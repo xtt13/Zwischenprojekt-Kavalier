@@ -38,14 +38,14 @@
 
 <body>
   <header class="main-header">
-    <h1><a href="index.html">Kavalier</a></h1>
+    <h1><a href="index.php">Kavalier</a></h1>
     <nav><ul>
-      <li><a href="index.html#top">Home</a></li>
-      <li><a href="store.html">Store</a></li>
-      <li><a href="index.html#AboutUs">About Us</a></li>
-      <li><a href="index.html#Team">Team</a></li>
-      <li><a href="index.html#Location">Location</a></li>
-      <li><a href="index.html#Contact">Contact</a></li>
+      <li><a href="index.php">Home</a></li>
+      <li><a href="index.php?site=store">Store</a></li>
+      <li><a href="index.php?site=homepage#AboutUs">About Us</a></li>
+      <li><a href="index.php?site=homepage#Team">Team</a></li>
+      <li><a href="index.php?site=homepage#Location">Location</a></li>
+      <li><a href="index.php?site=homepage#Contact">Contact</a></li>
     </ul>
   </nav>
     <a class="cart" href="bag.html">
