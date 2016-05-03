@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="26px" height="54px" viewBox="0 0 26 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>Pfeillinks</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M0,0 L25.31755,0 L25.31755,54 L0,54"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Desktop-HD-Copy" sketch:type="MSArtboardGroup" transform="translate(-271.000000, -358.000000)">
+            <g id="Pfeillinks" sketch:type="MSLayerGroup" transform="translate(283.788387, 385.000000) rotate(-180.000000) translate(-283.788387, -385.000000) translate(271.000000, 358.000000)">
+                <mask id="mask-2" sketch:name="Clip 2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M1.20971229,54 C0.900025941,54 0.590685228,53.8671367 0.354272884,53.6017986 C-0.118206172,53.0707338 -0.118206172,52.2098417 0.354272884,51.678777 L22.3969589,26.9028777 L0.527088925,2.32122302 C0.0546098689,1.79015827 0.0546098689,0.929266187 0.527088925,0.398201439 C0.999913613,-0.132863309 1.76514304,-0.132863309 2.23796773,0.398201439 L24.9632771,25.9413669 C25.4357562,26.4724317 25.4357562,27.3333237 24.9632771,27.8643885 L2.06515169,53.6017986 C1.82873935,53.8671367 1.51939863,54 1.20971229,54" id="Fill-1" fill="#010202" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
