@@ -12,6 +12,8 @@ if($site == "store") {
   include("views/homepage.php");
 } elseif($site == "bag") {
   include("views/bag.php");
+} elseif($site == "detail") {
+  include("views/detail.php");
 } elseif($site == "login") {
   // Muss später noch auf $_SESSION überprüft werden!
   include("views/login.php");

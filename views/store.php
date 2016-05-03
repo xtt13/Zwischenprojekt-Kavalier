@@ -32,75 +32,75 @@
         <ul>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
           <li>
             <p class="sale">SALE!</p>
-            <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="detail.html">89,99€</a></div>
-            <a class="view-link" href="detail.html">View Item</a>
+            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
+            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
+            <a class="view-link" href="views/detail.php">View Item</a>
           </li>
         </ul>
       </div>
