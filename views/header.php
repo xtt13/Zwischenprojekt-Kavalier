@@ -48,10 +48,10 @@
       <li><a href="index.php?site=homepage#Contact">Contact</a></li>
     </ul>
   </nav>
-    <a class="cart" href="bag.html">
+    <a class="cart" href="index.php?site=bag">
       <p>1</p>
     </a>
-    <a class="signin" href="login.html">Sign In/Register</a>
+    <a class="signin" href="index.php?site=login">Sign In/Register</a>
     <div class="nav-icon">
       <span></span>
       <span></span>

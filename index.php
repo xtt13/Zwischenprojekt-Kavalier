@@ -10,6 +10,11 @@ if($site == "store") {
   include("views/store.php");
 } elseif($site == "homepage") {
   include("views/homepage.php");
+} elseif($site == "bag") {
+  include("views/bag.php");
+} elseif($site == "login") {
+  // Muss später noch auf $_SESSION überprüft werden!
+  include("views/login.php");
 } else {
   include("views/homepage.php");
 }
