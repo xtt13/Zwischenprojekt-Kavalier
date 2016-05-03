@@ -37,3 +37,24 @@
 </head>
 
 <body>
+  <header class="main-header">
+    <h1><a href="index.html">Kavalier</a></h1>
+    <nav><ul>
+      <li><a href="index.html#top">Home</a></li>
+      <li><a href="store.html">Store</a></li>
+      <li><a href="index.html#AboutUs">About Us</a></li>
+      <li><a href="index.html#Team">Team</a></li>
+      <li><a href="index.html#Location">Location</a></li>
+      <li><a href="index.html#Contact">Contact</a></li>
+    </ul>
+  </nav>
+    <a class="cart" href="bag.html">
+      <p>1</p>
+    </a>
+    <a class="signin" href="login.html">Sign In/Register</a>
+    <div class="nav-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
