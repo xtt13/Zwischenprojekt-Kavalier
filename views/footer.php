@@ -46,6 +46,11 @@
 <script src="js/script.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR5BTqOGfwfrDxu0Wyj9kr7VA4rMVYpRU&callback=initMap"></script>
 <script src="js/maps.js"></script>
+<script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.12.3.js'><\/script>".replace("HOST", location
+.hostname));
+//]]></script>
+
 
 </body>
 
