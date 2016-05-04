@@ -1,3 +1,14 @@
+<?php
+
+  $id = $_GET['id'];
+
+    $sql = "SELECT * FROM products WHERE id = '$id'";
+    $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+    $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    print_r($products);
+ ?>
+
 
   <div class="wrapper-page detail">
     <div class="wrapper-detail">
@@ -6,21 +17,20 @@
         <a href="#" class="control_next"></a>
         <a href="#" class="control_prev"></a>
         <ul>
-          <li><img class="slider-image" src="images/product-image.jpeg" alt="NailKit"></li>
-          <li><img class="slider-image" src="images/hipflask.jpeg" alt="Hipflask"></li>
-          <li><img class="slider-image" src="images/waiters.jpeg" alt="Waiters"></li>
-          <li><img class="slider-image" src="images/shoeshine.jpeg" alt="Shoeshine"></li>
+          <li><img class="slider-image" src="images/<?php echo $products['0']['image_main']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
+          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
+          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
+          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
         </ul>
       </div>
 
       <div class="wrapper-information">
-        <h1>Gentlemen's Set</h1>
-        <p class="product-info">You can tell a lot from a good firm hand shake and the same can be said for well-groomed nails!  </p>
-        <p class="product-info">The Gentlemens Hardware manicure kit contains five essential brass-effect tools all wrapped up in a handy zipped canvas case. A must for all modern gentlemen.</p>
-        <p class="product-price">19.99€</p>
+        <h1><?php echo $products['0']['product_name']; ?></h1>
+        <p class="product-info"><?php echo $products['0']['description']; ?></p>
+        <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
         <div class="wrapper-information-wrapper">
-          <a href="#" class="add-to-bag">Add to bag</a>
-          <a href="bag.html" class="show-bag">Show Bag</a>
+          <a href="index.php?site=detail" class="add-to-bag">Add to bag</a>
+          <a href="index.php?site=bag" class="show-bag">Show Bag</a>
         </div>
       </div>
     </div>

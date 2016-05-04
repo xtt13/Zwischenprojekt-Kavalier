@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('dbconnect.php');
 include('views/header.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "homepage";

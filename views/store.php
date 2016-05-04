@@ -1,3 +1,13 @@
+<?php
+
+  $sql = "SELECT * FROM products";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+ ?>
+
+
 
   <div class="wrapper-page shop">
     <div class="wrapper-categories">
@@ -30,78 +40,30 @@
       </div>
       <div class="wrapper-all-products">
         <ul>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
-          <li>
-            <p class="sale">SALE!</p>
-            <a class="image-link" href="views/detail.php"><img src="images/product-image.jpeg" alt="Nailkit"></a>
-            <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="views/detail.php">89,99€</a></div>
-            <a class="view-link" href="views/detail.php">View Item</a>
-          </li>
+          <?php
+          //print_r($products);
+
+          foreach($products as $product){
+
+          $id = $product['id'];
+           $name = $product['product_name'];
+           $price = $product['price'];
+           $sale = $product['sale'];
+           $image_main = $product['image_main'];
+
+
+            echo "<li>
+            <p class='sale'>SALE!</p>
+              <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image_main' alt='Nailkit'></a>
+              <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
+              <a class='view-link' href='index.php?site=detail&id=$id'>View Item</a>
+            </li>";
+
+          }
+
+
+          ?>
+
         </ul>
       </div>
     </div>
