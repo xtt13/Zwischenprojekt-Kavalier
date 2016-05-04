@@ -1,31 +1,25 @@
 <?php
 
-
-  $id = $_GET['id'];
+    $id = $_GET['id'];
 
     $sql = "SELECT * FROM products WHERE id = '$id'";
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    //print_r($products);
 
+    // Wenn $_GET['action']=="add-to-bag" gesetzt ist, dann schiebe Data in $_SESSION['bag']
     if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
+
       $productname = $_POST['product_name'];
       $price = $_POST['price'];
       $quantity = $_POST['quantity'];
-
-
-      print_r($_POST);
 
       $_SESSION['bag'][$productname]['name'] = $productname;
       $_SESSION['bag'][$productname]['price'] = $price;
       $_SESSION['bag'][$productname]['quantity'] = $quantity;
       $_SESSION['bag'][$productname]['id'] = $id;
 
-
       // setcookie('bag', json_encode($bag), time()+2678400);
     }
-    print_r($bag);
 
  ?>
 

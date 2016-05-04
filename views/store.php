@@ -1,5 +1,6 @@
 <?php
 
+  // Query: Alle Produkte aus der Tabelle
   $sql = "SELECT * FROM products";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
@@ -43,14 +44,15 @@
           <?php
           //print_r($products);
 
+
+          // Foreach Schleife um Produkt-Div zu befüllen
           foreach($products as $product){
 
           $id = $product['id'];
-           $name = $product['product_name'];
-           $price = $product['price'];
-           $sale = $product['sale'];
-           $image_main = $product['image_main'];
-
+          $name = $product['product_name'];
+          $price = $product['price'];
+          $sale = $product['sale'];
+          $image_main = $product['image_main'];
 
             echo "<li>
             <p class='sale'>SALE!</p>
@@ -58,9 +60,7 @@
               <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
               <a class='view-link' href='index.php?site=detail&id=$id'>View Item</a>
             </li>";
-
           }
-
 
           ?>
 

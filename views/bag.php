@@ -1,4 +1,6 @@
 <?php
+  // Ansatz für das Löschen von Produkten aus dem Warenkorb
+  //
   // if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
   //   $key = array_search($_GET['id'], $_SESSION['bag']);
   //   print_r($_GET['id']);
@@ -28,10 +30,9 @@
 
         <?php
 
+        // Ansatz für Dedoding von Produkten im Cookie
         // $data = json_decode($_COOKIE['bag'], true);
-        // echo "<pre>";
-        // print_r($_SESSION['bag']);
-        // echo "</pre>";
+
 
         $gesamtpreis = "";
         $bag = $_SESSION['bag'];
@@ -62,7 +63,8 @@
                         <td><a class='bag-delete' href='index.php?site=bag&action=delete&id=$id'></a></td>
                       </tr>
 
-                      <tr class='space'></tr>";
+                      <tr class='space'></tr>
+              ";
         }
         ?>
 

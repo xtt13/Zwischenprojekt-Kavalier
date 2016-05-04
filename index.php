@@ -5,8 +5,6 @@ include('views/header.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "homepage";
 
-
-
 if($site == "store") {
   include("views/store.php");
 } elseif($site == "homepage") {
