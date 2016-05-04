@@ -6,7 +6,7 @@
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    print_r($products);
+    //print_r($products);
  ?>
 
 
@@ -28,8 +28,18 @@
         <h1><?php echo $products['0']['product_name']; ?></h1>
         <p class="product-info"><?php echo $products['0']['description']; ?></p>
         <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
+        <select class="" name="">
+          <option value="0">Quantity</option>
+
+          <?php
+          for($i=1;$i<=$products['0']['stock'];$i++){
+            echo "<option value='$i'>$i</option>";
+          }
+          ?>
+
+        </select>
         <div class="wrapper-information-wrapper">
-          <a href="index.php?site=detail" class="add-to-bag">Add to bag</a>
+          <a href="index.php?site=detail&amp;id=<?php echo $products['0']['id']; ?>&amp;action=addtobag" class="add-to-bag">Add to bag</a>
           <a href="index.php?site=bag" class="show-bag">Show Bag</a>
         </div>
       </div>
