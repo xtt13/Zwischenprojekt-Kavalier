@@ -1,5 +1,6 @@
 <?php
 
+
   $id = $_GET['id'];
 
     $sql = "SELECT * FROM products WHERE id = '$id'";
@@ -13,15 +14,18 @@
       $price = $_POST['price'];
       $quantity = $_POST['quantity'];
 
+
       print_r($_POST);
 
-      $_SESSION['bag'][$productname][$productname] = $productname;
+      $_SESSION['bag'][$productname]['name'] = $productname;
       $_SESSION['bag'][$productname]['price'] = $price;
       $_SESSION['bag'][$productname]['quantity'] = $quantity;
+      $_SESSION['bag'][$productname]['id'] = $id;
 
-      print_r($_SESSION);
-      print_r(count($_SESSION['bag']));
+
+      // setcookie('bag', json_encode($bag), time()+2678400);
     }
+    print_r($bag);
 
  ?>
 
@@ -47,6 +51,7 @@
           <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
           <input type="hidden" name="product_name" value="<?php echo $products['0']['product_name']; ?>">
           <input type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
+          <input type="hidden" name="id" value="<?php echo $products['0']['id']; ?>">
           <select class="" name="quantity">
             <option value="0">Quantity</option>
 

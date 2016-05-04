@@ -1,3 +1,12 @@
+<?php
+  // if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
+  //   $key = array_search($_GET['id'], $_SESSION['bag']);
+  //   print_r($_GET['id']);
+  // }
+ ?>
+
+
+
 
   <div class="wrapper-page bag">
     <h1 class="bag-headline">Your Bag</h1>
@@ -17,55 +26,53 @@
 
         <tr class="space"></tr>
 
-        <tr>
-          <td><div class="bag-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-          <td>Gentlemen's Set</td>
-          <td></td>
-          <td>1</td>
-          <td>19,99€</td>
-          <td><a class="bag-delete" href="#"></a></td>
-        </tr>
+        <?php
 
-        <tr class="space"></tr>
+        // $data = json_decode($_COOKIE['bag'], true);
+        // echo "<pre>";
+        // print_r($_SESSION['bag']);
+        // echo "</pre>";
 
-        <tr>
-          <td><div class="bag-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-          <td>Gentlemen's Set</td>
-          <td></td>
-          <td>1</td>
-          <td>19,99€</td>
-          <td><a class="bag-delete" href="#"></a></td>
-        </tr>
+        $gesamtpreis = "";
+        $bag = $_SESSION['bag'];
 
-        <tr class="space"></tr>
+        foreach($bag as $bag_keys){
 
-        <tr>
-          <td><div class="bag-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-          <td>Gentlemen's Set</td>
-          <td></td>
-          <td>1</td>
-          <td>19,99€</td>
-          <td><a class="bag-delete" href="#"></a></td>
-        </tr>
+          $product_id = $bag_keys['id'];
 
-        <tr class="space"></td>
+          $sql = "SELECT * FROM products WHERE id = '$product_id'";
+          $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+          $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-        <tr>
-          <td><div class="bag-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-          <td>Gentlemen's Set</td>
-          <td></td>
-          <td>1</td>
-          <td>19,99€</td>
-          <td><a class="bag-delete" href="#"></a></td>
-        </tr>
+          $name = $products['0']['product_name'];
+          $image = $products['0']['image_main'];
+          $price = $products['0']['price'];
+          $quantity = $bag_keys['quantity'];
+          $id = $products['0']['id'];
+          $entire_product_price = $price * $quantity;
+          $gesamtpreis += $entire_product_price;
 
-        <tr class="space"></tr>
+          echo "
+                      <tr>
+                        <td><div class='bag-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
+                        <td>$name</td>
+                        <td></td>
+                        <td>$quantity</td>
+                        <td>$entire_product_price €</td>
+                        <td><a class='bag-delete' href='index.php?site=bag&action=delete&id=$id'></a></td>
+                      </tr>
+
+                      <tr class='space'></tr>";
+        }
+        ?>
+
+
 
       </tbody>
     </table>
 
     <div class="checkout-wrapper">
-      <p>Total: 79,96€</p>
+      <p>Total: <?php echo $gesamtpreis; ?>€</p>
       <a href="login.html">Check out!</a>
     </div>
 
