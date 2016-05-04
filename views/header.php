@@ -49,7 +49,7 @@
     </ul>
   </nav>
     <a class="cart" href="index.php?site=bag">
-      <p>1</p>
+      <?php if(isset($_SESSION['bag'])){echo '<p>' . count($_SESSION['bag']) . '</p>';}?>
     </a>
     <a class="signin" href="index.php?site=login">Sign In/Register</a>
     <div class="nav-icon">

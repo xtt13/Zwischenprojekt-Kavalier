@@ -7,6 +7,22 @@
 
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
     //print_r($products);
+
+    if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
+      $productname = $_POST['product_name'];
+      $price = $_POST['price'];
+      $quantity = $_POST['quantity'];
+
+      print_r($_POST);
+
+      $_SESSION['bag'][$productname][$productname] = $productname;
+      $_SESSION['bag'][$productname]['price'] = $price;
+      $_SESSION['bag'][$productname]['quantity'] = $quantity;
+
+      print_r($_SESSION);
+      print_r(count($_SESSION['bag']));
+    }
+
  ?>
 
 
@@ -24,25 +40,30 @@
         </ul>
       </div>
 
-      <div class="wrapper-information">
-        <h1><?php echo $products['0']['product_name']; ?></h1>
-        <p class="product-info"><?php echo $products['0']['description']; ?></p>
-        <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
-        <select class="" name="">
-          <option value="0">Quantity</option>
+      <form class="" action="index.php?site=detail&amp;id=<?php echo $id; ?>&amp;action=add-to-bag" method="post">
+        <div class="wrapper-information">
+          <h1><?php echo $products['0']['product_name']; ?></h1>
+          <p class="product-info"><?php echo $products['0']['description']; ?></p>
+          <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
+          <input type="hidden" name="product_name" value="<?php echo $products['0']['product_name']; ?>">
+          <input type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
+          <select class="" name="quantity">
+            <option value="0">Quantity</option>
 
-          <?php
-          for($i=1;$i<=$products['0']['stock'];$i++){
-            echo "<option value='$i'>$i</option>";
-          }
-          ?>
+            <?php
+            for($i=1;$i<=$products['0']['stock'];$i++){
+              echo "<option value='$i'>$i</option>";
+            }
+            ?>
 
-        </select>
-        <div class="wrapper-information-wrapper">
-          <a href="index.php?site=detail&amp;id=<?php echo $products['0']['id']; ?>&amp;action=addtobag" class="add-to-bag">Add to bag</a>
-          <a href="index.php?site=bag" class="show-bag">Show Bag</a>
+          </select>
+          <div class="wrapper-information-wrapper">
+            <button class="add-to-bag" type="submit" name="button">Add To Bag</button>
+            <a href="index.php?site=bag" class="show-bag">Show Bag</a>
+          </div>
         </div>
-      </div>
+      </form>
+
     </div>
   </div>
   <section class="other-products">
