@@ -6,8 +6,9 @@
 // }
 
 
-// wird mit $_SESSION['logged_in'] ersetzt
+// wird mit $_SESSION['logged_in'] und der $_SESSION['id'] ersetzt
 $logged_in = true;
+$id = 1;
 
 
 if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){

@@ -1,3 +1,34 @@
+  <?php
+
+    // Query: Alle Produkte aus der Tabelle welche aktiv sind
+    $sql = "SELECT * FROM users WHERE id = '$id'";
+    $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+    $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    //print_r($user);
+
+    $payment = $user[0]['payment'];
+
+    $prepayment_checked = '';
+    $oninvoice_checked = '';
+    $lastname_checked = '';
+
+    switch ($payment) {
+        case 'prepayment':
+            $prepayment_checked = 'checked';
+            break;
+        case 'oninvoice':
+            $oninvoice_checked = 'checked';
+            break;
+        case 'lastname':
+            $lastname_checked = 'checked';
+            break;
+
+        default:
+    }
+
+   ?>
+
 
   <div class="wrapper-page shipping">
 
@@ -20,14 +51,14 @@
     </section>
 
     <section class="shipping-form">
-      <form action="index.php?site=checkout&amp;action=summary" method="post">
+      <form action="#" method="post">
         <fieldset>
           <h3 class="shipping-form">Shippingadress</h3>
-          <input class="shipping-adress" type="text" name="adress" placeholder="Street and Number"><br>
+          <input class="shipping-adress" type="text" name="adress" value="<?php echo $user[0]['street_and_number']; ?>" placeholder="Street and Number"><br>
 
           <div class="short">
-            <input class="shipping-zip" type="text" name="zip" placeholder="Zip"><br>
-            <input class="shipping-country" type="text" name="country" placeholder="Country"><br>
+            <input class="shipping-zip" type="text" name="zip" value="<?php echo $user[0]['zip_and_location']; ?>" placeholder="Zip"><br>
+            <input class="shipping-country" type="text" name="country" value="<?php echo $user[0]['country']; ?>" placeholder="Country"><br>
           </div>
 
           <div class="shipping-alternative-wrapper">
@@ -36,7 +67,7 @@
           </div>
 
 
-          <input class="invoice-adress" type="text" name="adress" placeholder="Street and Number" disabled><br>
+          <input class="invoice-adress" type="text" name="alt-adress" placeholder="Street and Number" disabled><br>
 
           <div class="short">
             <input class="invoice-zip" type="text" name="zip" placeholder="Zip" disabled><br>
@@ -47,17 +78,17 @@
 
           <div class="checkboxes-wrapper">
             <div class="on-invoice-wrapper">
-              <input class="on-invoice" id="on-invoice-label" name="checkbox" type="radio">
+              <input class="on-invoice" id="on-invoice-label" name="oninvoice" type="radio" <?php echo $oninvoice_checked; ?>>
               <label class="on-invoice-label" for="on-invoice-label"><span></span>On Invoice</label>
             </div>
 
             <div class="lastname-wrapper">
-              <input class="lastname" id="lastname-label" name="checkbox" type="radio">
+              <input class="lastname" id="lastname-label" name="lastname" type="radio" <?php echo $lastname_checked; ?>>
               <label class="lastname-label" for="lastname-label"><span></span>Lastname</label>
             </div>
 
             <div class="prepayment-wrapper">
-              <input class="prepayment" id="prepayment-label" name="checkbox" type="radio">
+              <input class="prepayment" id="prepayment-label" name="prepayment" type="radio" <?php echo $prepayment_checked; ?>>
               <label class="prepayment-label" for="prepayment-label"><span></span>Prepayment</label>
             </div>
           </div>
