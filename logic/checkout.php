@@ -27,7 +27,7 @@ if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('views/summary.php');
+    include('views/thankyou.php');
   }
 } else {
   if($logged_in == false){

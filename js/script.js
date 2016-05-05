@@ -19,6 +19,10 @@ jQuery(document).ready(function($) {
     });
   });
 
+  $(".add-to-bag").click(function() {
+      $('.cart p').html(function(i, val) { return +val+1; });
+  });
+
   // MOBILE MENU
 
   $('.nav-icon').click(function(){
@@ -26,7 +30,7 @@ jQuery(document).ready(function($) {
     $('header ul').toggleClass('open');
     $('header nav').toggleClass('open');
     $('.nav-icon').toggleClass('open');
-    
+
 
   });
 
