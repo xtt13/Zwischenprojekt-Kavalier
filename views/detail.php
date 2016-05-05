@@ -13,8 +13,6 @@
       $price = $_POST['price'];
       $quantity = $_POST['quantity'];
 
-      $_SESSION['bag'][$productname]['name'] = $productname;
-      $_SESSION['bag'][$productname]['price'] = $price;
       $_SESSION['bag'][$productname]['quantity'] = $quantity;
       $_SESSION['bag'][$productname]['id'] = $id;
 
@@ -43,9 +41,11 @@
           <h1><?php echo $products['0']['product_name']; ?></h1>
           <p class="product-info"><?php echo $products['0']['description']; ?></p>
           <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
+
           <input type="hidden" name="product_name" value="<?php echo $products['0']['product_name']; ?>">
           <input type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
           <input type="hidden" name="id" value="<?php echo $products['0']['id']; ?>">
+
           <select class="" name="quantity">
             <option value="0">Quantity</option>
 

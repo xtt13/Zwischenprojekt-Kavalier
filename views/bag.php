@@ -50,6 +50,7 @@
           $price = $products['0']['price'];
           $quantity = $bag_keys['quantity'];
           $id = $products['0']['id'];
+
           $entire_product_price = $price * $quantity;
           $gesamtpreis += $entire_product_price;
 
