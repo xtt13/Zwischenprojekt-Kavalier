@@ -6,14 +6,34 @@
 // }
 
 
+// wird mit $_SESSION['logged_in'] ersetzt
+$logged_in = true;
+
+
 if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
-  include('views/shipping-information.php');
+  if($logged_in == false){
+    redirect_to("index.php?site=login&amp;action=checkout");
+  } else {
+    include('views/shipping-information.php');
+  }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'summary') {
-  include('views/summary.php');
+  if($logged_in == false){
+    redirect_to("index.php?site=login&amp;action=checkout");
+  } else {
+    include('views/summary.php');
+  }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'success') {
-  include('views/thankyou.php');
+  if($logged_in == false){
+    redirect_to("index.php?site=login&amp;action=checkout");
+  } else {
+    include('views/summary.php');
+  }
 } else {
-  include('views/shipping-information.php');
+  if($logged_in == false){
+    redirect_to("index.php?site=login&amp;action=checkout");
+  } else {
+    include('views/thankyou.php');
+  }
 }
 
 
