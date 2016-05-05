@@ -1,7 +1,7 @@
 <?php
 
-  // Query: Alle Produkte aus der Tabelle
-  $sql = "SELECT * FROM products";
+  // Query: Alle Produkte aus der Tabelle welche aktiv sind
+  $sql = "SELECT * FROM products WHERE active = 1";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
