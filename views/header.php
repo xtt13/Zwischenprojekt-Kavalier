@@ -51,7 +51,7 @@
     <a class="cart" href="index.php?site=bag">
       <?php if(isset($_SESSION['bag'])){echo '<p>' . count($_SESSION['bag']) . '</p>';}?>
     </a>
-    <a class="signin" href="index.php?site=login">Sign In/Register</a>
+    <a class="signin" href="index.php?site=login&amp;action=useraccount">Sign In/Register</a>
     <div class="nav-icon">
       <span></span>
       <span></span>

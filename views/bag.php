@@ -76,7 +76,7 @@
 
     <div class="checkout-wrapper">
       <p>Total: <?php echo $gesamtpreis; ?>€</p>
-      <a href="login.html">Check out!</a>
+      <a href="index.php?site=login&amp;action=checkout">Check out!</a>
     </div>
 
   </div>
