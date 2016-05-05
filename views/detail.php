@@ -13,8 +13,8 @@
       $price = $_POST['price'];
       $quantity = $_POST['quantity'];
 
-      $_SESSION['bag'][$productname]['quantity'] = $quantity;
-      $_SESSION['bag'][$productname]['id'] = $id;
+      $_SESSION['bag'][$id]['quantity'] = $quantity;
+      $_SESSION['bag'][$id]['id'] = $id;
 
       // setcookie('bag', json_encode($bag), time()+2678400);
     }

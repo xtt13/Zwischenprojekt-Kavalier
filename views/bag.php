@@ -1,10 +1,11 @@
 <?php
-  // Ansatz für das Löschen von Produkten aus dem Warenkorb
-  //
-  // if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
-  //   $key = array_search($_GET['id'], $_SESSION['bag']);
-  //   print_r($_GET['id']);
-  // }
+  //Ansatz für das Löschen von Produkten aus dem Warenkorb
+
+  if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
+    // $key = array_search($_GET['id'], $_SESSION['bag']);
+    $id = $_GET['id'];
+    unset($_SESSION['bag'][$id]);
+  }
  ?>
 
 
@@ -35,38 +36,53 @@
 
 
         $gesamtpreis = "";
-        $bag = $_SESSION['bag'];
+        if(isset($_SESSION['bag'])){
+          $bag = $_SESSION['bag'];
 
-        foreach($bag as $bag_keys){
+          //print_r($bag);
 
-          $product_id = $bag_keys['id'];
+          foreach($bag as $bag_keys){
 
-          $sql = "SELECT * FROM products WHERE id = '$product_id'";
-          $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-          $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            $product_id = $bag_keys['id'];
 
-          $name = $products['0']['product_name'];
-          $image = $products['0']['image_main'];
-          $price = $products['0']['price'];
-          $quantity = $bag_keys['quantity'];
-          $id = $products['0']['id'];
 
-          $entire_product_price = $price * $quantity;
-          $gesamtpreis += $entire_product_price;
+            $sql = "SELECT * FROM products WHERE id = '$product_id'";
+            $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+            $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-          echo "
-                      <tr>
-                        <td><div class='bag-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
-                        <td>$name</td>
-                        <td></td>
-                        <td>$quantity</td>
-                        <td>$entire_product_price €</td>
-                        <td><a class='bag-delete' href='index.php?site=bag&action=delete&id=$id'></a></td>
-                      </tr>
+            // echo "<pre>";
+            // print_r($_SESSION['bag']);
+            // echo "</pre>";
+            //print_r($products);
 
-                      <tr class='space'></tr>
-              ";
+
+            $name = $products['0']['product_name'];
+            $image = $products['0']['image_main'];
+            $price = $products['0']['price'];
+            $quantity = $bag_keys['quantity'];
+            $id = $products['0']['id'];
+
+            $entire_product_price = $price * $quantity;
+            $gesamtpreis += $entire_product_price;
+
+            echo "
+                        <tr>
+                          <td><div class='bag-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
+                          <td>$name</td>
+                          <td></td>
+                          <td>$quantity</td>
+                          <td>$entire_product_price €</td>
+                          <td><a class='bag-delete' href='index.php?site=bag&action=delete&id=$id'></a></td>
+                        </tr>
+
+                        <tr class='space'></tr>
+                ";
+          }
         }
+
+
+
+
         ?>
 
 
