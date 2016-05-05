@@ -13,8 +13,6 @@
       $password = mysqli_real_escape_string($link, $_POST["password"]);
 
 
-
-
       $sql = "SELECT email, password_hash, is_admin FROM users WHERE email = '$email'";
       $result = mysqli_query($link, $sql);
 
@@ -29,10 +27,10 @@
 
             if($user["is_admin"] == 1){
                   $_SESSION["is_admin"] = true;
-                  redirect_to("backend/index.php");
+                  // redirect_to("backend/index.php");
                 }
 
-          redirect_to("index.php?site=reservations&action=new");
+          // redirect_to("index.php?site=reservations&action=new");
 
           }
            else {
@@ -42,8 +40,7 @@
         $error = 1;
       }
 
-
-
+      
 
       if($error == 1) {
         $errors["auth"] = "Die eingegebene Email-Passwort-Kombination stimmt nicht überein.";
