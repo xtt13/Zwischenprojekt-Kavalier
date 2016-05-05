@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Erstellungszeit: 05. Mai 2016 um 14:38
+-- Erstellungszeit: 05. Mai 2016 um 14:41
 -- Server-Version: 10.1.9-MariaDB
 -- PHP-Version: 5.6.15
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `Kavalier`
 --
+CREATE DATABASE IF NOT EXISTS `Kavalier` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `Kavalier`;
 
 -- --------------------------------------------------------
 
