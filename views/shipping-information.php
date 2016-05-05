@@ -5,7 +5,12 @@
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
     $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
-    //print_r($user);
+    print_r($user);
+    print_r($_POST);
+
+    if(!isset($_POST['alternative_checkbox'])){
+      echo "Hurra";
+    }
 
     $payment = $user[0]['payment'];
 
@@ -62,33 +67,33 @@
           </div>
 
           <div class="shipping-alternative-wrapper">
-            <input class="shipping-alternative" id="shipping-alternative" type="checkbox" name="alternative" checked>
+            <input class="shipping-alternative" id="shipping-alternative" value="alt_shipping_adress" type="checkbox" name="alternative_checkbox" checked>
             <label class="shipping-alternative-label" for="shipping-alternative"><span></span>Alternative Invoiceadress</label>
           </div>
 
 
-          <input class="invoice-adress" type="text" name="alt-adress" placeholder="Street and Number" disabled><br>
+          <input class="invoice-adress" type="text" name="alt-adress" value="<?php echo $user[0]['alt_street_and_number']; ?>" placeholder="Street and Number" disabled><br>
 
           <div class="short">
-            <input class="invoice-zip" type="text" name="zip" placeholder="Zip" disabled><br>
-            <input class="invoice-country" type="text" name="country" placeholder="Country" disabled><br>
+            <input class="invoice-zip" type="text" name="alt_zip" value="<?php echo $user[0]['alt_zip_and_location']; ?>" placeholder="Zip" disabled><br>
+            <input class="invoice-country" type="text" name="alt_country" value="<?php echo $user[0]['alt_country']; ?>" placeholder="Country" disabled><br>
           </div>
 
           <h3 class="shipping-form">Payment</h3>
 
           <div class="checkboxes-wrapper">
             <div class="on-invoice-wrapper">
-              <input class="on-invoice" id="on-invoice-label" name="oninvoice" type="radio" <?php echo $oninvoice_checked; ?>>
+              <input class="on-invoice" id="on-invoice-label" name="payment" value="oninvoice" type="radio" <?php echo $oninvoice_checked; ?>>
               <label class="on-invoice-label" for="on-invoice-label"><span></span>On Invoice</label>
             </div>
 
             <div class="lastname-wrapper">
-              <input class="lastname" id="lastname-label" name="lastname" type="radio" <?php echo $lastname_checked; ?>>
+              <input class="lastname" id="lastname-label" name="payment" value="lastname" type="radio" <?php echo $lastname_checked; ?>>
               <label class="lastname-label" for="lastname-label"><span></span>Lastname</label>
             </div>
 
             <div class="prepayment-wrapper">
-              <input class="prepayment" id="prepayment-label" name="prepayment" type="radio" <?php echo $prepayment_checked; ?>>
+              <input class="prepayment" id="prepayment-label"  value="prepayment" name="payment" type="radio" <?php echo $prepayment_checked; ?>>
               <label class="prepayment-label" for="prepayment-label"><span></span>Prepayment</label>
             </div>
           </div>
