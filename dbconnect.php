@@ -3,7 +3,7 @@
 
 // mysqli_connect Parameter: Host, Benutzer, Passwort, Datenbank
 
-$link = mysqli_connect('localhost', 'hannah', 'sudo', 'Kavalier');
+$link = mysqli_connect('localhost', 'hannah', 'sudo', 'sae_Kavalier');
 
 if (!$link) {
   die('Connect Error (' . mysqli_connect_errno() . ') '
