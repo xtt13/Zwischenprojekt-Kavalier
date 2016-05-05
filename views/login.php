@@ -20,7 +20,7 @@
     </section>
 
     <section class="login-form">
-      <form action="index.php?site=index">
+      <form action="index.php?site=homepage" method="post">
         <fieldset>
           <h3 class="login-form">Login</h3>
             <label for="email"></label>
