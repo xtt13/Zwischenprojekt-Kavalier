@@ -15,7 +15,7 @@ if($site == "store") {
   include("views/detail.php");
 } elseif($site == "login") {
   // Muss später noch auf $_SESSION überprüft werden!
-  include("views/login.php");
+  include("logic/login.php");
 } else {
   include("views/homepage.php");
 }
