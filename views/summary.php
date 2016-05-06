@@ -1,4 +1,29 @@
+<?php
+  // Man kommt erst zur Summary wenn alles im Bereich Shippinginformation OK war
+  if($_SESSION['shippinginformation'] !== true){
+    redirect_to("index.php?site=checkout&action=shippinginformation");
+  }
 
+  // Query von Userdaten
+  $sql = "SELECT * FROM users WHERE id = '$id'";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+  $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+  $gesamtpreis = "";
+
+  //print_r($_POST);
+
+  // Wenn der Buy!-Button gedrückt wurde
+  if(isset($_POST['button-sbm-buy'])){
+    echo "Gekauft!";
+    // $zeitpunkt = time();
+    redirect_to("index.php?site=checkout&action=success");
+  }
+
+
+
+
+ ?>
 
   <div class="wrapper-page shipping">
 
@@ -23,15 +48,27 @@
     <section class="summary-section">
       <h1>Summary</h1>
 
-      <div class="summary-shippingadress-wrapper">
-        <div class="summary-shippingadress"><p>Shippingadress:</p></div>
-        <div class="summary-personaldata"><p>John Someone<br>Somestreet 23<br>1130 Rainbow<br>Austria</p></div>
+      <div class='summary-shippingadress-wrapper'>
+        <div class='summary-shippingadress'><p>Shippingadress:</p></div>
+        <div class='summary-personaldata'><p><?php echo $user[0]['fullname'] ?><br><?php echo $user[0]['street_and_number'] ?><br><?php echo $user[0]['zip_and_location'] ?><br><?php echo $user[0]['country'] ?></p></div>
       </div>
 
-      <div class="summary-invoiceadress-wrapper">
-        <div class="summary-invoiceadress"><p>Shippingadress:</p></div>
-        <div class="summary-invoicedata"><p>John Someone<br>Somestreet 14<br>1150 Somewhere<br>Austria</p></div>
-      </div>
+      <?php
+        // Wenn die Alternative Checkbox gecheckt wurde wird die Alternative Invoiceadress angezeigt
+        if(isset($_SESSION['alternative_adress']) && $_SESSION['alternative_adress'] == true){
+
+          $alt_street_and_number = $user[0]['alt_street_and_number'];
+          $alt_zip_and_location = $user[0]['alt_zip_and_location'];
+          $alt_country = $user[0]['alt_country'];
+
+          echo "
+            <div class='summary-invoiceadress-wrapper'>
+              <div class='summary-invoiceadress'><p>Invoiceadress:</p></div>
+              <div class='summary-invoicedata'><p>$alt_street_and_number<br>$alt_zip_and_location<br>$alt_country</p></div>
+            </div>
+          ";
+        }
+       ?>
 
       <table class="summary-table">
         <thead class="summary-table-head">
@@ -47,44 +84,80 @@
 
           <tr class="summary-space"></tr>
 
-          <tr>
-            <td><div class="summary-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-            <td>Gentlemen's Set</td>
-            <td></td>
-            <td>1</td>
-            <td>19,99€</td>
-          </tr>
+          <?php
+            // Wenn sich etwas im Warenkorb befindet
+            if(isset($_SESSION['bag'])){
+              $bag = $_SESSION['bag'];
 
-          <tr class="summary-space"></tr>
+              //print_r($bag);
 
-          <tr>
-            <td><div class="summary-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-            <td>Gentlemen's Set</td>
-            <td></td>
-            <td>1</td>
-            <td>19,99€</td>
-          </tr>
+              // Foreachschleife für WarenkorbArray
+              foreach($bag as $bag_keys){
 
-          <tr class="summary-space"></tr>
+                //Produkt ID auf Variable
+                $product_id = $bag_keys['id'];
+
+                // Query für Produkt
+                $sql = "SELECT * FROM products WHERE id = '$product_id'";
+                $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+                $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 
-          <tr>
-            <td><div class="summary-table-image-wrapper"><img src="./images/product-image.jpeg" alt="Nailkit"></div></td>
-            <td>Gentlemen's Set</td>
-            <td></td>
-            <td>1</td>
-            <td>19,99€</td>
-          </tr>
+                $name = $products['0']['product_name'];
+                $image = $products['0']['image_main'];
+                $price = $products['0']['price'];
+                $quantity = $bag_keys['quantity'];
+                $id = $products['0']['id'];
 
-          <tr class="summary-space"></tr>
+                // Entirepreis = Produktpreis * Menge
+                $entire_product_price = $price * $quantity;
+                $gesamtpreis += $entire_product_price;
 
-          <tr>
-            <td><div class="summary-table-image-wrapper"><img src="./images/shipping.svg" alt="Nailkit"></div></td>
-            <td>Shipping</td>
-            <td></td>
-            <td>1</td>
-            <td>4,99€</td>
-          </tr>
+                echo "
+                  <tr>
+                    <td><div class='summary-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
+                    <td>$name</td>
+                    <td></td>
+                    <td>$quantity</td>
+                    <td>$entire_product_price €</td>
+                  </tr>
+
+                  <tr class='summary-space'></tr>
+                    ";
+
+                // Wenn der Gesamtpreis <= 30€ ist, dann berechne 4,99€ Versand
+                if($gesamtpreis <= 30){
+                  echo "
+                    <tr>
+                      <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
+                      <td>Shipping</td>
+                      <td></td>
+                      <td>1</td>
+                      <td>4,99 €</td>
+                    </tr>
+
+                    <tr class='summary-space'></tr>
+                  ";
+
+                  $gesamtpreis += 4.99;
+
+                  // Wenn der Gesamtpreis > 30€ ist, dann berechne 0€ Versand
+                } else {
+                  echo "
+                    <tr>
+                      <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
+                      <td>Free Shipping</td>
+                      <td></td>
+                      <td>1</td>
+                      <td>0 €</td>
+                    </tr>
+
+                    <tr class='summary-space'></tr>
+                  ";
+                }
+              }
+            }
+           ?>
 
           <tr class="summary-space"></tr>
 
@@ -92,9 +165,13 @@
       </table>
 
       <div class="total-wrapper">
-        <p class="total">Total: 44,97€</p>
+        <p class="total">Total: <?php echo $gesamtpreis; ?>€</p>
       </div>
-      <a class="summary-buy" href="index.php?site=checkout&amp;action=success">Buy!</a>
+
+      <form action="index.php?site=checkout&amp;action=summary" method="post">
+        <button class="summary-buy" name="button-sbm-buy" type="submit" value="Buy">Next!</button>
+      </form>
+
 
     </section>
 

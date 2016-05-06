@@ -5,6 +5,7 @@
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
     $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+
     // print_r($user);
     // print_r($_POST);
 
@@ -12,6 +13,7 @@
     $prepayment_checked = '';
     $oninvoice_checked = '';
     $lastname_checked = '';
+    $_SESSION['alternative_adress'] = false;
 
     $payment = $user[0]['payment'];
 
@@ -40,7 +42,7 @@
 
       // Wenn die Alternative Checkbox gechecked ist (ACHTUNG! Aufgrund des Checkboxstylings wird auf !isset überprüft !!!)
       if(!isset($_POST['alternative_checkbox'])){
-        $alternative_adress = true;
+        $_SESSION['alternative_adress'] = true;
 
         $alt_street_and_number = $_POST['alt-adress'];
         $alt_zip_and_location = $_POST['alt_zip'];
@@ -82,7 +84,7 @@
           //save_reservation($fullname, $reservation_date, $smoking_area, $time_sent);
 
           // Wenn die Alternative Checkbox checked ist, dann verwende Besonderes Query
-          if($alternative_adress == true){
+          if($_SESSION['alternative_adress'] == true){
             $sql = "UPDATE users SET street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', alt_street_and_number = '$alt_street_and_number', alt_zip_and_location = '$alt_zip_and_location', alt_country ='$alt_country', payment = '$payment' WHERE id = '1'";
             mysqli_query($link, $sql) or die(mysqli_error($link));
           } else {
