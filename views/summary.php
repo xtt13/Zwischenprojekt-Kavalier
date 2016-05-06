@@ -11,14 +11,8 @@
 
   $gesamtpreis = "";
 
-  //print_r($_POST);
 
-  // Wenn der Buy!-Button gedrückt wurde
-  if(isset($_POST['button-sbm-buy'])){
-    echo "Gekauft!";
-    // $zeitpunkt = time();
-    redirect_to("index.php?site=checkout&action=success");
-  }
+  //print_r($_POST);
 
 
 
@@ -124,37 +118,37 @@
 
                   <tr class='summary-space'></tr>
                     ";
+              }
 
-                // Wenn der Gesamtpreis <= 30€ ist, dann berechne 4,99€ Versand
-                if($gesamtpreis <= 30){
-                  echo "
-                    <tr>
-                      <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
-                      <td>Shipping</td>
-                      <td></td>
-                      <td>1</td>
-                      <td>4,99 €</td>
-                    </tr>
+              // Wenn der Gesamtpreis <= 30€ ist, dann berechne 4,99€ Versand
+              if($gesamtpreis <= 30){
+                echo "
+                  <tr>
+                    <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
+                    <td>Shipping</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>4,99 €</td>
+                  </tr>
 
-                    <tr class='summary-space'></tr>
-                  ";
+                  <tr class='summary-space'></tr>
+                ";
 
-                  $gesamtpreis += 4.99;
+                $gesamtpreis += 4.99;
 
-                  // Wenn der Gesamtpreis > 30€ ist, dann berechne 0€ Versand
-                } else {
-                  echo "
-                    <tr>
-                      <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
-                      <td>Free Shipping</td>
-                      <td></td>
-                      <td>1</td>
-                      <td>0 €</td>
-                    </tr>
+                // Wenn der Gesamtpreis > 30€ ist, dann berechne 0€ Versand
+              } else {
+                echo "
+                  <tr>
+                    <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
+                    <td>Free Shipping</td>
+                    <td></td>
+                    <td>1</td>
+                    <td>0 €</td>
+                  </tr>
 
-                    <tr class='summary-space'></tr>
-                  ";
-                }
+                  <tr class='summary-space'></tr>
+                ";
               }
             }
            ?>
@@ -178,3 +172,43 @@
 
 
   </div>
+
+  <?php
+  // Wenn der Buy!-Button gedrückt wurde
+  if(isset($_POST['button-sbm-buy'])){
+
+    $created_at = time();
+    $user_id = $user[0]['id'];
+
+    // Die Bestellung wird in 'orders' eingetragen
+    $sql = "INSERT INTO orders (user_id, total_price) VALUES ('$user_id', '$gesamtpreis')";
+    mysqli_query($link, $sql) or die(mysqli_error($link));
+    // ID vom letzen Query wird ausgelesen
+    $order_id = mysqli_insert_id($link);
+
+    $bag = $_SESSION['bag'];
+
+    // Bag wird nochmal durchlaufen und der jeweilige Preis des Produkts wird erfasst
+    foreach($bag as $bag_keys){
+
+      $product_id = $bag_keys['id'];
+
+      // Query für Produkt
+      $sql = "SELECT * FROM products WHERE id = '$product_id'";
+      $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+      $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+      $quantity = $bag_keys['quantity'];
+      $price = $products['0']['price'];
+
+      // Einzelnen Produkte werden in 'producs_sold' geschrieben. Mit der order_id kann jede Bestellung wieder zusammengebaut werden.
+      $sql = "INSERT INTO products_sold (order_id, product_id, quantity, price) VALUES ('$order_id', '$product_id', '$quantity', '$price')";
+      $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+    }
+    // Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
+    $_SESSION['summary'] = true;
+    redirect_to("index.php?site=checkout&action=success");
+  }
+
+   ?>

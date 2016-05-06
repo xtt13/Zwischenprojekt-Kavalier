@@ -1,4 +1,9 @@
+<?php
+  if($_SESSION['summary'] !== true){
+    redirect_to("index.php?site=checkout&action=summary");
+  }
 
+ ?>
   <div class="wrapper-page thankyou">
 
     <img class="progress_bar" src="images/progressbar4.svg" border="0" width="528" height="48" orgWidth="528" orgHeight="48" usemap="#image-maps-2016-03-26-060856" alt="" />

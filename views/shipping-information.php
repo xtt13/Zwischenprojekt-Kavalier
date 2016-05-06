@@ -92,7 +92,7 @@
             mysqli_query($link, $sql) or die(mysqli_error($link));
           }
 
-          // Alles in Shippinginformation ist OK
+          // Alles in Shippinginformation ist OK. (Ist  Berechtigung für nächsten Checkoutteil)
           $_SESSION['shippinginformation'] = true;
 
           // Wenn alles OK --> redirect zum nächsten Checkoutschritt
