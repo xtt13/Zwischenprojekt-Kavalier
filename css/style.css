@@ -1598,7 +1598,7 @@ LOGINFORM
   background-color: #F3F3F3;
   border: 2px solid transparent;
 
-  padding-left: 90px;
+  text-align: center;
   padding-top: 5px;
 
   font-family: 'myriad-pro', sans-serif;
@@ -1623,7 +1623,7 @@ LOGINFORM
   background-color: #F3F3F3;
   border: 2px solid transparent;
 
-  padding-left: 100px;
+  text-align: center;
   padding-top: 5px;
 
   font-family: 'myriad-pro', sans-serif;
