@@ -1,8 +1,8 @@
 <?php
-  // Man kommt erst zur Summary wenn alles im Bereich Shippinginformation OK war
-  if($_SESSION['shippinginformation'] !== true){
-    redirect_to("index.php?site=checkout&action=shippinginformation");
-  }
+
+  // if($_SESSION['shippinginformation'] !== true){
+  //   redirect_to("index.php?site=checkout&action=shippinginformation");
+  // }
 
   // Query von Userdaten
   $sql = "SELECT * FROM users WHERE id = '$id'";
@@ -11,11 +11,7 @@
 
   $gesamtpreis = "";
 
-
   //print_r($_POST);
-
-
-
 
  ?>
 
@@ -163,7 +159,7 @@
       </div>
 
       <form action="index.php?site=checkout&amp;action=summary" method="post">
-        <button class="summary-buy" name="button-sbm-buy" type="submit" value="Buy">Next!</button>
+        <button class="summary-buy" name="button-sbm-buy" type="submit" value="Buy">Buy!</button>
       </form>
 
 
@@ -208,7 +204,13 @@
     }
     // Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
     $_SESSION['summary'] = true;
+
+    // Warenkorb wird geleert
+    unset($_SESSION['bag']);
+
+    // Redirect zur Successseite
     redirect_to("index.php?site=checkout&action=success");
+    echo "TEST";
   }
 
    ?>
