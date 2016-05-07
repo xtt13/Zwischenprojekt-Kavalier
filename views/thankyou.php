@@ -1,5 +1,5 @@
 <?php
-  if($_SESSION['summary'] !== true){
+  if($_SESSION['summary'] !== true && $_SESSION['shippinginformation'] !== true){
     redirect_to("index.php?site=checkout&action=summary");
   }
 

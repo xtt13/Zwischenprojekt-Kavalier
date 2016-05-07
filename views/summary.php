@@ -1,8 +1,8 @@
 <?php
 
-  // if($_SESSION['shippinginformation'] !== true){
-  //   redirect_to("index.php?site=checkout&action=shippinginformation");
-  // }
+  if($_SESSION['shippinginformation'] !== true){
+    redirect_to("index.php?site=checkout&action=shippinginformation");
+  }
 
   // Query von Userdaten
   $sql = "SELECT * FROM users WHERE id = '$id'";
@@ -54,8 +54,10 @@
     // Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
     $_SESSION['summary'] = true;
 
+    // SESSION Überprüfung für Checkoutbereich wird zurückgesetzt
+    $_SESSION['shippinginformation'] = false;
     // Warenkorb wird geleert
-    //unset($_SESSION['bag']);
+    unset($_SESSION['bag']);
 
     // Redirect zur Successseite
     //redirect_to("index.php?site=checkout&action=success");
