@@ -211,6 +211,7 @@ section.register-form {
 	font-family: 'Latin Modern Roman', serif;
 	font-size: 18px;
 	font-style: italic;
+	text-align: center;
 }
 
 .cart p {

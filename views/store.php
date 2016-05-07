@@ -52,9 +52,16 @@
           $price = $product['price'];
           $sale = $product['sale'];
           $image_main = $product['image_main'];
+          $sale = $product['sale'];
 
-            echo "<li>
-            <p class='sale'>SALE!</p>
+            echo "<li>";
+
+            // Wenn SALE == 1 dann füge <p>-sale ein
+            if($sale == 1) {
+              echo "<p class='sale'>SALE!</p>";
+            }
+
+            echo "
               <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image_main' alt='Nailkit'></a>
               <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
               <a class='view-link' href='index.php?site=detail&id=$id'>View Item</a>
