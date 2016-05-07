@@ -1469,6 +1469,32 @@ a.control_prev:hover, a.control_next:hover {
 
 }
 
+.bag-select {
+	background-color: #F3F3F3;
+	font-family: 'myriad-pro', sans-serif;
+	color: black;
+	font-size: 15px;
+	border: 1px solid transparent;
+}
+
+.bag-update {
+	display: block;
+	width: 154px;
+	height: 43px;
+	background: #D1BCA3;
+	border-radius: 3px;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 24px;
+	color: #FFFFFF;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	margin-right: 20px;
+}
+
 .bag-delete {
 	display: block;
 	width: 29px;
