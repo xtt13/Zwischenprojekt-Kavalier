@@ -1397,7 +1397,7 @@ a.control_prev:hover, a.control_next:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-	height: 1440px;
+	min-height: 1440px;
 	position: relative;
 }
 
@@ -1493,6 +1493,13 @@ a.control_prev:hover, a.control_next:hover {
 	align-items: center;
 	border: 0;
 	margin-right: 20px;
+}
+
+.bag-alert {
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	color: red;
 }
 
 .bag-delete {

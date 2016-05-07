@@ -58,6 +58,15 @@
             ?>
 
           </select>
+
+          <?php
+          // Wenn es weniger als 5 Artikel eines Produktes gibt --> Alert Message
+          if($products['0']['stock'] < 5){
+            $quantity_products = $products['0']['stock'];
+            echo "<p class='bag-alert'>Only $quantity_products products left!</p>";
+          }
+           ?>
+
           <div class="wrapper-information-wrapper">
             <button class="add-to-bag" type="submit" name="button">Add To Bag</button>
             <a href="index.php?site=bag" class="show-bag">Show Bag</a>
