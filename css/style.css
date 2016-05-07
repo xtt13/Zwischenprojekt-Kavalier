@@ -207,6 +207,12 @@ section.register-form {
   background-repeat: no-repeat;
 }
 
+.empty-cart-message {
+	font-family: 'Latin Modern Roman', serif;
+	font-size: 18px;
+	font-style: italic;
+}
+
 .cart p {
   margin: 0;
   position: relative;
@@ -1139,6 +1145,16 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 .wrapper-information-wrapper {
 	display: flex;
 	margin-top: 120px;
+}
+
+.detail-select {
+	border: 1px solid transparent;
+	height: 43px;
+	width: 120px;
+	background-color: #F3F3F3;
+	font-family: 'myriad-pro', sans-serif;
+	color: black;
+	font-size: 15px;
 }
 
 .add-to-bag {

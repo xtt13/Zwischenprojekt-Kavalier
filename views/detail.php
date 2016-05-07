@@ -1,5 +1,7 @@
 <?php
 
+    print_r($_POST);
+
     $id = $_GET['id'];
 
     $sql = "SELECT * FROM products WHERE id = '$id'";
@@ -46,7 +48,7 @@
           <input type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
           <input type="hidden" name="id" value="<?php echo $products['0']['id']; ?>">
 
-          <select class="" name="quantity">
+          <select class="detail-select" name="quantity">
             <option value="0">Quantity</option>
 
             <?php

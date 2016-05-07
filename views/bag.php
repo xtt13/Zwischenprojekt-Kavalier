@@ -90,6 +90,8 @@
       </tbody>
     </table>
 
+    <?php if(!isset($_SESSION['bag'])){echo "<p class='empty-cart-message'>You have no items in your cart!</p>";} ?>
+
     <div class="checkout-wrapper">
       <p>Total: <?php echo $gesamtpreis; ?>€</p>
       <a href="index.php?site=login&amp;action=checkout">Check out!</a>

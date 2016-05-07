@@ -2,6 +2,10 @@
 
 jQuery(document).ready(function($) {
 
+    $('.detail-select').on('change', function() {
+     document.forms[myFormName].submit();
+  });
+
   // SMOOTH ANCHOR SCROLLING
 
   $(function() {
@@ -56,7 +60,7 @@ jQuery(document).ready(function($) {
   function moveLeft() {
     $('#slider ul').animate({
       left: +slideWidth
-    }, 850, function() {
+    }, 550, function() {
       $('#slider ul li:last-child').prependTo('#slider ul');
       $('#slider ul').css('left', '');
     });
@@ -65,7 +69,7 @@ jQuery(document).ready(function($) {
   function moveRight() {
     $('#slider ul').animate({
       left: -slideWidth
-    }, 850, function() {
+    }, 550, function() {
       $('#slider ul li:first-child').appendTo('#slider ul');
       $('#slider ul').css('left', '');
     });
