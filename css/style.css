@@ -1494,6 +1494,7 @@ a.control_prev:hover, a.control_next:hover {
 	align-items: center;
 	border: 0;
 	margin-right: 20px;
+	cursor: pointer;
 }
 
 .bag-alert {

@@ -90,7 +90,7 @@
                           <td><div class='bag-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
                           <td>$name</td>
                           <td></td>
-                          <td><select class='bag-select' name='$id'>
+                          <td><select class='bag-select' name='$id' onchange='this.form.submit()'>
                 ";
                           for($i=1;$i<=$products['0']['stock'];$i++){
                             if($i == $quantity){
