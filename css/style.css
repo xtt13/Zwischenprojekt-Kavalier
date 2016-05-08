@@ -1479,22 +1479,7 @@ a.control_prev:hover, a.control_next:hover {
 }
 
 .bag-update {
-	display: block;
-	width: 154px;
-	height: 43px;
-	background: #D1BCA3;
-	border-radius: 3px;
-	font-family: 'myriad-pro', sans-serif;
-	font-style: italic;
-	font-size: 24px;
-	color: #FFFFFF;
-	text-decoration: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border: 0;
-	margin-right: 20px;
-	cursor: pointer;
+	display: none;
 }
 
 .bag-alert {
