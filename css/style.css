@@ -1413,6 +1413,12 @@ a.control_prev:hover, a.control_next:hover {
   font-weight: normal;
 }
 
+.bag-table-image-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .bag-table {
 	width: 939px;
 	margin-top: 69px;

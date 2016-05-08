@@ -87,7 +87,7 @@
 
             echo "
                         <tr>
-                          <td><div class='bag-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
+                          <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='index.php?site=detail&id=$id'><img src='./images/$image' alt='Nailkit'></a></div></td>
                           <td>$name</td>
                           <td></td>
                           <td><select class='bag-select' name='$id' onchange='this.form.submit()'>
