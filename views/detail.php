@@ -11,15 +11,25 @@
     // Wenn $_GET['action']=="add-to-bag" gesetzt ist, dann schiebe Data in $_SESSION['bag']
     if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
 
-      $productname = $_POST['product_name'];
-      $price = $_POST['price'];
-      $quantity = $_POST['quantity'];
+      // Wenn der User keine Menge ausgewählt hat
+      if($_POST['quantity'] == 0){
+        $quantity_error = "Please choose a quantity!";
+      } else {
+        $productname = $_POST['product_name'];
+        $price = $_POST['price'];
+        $quantity = $_POST['quantity'];
 
-      $_SESSION['bag'][$id]['quantity'] = $quantity;
-      $_SESSION['bag'][$id]['id'] = $id;
+        // Daten werden in den Bag geschrieben
+        $_SESSION['bag'][$id]['quantity'] = $quantity;
+        $_SESSION['bag'][$id]['id'] = $id;
 
-      // setcookie('bag', json_encode($bag), time()+2678400);
+        $quantity_success = "Product added to bag!";
+      }
+
     }
+
+    //echo $error_message;
+    print_r($_SESSION['bag']);
 
  ?>
 
@@ -59,11 +69,23 @@
 
           </select>
 
+
           <?php
+
           // Wenn es weniger als 5 Artikel eines Produktes gibt --> Alert Message
           if($products['0']['stock'] < 5){
             $quantity_products = $products['0']['stock'];
-            echo "<p class='bag-alert'>Only $quantity_products products left!</p>";
+            echo "<p class='detail-quantity-alert'>Only $quantity_products products left!</p>";
+          }
+
+          // Quantity-Error bei 0 Produkten im Select
+          if(isset($quantity_error)){
+            echo "<p class='quantity-error'>$quantity_error</p>";
+          }
+
+          // Success Message bei erfolgreichem Hinzufügen zum Bag
+          if(isset($quantity_success)){
+            echo "<p class='quantity-success'>$quantity_success</p>";
           }
            ?>
 

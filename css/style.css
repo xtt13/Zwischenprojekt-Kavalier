@@ -1158,6 +1158,27 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	font-size: 15px;
 }
 
+.detail-quantity-alert {
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	color: green;
+}
+
+.quantity-error {
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	color: red;
+}
+
+.quantity-success {
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 18px;
+	color: green;
+}
+
 .add-to-bag {
   width: 154px;
   height: 43px;
@@ -1486,13 +1507,6 @@ a.control_prev:hover, a.control_next:hover {
 
 .bag-update {
 	display: none;
-}
-
-.bag-alert {
-	font-family: 'myriad-pro', sans-serif;
-	font-style: italic;
-	font-size: 18px;
-	color: red;
 }
 
 .bag-delete {

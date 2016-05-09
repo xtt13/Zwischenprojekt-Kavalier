@@ -4,15 +4,13 @@
     redirect_to("index.php?site=checkout&action=shippinginformation");
   }
 
+  //Damit man in der Menüwahl bei einer späteren Bestellung nicht auf die (3)Summary springen kann. Damit Daten submited werden und nicht übersprungen werden können
+  //$_SESSION['shippinginformation'] = false;
+
   // Query von Userdaten
   $sql = "SELECT * FROM users WHERE id = '$id'";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
   $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-  if(!isset($gesamtpreis)) {
-      $gesamtpreis = "";
-  }
-
 
   //print_r($_POST);
 
@@ -23,7 +21,7 @@
     $created_at = time();
     $user_id = $user[0]['id'];
 
-    echo$gesamtpreis;
+    echo $gesamtpreis;
 
     // Die Bestellung wird in 'orders' eingetragen
     $sql = "INSERT INTO orders (user_id, total_price) VALUES ('$user_id', '$gesamtpreis')";
@@ -51,16 +49,17 @@
       $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
     }
-    // Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
+    //Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
     $_SESSION['summary'] = true;
 
     // SESSION Überprüfung für Checkoutbereich wird zurückgesetzt
-    $_SESSION['shippinginformation'] = false;
+    //$_SESSION['shippinginformation'] = false;
+
     // Warenkorb wird geleert
     unset($_SESSION['bag']);
 
     // Redirect zur Successseite
-    //redirect_to("index.php?site=checkout&action=success");
+    redirect_to("index.php?site=checkout&action=success");
     echo "TEST";
   }
 
@@ -131,6 +130,7 @@
               $bag = $_SESSION['bag'];
 
               //print_r($bag);
+              $gesamtpreis = 0;
 
               // Foreachschleife für WarenkorbArray
               foreach($bag as $bag_keys){
@@ -153,6 +153,7 @@
                 // Entirepreis = Produktpreis * Menge
                 $entire_product_price = $price * $quantity;
                 $gesamtpreis += $entire_product_price;
+
 
                 echo "
                   <tr>

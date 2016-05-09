@@ -1,7 +1,10 @@
 <?php
-  if($_SESSION['summary'] !== true && $_SESSION['shippinginformation'] !== true){
+  if($_SESSION['summary'] !== true){
     redirect_to("index.php?site=checkout&action=summary");
   }
+
+  $_SESSION['summary'] = false;
+  $_SESSION['shippinginformation'] = false;
 
  ?>
   <div class="wrapper-page thankyou">

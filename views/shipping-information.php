@@ -1,5 +1,11 @@
   <?php
 
+    if(empty($_SESSION['bag'])){
+      redirect_to("index.php?site=bag");
+    }
+
+    $_SESSION['shippinginformation'] = false;
+
     // Query: Alle Produkte aus der Tabelle welche aktiv sind
     $sql = "SELECT * FROM users WHERE id = '$id'";
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
