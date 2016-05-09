@@ -108,6 +108,8 @@
             </div>
           ";
         }
+
+        echo "<p class='summary-payment'>Payment: <span>" . ucfirst($user[0]['payment']) . "</span></p>";
        ?>
 
       <table class="summary-table">

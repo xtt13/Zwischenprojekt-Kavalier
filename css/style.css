@@ -1400,9 +1400,6 @@ a.control_prev:hover, a.control_next:hover {
 	transition-duration: 0.5s;
 }
 
-.slider-image:hover {
-	transform:scale(1.1);
-}
 
 .slider-image-zoom {
 	transform:scale(1.1);
@@ -2610,6 +2607,7 @@ SHIPPINGFORM
 	font-size: 20px;
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
+	width: 400px;
 }
 
 .summary-shippingadress {
@@ -2623,10 +2621,27 @@ SHIPPINGFORM
 	font-size: 20px;
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
+	width: 400px;
 }
 
 .summary-invoiceadress {
 	margin-right: 20px;
+
+}
+
+.summary-payment {
+	display: flex;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+	width: 400px;
+}
+
+.summary-payment span {
+	margin-left: 60px;
+
 }
 
 .summary-table {
