@@ -58,20 +58,24 @@ jQuery(document).ready(function($) {
   $('#slider ul li:last-child').prependTo('#slider ul');
 
   function moveLeft() {
+    $('.slider-image').removeClass('slider-image-zoom');
     $('#slider ul').animate({
       left: +slideWidth
     }, 550, function() {
       $('#slider ul li:last-child').prependTo('#slider ul');
       $('#slider ul').css('left', '');
+      $('.slider-image').addClass('slider-image-zoom');
     });
   }
 
   function moveRight() {
+    $('.slider-image').removeClass('slider-image-zoom');
     $('#slider ul').animate({
       left: -slideWidth
     }, 550, function() {
       $('#slider ul li:first-child').appendTo('#slider ul');
       $('#slider ul').css('left', '');
+      $('.slider-image').addClass('slider-image-zoom');
     });
   }
 

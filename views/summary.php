@@ -21,7 +21,7 @@
     $created_at = time();
     $user_id = $user[0]['id'];
 
-    echo $gesamtpreis;
+    //echo $gesamtpreis;
 
     // Die Bestellung wird in 'orders' eingetragen
     $sql = "INSERT INTO orders (user_id, total_price) VALUES ('$user_id', '$gesamtpreis')";

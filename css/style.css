@@ -1397,10 +1397,14 @@ a.control_prev:hover, a.control_next:hover {
 .slider-image {
 	width: 280px;
 	height: 280px;
-	transition-duration: 1s;
+	transition-duration: 0.5s;
 }
 
 .slider-image:hover {
+	transform:scale(1.1);
+}
+
+.slider-image-zoom {
 	transform:scale(1.1);
 }
 
