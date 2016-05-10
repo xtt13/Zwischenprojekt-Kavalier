@@ -1,7 +1,8 @@
 <?php
-echo 'users';
+
  ?>
- <h4>Users</h4>
+ <div class="body-wrapper">
+ <h3 class="headline">Users</h3>
  <a href="index.php?site=users&amp;action=new">new user</a>
 
  <table>
@@ -28,3 +29,4 @@ echo 'users';
        </tr>
    </tbody>
  </table>
+</div>

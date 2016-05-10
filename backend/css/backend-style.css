@@ -1,0 +1,152 @@
+/*____
+|  _ \
+| |_) | __ _ ___  ___
+|  _ < / _` / __|/ _ \
+| |_) | (_| \__ \  __/
+|____/ \__,_|___/\___|*/
+
+@font-face{
+	font-family: 'Latin Modern Roman';
+	src: url('font/lmroman10-regular-webfont.eot');
+	src: url('font/lmroman10-regular-webfont.eot?iefix') format('eot'),
+	     url('font/lmroman10-regular-webfont.woff') format('woff'),
+	     url('font/lmroman10-regular-webfont.ttf') format('truetype'),
+	     url('font/lmroman10-regular-webfont.svg#webfont') format('svg');
+}
+
+@font-face{
+	font-family: 'Latin Modern Italic';
+	src: url('font/lmroman10-italic-webfont.eot');
+	src: url('font/lmroman10-italic-webfont.eot?iefix') format('eot'),
+	     url('font/lmroman10-italic-webfont.woff') format('woff'),
+	     url('font/lmroman10-italic-webfont.ttf') format('truetype'),
+	     url('font/lmroman10-italic-webfont.svg#webfont') format('svg');
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: black;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: black;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: black;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+  color: black;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+	position: relative;
+}
+
+
+
+/*
+_    _                _
+| |  | |              | |
+| |__| | ___  __ _  __| | ___ _ __
+|  __  |/ _ \/ _` |/ _` |/ _ \ '__|
+| |  | |  __/ (_| | (_| |  __/ |
+|_|  |_|\___|\__,_|\__,_|\___|_|
+                           */
+
+.main-header {
+    height: 50px;
+    width: 100%;
+    background: #000000;
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.50);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+
+  }
+
+  .main-header ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-header li {
+    margin-left: 74px;
+    list-style: none;
+  }
+
+  .main-header a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .main-header li a {
+    font-size: 18px;
+    font-family: 'Latin Modern Roman', serif;
+  	transition-duration: 300ms;
+  }
+
+  .main-header li a:hover {
+  	border-bottom: 1px solid white;
+  }
+
+  .main-header h1 {
+    margin: 0;
+  }
+  .main-header h1 a {
+    display: block;
+    width: 120px;
+    height: 23px;
+    text-indent: 10000px;
+    background-image: url(images/logo-header.svg);
+    background-repeat: no-repeat;
+  }
+
+
+
+  .signin {
+    margin-left: 56px;
+  }
+
+
+  /*____            _
+|  _ \          | |
+| |_) | ___   __| |_   _
+|  _ < / _ \ / _` | | | |
+| |_) | (_) | (_| | |_| |
+|____/ \___/ \__,_|\__, |
+                   __/ |
+                  |___/ */
+
+.body-wrapper{
+
+  padding-top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+background-color: #FBFBFB;
+margin: 0 auto;
+height: 100vh;
+}
+
+.headline {
+  margin: 0;
+  margin-bottom: 50px;
+  font-size: 48px;
+  color: black;
+  font-weight: normal;
+  font-family: 'Latin Modern Roman', serif;
+}
