@@ -9,6 +9,7 @@
 // wird mit $_SESSION['logged_in'] und der $_SESSION['id'] ersetzt
 $logged_in = true;
 $id = 1;
+$_SESSION['user_id'] = 1;
 
 // Überprüfung auf Richtige GET Parameter des Checkouts + $logged_in Überprüfung
 if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
@@ -21,7 +22,7 @@ if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('logic/summary-foreach.php');
+    include('logic/summary-price-calculator.php');
     include('logic/summary.php');
   }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'success') {

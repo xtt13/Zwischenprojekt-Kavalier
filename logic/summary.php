@@ -7,10 +7,6 @@
   //Damit man in der Menüwahl bei einer späteren Bestellung nicht auf die (3)Summary springen kann. Damit Daten submited werden und nicht übersprungen werden können
   //$_SESSION['shippinginformation'] = false;
 
-  // Query von Userdaten
-  $sql = "SELECT * FROM users WHERE id = '$id'";
-  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-  $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
   //print_r($_POST);
 
@@ -18,10 +14,16 @@
   // Wenn der Buy!-Button gedrückt wurde
   if(isset($_POST['button-sbm-buy'])){
 
+    // Query von Userdaten
+    $sql = "SELECT * FROM users WHERE id = '$id'";
+    $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+    $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
     $created_at = time();
-    $user_id = $user[0]['id'];
+    $user_id = $_SESSION['user_id'];
 
     //echo $gesamtpreis;
+
 
     // Die Bestellung wird in 'orders' eingetragen
     $sql = "INSERT INTO orders (user_id, total_price) VALUES ('$user_id', '$gesamtpreis')";

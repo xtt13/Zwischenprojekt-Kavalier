@@ -9,6 +9,7 @@
 // wird mit $_SESSION['logged_in'] und der $_SESSION['id'] ersetzt
 $logged_in = true;
 $id = 1;
+$_SESSION['user_id'] = 1;
 
 // Überprüfung auf Richtige GET Parameter des Checkouts + $logged_in Überprüfung
 if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
