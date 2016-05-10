@@ -3,13 +3,10 @@ session_start();
 include('dbconnect.php');
 include('functions/functions.php');
 
-
-
+$site = isset($_GET['site']) ? $_GET["site"] : "homepage";
 
 
 include('views/header.php');
-$site = isset($_GET['site']) ? $_GET["site"] : "homepage";
-
 
 if($site == "store") {
   include("views/store.php");
