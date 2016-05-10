@@ -1,11 +1,15 @@
 <?php
 session_start();
 include('dbconnect.php');
-include('views/header.php');
-
 include('functions/functions.php');
 
+
+
+
+
+include('views/header.php');
 $site = isset($_GET['site']) ? $_GET["site"] : "homepage";
+
 
 if($site == "store") {
   include("views/store.php");
@@ -24,25 +28,6 @@ if($site == "store") {
   include("views/homepage.php");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 include('views/footer.php')
+
  ?>
