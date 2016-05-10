@@ -15,26 +15,29 @@ if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('logic/shipping-information.php');
+    include('views/shipping-information.php');
   }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'summary') {
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('logic/summary-foreach.php');
-    include('logic/summary.php');
+    include('views/summary.php');
   }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'success') {
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('logic/thankyou.php');
+    include('views/thankyou.php');
   }
 } else {
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");
   } else {
-    include('logic/thankyou.php');
+    include('views/thankyou.php');
   }
 }
+
+
+
+
 ?>
