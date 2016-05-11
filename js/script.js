@@ -40,6 +40,14 @@ jQuery(document).ready(function($) {
 
   // SLIDER
 
+  $(".control_next").click(function(event) {
+  event.preventDefault();
+  });
+
+  $(".control_prev").click(function(event) {
+  event.preventDefault();
+  });
+
   var slideCount = $('#slider ul li').length;
   var slideWidth = $('#slider ul li').width();
   var slideHeight = $('#slider ul li').height();

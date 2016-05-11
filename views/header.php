@@ -25,7 +25,10 @@
   <link rel="manifest" href="icons/manifest.json">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#000000">
+
+
+  <link rel="apple-touch-startup-image" href="icons/icon.png">
 </head>
 
 <body>

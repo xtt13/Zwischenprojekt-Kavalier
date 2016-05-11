@@ -3,7 +3,7 @@
     <div class="wrapper-categories">
       <h1>Categories</h1>
       <ul>
-
+        <li><a href='index.php?site=store'>All Products</a></li>
         <?php
 
         foreach ($categories as $category) {
