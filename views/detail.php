@@ -85,7 +85,7 @@
         echo "
           <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image' alt=''></a>
           <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
-          <a class='view-link' href='index.php?site=detail&id=$id'>View Article</a>
+          <a class='view-link' href='index.php?site=detail&id=$id'>View Item</a>
         </li>";
       }
       ?>

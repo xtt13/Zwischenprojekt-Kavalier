@@ -790,6 +790,7 @@ footer li a:hover {
   width: 1000px;
   background-color: #FBFBFB;
   margin: 0 auto;
+	min-height: 900px;
 }
 
 .shop {
@@ -940,6 +941,7 @@ footer li a:hover {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+	justify-content: flex-start;
 }
 
 .wrapper-all-products li {
@@ -1272,7 +1274,7 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
   left: 10px;
   top: 10px;
   margin: 0;
-	z-index: 99999;
+	z-index: 1;
 }
 
 .other-products .image-link {
@@ -2803,6 +2805,9 @@ input:focus {
         transition: .25s ease-in-out;
     }
 
+		.main-header li {
+			margin-left: 0;
+		}
 
     .nav-icon span:nth-child(1) {
         top: 0px;
@@ -2847,7 +2852,8 @@ input:focus {
 
     header nav.open{
         display: block;
-        background-color: rgba(0,0,0,0.7);
+        background-color: rgba(0,0,0,0.8);
+				-webkit-backdrop-filter: blur(10px);
         width: 100vw;
         height: 100vh;
         position: absolute;
@@ -2855,7 +2861,6 @@ input:focus {
         top: 0;
         font-size: 40px;
 				z-index: 9;
-
 
     }
 

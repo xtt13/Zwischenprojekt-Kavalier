@@ -18,7 +18,7 @@
 
         // Wenn zusätzlich eine Kategorie gewählt wurde
         if(isset($_GET['category'])) {
-          echo "HELLO H-T-L CAT";
+          
           $category = $_GET['category'];
           $products = price_high_to_low_category($category);
           $high_to_low = "selected";
