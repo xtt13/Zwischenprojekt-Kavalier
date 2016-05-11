@@ -63,26 +63,33 @@
 
     </div>
   </div>
+  <?php if(isset($at_least_one_product)): ?>
   <section class="other-products">
     <h2>You might also like:</h2>
     <ul>
-      <li>
-        <p class="sale">SALE!</p>
-        <a class="image-link" href="#"><img src="images/product-image.jpeg" alt=""></a>
-        <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="">89,99€</a></div>
-        <a class="view-link" href="">View Article</a>
-      </li>
-      <li>
-        <p class="sale">SALE!</p>
-        <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt=""></a>
-        <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="">89,99€</a></div>
-        <a class="view-link" href="detail.html">View Article</a>
-      </li>
-      <li>
-        <p class="sale">SALE!</p>
-        <a class="image-link" href="detail.html"><img src="images/product-image.jpeg" alt=""></a>
-        <div><a class="title-link" href="detail.html">Gentlemen's Set</a><a class="price-link" href="">89,99€</a></div>
-        <a class="view-link" href="detail.html">View Article</a>
-      </li>
+
+      <?php foreach ($products_other as $product) {
+        //print_r($product);
+        $name = $product['product_name'];
+        $image = $product['image_main'];
+        $price = $product['price'];
+        $sale = $product['sale'];
+        $id = $product['id'];
+
+        echo "<li>";
+
+        if($sale == 1) {
+          echo "<p class='sale'>SALE!</p>";
+        }
+
+        echo "
+          <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image' alt=''></a>
+          <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
+          <a class='view-link' href='index.php?site=detail&id=$id'>View Article</a>
+        </li>";
+      }
+      ?>
+
     </ul>
   </section>
+  <?php endif; ?>
