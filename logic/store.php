@@ -1,35 +1,53 @@
 <?php
-  // // Query: Alle Produkte aus der Tabelle welche aktiv sind
-  // $sql = "SELECT * FROM products WHERE active = 1";
-  // $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-  //
-  // $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
   // Query: Alle Kategorien
   $sql = "SELECT * FROM categories";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
   $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-  // Wenn im GET['category'] nichts drinn steht, dann rufe die Funktion all_products_query() auf, sonst category_product_query($category)
-  if(!isset($_GET['category']) && !isset($_POST)){
-      $products = all_products_query();
+  // print_r($_POST);
+  // print_r($_GET);
 
-  } elseif(isset($_GET['category'])) {
-      $category = $_GET['category'];
-      $products = category_product_query($category);
+  // Wenn eine Kategorie gewählt wurde und keine Auswahl in der Sortierung getroffen wurde
+  if(isset($_GET['category']) && isset($_POST) && empty($_POST)){
+    $category = $_GET['category'];
+    $products = category_product_query($category);
+
+  // Wenn die Auswahl Price High-To-Low getroffen wurde
   } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'high-to-low'){
-      $products = price_high_to_low();
-      $high_to_low = "selected";
+
+        // Wenn zusätzlich eine Kategorie gewählt wurde
+        if(isset($_GET['category'])) {
+          echo "HELLO H-T-L CAT";
+          $category = $_GET['category'];
+          $products = price_high_to_low_category($category);
+          $high_to_low = "selected";
+        } else {
+          $products = price_high_to_low();
+          $high_to_low = "selected";
+
+        }
+
+  // Wenn die Auswahl Price Low-To-High getroffen wurde
   } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'low-to-high'){
-      $products = price_low_to_high();
-      $low_to_high = "selected";
+
+      // Wenn zusätzlich eine Kategorie gewählt wurde
+      if(isset($_GET['category'])) {
+        $category = $_GET['category'];
+        $products = price_low_to_high_category($category);
+        $low_to_high = "selected";
+
+      } else {
+        $products = price_low_to_high();
+        $low_to_high = "selected";
+
+      }
+  // Wenn keine Kategorie und keine Sortierung bewählt wurde
   } else {
       $products = all_products_query();
+
   }
 
-  // echo "<pre>";
-  // print_r($_POST);
-  // echo "</pre>";
 
 
 

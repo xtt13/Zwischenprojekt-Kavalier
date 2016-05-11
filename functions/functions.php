@@ -31,7 +31,7 @@ function category_product_query($category){
 
 function price_high_to_low(){
   global $link;
-  $sql = "SELECT * FROM products ORDER BY price DESC";
+  $sql = "SELECT * FROM products WHERE active = 1 ORDER BY price DESC";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -40,7 +40,25 @@ function price_high_to_low(){
 
 function price_low_to_high(){
   global $link;
-  $sql = "SELECT * FROM products ORDER BY price";
+  $sql = "SELECT * FROM products WHERE active = 1 ORDER BY price";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
+function price_high_to_low_category($category){
+  global $link;
+  $sql = "SELECT * FROM products WHERE active = 1 AND category='$category' ORDER BY price DESC";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
+function price_low_to_high_category($category){
+  global $link;
+  $sql = "SELECT * FROM products WHERE active = 1 AND category='$category' ORDER BY price";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
