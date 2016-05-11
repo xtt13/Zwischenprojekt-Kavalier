@@ -1,24 +1,17 @@
-<?php
-  // Query: Alle Produkte aus der Tabelle welche aktiv sind
-  $sql = "SELECT * FROM products WHERE active = 1";
-  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-
-  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
- ?>
-
-
 
   <div class="wrapper-page shop">
     <div class="wrapper-categories">
       <h1>Categories</h1>
       <ul>
-        <li><a href="#">Suits</a></li>
-        <li><a href="#">Accessoires</a></li>
-        <li><a href="#">Glasses</a></li>
-        <li><a href="#">Watches</a></li>
-        <li><a href="#">Lighters</a></li>
-        <li><a href="#">Knifes</a></li>
+
+        <?php
+
+        foreach ($categories as $category) {
+          $category = $category['category'];
+          echo "<li><a href='index.php?site=store&category=$category'>$category</a></li>";
+        }
+
+        ?>
       </ul>
       <input type="checkbox" value="None" id="sale" name="check"/>
       <label for="sale"><span></span>Sonderangebote</label>
@@ -27,16 +20,19 @@
     <div class="wrapper-products">
       <div class="wrapper-selection">
         <p>Showing <span>1-12</span> of 32 results</p>
-        <select class="select-view" name="blabla" id="blabla">
-          <option value="">VIEW 12 PRODUCTS</option>
-          <option value="">1</option>
-          <option value="">2</option>
-        </select>
-        <select class="select-price" name="blablaa" id="blablaaa">
-          <option value="">SORT PRICE</option>
-          <option value="">1</option>
-          <option value="">2</option>
-        </select>
+        <form action='index.php?site=store' method='post'>
+          <select class="select-view" name="view-products" id="blabla" onchange='this.form.submit()'>
+            <option value="">VIEW 12 PRODUCTS</option>
+            <option value="">1</option>
+            <option value="">2</option>
+          </select>
+
+          <select class="select-price" name="sort-price" id="blablaaa" onchange='this.form.submit()'>
+            <option value="">SORT PRICE</option>
+            <option value="low-to-high" <?php if(isset($low_to_high)){echo $low_to_high;} ?>>Low to High</option>
+            <option value="high-to-low" <?php if(isset($high_to_low)){echo $high_to_low;} ?>>High to Low</option>
+          </select>
+        </form>
       </div>
       <div class="wrapper-all-products">
         <ul>

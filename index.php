@@ -12,6 +12,8 @@ if($site == "checkout"){
   include("logic/checkout.php");
 } elseif($site == "detail") {
   include("logic/detail.php");
+} elseif($site == "store") {
+  include("logic/store.php");
 }
 
 // AB HIER VIEWS EINBINDUNGEN
