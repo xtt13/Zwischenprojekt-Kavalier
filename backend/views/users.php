@@ -3,7 +3,7 @@
  ?>
  <div class="body-wrapper">
  <h3 class="headline">Users</h3>
- <a href="index.php?site=users&amp;action=new">new user</a>
+ <a href="index.php?site=users&amp;action=new" class="button_new">new user</a>
 
  <table>
    <thead>
@@ -17,7 +17,8 @@
    </thead>
 
    <tbody>
-       <tr>
+      <tr class="space"></tr>
+       <tr class="table_content">
          <td>1</td>
          <td>hannah</td>
          <td>email.adress@email.at</td>
@@ -27,6 +28,17 @@
            <a href="index.php?site=users&amp;action=delet">delete</a>
          </td>
        </tr>
+       <tr class="space"></tr>
+        <tr class="table_content">
+          <td>2</td>
+          <td>Hannah</td>
+          <td>email.adress@email.at</td>
+          <td>nein</td>
+          <td>
+            <a href="index.php?site=users&amp;action=edit">edit</a>
+            <a href="index.php?site=users&amp;action=delet">delete</a>
+          </td>
+        </tr>
    </tbody>
  </table>
 </div>

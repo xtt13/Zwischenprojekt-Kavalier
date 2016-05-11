@@ -15,7 +15,8 @@
   </thead>
 
   <tbody>
-      <tr>
+      <tr class="space"></tr>
+      <tr class="table_content">
         <td>1</td>
         <td>24</td>
         <td>95,60€</td>
