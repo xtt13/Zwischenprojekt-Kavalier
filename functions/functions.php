@@ -29,6 +29,24 @@ function category_product_query($category){
   return $products;
 }
 
+function price_high_to_low(){
+  global $link;
+  $sql = "SELECT * FROM products ORDER BY price DESC";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
+function price_low_to_high(){
+  global $link;
+  $sql = "SELECT * FROM products ORDER BY price";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
 
 
 

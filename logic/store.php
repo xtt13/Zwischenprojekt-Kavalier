@@ -11,23 +11,26 @@
   $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
   // Wenn im GET['category'] nichts drinn steht, dann rufe die Funktion all_products_query() auf, sonst category_product_query($category)
-  if(!isset($_GET['category'])){
-    $products = all_products_query();
+  if(!isset($_GET['category']) && !isset($_POST)){
+      $products = all_products_query();
+
+  } elseif(isset($_GET['category'])) {
+      $category = $_GET['category'];
+      $products = category_product_query($category);
+  } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'high-to-low'){
+      $products = price_high_to_low();
+      $high_to_low = "selected";
+  } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'low-to-high'){
+      $products = price_low_to_high();
+      $low_to_high = "selected";
   } else {
-    $category = $_GET['category'];
-    $products = category_product_query($category);
+      $products = all_products_query();
   }
 
   // echo "<pre>";
   // print_r($_POST);
   // echo "</pre>";
 
-  if(isset($_POST['sort-price']) && $_POST['sort-price'] == 'high-to-low'){
-    $high_to_low = "selected";
-  }
 
-  if(isset($_POST['sort-price']) && $_POST['sort-price'] == 'low-to-high'){
-    $low_to_high = "selected";
-  }
 
  ?>
