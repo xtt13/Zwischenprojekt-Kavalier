@@ -8,8 +8,14 @@
 
         foreach ($categories as $category) {
           $category = $category['category'];
-          echo "<li><a href='index.php?site=store&category=$category'>$category</a></li>";
+          echo "<li><a ";
+
+          if(isset($_GET['category']) && $_GET['category'] == $category){ echo "class='category-underline'";}
+
+          echo" href='index.php?site=store&category=$category'>$category</a></li>";
         }
+
+
 
         ?>
       </ul>

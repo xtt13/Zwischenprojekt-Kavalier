@@ -280,6 +280,7 @@ section.register-form {
   ___) |  __/ (_| (_) | | | | (_| |  ___) |  __/ (__| |_| | (_) | | | |
  |____/ \___|\___\___/|_| |_|\__,_| |____/ \___|\___|\__|_|\___/|_| |_|*/
 
+
 .homepage-store {
   display: flex;
   flex-direction: column;
@@ -837,6 +838,10 @@ footer li a:hover {
   color: #8B8B8B;
 }
 
+.category-underline {
+	color: black !important;
+}
+
 .wrapper-categories li a:hover {
 	color: black;
 }
@@ -932,6 +937,7 @@ footer li a:hover {
 
 .wrapper-all-products {
   margin-bottom: 123px;
+	width: 700px;
 }
 
 .wrapper-all-products ul{
@@ -3231,5 +3237,19 @@ input:focus {
 
 	.other-products ul {
 		width: auto;
+	}
+}
+
+/* BAG MEDIAQUERIES */
+
+@media screen and (max-width: 974px) {
+	.bag-table {
+		width: 700px;
+	}
+}
+
+@media screen and (max-width: 745px) {
+	.bag-table {
+		width: 700px;
 	}
 }
