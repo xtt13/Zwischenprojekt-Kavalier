@@ -5,7 +5,11 @@
     $result = mysqli_query($link, $sql) or die(mysqli_error($link));
     $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-    //print_r($products);
+    // Alternative Bilder werden augewählt und am Beistrich explodet
+    $images_other = $products[0]['image_other'];
+    $images_other_array = explode(", ", $images_other);
+
+
 
     // Kategorie des Detail Produkts
     $category_other = $products[0]['category'];

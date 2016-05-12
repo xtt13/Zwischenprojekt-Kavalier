@@ -7,9 +7,13 @@
         <a href="#" class="control_prev"></a>
         <ul>
           <li><img class="slider-image" src="images/<?php echo $products['0']['image_main']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
-          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
-          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
-          <li><img class="slider-image" src="images/<?php echo $products['0']['image_other']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
+
+          <?php
+            foreach ($images_other_array as $image) {
+                echo "<li><img class='slider-image' src='images/$image' alt=''></li>";
+            }
+           ?>
+
         </ul>
       </div>
 
