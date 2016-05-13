@@ -54,6 +54,9 @@
     //Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
     $_SESSION['summary'] = true;
 
+    // EMAIL BESTÄTIGUNG
+    //include('logic/mail-confirmation.php');
+
     // SESSION Überprüfung für Checkoutbereich wird zurückgesetzt
     //$_SESSION['shippinginformation'] = false;
 

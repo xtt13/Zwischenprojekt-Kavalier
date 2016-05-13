@@ -25,7 +25,7 @@
 
     <div class="wrapper-products">
       <div class="wrapper-selection">
-        <p>Showing <span>1-12</span> of 32 results</p>
+        <p>Showing <span><?php if(isset($results)){echo $results;} ?></span> results</p>
         <form action='' method='post'>
           <select class="select-view" name="view-products" id="blabla" onchange='this.form.submit()'>
             <option value="">VIEW 12 PRODUCTS</option>

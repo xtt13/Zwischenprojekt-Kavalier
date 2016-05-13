@@ -1,4 +1,8 @@
 <?php
+
+$order = get_order($order_id);
+print_r($order);
+
 // Query von Userdaten
 $sql = "SELECT * FROM users WHERE id = '$id'";
 $result = mysqli_query($link, $sql) or die(mysqli_error($link));
