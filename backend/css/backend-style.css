@@ -198,6 +198,8 @@ thead th{
 
 }
 
+
+
 tbody td{
 	font-family: 'myriad-pro', sans-serif;
 	font-weight: 100;
@@ -209,6 +211,11 @@ tbody td{
 	padding-left: 50px;
 }
 
+tbody td:last-child{
+
+	padding-right: 50px;
+}
+
 .table_content{
 	height: 138px;
 	background-color: #EBEBEB;
@@ -216,4 +223,23 @@ tbody td{
 
 .space{
 	height: 28px;
+}
+
+.button{
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	width: 80px;
+	/*height: 43px;*/
+	background-color: #D1BCA3;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	color: white;
+	/*font-size: 24px;*/
+	font-family: 'myriad-pro', sans-serif;
+	/*font-style: italic;*/
+	padding: 6px;
+	cursor: pointer;
+	/*margin-bottom: 32px;*/
+
 }

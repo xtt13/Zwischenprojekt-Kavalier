@@ -12,7 +12,8 @@
        <th>user_name</th>
        <th>user_email</th>
        <th>user_is_admin</th>
-       <th>Aktionen</th>
+       <th></th>
+       <th></th>
      </tr>
    </thead>
 
@@ -24,8 +25,10 @@
          <td>email.adress@email.at</td>
          <td>ja</td>
          <td>
-           <a href="index.php?site=users&amp;action=edit">edit</a>
-           <a href="index.php?site=users&amp;action=delet">delete</a>
+           <a href="index.php?site=users&amp;action=edit" class="button">edit</a>
+         </td>
+         <td>
+            <a href="index.php?site=users&amp;action=delet" class="button">delete</a>
          </td>
        </tr>
        <tr class="space"></tr>
@@ -35,8 +38,10 @@
           <td>email.adress@email.at</td>
           <td>nein</td>
           <td>
-            <a href="index.php?site=users&amp;action=edit">edit</a>
-            <a href="index.php?site=users&amp;action=delet">delete</a>
+            <a href="index.php?site=users&amp;action=edit" class="button">edit</a>
+          </td>
+          <td>
+            <a href="index.php?site=users&amp;action=delet" class="button">delete</a>
           </td>
         </tr>
    </tbody>

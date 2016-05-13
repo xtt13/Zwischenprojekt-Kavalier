@@ -9,7 +9,8 @@
       <th>product_name</th>
       <th>category</th>
       <th>price</th>
-      <th>Aktionen</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -21,8 +22,10 @@
         <td>Gadgets</td>
         <td>19,90€</td>
         <td>
-          <a href="index.php?site=products&amp;action=edit">edit</a>
-          <a href="index.php?site=products&amp;action=delet">delete</a>
+          <a href="index.php?site=products&amp;action=edit" class="button">edit</a>
+        </td>
+        <td>
+            <a href="index.php?site=products&amp;action=delet" class="button">delete</a>
         </td>
       </tr>
   </tbody>

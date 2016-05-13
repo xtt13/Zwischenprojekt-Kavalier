@@ -10,7 +10,8 @@
       <th>user_id</th>
       <th>total price</th>
       <th>date_ordered</th>
-      <th>Aktionen</th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,8 +23,10 @@
         <td>95,60€</td>
         <td>12.04.2015 12:35</td>
         <td>
-          <a href="index.php?site=orders&amp;action=edit">edit</a>
-          <a href="index.php?site=orders&amp;action=shipped">shipped</a>
+          <a href="index.php?site=orders&amp;action=edit" class="button">edit</a>
+        </td>
+        <td>
+            <a href="index.php?site=orders&amp;action=shipped" class="button">shipped</a>
         </td>
       </tr>
   </tbody>
