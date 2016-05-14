@@ -5,8 +5,10 @@
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
   $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-  // print_r($_POST);
+  //print_r($_POST);
   // print_r($_GET);
+
+
 
   // Wenn eine Kategorie gewählt wurde und keine Auswahl in der Sortierung getroffen wurde
   if(isset($_GET['category']) && isset($_POST) && empty($_POST)){

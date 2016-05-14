@@ -4,13 +4,14 @@
 
 $order = get_order(89);
 
-$to = $user[0]['fullname'];
+$to = $user[0]['email'];
+$user_name = $user[0]['fullname'];
 $subject = "Your Order";
+$order_id = $order[0]['order_id'];
+$order_date = $order[0]['date_ordered'];
 $message = "
 
-Dear '. $to . ', \n
-
-\n
+Dear $user_name,
 
 Thank you for placing your order with Kavalier!
 
@@ -18,10 +19,9 @@ Thank you for placing your order with Kavalier!
 ----------------------------------------------------------------
 \n
 
-Order ID: ' . $order[0]['order_id'] . ' \n
-Order Date: ' . $order[0]['date_ordered'] . ' \n
+Order ID: $order_id
+Order Date: $order_date
 \n
-
 
 
 

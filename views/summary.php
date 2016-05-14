@@ -1,6 +1,6 @@
 <?php
 
-$order = get_order($order_id);
+$order = get_order(89);
 print_r($order);
 
 // Query von Userdaten

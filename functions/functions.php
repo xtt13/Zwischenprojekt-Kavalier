@@ -71,22 +71,31 @@ function price_low_to_high_category($category){
   return $products;
 }
 
-function get_order($id){
+function get_order($order_id){
   global $link;
-  $sql = "SELECT * FROM orders LEFT JOIN products_sold ON orders.id = products_sold.order_id WHERE orders.id = '$id'";
+  $sql = "SELECT * FROM orders LEFT JOIN products_sold ON orders.id = products_sold.order_id WHERE orders.id = '$order_id'";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $order = mysqli_fetch_all($result, MYSQLI_ASSOC);
   return $order;
 }
 
-function get_product($id){
+function get_product($product_id){
   global $link;
-  $sql = "SELECT * FROM products WHERE id = '$id'";
+  $sql = "SELECT * FROM products WHERE id = '$product_id'";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $product = mysqli_fetch_all($result, MYSQLI_ASSOC);
   return $product;
+}
+
+function get_user($user_id){
+  global $link;
+  $sql = "SELECT * FROM users WHERE id = '$user_id'";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $user;
 }
 
 

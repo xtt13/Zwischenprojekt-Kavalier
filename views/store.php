@@ -19,8 +19,10 @@
 
         ?>
       </ul>
-        <input type="checkbox" value="None" id="sale" name="checkbox-sale"/>
-        <label for="sale"><span></span>Sonderangebote</label>
+        <form action="" method="post">
+          <input type="checkbox" value="None" id="sale" name="checkbox-sale" onchange='this.form.submit()'/>
+          <label for="sale"><span></span>Sonderangebote</label>
+        </form>
     </div>
 
     <div class="wrapper-products">
