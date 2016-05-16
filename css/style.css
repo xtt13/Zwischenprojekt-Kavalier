@@ -404,12 +404,14 @@ section.register-form {
   display: flex;
 	margin: 0;
 	padding: 0;
+	margin-bottom: 40px;
 }
 
 .homepage-team li {
   max-width: 380px;
   height: auto;
-  margin-right: 60px;
+  margin-right: 30px;
+	margin-left: 30px;
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
   background-color: white;
   border-radius: 3px;
@@ -419,9 +421,6 @@ section.register-form {
   align-items: center;
 }
 
-.homepage-team li:nth-child(2) {
-	margin-right: 0;
-}
 
 .homepage-team li img {
   margin-top: 51px;
@@ -470,6 +469,11 @@ section.register-form {
 
 .homepage-location li:nth-child(2){
 	margin-bottom: 40px;
+}
+
+.homepage-location li:nth-child(1){
+	height: auto;
+	padding-bottom: 20px;
 }
 
 .homepage-location h3 {
@@ -2990,6 +2994,7 @@ input:focus {
 		margin-right: 0;
 		margin-top: 20px;
 	}
+
 
 	.newsletter {
 		margin-left: 20px;
