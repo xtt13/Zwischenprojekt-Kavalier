@@ -309,6 +309,64 @@ jQuery(document).ready(function($) {
     shippingchecked();
   });
 
+  // $('.bag-delete').click(function() {
+  //   event.preventDefault();
+  //   var id = $(this).data("id");
+  //   $.ajax({
+  //           url: "index.php?site=bag",
+  //           method: "get",
+  //           data: {
+  //             action: 'delete',
+  //             id: id
+  //           }
+  //         })
+  //         .done(function(data, textStatus, jqXhr) {
+  //           // alert(data);
+  //           $("form").replaceWith($("form", data));
+  //           //$(this).closest('tr').fadeOut("slow");
+  //           //$('.content_header').html(data);
+  //         })
+  //         .fail(function(jqXhr, textStatus, errorThrown) {
+  //           // wird bei fehlerhaftem Request ausgeführt
+  //           alert('KLAPPT NICHT!');
+  //         });
+  // });
 
+  $('.bag-delete').click(function() {
+    $(this).closest('tr').animate({ opacity: 0.25},400, function() {
+         event.preventDefault();
+         var id = $(this).data("id");
+         $.ajax({
+                 url: "index.php?site=bag",
+                 method: "get",
+                 data: {
+                   action: 'delete',
+                   id: id
+                 }
+               })
+               .done(function(data, textStatus, jqXhr) {
+                 alert('Klappt');
+                 $("form").replaceWith($("form", data));
+                 //$(this).closest('tr').fadeOut("slow");
+                 //$('.content_header').html(data);
+               })
+               .fail(function(jqXhr, textStatus, errorThrown) {
+                 // wird bei fehlerhaftem Request ausgeführt
+                 alert('KLAPPT NICHT!');
+               });
+    });
+  });
+
+
+
+  //$(this).closest('tr').fadeOut("slow");
+  //$(this).closest('tr').prev().fadeOut("slow");
+
+  $(".bag-delete").hover(
+  function() {
+    $(this).css("background-image", "url('css/images/bag-delete-click.svg')");
+  }, function() {
+    $(this).css("background-image", "url('css/images/bag-delete.svg')");
+  });
 
 });

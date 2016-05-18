@@ -1,10 +1,13 @@
 <?php
 
+  print_r($_GET);
+
   //Löschen von Produkten aus dem Warenkorb
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
     // $key = array_search($_GET['id'], $_SESSION['bag']);
     $id = $_GET['id'];
     unset($_SESSION['bag'][$id]);
+    //echo $gesamtpreis;
   }
 
   // Update von Produktanzahl im Warenkorb
@@ -103,7 +106,7 @@
 
             echo "        </select></td>
                           <td>$entire_product_price €</td>
-                          <td><a class='bag-delete' href='index.php?site=bag&action=delete&id=$id'></a></td>
+                          <td><a class='bag-delete' data-id='$id' href='index.php?site=bag'></a></td>
                         </tr>
 
                         <tr class='space'></tr>
@@ -112,7 +115,7 @@
 
         }
 
-
+// &action=delete&id=$id
 
 
         ?>
