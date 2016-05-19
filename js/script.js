@@ -332,10 +332,16 @@ jQuery(document).ready(function($) {
   //         });
   // });
 
-  $('.bag-delete').click(function() {
-    $(this).closest('tr').animate({ opacity: 0.25},400, function() {
-         event.preventDefault();
-         var id = $(this).data("id");
+  $('.bag-delete').click(function(event) {
+  $('.body').on("click", ".bag-delete", (function(event) {
+  
+    event.preventDefault();
+    $(this).closest('tr').animate({ opacity: 0},200, function() {
+
+      // Cart Icon Value wird um 1 vermindert!
+      $('.cart p').text(parseInt($('.cart p').text()) - 1);
+
+         var id = $('.bag-delete').data("id");
          $.ajax({
                  url: "index.php?site=bag",
                  method: "get",
@@ -345,9 +351,9 @@ jQuery(document).ready(function($) {
                  }
                })
                .done(function(data, textStatus, jqXhr) {
-                 alert('Klappt');
+                 //alert('Klappt');
                  $("form").replaceWith($("form", data));
-                 //$(this).closest('tr').fadeOut("slow");
+                 $(this).closest('tr').fadeOut("slow");
                  //$('.content_header').html(data);
                })
                .fail(function(jqXhr, textStatus, errorThrown) {
@@ -355,7 +361,12 @@ jQuery(document).ready(function($) {
                  alert('KLAPPT NICHT!');
                });
     });
+
   });
+  });
+
+
+
 
 
 
