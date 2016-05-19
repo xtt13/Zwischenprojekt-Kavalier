@@ -22,7 +22,7 @@
         <td>Gadgets</td>
         <td>19,90€</td>
         <td>
-          <a href="index.php?site=products&amp;action=edit" class="button">edit</a>
+          <a href="index.php?site=products&amp;action=edit&amp;id=2" class="button">edit</a>
         </td>
         <td>
             <a href="index.php?site=products&amp;action=delet" class="button">delete</a>
@@ -31,3 +31,6 @@
   </tbody>
 </table>
 </div>
+
+<a href="index.php?site=reservations&amp;action=edit&amp;id=<?php echo $reservation['id']; ?>">edit</a>
+<a href="index.php?site=reservations&amp;action=delete&amp;id=<?php echo $reservation['id']; ?>">delete</a>

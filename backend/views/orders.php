@@ -1,7 +1,9 @@
-<?php
- ?>
+
 <div class="body-wrapper">
 <h3 class="headline">Orders</h3>
+
+<?php
+?>
 
 <table>
   <thead>

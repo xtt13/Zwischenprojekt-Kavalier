@@ -6,6 +6,8 @@ include('views/header.php');
 // include('functions/functions.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "index.php";
+$action= $_GET['action'];
+
 
 if($site == "statistics") {
     include("views/statistics.php");
@@ -14,7 +16,7 @@ if($site == "statistics") {
 } elseif($site == "users") {
   include("views/users.php");
 }elseif ($site == "products") {
-  include("views/products.php");
+  include("logic/products.php");
 }
 else{
   include("views/home.php");
