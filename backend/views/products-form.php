@@ -2,20 +2,23 @@
 
   <h3 class="headline">New Product</h3>
 
+<section class="product-form">
+
+
   <form class="" action="index.html" method="post">
     <fieldset>
 
-      <label for="product-name">
-        Name
+        <label for="product-name"></label>
+        <h2 class="form-headline">Name</h2>
         <input type="text" name="product-name" value="">
-      </label>
+
 
       <br></br>
 
-      <label for="product-price">
+      <label for="product-price"></label>
         Price
         <input type="text" name="product-price" value="">
-      </label>
+
 
       <br></br>
 
@@ -44,7 +47,7 @@
         <input name="product-image_main" type="file" id="product-image_main">
         <input name="upload" type="submit" class="box" id="upload" value=" Upload ">
       </label>
-      
+
       <br></br>
 
       <label for="Sale">
@@ -54,4 +57,5 @@
 
     </fieldset>
   </form>
+  </section>
   </div>
