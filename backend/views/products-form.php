@@ -8,53 +8,79 @@
   <form class="" action="index.html" method="post">
     <fieldset>
 
-        <label for="product-name"></label>
+      <div class="product-form ">
         <h2 class="form-headline">Name</h2>
-        <input type="text" name="product-name" value="">
+        <label for="product-name"></label>
+        <input type="text" name="product-name" class="product-name" value="">
+      </div>
 
+      <div class="product-form">
+        <h2 class="form-headline">Price</h2>
+        <label for="product-price"></label>
+        <input type="text" name="product-price" class="product-price" value="">
+      </div>
 
-      <br></br>
-
-      <label for="product-price"></label>
-        Price
-        <input type="text" name="product-price" value="">
-
-
-      <br></br>
-
-      <label for="porduct-description">
-        Description
-        <input type="text" name="product-description" value="">
-      </label>
-
-      <br></br>
-
-      <label for="category">
-        <input type="radio" name="category" value="Category1">
-        Category1
-      </label>
-
-      <label for="category">
-      <input type="radio" name="category" value="Category2">
-      Category2
-      </label>
-
-      <br></br>
-
-      <label for="product-image_main">
-        Main Image
-        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-        <input name="product-image_main" type="file" id="product-image_main">
-        <input name="upload" type="submit" class="box" id="upload" value=" Upload ">
-      </label>
-
-      <br></br>
-
-      <label for="Sale">
+      <div class="sale-wrapper">
+        <label for="Sale">Sale</label>
         <input type="checkbox" name="sale" value="Sale">
-        Sale
-      </label>
+      </div>
 
+      <div class="product-form">
+        <h2 class="form-headline">Description</h2>
+        <textarea name="porduct-description" rows="8" cols="40" class="product-description"></textarea>
+      </div>
+
+      <div class="category-radio-wrapper">
+
+        <h2 class="form-headline">Category</h2>
+
+        <div class="category">
+          <label for="category" class="category-radio-headline">Category1</label>
+          <input type="radio" name="category"class="category-input" value="Category1">
+        </div>
+
+        <div class="category">
+          <label for="category" class="category-radio-headline">Category2</label>
+          <input type="radio" name="category"class="category-input" value="Category1">
+        </div>
+
+      </div>
+
+
+      <div class="product-form">
+        <h2 class="form-headline">Main Image</h2>
+      </div>
+
+      <div class="upload-wrapper">
+        <label for="product-image_main" class="choose-file-button-label"></label>
+
+        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+
+        <input name="product-image_main" class="choose-file-button" type="file" id="product-image_main">
+
+        <input name="upload" type="submit" class="upload-button" id="upload" value=" Upload ">
+
+      </div>
+
+      <div class="product-form">
+        <h2 class="form-headline">Other Image</h2>
+      </div>
+
+      <div class="upload-wrapper">
+        <label for="product-image_main" class="choose-file-button-label"></label>
+
+        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+
+        <input name="product-image_main" class="choose-file-button" type="file" id="product-image_main">
+
+        <input name="upload" type="submit" class="upload-button" id="upload" value=" Upload ">
+
+      </div>
+
+
+      <div class="product-form">
+        <input type="submit"  class="save-button" value="Save">
+      </div>
     </fieldset>
   </form>
   </section>
