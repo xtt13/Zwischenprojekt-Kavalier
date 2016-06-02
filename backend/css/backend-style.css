@@ -409,8 +409,47 @@ fieldset{
 
 }
 
+/*
+###############Upload###############
+
+ */
+
+ #file-upload {
+   position: absolute;
+   left: -9999px;
+ }
+
+ label[for="file-upload"] {
+   padding: 0.5em;
+   display: inline-block;
+   /*background: #623475;*/
+   background-color: rgb(209, 188, 163);
+	 color: white;
+	 font-size: 18px;
+	 font-family: myriad-pro, sans-serif;
+	 font-style: italic;
+   cursor: pointer;
+ }
+ label[for="file-upload"]:hover {
+   text-decoration: underline;
+   color : white
+ }
+
+ #filename {
+   padding: 0.5em;
+   float: left;
+   width: 200px;
+   white-space: nowrap;
+   overflow: hidden;
+   /*background: #804399;*/
+   background-color:#F3F3F3;
+	 font-family: myriad-pro, sans-serif;
+
+ }
+
+
 .save-button{
-	margin-top: 59px;
+margin-top: 59px;
 display: block;
 width: 154px;
 height: 43px;

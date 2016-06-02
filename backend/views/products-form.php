@@ -52,13 +52,11 @@
       </div>
 
       <div class="upload-wrapper">
-        <label for="product-image_main" class="choose-file-button-label"></label>
 
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-        <input name="product-image_main" class="choose-file-button" type="file" id="product-image_main">
-
-        <input name="upload" type="submit" class="upload-button" id="upload" value=" Upload ">
+        <span id="filename">Select your file</span>
+        <label for="file-upload">Browse<input type="file" id="file-upload"></label>
 
       </div>
 
@@ -67,16 +65,21 @@
       </div>
 
       <div class="upload-wrapper">
-        <label for="product-image_main" class="choose-file-button-label"></label>
 
         <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-        <input name="product-image_main" class="choose-file-button" type="file" id="product-image_main">
-
-        <input name="upload" type="submit" class="upload-button" id="upload" value=" Upload ">
+        <span id="filename">Select your file</span>
+        <label for="file-upload">Browse<input type="file" id="file-upload"></label>
 
       </div>
+      <div class="upload-wrapper">
 
+        <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+
+        <span id="filename">Select your file</span>
+        <label for="file-upload">Browse<input type="file" id="file-upload"></label>
+
+      </div>
 
       <div class="product-form">
         <input type="submit"  class="save-button" value="Save">

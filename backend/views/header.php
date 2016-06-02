@@ -43,7 +43,7 @@
       <li><a href="index.php">Home</a></li>
       <li><a href="index.php?site=statistics">Statistics</a></li>
       <li><a href="index.php?site=orders">Orders</a></li>
-      <li><a href="index.php?site=users">Users</a></li>
+      <li><a href="index.php?site=users&amp;action=view">Users</a></li>
       <li><a href="index.php?site=products&amp;action=view">Products</a></li>
     </ul>
   </nav>

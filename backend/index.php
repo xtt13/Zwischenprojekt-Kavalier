@@ -3,6 +3,7 @@ session_start();
 // include('dbconnect.php');
 include('views/header.php');
 
+
 // include('functions/functions.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "index.php";
@@ -14,7 +15,7 @@ if($site == "statistics") {
 } elseif($site == "orders") {
   include("views/orders.php");
 } elseif($site == "users") {
-  include("views/users.php");
+  include("logic/users.php");
 }elseif ($site == "products") {
   include("logic/products.php");
 }
@@ -32,5 +33,6 @@ else{
 // } else {
 //   include("views/homepage.php");
 // }
+include("views/footer.php")
 
 ?>
