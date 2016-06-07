@@ -123,7 +123,7 @@ body {
 
   flex-direction: column;
   align-items: center;
-  width: 1000px;
+  width: 60vw;
 
 	background-color: #FBFBFB;
 	margin: 0 auto;
@@ -239,7 +239,7 @@ tbody td:last-child{
 
 .form-new form{
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
-  width: 600px;
+  width: 50vw;
 	/*height: 800px;*/
   margin: auto;
   background-color: #ffffff;
@@ -247,10 +247,12 @@ tbody td:last-child{
 
 	padding-bottom: 40px;
 	margin-bottom: 50px;
+
 }
 
 fieldset{
 	border: 0px;
+	padding-top: 50px;
 }
 
 .form-wrapper{
@@ -258,6 +260,12 @@ fieldset{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.form-element-wrapper{
+
+display: flex;
+
 }
 
 .form-headline{
@@ -271,24 +279,52 @@ fieldset{
 	margin-bottom: 15px;
 }
 
+.form-subheadline{
+
+	font-family:'Latin Modern Roman';
+	font-weight: normal;
+	font-size: 20px;
+	color: #0C0C0C;
+
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	align-self: flex-start;
+
+}
+
+.form-subheadline-diffrent{
+
+
+	font-family:'Latin Modern Roman';
+	font-weight: normal;
+	font-size: 20px;
+	color: #0C0C0C;
+
+	margin: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
 /* Input */
 
 .form-input{
 	display: block;
 	margin: auto;
 	margin-bottom: 5px;
-	width: 300px;
+	width: 30vw;
 	height: 43px;
 	border-radius: 3px;
 	background-color: #F3F3F3;
 	border: 2px solid transparent;
 	text-align: center;
-	font-size: 20px;
+	font-size: 10px;
 	color: black;
 	padding-top: 5px;
 	font-family: 'myriad-pro', sans-serif;
 	font-style: italic;
-	font-size: 20px;
+	font-size: 15px;
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
 }
@@ -418,13 +454,10 @@ fieldset{
 
  }
 
-
-
 /* Submit */
 
-
 .save-button{
-margin-top: 59px;
+margin-top: 30px;
 display: block;
 width: 154px;
 height: 43px;
@@ -435,9 +468,38 @@ font-family: myriad-pro, sans-serif;
 font-style: italic;
 padding-top: 6px;
 cursor: pointer;
-margin-bottom: 10px;
+margin-bottom: 20px;
 border-width: 1px;
 border-style: solid;
 border-color: transparent;
 border-radius: 3px;
+}
+
+
+/* Adress */
+
+
+.input-street{
+  width: 14vw;
+	margin-right: 2vw;
+
+}
+.input-number{
+  width: 14vw;
+}
+
+.input-zip{
+  width: 4vw;
+	margin-right: 1vw;
+
+}
+
+.input-location{
+  width: 9vw;
+	margin-right: 2vw;
+
+}
+
+.input-country{
+	width: 14vw;
 }
