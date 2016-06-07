@@ -16,16 +16,16 @@
 
   <tbody>
       <tr class="space"></tr>
-      <tr class="table_content">
+      <tr class="table_row">
         <td>1</td>
         <td>Gentlemen's Set</td>
         <td>Gadgets</td>
         <td>19,90€</td>
         <td>
-          <a href="index.php?site=products&amp;action=edit&amp;id=2" class="button">edit</a>
+          <a href="index.php?site=products&amp;action=edit&amp;id=2" class="button_do">edit</a>
         </td>
         <td>
-            <a href="index.php?site=products&amp;action=delet" class="button">delete</a>
+            <a href="index.php?site=products&amp;action=delet" class="button_do">delete</a>
         </td>
       </tr>
   </tbody>

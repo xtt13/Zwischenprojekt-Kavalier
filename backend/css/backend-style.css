@@ -1,9 +1,6 @@
-/*____
-	|  _ \
-| |_) | __ _ ___  ___
-|  _ < / _` / __|/ _ \
-| |_) | (_| \__ \  __/
-|____/ \__,_|___/\___|*/
+/*
+######### BASE #########
+*/
 
 @font-face{
 	font-family: 'Latin Modern Roman';
@@ -54,13 +51,9 @@ body {
 
 
 /*
-_    _                _
-| |  | |              | |
-| |__| | ___  __ _  __| | ___ _ __
-|  __  |/ _ \/ _` |/ _` |/ _ \ '__|
-| |  | |  __/ (_| | (_| |  __/ |
-|_|  |_|\___|\__,_|\__,_|\___|_|
-                           */
+######### HEADER #########
+*/
+
 
 .main-header {
     height: 50px;
@@ -114,21 +107,14 @@ _    _                _
     background-repeat: no-repeat;
   }
 
-
-
-  .signin {
+  .login {
     margin-left: 56px;
   }
 
 
-  /*____            _
-|  _ \          | |
-| |_) | ___   __| |_   _
-|  _ < / _ \ / _` | | | |
-| |_) | (_) | (_| | |_| |
-|____/ \___/ \__,_|\__, |
-                   __/ |
-                  |___/ */
+	/*
+	######### BODY-HEADER #########
+	*/
 
 .body-wrapper{
 
@@ -171,6 +157,11 @@ _    _                _
 	margin-bottom: 32px;
 }
 
+/*
+######### TABLE #########
+*/
+
+
 table {
 	width: 939px;
 	/*margin-top: 69px;*/
@@ -182,8 +173,6 @@ thead{
 	background-color: #282f43;
 	width: 939px;
 	margin-top: 69px;
-
-
 }
 
 thead th{
@@ -195,10 +184,7 @@ thead th{
 	letter-spacing: 1.17px;
 	padding: 10px;
 	padding-left: 30px;
-
 }
-
-
 
 tbody td{
 	font-family: 'myriad-pro', sans-serif;
@@ -212,11 +198,11 @@ tbody td{
 }
 
 tbody td:last-child{
-
 	padding-right: 50px;
 }
 
-.table_content{
+
+.table_row{
 	height: 138px;
 	background-color: #EBEBEB;
 }
@@ -225,7 +211,7 @@ tbody td:last-child{
 	height: 28px;
 }
 
-.button{
+.button_do{
 	text-decoration: none;
 	text-align: center;
 	display: block;
@@ -241,17 +227,17 @@ tbody td:last-child{
 	padding: 6px;
 	cursor: pointer;
 	/*margin-bottom: 32px;*/
-
 }
 
-.button:hover{
+.button_do:hover{
 	text-decoration: underline;
 }
 
+/*
+######### FORM #########
+*/
 
-/* FORMS */
-
-.product-form form{
+.form-new form{
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
   width: 600px;
 	/*height: 800px;*/
@@ -267,13 +253,12 @@ fieldset{
 	border: 0px;
 }
 
-.product-form{
+.form-wrapper{
   border: 0px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 
 .form-headline{
 	font-family:'Latin Modern Italic', serif;
@@ -286,7 +271,9 @@ fieldset{
 	margin-bottom: 15px;
 }
 
-.product-name{
+/* Input */
+
+.form-input{
 	display: block;
 	margin: auto;
 	margin-bottom: 5px;
@@ -306,28 +293,30 @@ fieldset{
 	letter-spacing: 1.16px;
 }
 
-.product-price{
-	display: block;
-	margin: auto;
-	margin-bottom: 5px;
-	width: 300px;
-	height: 43px;
-	border-radius: 3px;
-	background-color: #F3F3F3;
-	border: 2px solid transparent;
-	text-align: center;
-	font-size: 20px;
-	color: black;
-	padding-top: 5px;
-	font-family: 'myriad-pro', sans-serif;
-	font-style: italic;
-	font-size: 20px;
+/* Checkbox */
+
+.checkbox-wrapper{
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+	align-items: center;
+}
+
+.checkbox-wrapper label{
+	font-family:'Latin Modern Roman', serif;
+	font-size: 25px;
 	color: #0C0C0C;
-	letter-spacing: 1.16px;
+	margin: 0;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	margin-right: 5px;
 
 }
 
-.product-description{
+/* Textarea */
+
+.form-textarea{
+
 	display: block;
 	margin: auto;
 	margin-bottom: 5px;
@@ -344,9 +333,12 @@ fieldset{
 	font-size: 20px;
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
+
 }
 
-.category-radio-wrapper{
+/* Radio */
+
+.radio-wrapper{
 	justify-content: center;
 	display: flex;
 	align-items: center;
@@ -355,10 +347,11 @@ fieldset{
 	flex-direction: column;
 }
 
-.category{
+.category-space{
 	margin-bottom: 5px;
 }
-.category-radio-headline{
+
+.form-radio-label{
 	font-family:'Latin Modern Italic', serif;
 	font-size: 20px;
 	color: #0C0C0C;
@@ -367,7 +360,7 @@ fieldset{
 	margin-bottom: 15px;
 }
 
-.category-input{
+.form-radio{
 	display:inline-block;
   width:16px;
   height:16px;
@@ -379,9 +372,11 @@ fieldset{
 	background-color: #D8D8D8;
 	}
 
-	.category-radio-wrapper h2{
+.radio-wrapper h2{
 		display: inline-block;
 	}
+
+/* Upload */
 
 .upload-wrapper{
 
@@ -389,30 +384,6 @@ fieldset{
 	justify-content: center;
 	margin-bottom: 10px;
 }
-
-.sale-wrapper{
-
-	display: flex;
-	justify-content: center;
-	padding-top: 10px;
-	align-items: center;
-}
-
-.sale-wrapper label{
-	font-family:'Latin Modern Roman', serif;
-	font-size: 25px;
-	color: #0C0C0C;
-	margin: 0;
-	margin-top: 10px;
-	margin-bottom: 15px;
-	margin-right: 5px;
-
-}
-
-/*
-###############Upload###############
-
- */
 
  #file-upload {
    position: absolute;
@@ -446,6 +417,10 @@ fieldset{
 	 font-family: myriad-pro, sans-serif;
 
  }
+
+
+
+/* Submit */
 
 
 .save-button{

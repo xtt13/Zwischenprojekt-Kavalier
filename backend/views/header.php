@@ -52,7 +52,7 @@
     </a> -->
 
 
-    <a class="signin" href="index.php?site=login&amp;action=useraccount">Sign In/Register</a>
+    <a class="login" href="index.php?site=login&amp;action=useraccount">Logut</a>
     <div class="nav-icon">
       <span></span>
       <span></span>
