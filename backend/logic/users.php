@@ -6,7 +6,7 @@ if(isset($_GET['action'])) {
 
   if($action == "view") {
 
-    $product = [];
+    $users = get_users();
 
     require("views/users.php");
 

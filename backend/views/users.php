@@ -18,32 +18,20 @@
    </thead>
 
    <tbody>
+     <?php foreach ($users as $user) : ?>
       <tr class="space"></tr>
        <tr class="table_row">
-         <td>1</td>
-         <td>hannah</td>
-         <td>email.adress@email.at</td>
-         <td>ja</td>
+         <td><?php echo $user['id']; ?></td>
+         <td><?php echo $user['fullname']; ?></td>
+         <td><?php echo $user['email']; ?></td>
+         <td><?php echo $user['is_admin']; ?></td>
          <td>
-           <a href="index.php?site=users&amp;action=edit" class="button_do">edit</a>
+           <a href="index.php?site=users&amp;action=edit&amp;id=<?php echo $user['id']; ?>" class="button_do">edit</a>
          </td>
          <td>
-            <a href="index.php?site=users&amp;action=delet" class="button_do">delete</a>
+            <a href="index.php?site=users&amp;action=delet&amp;id=<?php echo $user['id']; ?>" class="button_do">delete</a>
          </td>
-       </tr>
-       <tr class="space"></tr>
-        <tr class="table_row">
-          <td>2</td>
-          <td>Hannah</td>
-          <td>email.adress@email.at</td>
-          <td>nein</td>
-          <td>
-            <a href="index.php?site=users&amp;action=edit" class="button_do">edit</a>
-          </td>
-          <td>
-            <a href="index.php?site=users&amp;action=delet" class="button_do">delete</a>
-          </td>
-        </tr>
+      <?php endforeach; ?>
    </tbody>
  </table>
 </div>

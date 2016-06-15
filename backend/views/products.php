@@ -23,7 +23,7 @@
         <td><?php echo $product['id']; ?></td>
         <td><?php echo $product['product_name']; ?></td>
         <td><?php echo $product['category']; ?></td>
-        <td><?php echo $product['price']; ?></td>
+        <td><?php echo $product['price']?>€</td>
         <td>
           <a href="index.php?site=products&amp;action=edit&amp;id=<?php echo $product['id']; ?>" class="button_do">edit</a>
         </td>

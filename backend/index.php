@@ -3,6 +3,7 @@ session_start();
 include('dbconnect.php');
 include('views/header.php');
 include('functions/products.php');
+include('functions/users.php');
 
 // include('functions/functions.php');
 
