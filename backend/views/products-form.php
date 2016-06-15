@@ -6,46 +6,39 @@
 
 
   <form class="" action="index.html" method="post">
+  <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
     <fieldset>
 
       <div class="form-wrapper">
         <h2 class="form-headline">Name</h2>
         <label for="product-name"></label>
-        <input type="text" name="product-name" class="form-input" value="">
+        <input type="text" name="product-name" class="form-input" value="<?php echo $product['product_name']; ?>">
       </div>
 
       <div class="form-wrapper">
         <h2 class="form-headline">Price</h2>
         <label for="product-price"></label>
-        <input type="text" name="product-price" class="form-input" value="">
+        <input type="text" name="product-price" class="form-input" value="<?php echo $product['price']; ?>">
       </div>
 
       <div class="checkbox-wrapper">
         <label for="Sale">Sale</label>
-        <input type="checkbox" name="sale" value="Sale">
+        <input type="checkbox" name="sale" <?php echo is_checked($product["sale"]) ?>>
       </div>
 
       <div class="form-wrapper">
         <h2 class="form-headline">Description</h2>
-        <textarea name="porduct-description" rows="8" cols="40" class="form-textarea"></textarea>
+        <textarea name="porduct-description" rows="15" cols="50" class="form-textarea" value=""><?php echo $product['description']; ?></textarea>
       </div>
 
-      <div class="radio-wrapper">
-
-        <h2 class="form-headline">Category</h2>
-
-        <div class="category-space">
-          <label for="category1" class="form-radio-label">Category1</label>
-          <input type="radio" name="category1"class="form-radio" value="Category1">
-        </div>
-
-        <div class="category-space">
-          <label for="category" class="form-radio-label">Category2</label>
-          <input type="radio" name="category"class="form-radio" value="Category1">
-        </div>
-
+      <div class="form-wrapper">
+        <h2 class="form-headline">Categroy</h2>
+        <select class="" name="category">
+          <option value="option">option</option>
+          <option value="option">option</option>
+          <option value="option">option</option>
+        </select>
       </div>
-
 
       <div class="form-wrapper">
         <h2 class="form-headline">Main Image</h2>
