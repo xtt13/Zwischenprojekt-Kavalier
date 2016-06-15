@@ -119,11 +119,12 @@ body {
 .body-wrapper{
 
   padding-top: 100px;
+	padding-bottom: 100px;
   display: flex;
 
   flex-direction: column;
   align-items: center;
-  width: 60vw;
+  width: 80vw;
 
 	background-color: #FBFBFB;
 	margin: 0 auto;

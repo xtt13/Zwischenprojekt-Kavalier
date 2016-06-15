@@ -10,7 +10,7 @@
     <tr>
       <th>order_id</th>
       <th>user_id</th>
-      <th>total price</th>
+      <th>total_price</th>
       <th>date_ordered</th>
       <th></th>
       <th></th>
@@ -18,12 +18,14 @@
   </thead>
 
   <tbody>
+    <?php   ?>
+    <?php foreach($orders as $order) : ?>
       <tr class="space"></tr>
       <tr class="table_row">
-        <td>1</td>
-        <td>24</td>
-        <td>95,60€</td>
-        <td>12.04.2015 12:35</td>
+        <td><?php echo $order['id']; ?></td>
+        <td><?php echo $order['user_id']; ?></td>
+        <td><?php echo $order['total_price']; ?>€</td>
+        <td><?php echo $order['date_ordered']; ?></td>
         <td>
           <a href="index.php?site=orders&amp;action=edit" class="button_do">edit</a>
         </td>
@@ -31,6 +33,7 @@
             <a href="index.php?site=orders&amp;action=shipped" class="button_do">shipped</a>
         </td>
       </tr>
+    <?php endforeach; ?>
   </tbody>
 </table>
 </div>
