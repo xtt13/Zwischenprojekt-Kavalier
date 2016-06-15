@@ -1,6 +1,6 @@
 <div class="body-wrapper">
 
-  <h3 class="headline">New Product</h3>
+  <h3 class="headline"><?php echo $title ?></h3>
 
 <section class="form-new">
 

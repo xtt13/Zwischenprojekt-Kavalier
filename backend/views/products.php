@@ -15,22 +15,23 @@
   </thead>
 
   <tbody>
+      <?php
+
+      foreach($products as $product):?>
       <tr class="space"></tr>
       <tr class="table_row">
-        <td>1</td>
-        <td>Gentlemen's Set</td>
-        <td>Gadgets</td>
-        <td>19,90€</td>
+        <td><?php echo $product['id']; ?></td>
+        <td><?php echo $product['product_name']; ?></td>
+        <td><?php echo $product['category']; ?></td>
+        <td><?php echo $product['price']; ?></td>
         <td>
-          <a href="index.php?site=products&amp;action=edit&amp;id=2" class="button_do">edit</a>
+          <a href="index.php?site=products&amp;action=edit&amp;id=<?php echo $product['id']; ?>" class="button_do">edit</a>
         </td>
         <td>
-            <a href="index.php?site=products&amp;action=delet" class="button_do">delete</a>
+            <a href="index.php?site=products&amp;action=delet&amp;id=<?php echo $product['id']; ?>" class="button_do">delete</a>
         </td>
       </tr>
+    <?php endforeach; ?>
   </tbody>
 </table>
 </div>
-
-<!-- <a href="index.php?site=reservations&amp;action=edit&amp;id=<?php echo $reservation['id']; ?>">edit</a>
-<a href="index.php?site=reservations&amp;action=delete&amp;id=<?php echo $reservation['id']; ?>">delete</a> -->

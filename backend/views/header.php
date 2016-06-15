@@ -25,7 +25,7 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
 
-  <script src="https://use.typekit.net/rse4oyh.js"></script>
+  <!-- <script src="https://use.typekit.net/rse4oyh.js"></script> -->
   <script>
     try {
       Typekit.load({
