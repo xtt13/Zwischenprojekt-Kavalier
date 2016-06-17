@@ -42,7 +42,7 @@
   </div>
 </footer>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="backend/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="js/script.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR5BTqOGfwfrDxu0Wyj9kr7VA4rMVYpRU&callback=initMap"></script>
 <script src="js/maps.js"></script>

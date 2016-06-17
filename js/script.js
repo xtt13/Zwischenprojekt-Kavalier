@@ -332,38 +332,41 @@ jQuery(document).ready(function($) {
   //         });
   // });
 
-  $('.bag-delete').click(function(event) {
-  $('.body').on("click", ".bag-delete", (function(event) {
-  
-    event.preventDefault();
-    $(this).closest('tr').animate({ opacity: 0},200, function() {
 
-      // Cart Icon Value wird um 1 vermindert!
-      $('.cart p').text(parseInt($('.cart p').text()) - 1);
-
-         var id = $('.bag-delete').data("id");
-         $.ajax({
-                 url: "index.php?site=bag",
-                 method: "get",
-                 data: {
-                   action: 'delete',
-                   id: id
-                 }
-               })
-               .done(function(data, textStatus, jqXhr) {
-                 //alert('Klappt');
-                 $("form").replaceWith($("form", data));
-                 $(this).closest('tr').fadeOut("slow");
-                 //$('.content_header').html(data);
-               })
-               .fail(function(jqXhr, textStatus, errorThrown) {
-                 // wird bei fehlerhaftem Request ausgeführt
-                 alert('KLAPPT NICHT!');
-               });
-    });
-
-  });
-  });
+  // FUNKTIONIERT NICHT MEHR!
+  //
+  // $('.bag-delete').click(function(event) {
+  // $('.body').on("click", ".bag-delete", (function(event) {
+  //
+  //   event.preventDefault();
+  //   $(this).closest('tr').animate({ opacity: 0},200, function() {
+  //
+  //     // Cart Icon Value wird um 1 vermindert!
+  //     $('.cart p').text(parseInt($('.cart p').text()) - 1);
+  //
+  //        var id = $('.bag-delete').data("id");
+  //        $.ajax({
+  //                url: "index.php?site=bag",
+  //                method: "get",
+  //                data: {
+  //                  action: 'delete',
+  //                  id: id
+  //                }
+  //              })
+  //              .done(function(data, textStatus, jqXhr) {
+  //                //alert('Klappt');
+  //                $("form").replaceWith($("form", data));
+  //                $(this).closest('tr').fadeOut("slow");
+  //                //$('.content_header').html(data);
+  //              })
+  //              .fail(function(jqXhr, textStatus, errorThrown) {
+  //                // wird bei fehlerhaftem Request ausgeführt
+  //                alert('KLAPPT NICHT!');
+  //              });
+  //   });
+  //
+  // });
+  // });
 
 
 
