@@ -4,7 +4,9 @@ function get_products(){
 
  global $link;
 
-  $sql = "SELECT * FROM products";
+
+
+  $sql = "SELECT products.*, categories.category AS product_category FROM products LEFT JOIN categories ON categories.id = products.category ORDER BY `products`.`id` ASC";
   //
 
   $result = mysqli_query($link, $sql);
