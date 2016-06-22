@@ -3,6 +3,10 @@
       redirect_to("index.php?site=bag");
     }
 
+    if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false){
+      redirect_to("index.php?site=login-checkout&action=checkout");
+    }
+
     $_SESSION['shippinginformation'] = false;
 
     // Query: Alle Produkte aus der Tabelle welche aktiv sind

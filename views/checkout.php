@@ -18,6 +18,12 @@ if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
   } else {
     include('views/shipping-information.php');
   }
+} elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'login-checkout') {
+  if($logged_in == false){
+    redirect_to("index.php?site=checkout&action=login-checkout");
+  } else {
+    include('views/login-checkout.php');
+  }
 } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'summary') {
   if($logged_in == false){
     redirect_to("index.php?site=login&amp;action=checkout");

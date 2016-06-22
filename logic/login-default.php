@@ -3,7 +3,7 @@
 //   redirect_to("backend/index.php");
 // } else {
 
-  include("views/login.php");
+  //include("views/login-checkout.php");
 
   // $form_action = "index.php?site=login&action=save";
 
@@ -19,7 +19,7 @@
 
       $sql = "SELECT email, password_hash, is_admin FROM users WHERE email = '$email'";
       $result = mysqli_query($link, $sql);
-      
+
 
       if(mysqli_num_rows($result) === 1) {
 

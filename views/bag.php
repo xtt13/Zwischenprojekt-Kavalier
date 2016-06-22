@@ -131,7 +131,7 @@
     <div class="checkout-wrapper">
       <p>Total: <?php echo $gesamtpreis; ?>€</p>
       <button class='bag-update' type="submit">Update!</button>
-      <a href="index.php?site=login&amp;action=checkout">Check out!</a>
+      <a href="index.php?site=checkout&amp;action=login-checkout">Check out!</a>
     </div>
     </form>
   </div>

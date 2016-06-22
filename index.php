@@ -12,6 +12,8 @@ if($site == "checkout"){
   include("logic/checkout.php");
 } elseif($site == "detail") {
   include("logic/detail.php");
+} elseif($site == "login-default.php") {
+  include("logic/login-checkout.php");
 } elseif($site == "store") {
   include("logic/store.php");
 }
@@ -31,8 +33,9 @@ if($site == "store") {
 } elseif($site == "checkout") {
   include("views/checkout.php");
 } elseif($site == "login") {
-  // Muss später noch auf $_SESSION überprüft werden!
-  include("logic/login.php");
+  include("views/login-default.php");
+} elseif($site == "register") {
+  include("views/register.php");
 } else {
   include("views/homepage.php");
 }
