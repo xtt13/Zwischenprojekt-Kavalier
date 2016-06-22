@@ -46,7 +46,17 @@
     <a class="cart" href="index.php?site=bag">
       <?php if(isset($_SESSION['bag'])){echo '<p>' . count($_SESSION['bag']) . '</p>';}?>
     </a>
-    <a class="signin" href="index.php?site=login&amp;action=useraccount">Sign In/Register</a>
+    <?php
+    if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+      echo"<a class='signin' href='index.php?site=account'>Account</a>";
+      echo"<a class='signin' href='index.php?site=logout'>Logout</a>";
+    } else {
+      echo"<a class='signin' href='index.php?site=login&amp;action=useraccount'>Sign In/Register</a>";
+
+    }
+
+     ?>
+
     <div class="nav-icon">
       <span></span>
       <span></span>

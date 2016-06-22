@@ -1,19 +1,18 @@
 <?php
 
+// Überprüfen ob der User eingeloggt ist, und wenn ja wird Var auf true gesetzt
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
   $logged_in = true;
 } else {
   $logged_in = false;
 }
 
-// $logged_in = true;
-// $id = 1;
-
+// User ID auslesen (Session['user_id'] wird während Login gesetzt)
 if(isset($_SESSION['user_id'])){
   $id = $_SESSION['user_id'];
 }
 
-
+// Wenn der User nicht eingeloggt ist
 if($logged_in == false){
 
   //redirect_to("index.php?site=checkout&action=login-checkout");

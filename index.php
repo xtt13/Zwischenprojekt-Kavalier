@@ -12,8 +12,10 @@ if($site == "checkout"){
   include("logic/checkout.php");
 } elseif($site == "detail") {
   include("logic/detail.php");
-} elseif($site == "login-default.php") {
-  include("logic/login-checkout.php");
+} elseif($site == "logout") {
+  include("logic/logout.php");
+} elseif($site == "login") {
+  include("logic/login-default.php");
 } elseif($site == "store") {
   include("logic/store.php");
 }

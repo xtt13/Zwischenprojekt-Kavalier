@@ -7,8 +7,8 @@
 
   // $form_action = "index.php?site=login&action=save";
 
-
 // }
+
 
     if(is_post_request()) {
 
@@ -17,7 +17,7 @@
 
 
 
-      $sql = "SELECT email, password_hash, is_admin FROM users WHERE email = '$email'";
+      $sql = "SELECT id, email, password_hash, is_admin FROM users WHERE email = '$email'";
       $result = mysqli_query($link, $sql);
 
 
@@ -26,16 +26,16 @@
           $user = mysqli_fetch_assoc($result);
 
           if(password_verify($password, $user["password_hash"])) {
+            
             $_SESSION['logged_in'] = true;
+            $_SESSION['user_id'] = $user["id"];
 
+            if($user["is_admin"] == 1){
+                  $_SESSION["is_admin"] = true;
+                  redirect_to("backend/index.php");
+            }
 
-
-            // if($user["is_admin"] == 1){
-            //       $_SESSION["is_admin"] = true;
-            //       // redirect_to("backend/index.php");
-            // }
-          //
-          // redirect_to("index.php?site=homepage.php");
+          redirect_to("index.php?site=homepage");
 
           }
            else {
