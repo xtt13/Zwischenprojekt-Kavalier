@@ -384,4 +384,27 @@ jQuery(document).ready(function($) {
     $(this).css("background-image", "url('css/images/bag-delete.svg')");
   });
 
+
+    //
+    // ANSATZT FÜR AJAX SORTIERUNG PRICE
+    //
+    // $("select-price").on("change", sort_products);
+    //
+    // function sort_products(event) {
+    //   event.preventDefault();
+    //   var meineVar = $(this).val();
+    //   $.ajax({
+    //     url: 'index.php?site=store',
+    //     method: 'post',
+    //     data: {
+    //       sort_price: meineVar,
+    //     }
+    //   }).done(update_products);
+    // }
+    //
+    // function update_products(response, textStatus, jqXHR) {
+    //   $updated_cart = $(response).find('.cart');
+    //   $('.cart').replaceWith($updated_cart);
+    // }
+
 });
