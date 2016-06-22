@@ -1,49 +1,49 @@
 <?php
-// Überprüft ob man eingeloggt ist. Wenn nicht dann redirect zu Checkout Loginform
+
+if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
+  $logged_in = true;
+} else {
+  $logged_in = false;
+}
+
+// $logged_in = true;
+// $id = 1;
+
+if(isset($_SESSION['user_id'])){
+  $id = $_SESSION['user_id'];
+}
 
 
-// wird mit $_SESSION['logged_in'] und der $_SESSION['id'] ersetzt
-//$logged_in = true;
-$id = 1;
-$_SESSION['user_id'] = 1;
-$logged_in = true;
+if($logged_in == false){
 
-// Überprüfung auf Richtige GET Parameter des Checkouts + $logged_in Überprüfung
-if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
-  if($logged_in == false){
-    redirect_to("index.php?site=checkout&action=login-checkout");
-  } else {
-    include('logic/shipping-information.php');
-  }
-
-} elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'login-checkout') {
-  if($logged_in == false){
-    redirect_to("index.php?site=checkout&action=login-checkout");
-  } else {
-    include('logic/login-checkout.php');
-  }
-
-} elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'summary') {
-  if($logged_in == false){
-    redirect_to("index.php?site=checkout&action=login-checkout");
-  } else {
-    include('logic/summary-price-calculator.php');
-    include('logic/summary.php');
-  }
-
-} elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'success') {
-  if($logged_in == false){
-    redirect_to("index.php?site=checkout&action=login-checkout");
-  } else {
-    include('logic/thankyou.php');
-  }
-
+  //redirect_to("index.php?site=checkout&action=login-checkout");
+  include('logic/login-checkout.php');
 
 } else {
-  if($logged_in == false){
-    redirect_to("index.php?site=checkout&action=login-checkout");
+
+  if($_GET['site'] == 'checkout' && $_GET['action'] == 'shippinginformation'){
+
+      include('logic/shipping-information.php');
+
+  } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'login-checkout') {
+
+      include('logic/login-checkout.php');
+
+  } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'summary') {
+
+      include('logic/summary-price-calculator.php');
+      include('logic/summary.php');
+
+
+  } elseif($_GET['site'] == 'checkout' && $_GET['action'] == 'success') {
+
+      include('logic/thankyou.php');
+
   } else {
-    include('logic/thankyou.php');
+
+      include('logic/thankyou.php');
+
   }
+
 }
 ?>

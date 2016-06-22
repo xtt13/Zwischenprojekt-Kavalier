@@ -4,7 +4,7 @@
     }
 
     if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false){
-      redirect_to("index.php?site=login-checkout&action=checkout");
+      redirect_to("index.php?site=checkout&action=login-checkout");
     }
 
     $_SESSION['shippinginformation'] = false;

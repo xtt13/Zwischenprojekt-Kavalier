@@ -12,7 +12,7 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
     <img class="progress_bar" src="images/progressbar3.svg" border="0" width="528" height="48" orgWidth="528" orgHeight="48" usemap="#image-maps-2016-03-26-060856" alt="" />
     <map name="image-maps-2016-03-26-060856" id="ImageMapsCom-image-maps-2016-03-26-060856">
-    <area  alt="Login" title="Login" href="index.php?site=login-checkout&amp;action=checkout" shape="rect" coords="0,0,48,48" style="outline:none;" target="_self"     />
+    <area  alt="Login" title="Login" href="index.php?site=checkout&amp;action=login-checkout" shape="rect" coords="0,0,48,48" style="outline:none;" target="_self"     />
     <area  alt="Shippinginformation" title="" href="index.php?site=checkout&amp;action=shippinginformation" shape="rect" coords="161,0,208,48" style="outline:none;" target="_self"     />
     <area  alt="Summary" title="Summary" href="index.php?site=checkout&amp;action=summary" shape="rect" coords="320,0,367,48" style="outline:none;" target="_self"     />
     <area  alt="Thank You!" title="Thank You!" href="index.php?site=checkout&amp;action=success" shape="rect" coords="481,0,528,48" style="outline:none;" target="_self"     />
