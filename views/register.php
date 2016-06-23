@@ -3,7 +3,7 @@
 
 
     <section class="register-form">
-      <form action="#">
+      <form action="index.php?site=register" method='post'>
         <fieldset>
           <h3 class="register-form">Registration</h3>
 
@@ -24,7 +24,7 @@
             <input class="register-country" type="text" name="country" placeholder="Country"><br>
             </div>
 
-            <input class="register-submit" type="submit" value="Register">
+            <input name='sbmbtn' class="register-submit" type="submit" value="Register">
         </fieldset>
       </form>
       <div class="error"><p></p></div>

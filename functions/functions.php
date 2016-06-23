@@ -135,6 +135,12 @@ function get_product_from_productid($product_id){
   return $product;
 }
 
+function register_user($fullname, $email, $password_hash, $street_and_number, $zip_and_location, $country){
+  global $link;
+  $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip_and_location, country) VALUES ('$fullname', '$email', '$password_hash', '$street_and_number', '$zip_and_location', '$country')";
+  mysqli_query($link, $sql) or die(mysqli_error($link));
+}
+
 
 
 

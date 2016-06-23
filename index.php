@@ -18,6 +18,8 @@ if($site == "checkout"){
   include("logic/login-default.php");
 } elseif($site == "account") {
   include("logic/account.php");
+} elseif($site == "register") {
+  include("logic/register.php");
 } elseif($site == "store") {
   include("logic/store.php");
 }
@@ -42,6 +44,8 @@ if($site == "store") {
   include("views/login-default.php");
 } elseif($site == "register") {
   include("views/register.php");
+} elseif($site == "registersuccess") {
+  include("views/success-register.php");
 } else {
   include("views/homepage.php");
 }

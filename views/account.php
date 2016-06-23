@@ -25,7 +25,13 @@ foreach ($purchases as $purchase) {
 
   }
 
-  echo "  <h3 class='accordeon-title'>$date_format<span>";
+  echo "  <h3 class='accordeon-title'>$date_format <i>Order-ID: $order_id</i><span ";
+
+  if($sent){
+    echo "class='order-sent'";
+  }
+
+  echo">";
 
   if($sent){
     echo "SENT";
@@ -75,7 +81,7 @@ foreach ($purchases as $purchase) {
 
   echo"         </tbody>
             </table>
-            <p class='totalprice'>Total Price: <span>$total_price €</span></p>
+            <p class='totalprice'>Total Price: $total_price €</p>
           </div>";
 
 }
