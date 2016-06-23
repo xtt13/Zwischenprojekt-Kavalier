@@ -8,6 +8,7 @@ foreach ($purchases as $purchase) {
   $order_id = $purchase['id'];
   $total_price = $purchase['total_price'];
   $date = $purchase['date_ordered'];
+  $sent = $purchase['sent'];
   $date_format = date("d.m.Y", strtotime($date));
 
   $products = get_products_from_orderid($order_id);
@@ -24,7 +25,15 @@ foreach ($purchases as $purchase) {
 
   }
 
-  echo "  <h3 class='accordeon-title'>$date_format</h3>
+  echo "  <h3 class='accordeon-title'>$date_format<span>";
+
+  if($sent){
+    echo "SENT";
+  } else {
+    echo "PENDING";
+  }
+
+  echo "</h3>
           <div class='accordeon-content'>
             <table>
               <thead>

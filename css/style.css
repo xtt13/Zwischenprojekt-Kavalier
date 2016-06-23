@@ -2866,9 +2866,10 @@ input:focus {
   margin: 0;
 	font-family: 'myriad-pro', sans-serif;
 	color: #0C0C0C;
+	font-size: 15px;
 }
 
-.accordeon-title:after {
+.accordeon-title span:after {
   content: '+';
   float: right;
   font-size: 1.2em;
@@ -2877,9 +2878,15 @@ input:focus {
   height: 20px;
   line-height: 20px;
   text-align: center;
+	margin-left: 20px;
 }
 
-.accordeon-title.is-opened:after {
+.accordeon span {
+	float: right;
+	font-size: 12px;
+}
+
+.accordeon-title.is-opened span:after {
   content: '-';
 	color: white;
 }
