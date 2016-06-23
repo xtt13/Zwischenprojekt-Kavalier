@@ -1220,6 +1220,12 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	background-repeat: no-repeat;
 	background-size: 10%;
 	background-position: 94px center;
+	transition-duration: 500ms;
+	cursor: pointer;
+}
+
+.detail-select:hover {
+	background-color: #DBDBDB;
 }
 
 .detail-quantity-alert {
@@ -2844,9 +2850,11 @@ input:focus {
 
 .accordeon {
 	border-radius: 3px;
+	overflow: hidden;
 	width: 70%;
 	margin-top: 150px;
-	font-family: helvetica, sans-serif;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: normal;
 	box-shadow: 0px 0px 10px 0px rgba(170,170,170,0.50);
 }
 
@@ -2857,7 +2865,6 @@ input:focus {
   border-bottom: 1px solid #e6e6e6;
   margin: 0;
 	font-family: 'myriad-pro', sans-serif;
-	font-style: italic;
 	color: #0C0C0C;
 }
 
@@ -2874,6 +2881,12 @@ input:focus {
 
 .accordeon-title.is-opened:after {
   content: '-';
+	color: white;
+}
+
+.accordeon-title.is-opened {
+	background-color: #e6e6e6;
+	transition-duration: 800ms;
 }
 
 .accordeon-content {
@@ -2904,6 +2917,11 @@ input:focus {
 .accordeon table td{
 	padding: 10px;
 	padding-left: 0px;
+}
+
+.accordeon table a{
+	text-decoration: none;
+	color: black;
 }
 
 .accordeon table thead{

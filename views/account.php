@@ -54,7 +54,7 @@ foreach ($purchases as $purchase) {
 
                 echo "<tr>";
                 echo "<td><a href='index.php?site=detail&id=$id'><img src='images/$product_image' alt=''></a></td>
-                      <td>$product_title</td>
+                      <td><a href='index.php?site=detail&id=$id'>$product_title</a></td>
                       <td>$product_quantity x</td>
                       <td>$product_price</td>";
                 echo "</tr>";
