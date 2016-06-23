@@ -44,7 +44,11 @@
         $low_to_high = "selected";
 
       }
-  // Wenn keine Kategorie und keine Sortierung bewählt wurde
+  } elseif(isset($_GET['action']) && $_GET['action'] == 'sale'){
+
+
+      $products = all_sale_products_query();
+
   } else {
       $products = all_products_query();
 

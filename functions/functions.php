@@ -21,6 +21,16 @@ function all_products_query(){
   return $products;
 }
 
+// Ein Query um alle Angebote abzurufen
+function all_sale_products_query(){
+  global $link;
+  $sql = "SELECT * FROM products WHERE active = 1 AND sale = 1";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
 // Ein Query um Produkte einer Kategorie abzurufen
 function category_product_query($category){
   global $link;

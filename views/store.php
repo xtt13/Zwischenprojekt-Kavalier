@@ -5,7 +5,6 @@
       <ul>
         <li><a class='store-category<?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo " category-underline'";} ?>' href='index.php?site=store'>All Products</a></li>
         <?php
-
         foreach ($categories as $category) {
           $category = $category['category'];
           echo "<li><a class='store-category ";
@@ -20,8 +19,8 @@
         ?>
       </ul>
         <form action="" method="post">
-          <input type="checkbox" value="None" id="sale" name="checkbox-sale" onchange='this.form.submit()'/>
-          <label for="sale"><span></span>Sonderangebote</label>
+          <input class='store-checkbox' type="checkbox" value="None" id="sale" checked name="checkbox-sale"/>
+          <label class='store-checkbox-sonderangebote'for="sale"><span></span>Sonderangebote</label>
         </form>
     </div>
 

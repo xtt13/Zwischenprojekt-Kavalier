@@ -26,7 +26,7 @@
           $user = mysqli_fetch_assoc($result);
 
           if(password_verify($password, $user["password_hash"])) {
-            
+
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $user["id"];
 
@@ -35,7 +35,7 @@
                   redirect_to("backend/index.php");
             }
 
-          redirect_to("index.php?site=homepage");
+          redirect_to("index.php?site=account");
 
           }
            else {

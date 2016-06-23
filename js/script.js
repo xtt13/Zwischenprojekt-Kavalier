@@ -492,27 +492,44 @@ jQuery(document).ready(function($) {
   });
 
 
-    //
-    // ANSATZT FÜR AJAX SORTIERUNG PRICE
-    //
-    // $("select-price").on("change", sort_products);
-    //
-    // function sort_products(event) {
-    //   event.preventDefault();
-    //   var meineVar = $(this).val();
-    //   $.ajax({
-    //     url: 'index.php?site=store',
-    //     method: 'post',
-    //     data: {
-    //       sort_price: meineVar,
-    //     }
-    //   }).done(update_products);
-    // }
-    //
-    // function update_products(response, textStatus, jqXHR) {
-    //   $updated_cart = $(response).find('.cart');
-    //   $('.cart').replaceWith($updated_cart);
-    // }
+
+    //ANSATZT FÜR AJAX SORTIERUNG PRICE
+
+    $(".store-checkbox-sonderangebote").on("click", function(){
+      console.log('hoffentlich');
+      event.preventDefault();
+
+      if($(this).prop('checked') !== true){
+        console.log('juhu');
+
+        $.ajax({
+                url: 'index.php?site=store&action=sale',
+                method: "get",
+              })
+              .done(function(data, textStatus, jqXhr) {
+                // alert(data);
+                console.log('request');
+                $(".wrapper-products").replaceWith($(".wrapper-products", data));
+                $('.store-checkbox').prop('checked', false);
+                $('.store-category').removeClass('category-underline');
+                //$(this).closest('tr').fadeOut("slow");
+                //$('.content_header').html(data);
+              })
+              .fail(function(jqXhr, textStatus, errorThrown) {
+                // wird bei fehlerhaftem Request ausgeführt
+                alert('KLAPPT NICHT!');
+              });
+          } else {
+            console.log('not checked');
+            $('.store-checkbox').prop('checked', true);
+          }
+    });
+
+    $('.store-category').click(function(){
+      $('.store-checkbox').prop('checked', true);
+    });
+
+
 
 
     // AJAX KATHEGORIE
