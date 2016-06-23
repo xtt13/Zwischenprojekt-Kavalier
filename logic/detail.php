@@ -9,6 +9,7 @@
     $images_other = $products[0]['image_other'];
     $images_other_array = explode(", ", $images_other);
 
+    $products_in_stock = $products['0']['stock'];
 
 
     // Kategorie des Detail Produkts
@@ -28,8 +29,8 @@
     // Wenn $_GET['action']=="add-to-bag" gesetzt ist, dann schiebe Data in $_SESSION['bag']
     if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
 
-      // Wenn der User keine Menge ausgewählt hat
-      if($_POST['quantity'] == 0){
+      // Wenn der User keine Menge ausgewählt hat oder er mehr Proukte angibt als verfügbar sind!
+      if($_POST['quantity'] == 0 || $_POST['quantity'] >= $products_in_stock){
         $quantity_error = "Please choose a quantity!";
       } else {
         $productname = $_POST['product_name'];

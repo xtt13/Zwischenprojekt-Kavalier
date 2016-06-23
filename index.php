@@ -16,6 +16,8 @@ if($site == "checkout"){
   include("logic/logout.php");
 } elseif($site == "login") {
   include("logic/login-default.php");
+} elseif($site == "account") {
+  include("logic/account.php");
 } elseif($site == "store") {
   include("logic/store.php");
 }
@@ -28,6 +30,8 @@ if($site == "store") {
   include("views/store.php");
 } elseif($site == "homepage") {
   include("views/homepage.php");
+} elseif($site == "account") {
+  include("views/account.php");
 } elseif($site == "bag") {
   include("views/bag.php");
 } elseif($site == "detail") {
