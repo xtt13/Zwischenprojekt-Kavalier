@@ -95,6 +95,98 @@ jQuery(document).ready(function($) {
     moveRight();
   });
 
+  // NEWSLETTER EMAIL VALIDATION
+
+  $('.newsletter-email').on('input', function() {
+    var input = $(this);
+    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var is_email = re.test(input.val());
+    if (is_email) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-email");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-email");
+      $(".error-message").html("<p>We need your email!</p>");
+    }
+  });
+
+  // NEWSLETTER NAME VALIDATION
+
+  $('.newsletter-name').on('input', function() {
+    var input = $(this);
+    var is_name = input.val();
+    if (is_name) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-name");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-name");
+      $(".error-message").html("<p>We need your name!</p>");
+    }
+  });
+
+  // CONTACT NAME VALIDATION
+
+  $('.contactform-name').on('input', function() {
+    var input = $(this);
+    var is_name = input.val();
+    if (is_name) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-name");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-name");
+      $(".error-message").html("<p>We need your name!</p>");
+    }
+  });
+
+  // CONTACT EMAIL VALIDATION
+
+  $('.contactform-email').on('input', function() {
+    var input = $(this);
+    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var is_email = re.test(input.val());
+    if (is_email) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-email");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-email");
+      $(".error-message").html("<p>We need your email!</p>");
+    }
+  });
+
+  // CONTACT MESSAGE VALIDATION
+
+  $('.contactform-textarea').on('input', function() {
+    var input = $(this);
+    var is_name = input.val();
+    if (is_name) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-name");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-name");
+      $(".error-message").html("<p>We need your name!</p>");
+    }
+  });
+
+  // FUNKTIONIERT NICHT: ANSATZ SELECT VALIDIERUNG
+  $('.contactform-subject').on('change', function() {
+    $(this).addClass('contactform-ok');
+  });
+
   // FORM VALIDATION REGISTER
 
   $('.register-email').on('input', function() {
@@ -421,5 +513,27 @@ jQuery(document).ready(function($) {
     //   $updated_cart = $(response).find('.cart');
     //   $('.cart').replaceWith($updated_cart);
     // }
+
+
+    // AJAX KATHEGORIE
+    $('.store-category').click(function() {
+      event.preventDefault();
+      $(this).addClass('category-underline');
+      $('.store-category').not(this).removeClass('category-underline');
+      $.ajax({
+              url: $(this).attr('href'),
+              method: "get",
+            })
+            .done(function(data, textStatus, jqXhr) {
+              // alert(data);
+              $(".wrapper-products").replaceWith($(".wrapper-products", data));
+              //$(this).closest('tr').fadeOut("slow");
+              //$('.content_header').html(data);
+            })
+            .fail(function(jqXhr, textStatus, errorThrown) {
+              // wird bei fehlerhaftem Request ausgeführt
+              alert('KLAPPT NICHT!');
+            });
+    });
 
 });

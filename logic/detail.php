@@ -30,7 +30,7 @@
     if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
 
       // Wenn der User keine Menge ausgewählt hat oder er mehr Proukte angibt als verfügbar sind!
-      if($_POST['quantity'] == 0 || $_POST['quantity'] >= $products_in_stock){
+      if($_POST['quantity'] == 0 || $_POST['quantity'] > $products_in_stock){
         $quantity_error = "Please choose a quantity!";
       } else {
         $productname = $_POST['product_name'];

@@ -3,16 +3,16 @@
     <div class="wrapper-categories">
       <h1>Categories</h1>
       <ul>
-        <li><a <?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo "class='category-underline'";} ?>href='index.php?site=store'>All Products</a></li>
+        <li><a class='store-category<?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo " category-underline'";} ?>' href='index.php?site=store'>All Products</a></li>
         <?php
 
         foreach ($categories as $category) {
           $category = $category['category'];
-          echo "<li><a ";
+          echo "<li><a class='store-category ";
 
-          if(isset($_GET['category']) && $_GET['category'] == $category){ echo "class='category-underline'";}
+          if(isset($_GET['category']) && $_GET['category'] == $category){ echo "category-underline";}
 
-          echo" href='index.php?site=store&category=$category'>$category</a></li>";
+          echo" 'href='index.php?site=store&category=$category'>$category</a></li>";
         }
 
 
