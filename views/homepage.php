@@ -94,3 +94,6 @@
       </form>
     </div>
   </section>
+  
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR5BTqOGfwfrDxu0Wyj9kr7VA4rMVYpRU&callback=initMap"></script>
+  <script src="js/maps.js"></script>

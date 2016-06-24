@@ -45,6 +45,7 @@
       <li><a href="index.php?site=orders&amp;action=view">Orders</a></li>
       <li><a href="index.php?site=users&amp;action=view">Users</a></li>
       <li><a href="index.php?site=products&amp;action=view">Products</a></li>
+      <li><a href="index.php?site=search">Search</a></li>
     </ul>
   </nav>
     <!-- <a class="cart" href="index.php?site=bag">

@@ -1,9 +1,16 @@
-<div class="wrapper-page bag">
+<div class="body-wrapper">
+  <h3 class="headline">Welcome Admin!</h3>
+
+  <form class="request_form" action="#" method="get">
+    <input class="search_request" placeholder='User-ID or Emailadress' type="text" name="search_request" value="">
+  </form>
+
   <div class="accordeon">
 
-<?php
 
-foreach ($purchases as $purchase) {
+  <?php
+
+  foreach ($purchases as $purchase) {
 
   $order_id = $purchase['id'];
   $total_price = $purchase['total_price'];
@@ -68,7 +75,7 @@ foreach ($purchases as $purchase) {
 
 
                 echo "<tr>";
-                echo "<td><a href='index.php?site=detail&id=$id'><img src='images/$product_image' alt=''></a></td>
+                echo "<td><a href='index.php?site=detail&id=$id'><img src='../images/$product_image' alt=''></a></td>
                       <td><a href='index.php?site=detail&id=$id'>$product_title</a></td>
                       <td>$product_quantity x</td>
                       <td>$product_price</td>";
@@ -84,11 +91,14 @@ foreach ($purchases as $purchase) {
             <p class='totalprice'>Total Price: $total_price €</p>
           </div>";
 
-}
+  }
 
 
- ?>
+  ?>
 
 
-</div>
+  </div>
+
+
+
 </div>

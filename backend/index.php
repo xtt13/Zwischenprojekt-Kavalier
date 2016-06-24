@@ -5,17 +5,21 @@ include('views/header.php');
 include('functions/products.php');
 include('functions/users.php');
 include('functions/orders.php');
+include('functions/search.php');
 
 // include('functions/functions.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "index.php";
-$action= $_GET['action'];
+//$action= $_GET['action'];
 
 
 if($site == "statistics") {
     include("views/statistics.php");
 } elseif($site == "orders") {
   include("logic/orders.php");
+} elseif($site == "search") {
+  include("logic/search.php");
+  include("views/search.php");
 } elseif($site == "users") {
   include("logic/users.php");
 }elseif ($site == "products") {

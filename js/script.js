@@ -403,8 +403,9 @@ jQuery(document).ready(function($) {
 
   $('.bag-delete').click(function() {
     event.preventDefault();
-      $('.cart p').text(parseInt($('.cart p').text()) - 1);
+    $('.cart p').text(parseInt($('.cart p').text()) - 1);
     var id = $(this).data("id");
+
     $.ajax({
             url: "index.php?site=bag",
             method: "get",
@@ -493,14 +494,14 @@ jQuery(document).ready(function($) {
 
 
 
-    //ANSATZT FÜR AJAX SORTIERUNG PRICE
+    //AJAX SONDERANGEBOTE
 
     $(".store-checkbox-sonderangebote").on("click", function(){
       console.log('hoffentlich');
       event.preventDefault();
 
       if($(this).prop('checked') !== true){
-        console.log('juhu');
+        //console.log('juhu');
 
         $.ajax({
                 url: 'index.php?site=store&action=sale',
@@ -508,7 +509,7 @@ jQuery(document).ready(function($) {
               })
               .done(function(data, textStatus, jqXhr) {
                 // alert(data);
-                console.log('request');
+                //console.log('request');
                 $(".wrapper-products").replaceWith($(".wrapper-products", data));
                 $('.store-checkbox').prop('checked', false);
                 $('.store-category').removeClass('category-underline');
@@ -517,10 +518,10 @@ jQuery(document).ready(function($) {
               })
               .fail(function(jqXhr, textStatus, errorThrown) {
                 // wird bei fehlerhaftem Request ausgeführt
-                alert('KLAPPT NICHT!');
+                //alert('KLAPPT NICHT!');
               });
           } else {
-            console.log('not checked');
+            //console.log('not checked');
             $('.store-checkbox').prop('checked', true);
           }
     });
