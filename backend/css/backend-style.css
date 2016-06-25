@@ -128,7 +128,7 @@ body {
 
 	background-color: #FBFBFB;
 	margin: 0 auto;
-	/*height: 100vh;*/
+	height: 100vh;
 }
 
 .headline {
@@ -621,6 +621,12 @@ border-radius: 3px;
 }
 
 input { outline: none; }
+
+.answer p {
+	font-size: 15px;
+	padding: 10px;
+	font-family: 'myriad-pro', sans-serif;
+}
 
 
 

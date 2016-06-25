@@ -55,5 +55,8 @@ $('.search_request').keyup(function () {
     .done(function(data, textStatus, jqXhr) {
       //alert('klappt');
       $(".accordeon").replaceWith($(".accordeon", data));
+      $(".answer p").replaceWith($(".answer p", data));
+
+
     });
 });

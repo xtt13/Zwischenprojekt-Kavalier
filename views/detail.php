@@ -17,6 +17,7 @@
         </ul>
       </div>
 
+
       <form class="" action="index.php?site=detail&amp;id=<?php echo $id; ?>&amp;action=add-to-bag" method="post">
         <div class="wrapper-information">
           <h1><?php echo $products['0']['product_name']; ?></h1>
