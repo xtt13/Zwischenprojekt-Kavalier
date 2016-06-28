@@ -31,7 +31,7 @@
             <input class="login-submit" type="submit" value="Login">
         </fieldset>
         <ul class="support">
-          <li><a href="#">Forgot your password?</a></li>
+          <li><a href="index.php?site=pwdreset">Forgot your password?</a></li>
           <li><a href="register.html">No account? Sign up Now!</a></li>
         </ul>
       </form>

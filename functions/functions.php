@@ -108,6 +108,15 @@ function get_user($user_id){
   return $user;
 }
 
+function get_user_by_email($email){
+  global $link;
+  $sql = "SELECT * FROM users WHERE email = '$email'";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $user;
+}
+
 function get_purchases_from_user($user_id){
   global $link;
   $sql = "SELECT * FROM orders WHERE user_id = '$user_id' ORDER BY id DESC";
@@ -141,6 +150,11 @@ function register_user($fullname, $email, $password_hash, $street_and_number, $z
   mysqli_query($link, $sql) or die(mysqli_error($link));
 }
 
+function update_passwordcode($passwordcode, $user_id){
+  global $link;
+  $sql = "UPDATE users SET passwordcode = '$passwordcode' WHERE id = '$user_id'";
+  mysqli_query($link, $sql) or die(mysqli_error($link));
+}
 
 
 

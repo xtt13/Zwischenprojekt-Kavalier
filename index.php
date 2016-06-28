@@ -22,6 +22,10 @@ if($site == "checkout"){
   include("logic/register.php");
 } elseif($site == "store") {
   include("logic/store.php");
+} elseif($site == "pwdreset") {
+  include("logic/pwdreset.php");
+} else {
+  include("logic/homepage.php");
 }
 
 // AB HIER VIEWS EINBINDUNGEN
@@ -46,6 +50,8 @@ if($site == "store") {
   include("views/register.php");
 } elseif($site == "registersuccess") {
   include("views/success-register.php");
+} elseif($site == "pwdreset") {
+  include("views/pwdreset.php");
 } else {
   include("views/homepage.php");
 }

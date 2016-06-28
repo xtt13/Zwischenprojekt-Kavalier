@@ -2972,6 +2972,16 @@ input:focus {
 	background-color: grey;
 }*/
 
+/* PASSWORD RESET */
+
+.pwdreset {
+	margin-top: 100px;
+}
+
+.pwdreset-error {
+	color: red;
+}
+
 
 
 /* HOMEPAGE MEDIAQUERIES */
