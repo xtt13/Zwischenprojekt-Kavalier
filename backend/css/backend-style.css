@@ -363,6 +363,7 @@ display: flex;
 	border: 2px solid transparent;
 	color: black;
 	padding-top: 5px;
+	padding: 30px;
 	font-family: 'myriad-pro', sans-serif;
 	font-style: italic;
 	font-size: 15px;
@@ -371,6 +372,33 @@ display: flex;
 
 }
 
+/* Select */
+
+.select-wrapper select{
+
+	background: transparent;
+	width: 268px;
+	padding: 8px;
+	font-size: 15px;
+	line-height: 2;
+	border: 0;
+	border-radius: 0;
+	height: 45px;
+	-webkit-appearance: none;
+
+
+}
+
+.select-wrapper{
+
+	width: 240px;
+	height: 45px;
+	overflow: hidden;
+	/*background: url(new_arrow.png) no-repeat right #ddd;*/
+	background: url(images/select-arrow.png) no-repeat right;
+	border: 1px solid #ccc;
+	padding-right: 5px;
+}
 
 
 /* Upload */

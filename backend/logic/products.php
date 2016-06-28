@@ -19,6 +19,8 @@ if(isset($_GET['action'])) {
     $product['description'] = "";
     $product['sale'] = "";
 
+    $categories = get_categories();
+
     require("views/products-form.php");
   }elseif($action == "edit"){
 
@@ -26,7 +28,9 @@ if(isset($_GET['action'])) {
 
     $title = "Edit Product";
 
-    $product = get_product($id);
+    // $product = get_product($id);
+    $product = get_category($id);
+    $categories = get_categories();
 
     require("views/products-form.php");
   }
