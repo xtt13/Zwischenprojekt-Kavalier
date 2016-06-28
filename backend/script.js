@@ -6,11 +6,12 @@ $('#file-upload').change(function() {
 
 });
 
-//$(document).on('click', '.accordeon-title', function(){
+//$(body).on('click', '.accordeon-title', function(){
 
   var contents = $('.accordeon-content');
   var titles = $('.accordeon-title');
   titles.on('click',function(){
+  //$(body).on('click', '.accordeon-title', function(){
     var title = $(this);
     contents.filter(':visible').slideUp(function(){
       $(this).prev('.accordeon-title').removeClass('is-opened');
