@@ -24,6 +24,8 @@ if($site == "checkout"){
   include("logic/store.php");
 } elseif($site == "pwdreset") {
   include("logic/pwdreset.php");
+} elseif($site == "pwdupdate") {
+  include("logic/pwdupdate.php");
 } else {
   include("logic/homepage.php");
 }
@@ -52,6 +54,8 @@ if($site == "store") {
   include("views/success-register.php");
 } elseif($site == "pwdreset") {
   include("views/pwdreset.php");
+} elseif($site == "pwdupdate") {
+  include("views/pwdupdate.php");
 } else {
   include("views/homepage.php");
 }

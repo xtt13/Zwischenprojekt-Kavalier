@@ -152,10 +152,32 @@ function register_user($fullname, $email, $password_hash, $street_and_number, $z
 
 function update_passwordcode($passwordcode, $user_id){
   global $link;
-  $sql = "UPDATE users SET passwordcode = '$passwordcode' WHERE id = '$user_id'";
+  $sql = "UPDATE users SET passwordcode = '$passwordcode', passwordcode_time = now() WHERE id = '$user_id'";
   mysqli_query($link, $sql) or die(mysqli_error($link));
 }
 
+function update_password($password_hash, $id){
+  global $link;
+  $sql = "UPDATE users SET password_hash = '$password_hash', passwordcode = NULL, passwordcode_time = NULL WHERE id = '$id'";
+  mysqli_query($link, $sql) or die(mysqli_error($link));
+}
+
+// Funktion zum Generieren des Randomstrings (Für PW Reset)
+function random_string() {
+	if(function_exists('random_bytes')) {
+		$bytes = random_bytes(16);
+		$str = bin2hex($bytes);
+	} else if(function_exists('openssl_random_pseudo_bytes')) {
+		$bytes = openssl_random_pseudo_bytes(16);
+		$str = bin2hex($bytes);
+	} else if(function_exists('mcrypt_create_iv')) {
+		$bytes = mcrypt_create_iv(16, MCRYPT_DEV_URANDOM);
+		$str = bin2hex($bytes);
+	} else {
+		$str = md5(uniqid('euer_geheimer_string', true));
+	}
+	return $str;
+}
 
 
 ?>

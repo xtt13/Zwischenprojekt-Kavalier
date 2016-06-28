@@ -2976,10 +2976,161 @@ input:focus {
 
 .pwdreset {
 	margin-top: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.pwdreset p, .pwdreset form{
+	font-family: 'myriad-pro', sans-serif;
+
 }
 
 .pwdreset-error {
 	color: red;
+	margin-bottom: 10px;
+}
+
+.pwdreset h1 {
+	font-family:'Latin Modern Italic', serif;
+	font-size: 33px;
+}
+
+.pwdreset form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.pwdreset form button {
+	display: block;
+	width: 184px;
+	height: 43px;
+	background-color: #D1BCA3;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	color: white;
+	font-size: 24px;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	padding-top: 6px;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+
+.pwdreset form input {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 500px;
+	height: 43px;
+	border-radius: 3px;
+	background-color: #F3F3F3;
+	border: 2px solid transparent;
+
+	font-size: 20px;
+	color: black;
+	padding-top: 5px;
+
+	display: flex;
+	text-align: center;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/email-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 8px 9px;
+
+}
+
+.pwdreset-section {
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px 0px rgba(170,170,170,0.50);
+	border-radius: 3px;
+	width: 684px;
+	height: 328px;
+	margin-top: 100px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.pwdreset-section img {
+	margin-top: 50px;
+}
+
+.pwdupdate-section {
+	background: #FFFFFF;
+	box-shadow: 0px 0px 10px 0px rgba(170,170,170,0.50);
+	border-radius: 3px;
+	width: 684px;
+	height: 428px;
+	margin-top: 100px;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.pwdupdate-section form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin-top: 25px;
+}
+
+.pwdupdate-section button {
+	display: block;
+	width: 214px;
+	height: 43px;
+	background-color: #D1BCA3;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	color: white;
+	font-size: 24px;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	padding-top: 6px;
+	cursor: pointer;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.pwdupdate h1 {
+	font-family:'Latin Modern Italic', serif;
+	font-size: 33px;
+}
+
+.pwdupdate input {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 500px;
+	height: 43px;
+	border-radius: 3px;
+	background-color: #F3F3F3;
+	border: 2px solid transparent;
+
+	font-size: 20px;
+	color: black;
+	padding-top: 5px;
+
+	display: flex;
+	text-align: center;
+	font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/password-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 8px 9px;
 }
 
 
