@@ -390,7 +390,6 @@ display: flex;
 }
 
 .select-wrapper{
-
 	width: 240px;
 	height: 45px;
 	overflow: hidden;
@@ -504,7 +503,7 @@ border-radius: 3px;
 
   background-color: white;
 	overflow: hidden;
-
+	margin-bottom: 15px;
 
 }
 
@@ -515,6 +514,7 @@ img {
  height: 86%;
  transition-duration: 1s;
  margin-top: 15px;
+
 
 }
 

@@ -47,11 +47,27 @@
           <h2 class="form-headline">Main Image</h2>
         </div>
 
+        <div class="form-wrapper">
+        <?php
+        $image_main = $product["image_main"];
+
+         if(isset($image_main)){
+           echo "<a class='image-link'><img src='../images/$image_main' alt='$image_main'></a>";
+         } ?>
+       </div>
         <div class="upload-wrapper">
 
           <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-          <span id="filename">Select your file</span>
+          <span id="filename">
+
+          <?php if(isset($image_main)){
+              echo $image_main;
+            }else{
+              echo "Select your file";
+          } ?>
+
+          </span>
           <label for="file-upload">Browse<input type="file" id="file-upload"></label>
 
         </div>
@@ -60,22 +76,32 @@
           <h2 class="form-headline">Other Image</h2>
         </div>
 
+        <div class="form-wrapper">
+        <?php
+        $image_other = $product["image_other"];
+
+         if(isset($image_main)){
+           echo "<a class='image-link'><img src='../images/$image_other' alt='$image_other'></a>";
+         } ?>
+       </div>
+
         <div class="upload-wrapper">
 
           <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-          <span id="filename">Select your file</span>
+          <span id="filename">
+
+            <?php if(isset($image_other)){
+                echo $image_other;
+              }else{
+                echo "Select your file";
+            } ?>
+
+        </span>
           <label for="file-upload">Browse<input type="file" id="file-upload"></label>
 
         </div>
-        <div class="upload-wrapper">
-
-          <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-
-          <span id="filename">Select your file</span>
-          <label for="file-upload">Browse<input type="file" id="file-upload"></label>
-
-        </div>
+        
 
         <div class="form-wrapper">
           <input type="submit"  class="save-button" value="Save">
