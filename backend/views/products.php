@@ -18,9 +18,10 @@
       <?php
 
       foreach($products as $product):?>
+      <?php $image_main = $product["image_main"]; ?>
       <tr class="space"></tr>
       <tr class="table_row">
-        <td><?php echo $product['id']; ?></td>
+        <td> <?php echo "  <a class='image-link'><img src='../images/$image_main' alt='$image_main'></a>"; ?></td>
         <td><?php echo $product['product_name']; ?></td>
         <td><?php echo $product['product_category']; ?></td>
         <td><?php echo $product['price']?>€</td>

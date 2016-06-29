@@ -493,6 +493,33 @@ border-radius: 3px;
 	width: 14vw;
 }
 
+/*Image Tabelle*/
+
+.image-link {
+
+	display: block;
+  width: 150px;
+  height: 150px;
+	object-fit: contain;
+
+  background-color: white;
+	overflow: hidden;
+
+
+}
+
+img {
+
+ object-fit: contain;
+ width: 106%;
+ height: 86%;
+ transition-duration: 1s;
+ margin-top: 15px;
+
+}
+
+
+
 /* Backend Search */
 
 .accordeon {
