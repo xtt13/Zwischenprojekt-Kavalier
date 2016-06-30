@@ -10,7 +10,10 @@ if(isset($_GET['action'])) {
     require("views/products.php");
 
   }elseif($action == "new"){
+
     $title = "New Product";
+    $form_action = "index.php?site=products&action=save_product";
+    $submit_button_text = "Save";
 
     $product = [];
     $product['id'] = "";
@@ -22,11 +25,17 @@ if(isset($_GET['action'])) {
     $categories = get_categories();
 
     require("views/products-form.php");
+  }elseif($action == "save_product"){
+
+    save_product($_POST['product-name'], $_POST['product-price'], $_POST['category'], $_POST['description'], $_POST['sale']);
+
   }elseif($action == "edit"){
 
     $id = (int)$_GET["id"];
 
     $title = "Edit Product";
+    $form_action ="index.php?site=products&action=edit_product";
+    $submit_button_text = "Edit";
 
     // $product = get_product($id);
     $product = get_category($id);

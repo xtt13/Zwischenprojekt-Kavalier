@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>id</th>
-      <th>product_name</th>
-      <th>category</th>
-      <th>price</th>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Price</th>
       <th></th>
       <th></th>
     </tr>

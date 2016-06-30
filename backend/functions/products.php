@@ -74,6 +74,27 @@ function get_category($id){
 
 }
 
+function save_product($name, $price, $sale, $description, $category){
+
+  global $link;
+
+  $sql =
+  "INSERT INTO
+  products (product_name, price, sale, description, category)
+  VALUES
+  ('$name', '$price','$description','$category', '$sale')";
+
+  $result = mysqli_query($link, $sql);
+
+  if(!$result){
+
+    die(mysqli_error($link));
+  }
+
+  return  $result;
+
+
+}
 
 
 
