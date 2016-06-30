@@ -5,7 +5,8 @@
 @font-face{
 	font-family: 'Latin Modern Roman';
 	src: url('font/lmroman10-regular-webfont.eot');
-	src: url('font/lmroman10-regular-webfont.eot?iefix') format('eot'),
+	src: url('font/lmroman10-regular-webfont.eot?iefix')
+	at('eot'),
 	     url('font/lmroman10-regular-webfont.woff') format('woff'),
 	     url('font/lmroman10-regular-webfont.ttf') format('truetype'),
 	     url('font/lmroman10-regular-webfont.svg#webfont') format('svg');
@@ -468,12 +469,9 @@ border-radius: 3px;
 
 
 .input-street{
-  width: 14vw;
-	margin-right: 2vw;
+  width: 30vw;
 
-}
-.input-number{
-  width: 14vw;
+
 }
 
 .input-zip{
