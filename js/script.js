@@ -554,4 +554,33 @@ jQuery(document).ready(function($) {
             });
     });
 
+
+
+  // AJAX KATHEGORIE
+  $('body').on('change', '.select-price', function() {
+
+    var sort = $('.select-price').val();
+    var selected_category = $('.category-underline').attr('href');
+    var final_url = selected_category + '&sort-price=' + sort;
+    alert(final_url);
+
+
+    $.ajax({
+            url: final_url,
+            method: "get",
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".wrapper-products").replaceWith($(".wrapper-products", data));
+            //$(this).closest('tr').fadeOut("slow");
+            //$('.content_header').html(data);
+            alert('changed');
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+
+  });
+
 });

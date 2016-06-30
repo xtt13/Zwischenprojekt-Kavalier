@@ -28,13 +28,13 @@
       <div class="wrapper-selection">
         <p>Showing <span><?php if(isset($results)){echo $results;} ?></span> results</p>
         <form action='' method='post'>
-          <select class="select-view" name="view-products" id="blabla" onchange='this.form.submit()'>
+          <select class="select-view" name="view-products" id="blabla">
             <option value="">VIEW 12 PRODUCTS</option>
             <option value="">1</option>
             <option value="">2</option>
           </select>
 
-          <select class="select-price" name="sort-price" id="blablaaa" onchange='this.form.submit()'>
+          <select class="select-price" name="sort-price" id="blablaaa"'>
             <option value="">SORT PRICE</option>
             <option value="low-to-high" <?php if(isset($low_to_high)){echo $low_to_high;} ?>>Low to High</option>
             <option value="high-to-low" <?php if(isset($high_to_low)){echo $high_to_low;} ?>>High to Low</option>

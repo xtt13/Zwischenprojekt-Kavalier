@@ -592,9 +592,10 @@ img {
 	color: green;
 }
 
-.accordeon img {
+.search-image {
 	width: 50px;
 	border-radius: 3px;
+	height: auto;
 }
 
 .accordeon table {
