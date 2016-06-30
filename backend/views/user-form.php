@@ -2,24 +2,25 @@
 
   <div class="body-wrapper">
 
-    <h3 class="headline">New User</h3>
+    <h3 class="headline"><?php echo $title ?></h3>
 
   <section class="form-new">
 
 
-    <form class="" action="index.html" method="post">
+    <form class="" action="<?php echo $form_action; ?>" method="post">
+      <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
       <fieldset>
 
         <div class="form-wrapper">
           <h2 class="form-headline">Fullname</h2>
           <label for="fullname"></label>
-          <input type="text" name="fullname" class="form-input" value="">
+          <input type="text" name="fullname" class="form-input" value="<?php echo $user['fullname']; ?>">
         </div>
 
         <div class="form-wrapper">
           <h2 class="form-headline">Email</h2>
           <label for="email"></label>
-          <input type="text" name="email" class="form-input" value="">
+          <input type="text" name="email" class="form-input" value="<?php echo $user['email']; ?>">
         </div>
 
         <div class="form-wrapper">
@@ -41,20 +42,11 @@
                 <div class="form-element-wrapper">
 
                   <div class="form-wrapper">
-                  <h3 class="form-subheadline">Street</h3>
+                  <h3 class="form-subheadline">Street and Number</h3>
 
-                  <label for="street"></label>
-                  <input type="text" name="street" class="input-street form-input" value="">
+                  <label for="street_and_number"></label>
+                  <input type="text" name="street_and_number" class="input-street form-input" value="<?php echo $user['street_and_number']; ?>">
                 </div>
-
-                <div class="form-wrapper">
-
-                  <h3 class="form-subheadline">Number</h3>
-
-                  <label for="number"></label>
-                  <input type="text" name="number" class="input-number form-input" value="">
-                </div>
-
               </div>
 
               <div class="form-element-wrapper">
@@ -62,7 +54,7 @@
                   <h3 class="form-subheadline">ZIP</h3>
 
                     <label for="zip"></label>
-                    <input type="text" name="zip" class="input-zip form-input" value="">
+                    <input type="text" name="zip" class="input-zip form-input" value="<?php echo $user['zip_and_location']; ?>">
                 </div>
 
 
@@ -76,7 +68,7 @@
                 <div class="form-wrapper">
                   <h3 class="form-subheadline">Country</h3>
                   <label for="country"></label>
-                  <input type="text" name="country" class="input-country form-input" value="">
+                  <input type="text" name="country" class="input-country form-input" value="<?php echo $user['country']; ?>">
                 </div>
               </div>
             </div>
@@ -93,7 +85,7 @@
 
 
         <div class="form-wrapper">
-          <input type="submit"  class="save-button" value="Save">
+          <button type="submit"  class="save-button" value="Save"><?php echo $submit_button_text?></button>
         </div>
       </fieldset>
     </form>

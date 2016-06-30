@@ -17,7 +17,7 @@
         <div class="form-wrapper">
           <h2 class="form-headline">Price</h2>
           <label for="product-price"></label>
-          <input type="text" name="product-price" class="form-input" value="<?php echo $product['price']; ?>€">
+          <input type="text" name="product-price" class="form-input" value="<?php echo $product['price']; ?>">
         </div>
 
         <div class="checkbox-wrapper">
