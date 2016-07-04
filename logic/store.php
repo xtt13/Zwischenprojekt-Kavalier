@@ -1,12 +1,27 @@
 <?php
 
+  //PAGINATION (nur für All Produkts), für alle Anderen bin ich zu faul bzw. hab keine Zeit und ist zu viel Arbeit!
+
+  if(isset($_GET['page'])){
+    $page = (int)$_GET['page'];
+  } else {
+    $page = 1;
+  }
+
+  if(isset($_GET['per-page'])){
+    $perPage = (int)$_GET['per-page'];
+  } else {
+    $perPage = 12;
+  }
+
+  // Ermittelt Startpunkt für Pagination
+  $start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+
+
   // Query: Alle Kategorien
   $sql = "SELECT * FROM categories";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
   $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-  //print_r($_POST);
-  // print_r($_GET);
 
 
 
@@ -50,11 +65,19 @@
       $products = all_sale_products_query();
 
   } else {
-      $products = all_products_query();
+      $products = all_products_query($start,$perPage);
 
   }
 
+  // Ermittelt die Anzahl der aktuell Angezeigten Produkte
   $results = count($products);
+
+  // Ermittelt die Anzahl aller aktiven Produkte
+  $total = count_all_products();
+
+  // Ermittelt die Anzahl der Seiten
+  $pages = ceil($total / $perPage);
+
 
 
 

@@ -11,14 +11,25 @@ function is_post_request() {
   return (strtolower($_SERVER["REQUEST_METHOD"]) == "post" && !empty($_POST));
 }
 
-// Ein Query um alle Produkte abzurufen
-function all_products_query(){
+// Ein Query um alle Produkte abzurufen INKL. Pagination
+function all_products_query($start, $perPage){
+  global $link;
+  $sql = "SELECT * FROM products WHERE active = 1 LIMIT $start, $perPage";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  return $products;
+}
+
+// Ein Query um die Anzahl aller Produkte zu ermitteln
+function count_all_products() {
   global $link;
   $sql = "SELECT * FROM products WHERE active = 1";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-  return $products;
+  $total = count($products);
+  return $total;
 }
 
 // Ein Query um alle Angebote abzurufen

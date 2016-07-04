@@ -577,4 +577,29 @@ jQuery(document).ready(function($) {
 
   });
 
+  // AJAX STORE Preis Sortierung
+  $('body').on('change', '.select-view', function() {
+
+    var sort = $('.select-view').val();
+    var final_url = 'index.php?site=store&page=1&per-page=' + sort;
+    //alert(final_url);
+
+
+    $.ajax({
+            url: final_url,
+            method: "get",
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".wrapper-products").replaceWith($(".wrapper-products", data));
+
+            //alert('changed');
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+
+  });
+
 });

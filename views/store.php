@@ -29,12 +29,11 @@
         <p>Showing <span><?php if(isset($results)){echo $results;} ?></span> results</p>
         <form action='' method='post'>
           <select class="select-view" name="view-products" id="blabla">
-            <option value="">VIEW 12 PRODUCTS</option>
-            <option value="">1</option>
-            <option value="">2</option>
+            <option value="12" <?php if(isset($perPage) && $perPage == 12){echo 'selected';} ?>>VIEW 12 PRODUCTS</option>
+            <option value="24" <?php if(isset($perPage) && $perPage == 24){echo 'selected';} ?>>VIEW 24 PRODUCTS</option>
           </select>
 
-          <select class="select-price" name="sort-price" id="blablaaa"'>
+          <select class="select-price" name="sort-price" id="blablaaa">
             <option value="">SORT PRICE</option>
             <option value="low-to-high" <?php if(isset($low_to_high)){echo $low_to_high;} ?>>Low to High</option>
             <option value="high-to-low" <?php if(isset($high_to_low)){echo $high_to_low;} ?>>High to Low</option>
@@ -74,6 +73,14 @@
           ?>
 
         </ul>
+
+        <?php
+        if($pages > 1){
+          for($x=1; $x <= $pages; $x++){
+            echo "<a href='?site=store&page=$x&per-page=$perPage'>$x</a>";
+          }
+        }
+        ?>
 
       </div>
     </div>
