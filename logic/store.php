@@ -4,8 +4,18 @@
 
   if(isset($_GET['page'])){
     $page = (int)$_GET['page'];
+    if($page > 1){
+      $nextpage = $page + 1;
+      $prevpage = $page - 1;
+    }
+    if($page == 1){
+      $nextpage = $page + 1;
+      $prevpage = 1;
+    }
   } else {
     $page = 1;
+    $nextpage = $page + 1;
+    $prevpage = 1;
   }
 
   if(isset($_GET['per-page'])){

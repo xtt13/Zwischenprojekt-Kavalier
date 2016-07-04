@@ -76,9 +76,18 @@
 
         <?php
         if($pages > 1){
+          echo "<a class='pagination-prev' href='?site=store&page=$prevpage&per-page=$perPage'><</a>";
           for($x=1; $x <= $pages; $x++){
-            echo "<a href='?site=store&page=$x&per-page=$perPage'>$x</a>";
+            echo "<a href='?site=store&page=$x&per-page=$perPage' class='pagination ";
+            if($page === $x){echo "selected-page";}
+            echo "'>$x</a>";
           }
+          if($nextpage >= $pages){
+            echo "<a class='pagination-next' href='?site=store&page=$pages&per-page=$perPage'>></a>";
+          } else {
+            echo "<a class='pagination-next' href='?site=store&page=$nextpage&per-page=$perPage'>></a>";
+          }
+
         }
         ?>
 

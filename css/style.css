@@ -913,6 +913,61 @@ footer li a:hover {
   margin-right: 94px;
 }
 
+.pagination-prev {
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'myriad-pro', sans-serif;
+	background-color: #282F43;
+	padding: 5px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	/*border-right: 1px solid white;*/
+	color: white;
+	width: 40px;
+	text-align: center;
+	transition-duration: 400ms;
+}
+
+.pagination-next {
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'myriad-pro', sans-serif;
+	background-color: #282F43;
+	padding: 5px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	color: white;
+	width: 40px;
+	text-align: center;
+	transition-duration: 400ms;
+}
+
+.pagination-next:hover {
+	background-color: black;
+}
+
+.pagination-prev:hover {
+	background-color: black;
+}
+
+.pagination {
+	display: inline-block;
+	text-decoration: none;
+	font-family: 'myriad-pro', sans-serif;
+	background-color: #282F43;
+	padding: 5px;
+	color: white;
+	width: 20px;
+	text-align: center;
+
+
+	/*border-right: 1px solid white;*/
+}
+
+.selected-page {
+	background-color: black;
+}
+
 .wrapper-selection p span {
   color: black;
 }
