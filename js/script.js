@@ -401,7 +401,9 @@ jQuery(document).ready(function($) {
     shippingchecked();
   });
 
-  $('.bag-delete').click(function() {
+  // AJAX BAG DELETE
+  $('body').on('click', '.bag-delete', function() {
+  //$('.bag-delete').click(function() {
     event.preventDefault();
     $('.cart p').text(parseInt($('.cart p').text()) - 1);
     var id = $(this).data("id");
@@ -426,49 +428,42 @@ jQuery(document).ready(function($) {
           });
   });
 
+  // AJAY BAG QUANTITY Update
 
-  // FUNKTIONIERT NICHT MEHR!
-  //
-  // $('.bag-delete').click(function(event) {
-  // $('.body').on("click", ".bag-delete", (function(event) {
-  //
-  //   event.preventDefault();
-  //   $(this).closest('tr').animate({ opacity: 0},200, function() {
-  //
-  //       // Cart Icon Value wird um 1 vermindert!
-  //       $('.cart p').text(parseInt($('.cart p').text()) - 1);
-  //
-  //       var id = $(this).data("id");
-  //         $.ajax({
-  //                 url: "index.php?site=bag",
-  //                 method: "get",
-  //                 data: {
-  //                   action: 'delete',
-  //                   id: id
-  //                 }
-  //               })
-  //               .done(function(data, textStatus, jqXhr) {
-  //                 // alert(data);
-  //                 $("form").replaceWith($("form", data));
-  //                 //$(this).closest('tr').fadeOut("slow");
-  //                 //$('.content_header').html(data);
-  //               })
-  //               .fail(function(jqXhr, textStatus, errorThrown) {
-  //                 // wird bei fehlerhaftem Request ausgeführt
-  //                 alert('KLAPPT NICHT!');
-  //               });
-  //   });
-  //
-  // }));
-  // });
+  $('body').on('change', '.bag-select', function() {
+
+    var val = $(this).val();
+    var meinevar = $(this).attr('name');
+    var test = meinevar + ":" + val;
+    var final_url = 'index.php?site=bag&action=update_cart&id=' + meinevar + '&quantity=' + val;
+
+    //alert(final_url);
+
+    $.ajax({
+            url: final_url,
+            method: "get"
+
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".bag-table").replaceWith($(".bag-table", data));
+            $(".checkout-wrapper").replaceWith($(".checkout-wrapper", data));
+
+            //alert('changed');
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+
+  });
 
 
 
 
 
+  // END
 
-  //$(this).closest('tr').fadeOut("slow");
-  //$(this).closest('tr').prev().fadeOut("slow");
 
   $(".bag-delete").hover(
   function() {
@@ -497,7 +492,7 @@ jQuery(document).ready(function($) {
     //AJAX SONDERANGEBOTE
 
     $(".store-checkbox-sonderangebote").on("click", function(){
-      console.log('hoffentlich');
+      //console.log('hoffentlich');
       event.preventDefault();
 
       if($(this).prop('checked') !== true){
@@ -556,13 +551,13 @@ jQuery(document).ready(function($) {
 
 
 
-  // AJAX KATHEGORIE
+  // AJAX STORE Preis Sortierung
   $('body').on('change', '.select-price', function() {
 
     var sort = $('.select-price').val();
     var selected_category = $('.category-underline').attr('href');
     var final_url = selected_category + '&sort-price=' + sort;
-    alert(final_url);
+    //alert(final_url);
 
 
     $.ajax({
@@ -572,9 +567,8 @@ jQuery(document).ready(function($) {
           .done(function(data, textStatus, jqXhr) {
             // alert(data);
             $(".wrapper-products").replaceWith($(".wrapper-products", data));
-            //$(this).closest('tr').fadeOut("slow");
-            //$('.content_header').html(data);
-            alert('changed');
+
+            //alert('changed');
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt

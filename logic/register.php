@@ -34,6 +34,7 @@ if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
 
   } else {
     $error = 1;
+    $error_message['email'] = 'Some Inputfields are empty!';
   }
 }
 
@@ -45,7 +46,7 @@ if($error == 0){
   $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
   register_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
   $_SESSION['registered'] == true;
-  redirect_to('index.php?site=registersuccess');
+  // redirect_to('index.php?site=registersuccess');
 }
 }
  ?>

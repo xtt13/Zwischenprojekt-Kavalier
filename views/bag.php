@@ -1,6 +1,8 @@
 <?php
 
   print_r($_GET);
+  print_r($_POST);
+  print_r($_SESSION['bag']);
 
   //Löschen von Produkten aus dem Warenkorb
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
@@ -11,10 +13,20 @@
   }
 
   // Update von Produktanzahl im Warenkorb
-  if(isset($_POST)) {
-    foreach($_POST as $id => $quantity){
+  // if(isset($_POST)) {
+  //   foreach($_POST as $id => $quantity){
+  //     $_SESSION['bag'][$id]['quantity'] = $quantity;
+  //   }
+  // }
+
+  // GET ALTERNATIVE
+  //
+  if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'update_cart' && isset($_GET['quantity'])){
+      $quantity = $_GET['quantity'];
+      $id = $_GET['id'];
+
       $_SESSION['bag'][$id]['quantity'] = $quantity;
-    }
+
   }
  ?>
 
@@ -90,10 +102,10 @@
 
             echo "
                         <tr>
-                          <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='index.php?site=detail&id=$id'><img src='./images/$image' alt='Nailkit'></a></div></td>
+                          <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='index.php?site=detail&id=$id'><img src='./images/$image' alt='Bild'></a></div></td>
                           <td>$name</td>
                           <td></td>
-                          <td><select class='bag-select' name='$id' onchange='this.form.submit()'>
+                          <td><select class='bag-select' name='$id'>
                 ";
                           for($i=1;$i<=$products['0']['stock'];$i++){
                             if($i == $quantity){

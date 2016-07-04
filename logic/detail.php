@@ -29,9 +29,12 @@
     // Wenn $_GET['action']=="add-to-bag" gesetzt ist, dann schiebe Data in $_SESSION['bag']
     if(isset($_GET['action']) && $_GET['action'] == 'add-to-bag') {
 
-      // Wenn der User keine Menge ausgewählt hat oder er mehr Proukte angibt als verfügbar sind!
+      // Wenn der User keine Menge ausgewählt hat oder er mehr Proukte angibt als verfügbar sind! (Supis überprüfen das!)
       if($_POST['quantity'] == 0 || $_POST['quantity'] > $products_in_stock){
         $quantity_error = "Please choose a quantity!";
+        if($_POST['quantity'] > $products_in_stock){
+          $quantity_error = "Das ist aber nicht nett!";
+        }
       } else {
         $productname = $_POST['product_name'];
         $price = $_POST['price'];

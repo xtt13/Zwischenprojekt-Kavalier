@@ -1,6 +1,7 @@
 
   <div class="wrapper-page registration">
 
+<?php if(!isset($_SESSION['registered'])): ?>
 
     <section class="register-form">
       <form action="index.php?site=register" method='post'>
@@ -25,9 +26,22 @@
             </div>
 
             <input name='sbmbtn' class="register-submit" type="submit" value="Register">
+            <div class="error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo $key;}} ?></p></div>
         </fieldset>
       </form>
-      <div class="error"><p></p></div>
+
     </section>
+
+  <?php else: ?>
+
+    <section class="thankyou-section">
+      <h1>Registered!</h1>
+      <img src="images/success.svg" alt="Success!">
+
+      <a href="index.php?site=store">Home</a>
+    </section>
+
+
+  <?php endif; ?>
 
   </div>

@@ -11,12 +11,12 @@
 
 
   // Wenn eine Kategorie gewählt wurde und keine Auswahl in der Sortierung getroffen wurde
-  if(isset($_GET['category']) && isset($_POST) && empty($_POST)){
+  if(isset($_GET['category']) && !isset($_GET['sort-price'])){
     $category = $_GET['category'];
     $products = category_product_query($category);
 
   // Wenn die Auswahl Price High-To-Low getroffen wurde
-  } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'high-to-low'){
+} elseif(isset($_GET['sort-price']) && $_GET['sort-price'] == 'high-to-low'){
 
         // Wenn zusätzlich eine Kategorie gewählt wurde
         if(isset($_GET['category'])) {
@@ -31,7 +31,7 @@
         }
 
   // Wenn die Auswahl Price Low-To-High getroffen wurde
-  } elseif(isset($_POST['sort-price']) && $_POST['sort-price'] == 'low-to-high'){
+} elseif(isset($_GET['sort-price']) && $_GET['sort-price'] == 'low-to-high'){
 
       // Wenn zusätzlich eine Kategorie gewählt wurde
       if(isset($_GET['category'])) {
