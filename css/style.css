@@ -925,7 +925,9 @@ footer li a:hover {
 	color: white;
 	width: 40px;
 	text-align: center;
-	transition-duration: 400ms;
+	transition-duration: 200ms;
+	font-size: 13px;
+	padding: 6px;
 }
 
 .pagination-next {
@@ -939,15 +941,25 @@ footer li a:hover {
 	color: white;
 	width: 40px;
 	text-align: center;
-	transition-duration: 400ms;
+	transition-duration: 200ms;
+	font-size: 13px;
+	padding: 6px;
 }
 
 .pagination-next:hover {
 	background-color: black;
 }
 
+.pagination-next:active {
+	background-color: #1C1C1C;
+}
+
 .pagination-prev:hover {
 	background-color: black;
+}
+
+.pagination-prev:active {
+	background-color: #1C1C1C;
 }
 
 .pagination {
@@ -959,6 +971,8 @@ footer li a:hover {
 	color: white;
 	width: 20px;
 	text-align: center;
+	font-size: 13px;
+	padding: 6px;
 }
 
 .selected-page {

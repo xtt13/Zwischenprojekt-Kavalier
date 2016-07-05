@@ -602,6 +602,25 @@ jQuery(document).ready(function($) {
 
   });
 
+  // AJAX PAGINATATION NUMBER LINKS
+  $('body').on('click', '.pagination', function() {
+    event.preventDefault();
+    $.ajax({
+            url: $(this).attr('href'),
+            method: "get",
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".wrapper-products").replaceWith($(".wrapper-products", data));
+            //$(this).closest('tr').fadeOut("slow");
+            //$('.content_header').html(data);
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+  });
+
   // AJAX PAGINATATION PREV
   $('body').on('click', '.pagination-prev', function() {
     event.preventDefault();
