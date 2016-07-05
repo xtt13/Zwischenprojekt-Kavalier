@@ -14,7 +14,7 @@ function is_post_request() {
 // Ein Query um alle Produkte abzurufen INKL. Pagination
 function all_products_query($start, $perPage){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 LIMIT $start, $perPage";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 1 LIMIT $start, $perPage";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -24,7 +24,7 @@ function all_products_query($start, $perPage){
 // Ein Query um die Anzahl aller Produkte zu ermitteln
 function count_all_products() {
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 1";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -35,7 +35,7 @@ function count_all_products() {
 // Ein Query um alle Angebote abzurufen
 function all_sale_products_query(){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 AND sale = 1";
+  $sql = "SELECT * FROM products WHERE active = 1 AND sale = 1 AND stock > 1";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -45,7 +45,7 @@ function all_sale_products_query(){
 // Ein Query um Produkte einer Kategorie abzurufen
 function category_product_query($category){
   global $link;
-  $sql = "SELECT * FROM products WHERE category='$category' AND active = 1";
+  $sql = "SELECT * FROM products WHERE category='$category' AND active = 1 AND stock > 1";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -55,7 +55,7 @@ function category_product_query($category){
 // Ein Query um alle Produkte nach Preis H-T-L zu sortieren
 function price_high_to_low(){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 ORDER BY price DESC";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 0 ORDER BY price DESC";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -65,7 +65,7 @@ function price_high_to_low(){
 // Ein Query um alle Produkte nach Preis L-T-H zu sortieren
 function price_low_to_high(){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 ORDER BY price";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 0 ORDER BY price";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -75,7 +75,7 @@ function price_low_to_high(){
 // Ein Query um alle Produkte nach Preis H-T-L in einer Kategorie zu sortieren
 function price_high_to_low_category($category){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 AND category='$category' ORDER BY price DESC";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 0 AND category='$category' ORDER BY price DESC";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
@@ -85,7 +85,7 @@ function price_high_to_low_category($category){
 // Ein Query um alle Produkte nach Preis L-T-H in einer Kategorie zu sortieren
 function price_low_to_high_category($category){
   global $link;
-  $sql = "SELECT * FROM products WHERE active = 1 AND category='$category' ORDER BY price";
+  $sql = "SELECT * FROM products WHERE active = 1 AND stock > 0 AND category='$category' ORDER BY price";
   $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
   $products = mysqli_fetch_all($result, MYSQLI_ASSOC);

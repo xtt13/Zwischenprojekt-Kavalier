@@ -10,7 +10,7 @@
     }
     if($page == 1){
       $nextpage = $page + 1;
-      $prevpage = 1;
+      $prevpage = $page - 1;
     }
   } else {
     $page = 1;
