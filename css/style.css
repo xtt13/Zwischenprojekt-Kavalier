@@ -45,6 +45,10 @@
   box-sizing: border-box;
 }
 
+select:active, select:hover, select:checked {
+  outline: none
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1288,6 +1292,7 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	background-position: 94px center;
 	transition-duration: 500ms;
 	cursor: pointer;
+	outline: none;
 }
 
 .detail-select:hover {
@@ -1659,6 +1664,7 @@ a.control_prev:hover, a.control_next:hover {
 	color: black;
 	font-size: 15px;
 	border: 1px solid transparent;
+	outline: none;
 }
 
 .bag-update {
@@ -3567,10 +3573,12 @@ input:focus {
 	.select-price {
 			margin-right: 0;
 			width: 85px;
+			outline: none;
 	}
 
 	.select-view {
 		width: 125px;
+		outline: none;
 	}
 
 	.shop {
