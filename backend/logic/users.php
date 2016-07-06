@@ -23,6 +23,7 @@ if(isset($_GET['action'])) {
     $user['zip_and_location'] = "";
     $user['country'] = "";
 
+
     require("views/user-form.php");
   }elseif($action == "edit"){
 
@@ -45,6 +46,8 @@ if(isset($_GET['action'])) {
       $adress = $_POST['street_and_number'];
       $zip = $_POST['zip'];
       $country = $_POST['country'];
+      $is_admin = $_POST['is_admin'];
+
 
       $error = 2;
       $error_message;
@@ -79,14 +82,24 @@ if(isset($_GET['action'])) {
         $user['street_and_number'] = $adress;
         $user['zip_and_location'] = $zip;
         $user['country'] = $country;
+        $user['is_admin'] = $is_admin;
 
         require("views/user-form.php");
       }
-      if($error == 0){
-    $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-    save_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
-    $_SESSION['registered'] == true;
-    require('views/users.php');
+
+
+    if($error == 0){
+        if($is_admin == 'on'){
+          $is_admin = 1;
+        }else{
+          $is_admin = 0;
+        }
+
+        $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
+        save_user($name, $email, $passwordhash_hashed, $adress, $zip, $country, $is_admin);
+        $_SESSION['registered'] == true;
+        $users = get_users();
+        require('views/users.php');
     }
     }
 

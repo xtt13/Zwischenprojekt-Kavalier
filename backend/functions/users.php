@@ -38,12 +38,12 @@ function get_user($id){
 
 };
 
-function save_user($fullname, $email, $password_hashed, $street_and_number, $zip_and_location, $country){
+function save_user($fullname, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
 
   global $link;
 
-    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip_and_location, country)
-    VALUES ('$fullname', '$email', '$password_hashed', '$street_and_number', '$zip_and_location', '$country')";
+    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip_and_location, country, is_admin)
+    VALUES ('$fullname', '$email', '$password_hashed', '$street_and_number', '$zip_and_location', '$country', '$is_admin')";
 
     mysqli_query($link, $sql) or die(mysqli_error($link));
 

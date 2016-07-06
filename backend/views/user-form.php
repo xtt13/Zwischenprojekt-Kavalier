@@ -88,8 +88,9 @@
             </div>
 
             <div class="checkbox-wrapper">
-              <label for="admin">Administrator</label>
-              <input type="checkbox" name="admin" value="Admin">
+              <label>
+                <input type="checkbox" name="is_admin" <?php echo is_checked($user["is_admin"])?>> Administrator?
+              </label>
             </div>
 
         <div class="form-wrapper">
