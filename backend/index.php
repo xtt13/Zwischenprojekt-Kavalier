@@ -6,6 +6,7 @@ include('functions/products.php');
 include('functions/users.php');
 include('functions/orders.php');
 include('functions/search.php');
+include('functions/helpers.php');
 
 // include('functions/functions.php');
 
