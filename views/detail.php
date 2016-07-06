@@ -1,4 +1,7 @@
-
+<?php
+print_r($_POST);
+print_r($_GET);
+ ?>
   <div class="wrapper-page detail">
     <div class="wrapper-detail">
 
@@ -24,9 +27,9 @@
           <p class="product-info"><?php echo $products['0']['description']; ?></p>
           <p class="product-price"><?php echo $products['0']['price']; ?>€</p>
 
-          <input type="hidden" name="product_name" value="<?php echo $products['0']['product_name']; ?>">
-          <input type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
-          <input type="hidden" name="id" value="<?php echo $products['0']['id']; ?>">
+          <input class='hidden-product-name' type="hidden" name="product_name" value="<?php echo $products['0']['product_name']; ?>">
+          <input class='hidden-product-price' type="hidden" name="price" value="<?php echo $products['0']['price']; ?>">
+          <input class='hidden-product-id' type="hidden" name="id" value="<?php echo $products['0']['id']; ?>">
 
           <select class="detail-select" name="quantity">
             <option value="0">Quantity</option>

@@ -24,7 +24,7 @@ jQuery(document).ready(function($) {
   });
 
   $(".add-to-bag").click(function() {
-      $('.cart p').html(function(i, val) { return +val+1; });
+      $('.cart p').html(function(i, val) {return +val+1; });
   });
 
   // MOBILE MENU
@@ -657,6 +657,61 @@ jQuery(document).ready(function($) {
             // wird bei fehlerhaftem Request ausgeführt
             alert('KLAPPT NICHT!');
           });
+  });
+
+  // AJAX ADD-TO-BAG
+  $('body').on('click', '.add-to-bag', function() {
+    event.preventDefault();
+
+    var url = $('.wrapper-detail form').attr('action');
+    var quantity = $('.detail-select').val();
+    var name = $('.hidden-product-name').val();
+    var price = $('.hidden-product-price').val();
+    var id = $('.hidden-product-id').val();
+
+    //alert(url + ' ' + quantity);
+
+    $.ajax({
+            url: url,
+            method: "post",
+            data: {
+               quantity: quantity,
+               product_name: name,
+               price: price
+             }
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".wrapper-information").replaceWith($(".wrapper-information", data));
+            if($('.quantity-success').length){
+              $('.add-to-bag').html('✓');
+              $('.add-to-bag').addClass('add-to-bag-success');
+            } else {
+
+            }
+
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+
+
+  });
+
+
+
+  $('body').on('click', '.add-to-bag', function() {
+    $('.cart p').animate({
+      width: '30px',
+      height: '30px',
+
+    }, 100, function() {
+      $('.cart p').animate({
+        width: '20px',
+        height: '20px'
+      });
+    });
   });
 
 });

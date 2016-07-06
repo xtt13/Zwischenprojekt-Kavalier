@@ -1,13 +1,7 @@
 <?php
 
-if(isset($_SESSION['user_id'])){
-  $id = $_SESSION['user_id'];
-}
-
-$purchases = get_purchases_from_user($id);
-
-// echo"<pre>";
-// print_r($purchases);
-// echo"</pre>";
+  if(!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false){
+    redirect_to("index.php?site=homepage");
+  }
 
  ?>
