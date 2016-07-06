@@ -5,8 +5,8 @@
  <h3 class="headline">Users</h3>
  <a href="index.php?site=users&amp;action=new" class="button_new">new user</a>
 
- <table>
-   <thead>
+ <table class="table">
+   <thead class="t-head">
      <tr>
        <th>users_id</th>
        <th>user_name</th>
@@ -17,7 +17,7 @@
      </tr>
    </thead>
 
-   <tbody>
+   <tbody class="t-body">
      <?php foreach ($users as $user) : ?>
       <tr class="space"></tr>
        <tr class="table_row">
