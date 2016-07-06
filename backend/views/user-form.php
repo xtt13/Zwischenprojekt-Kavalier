@@ -5,7 +5,7 @@
     <h3 class="headline"><?php echo $title ?></h3>
 
   <section class="form-new">
-
+    <?php if(!isset($_SESSION['registered'])): ?>
 
     <form class="" action="<?php echo $form_action; ?>" method="post">
       <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
@@ -23,6 +23,7 @@
           <input type="text" name="email" class="form-input" value="<?php echo $user['email']; ?>">
         </div>
 
+        <?php if($action == 'new') :?>
         <div class="form-wrapper">
           <h2 class="form-headline">Password</h2>
           <label for="password"></label>
@@ -33,7 +34,20 @@
           <label for="password-confirm"></label>
           <input type="password" name="password-confirm" class="form-input" value="">
         </div>
+      <?php endif ?>
 
+      <?php if($action == 'save_user') : ?>
+      <div class="form-wrapper">
+        <h2 class="form-headline">Password</h2>
+        <label for="password"></label>
+        <input type="password" name="password" class="form-input" value="">
+      </div>
+      <div class="form-wrapper">
+        <h3 class="form-subheadline-diffrent">Confirm Password</h3>
+        <label for="password-confirm"></label>
+        <input type="password" name="password-confirm" class="form-input" value="">
+      </div>
+    <?php endif ?>
 
 
         <div class="form-wrapper">
@@ -73,21 +87,29 @@
               </div>
             </div>
 
-
-
-
-
-        <div class="checkbox-wrapper">
-          <label for="admin">Administrator</label>
-          <input type="checkbox" name="admin" value="Admin">
-        </div>
-
-
+            <div class="checkbox-wrapper">
+              <label for="admin">Administrator</label>
+              <input type="checkbox" name="admin" value="Admin">
+            </div>
 
         <div class="form-wrapper">
+
           <button type="submit"  class="save-button" value="Save"><?php echo $submit_button_text?></button>
+          <div class="error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo "<li>$key</li>";}}?></p></div>
+
         </div>
       </fieldset>
     </form>
     </section>
-    </div>
+
+  <?php else: ?>
+
+<section class="thankyou-section">
+  <h1>Registered!</h1>
+  <img src="images/success.svg" alt="Success!">
+
+  <a href="index.php?site=store">Home</a>
+</section>
+
+
+  <?php endif; ?>
