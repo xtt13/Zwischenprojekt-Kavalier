@@ -16,7 +16,7 @@ if(isset($_GET['action'])) {
     $form_action ="index.php?site=users&action=save_user";
     $submit_button_text = "Save";
 
-    $user = [];
+    $user= [];
     $user["fullname"] = "";
     $user['email'] = "";
     $user['street_and_number'] = "";
@@ -36,14 +36,60 @@ if(isset($_GET['action'])) {
 
     require("views/user-form.php");
   }elseif($action == "save_user"){
+    if(!empty($_POST)){
 
+      $name = $_POST['fullname'];
+      $email = $_POST['email'];
+      $password = $_POST['password'];
+      $password_again = $_POST['password-confirm'];
+      $adress = $_POST['street_and_number'];
+      $zip = $_POST['zip'];
+      $country = $_POST['country'];
+
+      $error = 2;
+      $error_message;
+
+      if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $country !== ''){
+
+        $error = 0;
+
+        if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
+          $error = 1;
+          $error_message['email'] = 'Please insert a valid emailadress!';
+        }
+
+        if($password !== $password_again){
+          $error = 1;
+          $error_message['passwords'] = 'Unequal Passwords!';
+        }
+
+        } else {
+        $error = 1;
+        $error_message['email'] = 'Some Inputfields are empty!';
+        }
+      }
+      if($error == 1){
+        $title = "New User";
+        $form_action ="index.php?site=users&action=save_user";
+        $submit_button_text = "Save";
+
+        $user = [];
+        $user["fullname"] = $name;
+        $user['email'] = $email;
+        $user['street_and_number'] = $adress;
+        $user['zip_and_location'] = $zip;
+        $user['country'] = $country;
+
+        require("views/user-form.php");
+      }
+      if($error == 0){
     $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-    register_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
+    save_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
     $_SESSION['registered'] == true;
-    redirect_to('index.php?site=users&action=view' , 'User erstellt!');
+    require('views/users.php');
+    }
+    }
 
-  };
 }
-
 
  ?>
