@@ -49,7 +49,7 @@ function save_user($fullname, $email, $password_hashed, $street_and_number, $zip
 
 }
 
-function update_user($fullname, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
+function update_user($id, $name, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
 
   global $link;
 

@@ -99,6 +99,7 @@ if(isset($_GET['action'])) {
         }
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
         echo 'Hallo';
+        echo $id;
         update_user($id,$name, $email, $passwordhash_hashed, $adress, $zip, $country, $is_admin);
         // $_SESSION['registered'] == true;
         $users = get_users();
