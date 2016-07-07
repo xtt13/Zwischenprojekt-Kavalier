@@ -27,7 +27,7 @@ if(isset($_GET['action'])) {
     require("views/products-form.php");
   }elseif($action == "save_product"){
 
-    save_product($_POST['product-name'], $_POST['product-price'], $_POST['category'], $_POST['description'], $_POST['sale']);
+    
 
   }elseif($action == "edit"){
 

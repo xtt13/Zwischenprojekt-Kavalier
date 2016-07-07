@@ -2,8 +2,8 @@
 <h3 class="headline">Products</h3>
 <a href="index.php?site=products&amp;action=new" class="button_new">new product</a>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="t-head">
     <tr>
       <th>Image</th>
       <th>Name</th>
@@ -14,9 +14,8 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="t-body">
       <?php
-
       foreach($products as $product):?>
       <?php $image_main = $product["image_main"]; ?>
       <tr class="space"></tr>

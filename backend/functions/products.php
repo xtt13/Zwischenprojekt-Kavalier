@@ -99,8 +99,5 @@ function save_product($name, $price, $sale, $description, $category){
 
 
 
-function is_checked($value) {
-  if($value) { return "checked"; }
-}
 
  ?>

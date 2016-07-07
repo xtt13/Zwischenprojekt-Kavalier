@@ -4,7 +4,7 @@
 
 
   <section class="form-new">
-    <form class="" action="<?php echo $form_action; ?>" method="post">
+    <form class="" action="<?php echo $form_action; ?>" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
       <fieldset>
 
@@ -48,10 +48,6 @@
         </div>
 
         <div class="form-wrapper">
-        <input type="file" name="pictures[]" />
-
-
-        <div class="form-wrapper">
         <?php
         $image_main = $product["image_main"];
 
@@ -72,7 +68,7 @@
           } ?>
 
           </span>
-          <label for="file-upload">Browse<input type="file" id="file-upload"></label>
+          <label for="file-upload">Browse<input type="file" id="file-upload" name="file_upload"></label>
 
         </div>
 
@@ -106,9 +102,8 @@
 
         </div>
 
-
         <div class="form-wrapper">
-          <button type="submit"  class="save-button" value="Save"><?php echo $submit_button_text?></button>
+          <input type="submit"  class="save-button" value="<?php echo $submit_button_text?>"></input>
         </div>
       </fieldset>
     </form>
