@@ -5,8 +5,8 @@
 <?php
 ?>
 
-<table>
-  <thead>
+<table class="table">
+  <thead class="t-head">
     <tr>
       <th>order_id</th>
       <th>user_id</th>
@@ -17,7 +17,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="t-body">
     <?php   ?>
     <?php foreach($orders as $order) : ?>
       <tr class="space"></tr>
@@ -27,7 +27,7 @@
         <td><?php echo $order['total_price']; ?>€</td>
         <td><?php echo $order['date_ordered']; ?></td>
         <td>
-          <a href="index.php?site=orders&amp;action=edit" class="button_do">edit</a>
+          <a href="index.php?site=orders&amp;action=detail" class="button_do">detail</a>
         </td>
         <td>
             <a href="index.php?site=orders&amp;action=shipped" class="button_do">shipped</a>

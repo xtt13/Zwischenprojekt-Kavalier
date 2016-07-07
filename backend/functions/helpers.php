@@ -7,6 +7,6 @@ function redirect_to($location, $message = "") {
 
 
 function is_checked($value) {
-  if($value == 'on') { return "checked"; }
+  if($value) { return "checked"; }
 }
  ?>
