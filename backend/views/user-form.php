@@ -8,7 +8,7 @@
     <?php if(!isset($_SESSION['registered'])): ?>
 
     <form class="" action="<?php echo $form_action; ?>" method="post">
-      <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
+      <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
       <fieldset>
 
         <div class="form-wrapper">

@@ -49,5 +49,21 @@ function save_user($fullname, $email, $password_hashed, $street_and_number, $zip
 
 }
 
+function update_user($fullname, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
+
+  global $link;
+
+    $sql = "UPDATE users
+    SET fullname = '$fullname' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', is_admin = '$is_admin'
+    WHERE id= '$id'";
+
+    $result = mysqli_query($link, $sql);
+
+    if(!$result) {
+        die(mysqli_error($link));
+      }
+
+}
+
 
  ?>
