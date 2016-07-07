@@ -77,30 +77,32 @@
         </div>
 
         <div class="form-wrapper">
-        <?php
-        $image_other = $product["image_other"];
 
-         if(isset($image_main)){
-           echo "<a class='image-link'><img src='../images/$image_other' alt='$image_other'></a>";
-         } ?>
-       </div>
+         <?php
+          foreach ($other_image as $image) {
+             echo "<a class='image-link'><img src='../images/$image' alt='$image'></a>";
+             echo "<div class='upload-wrapper'>
 
-        <div class="upload-wrapper">
 
-          <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-          <span id="filename">
+                 <input type='hidden' name='MAX_FILE_SIZE' value='2000000'>
 
-            <?php if(isset($image_other)){
-                echo $image_other;
-              }else{
-                echo "Select your file";
-            } ?>
+                 <span id='filename'>";
+                 if(isset($image)){
+                     echo $image;
+                   }else{
+                     echo 'Select your file';
+                 }
+            echo "</span>
+              <label for='file-upload' name='image'>Browse<input type='file' id='file-upload'></label>
 
-        </span>
-          <label for="file-upload" name="image_other">Browse<input type="file" id="file-upload"></label>
+          </div>  ";
 
-        </div>
+          }
+
+          ?>
+
+            </div>
 
         <div class="form-wrapper">
           <input type="submit"  class="save-button" value="<?php echo $submit_button_text?>"></input>

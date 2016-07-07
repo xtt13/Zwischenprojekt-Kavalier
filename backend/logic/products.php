@@ -27,7 +27,7 @@ if(isset($_GET['action'])) {
     require("views/products-form.php");
   }elseif($action == "save_product"){
 
-    
+
 
   }elseif($action == "edit"){
 
@@ -40,6 +40,10 @@ if(isset($_GET['action'])) {
     // $product = get_product($id);
     $product = get_category($id);
     $categories = get_categories();
+
+    $other_images = $product['image_other'];
+    $other_image = explode(', ', $other_images);
+    print_r($other_image);
 
     require("views/products-form.php");
   }
