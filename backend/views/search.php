@@ -1,4 +1,4 @@
-<div class="body-wrapper">
+<div class="body-wrapper search">
   <h3 class="headline">Welcome Admin!</h3>
 
   <form class="request_form" action="#" method="get">

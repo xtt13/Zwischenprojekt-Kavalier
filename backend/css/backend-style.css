@@ -566,6 +566,10 @@ img {
 }
 /* Backend Search */
 
+.search {
+	min-height: 100vh;
+}
+
 .accordeon {
 	border-radius: 3px;
 	overflow: hidden;

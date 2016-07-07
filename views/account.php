@@ -7,15 +7,26 @@
   </div>
 <?php
 
-  if(isset($_GET['action']) && $_GET['action'] == 'orders'){
-    include('logic/account-orders.php');
-    include('views/account-orders.php');
+  if(isset($_GET['action'])){
+
+    if($_GET['action'] == 'orders'){
+
+      include('logic/account-orders.php');
+      include('views/account-orders.php');
+
+    } elseif($_GET['action'] == 'information'){
+
+      include('logic/account-information.php');
+      include('views/account-information.php');
+
+    } else {
+
+      include('logic/account-information.php');
+      include('views/account-information.php');
+    }
+
   }
 
-  if(isset($_GET['action']) && $_GET['action'] == 'information'){
-    include('logic/account-information.php');
-    include('views/account-information.php');
-  }
 
  ?>
 </div>

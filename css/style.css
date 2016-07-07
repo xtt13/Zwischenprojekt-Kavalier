@@ -472,9 +472,9 @@ section.register-form {
   flex-direction: column;
 }
 
-.homepage-location li:nth-child(2){
+/*.homepage-location li:nth-child(2){
 	margin-bottom: 40px;
-}
+}*/
 
 .homepage-location li:nth-child(1){
 	height: auto;
@@ -1953,8 +1953,6 @@ REGISTERFORM
 
 .register-form fieldset{
   border: 0px;
-
-
 }
 
 .register-form h3{
@@ -3076,6 +3074,46 @@ input:focus {
 /*.accordeon table tr:nth-child(2n){
 	background-color: grey;
 }*/
+
+.information-wrapper {
+	width: 90%;
+	height: 400px;
+	margin-top: 30px;
+	background-color: grey;
+}
+
+.account-form {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+}
+
+.account-form fieldset{
+  border: 0px;
+}
+
+.account-form h3{
+  font-family:'Latin Modern Italic', serif;
+	font-weight: normal;
+	font-size: 45px;
+	color: #0C0C0C;
+	letter-spacing: 2.64px;
+	margin: 0;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 52px;
+}
+
+.account-form form{
+  box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
+  width: 684px;
+	height: 800px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 3px;
+  padding-top: 20px;
+  padding-bottom: 80px;
+}
 
 /* PASSWORD RESET */
 

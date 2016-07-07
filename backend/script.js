@@ -61,6 +61,11 @@ $('.search_request').keyup(function () {
       //alert('klappt');
       $(".accordeon").replaceWith($(".accordeon", data));
       $(".answer p").replaceWith($(".answer p", data));
+      $(".accordeon h3").css("display","none"); //hide
+      $(".accordeon h3").each(function (i){
+      var me = $(this);
+      setTimeout(function(){ $(me).fadeIn(400); }, (30 * i));
+});
 
 
     });

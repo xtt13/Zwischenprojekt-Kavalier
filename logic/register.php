@@ -43,7 +43,7 @@ if($error == 1){
 }
 
 if($error == 0){
-  $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
+  $passwordhash_hashed = password_hash($password, PASSWORD_DEFAULT);
   register_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
   $_SESSION['registered'] == true;
   // redirect_to('index.php?site=registersuccess');

@@ -1,6 +1,6 @@
 <?php
-print_r($_POST);
-print_r($_GET);
+// print_r($_POST);
+// print_r($_GET);
  ?>
   <div class="wrapper-page detail">
     <div class="wrapper-detail">
