@@ -8,10 +8,10 @@
  <table class="table">
    <thead class="t-head">
      <tr>
-       <th>users_id</th>
-       <th>user_name</th>
-       <th>user_email</th>
-       <th>user_is_admin</th>
+       <th>Id</th>
+       <th>Fullname</th>
+       <th>Email</th>
+       <th>Admin</th>
        <th></th>
        <th></th>
      </tr>
@@ -24,7 +24,13 @@
          <td><?php echo $user['id']; ?></td>
          <td><?php echo $user['fullname']; ?></td>
          <td><?php echo $user['email']; ?></td>
-         <td><?php echo $user['is_admin']; ?></td>
+         <td><?php if($user['is_admin'] == '1'){
+                      echo "Yes";
+
+                    }else{
+                      echo "No";
+                    }
+          ?></td>
          <td>
            <a href="index.php?site=users&amp;action=edit&amp;id=<?php echo $user['id']; ?>" class="button_do">edit</a>
          </td>

@@ -28,7 +28,7 @@ if(isset($_GET['action'])) {
 
     require("views/user-form.php");
 
-/* ####### EDIT #######*/
+/* ####### DELETE #######*/
 
   }elseif($action == "delet"){
 
@@ -36,8 +36,12 @@ if(isset($_GET['action'])) {
 
     delet_user($id);
 
-    echo 'deleted User';
+    $users = get_users();
+    require('views/users.php');
 
+
+
+  /* ####### EDIT #######*/
   }elseif($action == "edit"){
 
     $id = (int)$_GET["id"];
@@ -104,7 +108,6 @@ if(isset($_GET['action'])) {
 
         require("views/user-form.php");
       }
-
 
     if($error == 0){
         if($is_admin == 'on'){
