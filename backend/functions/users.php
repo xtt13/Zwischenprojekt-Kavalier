@@ -54,7 +54,7 @@ function update_user($id, $name, $email, $password_hashed, $street_and_number, $
   global $link;
 
     $sql = "UPDATE users
-    SET fullname = '$fullname' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', is_admin = '$is_admin'
+    SET fullname = '$name' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', is_admin = '$is_admin'
     WHERE id= '$id'";
 
     $result = mysqli_query($link, $sql);
@@ -62,6 +62,21 @@ function update_user($id, $name, $email, $password_hashed, $street_and_number, $
     if(!$result) {
         die(mysqli_error($link));
       }
+
+}
+/* #####  Kein Soft delete!  ######*/
+
+function delet_user($id){
+
+  global $link;
+
+  $sql = "DELETE FROM users WHERE id = '$id'";
+  $result = mysqli_query($link, $sql);
+
+  if(!$result) {
+      die(mysqli_error($link));
+    }
+
 
 }
 

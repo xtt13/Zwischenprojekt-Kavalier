@@ -4,6 +4,8 @@ if(isset($_GET['action'])) {
 
   $action = $_GET["action"];
 
+/* ####### VIEW #######*/
+
   if($action == "view") {
 
     $users = get_users();
@@ -25,6 +27,17 @@ if(isset($_GET['action'])) {
 
 
     require("views/user-form.php");
+
+/* ####### EDIT #######*/
+
+  }elseif($action == "delet"){
+
+    $id = (int)$_GET["id"];
+
+    delet_user($id);
+
+    echo 'deleted User';
+
   }elseif($action == "edit"){
 
     $id = (int)$_GET["id"];
@@ -36,11 +49,12 @@ if(isset($_GET['action'])) {
     $user = get_user($id);
 
     require("views/user-form.php");
+
+  /* ####### SAVE EDIT #######*/
+
   }elseif($action == 'save_edit'){
 
     if(!empty($_POST)){
-
-      print_r($_POST);
 
       $id = $_POST['id'];
       $name = $_POST['fullname'];
@@ -51,7 +65,7 @@ if(isset($_GET['action'])) {
       $zip = $_POST['zip'];
       $country = $_POST['country'];
       $is_admin = $_POST['is_admin'];
-
+      /* Variable Error auf 2 damit gestzt und nicht 0 oder 1*/
       $error = 2;
       $error_message;
 
@@ -80,6 +94,7 @@ if(isset($_GET['action'])) {
         $submit_button_text = "Save";
 
         $user = [];
+        $user["id"] = $id;
         $user["fullname"] = $name;
         $user['email'] = $email;
         $user['street_and_number'] = $adress;
@@ -97,21 +112,16 @@ if(isset($_GET['action'])) {
         }else{
           $is_admin = 0;
         }
+
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-        echo 'Hallo';
-        echo $id;
         update_user($id,$name, $email, $passwordhash_hashed, $adress, $zip, $country, $is_admin);
         // $_SESSION['registered'] == true;
         $users = get_users();
         require('views/users.php');
     }
+/* ####### SAVE_USER #######*/
 
-  }
-
-
-
-
-  elseif($action == "save_user"){
+  }elseif($action == "save_user"){
     if(!empty($_POST)){
 
       $name = $_POST['fullname'];
