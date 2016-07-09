@@ -155,9 +155,9 @@ function get_product_from_productid($product_id){
   return $product;
 }
 
-function register_user($fullname, $email, $password_hash, $street_and_number, $zip_and_location, $country){
+function register_user($fullname, $email, $password_hash, $street_and_number, $zip, $location, $country){
   global $link;
-  $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip_and_location, country) VALUES ('$fullname', '$email', '$password_hash', '$street_and_number', '$zip_and_location', '$country')";
+  $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip, location, country) VALUES ('$fullname', '$email', '$password_hash', '$street_and_number', '$zip', '$location', '$country')";
   mysqli_query($link, $sql) or die(mysqli_error($link));
 }
 
@@ -171,6 +171,27 @@ function update_password($password_hash, $id){
   global $link;
   $sql = "UPDATE users SET password_hash = '$password_hash', passwordcode = NULL, passwordcode_time = NULL WHERE id = '$id'";
   mysqli_query($link, $sql) or die(mysqli_error($link));
+}
+
+function register_to_newsletter($name, $email){
+  global $link;
+  $sql = "INSERT INTO newsletter (fullname, email) VALUES ('$name', '$email')";
+  mysqli_query($link, $sql) or die(mysqli_error($link));
+}
+
+function insert_into_contactdb($contact_name, $contact_email, $contact_subject, $contact_message){
+  global $link;
+  $sql = "INSERT INTO contact_messages (fullname, email, subject, message) VALUES ('$contact_name', '$contact_email', '$contact_subject', '$contact_message')";
+  mysqli_query($link, $sql) or die(mysqli_error($link));
+}
+
+function get_newsletter_email($email){
+  global $link;
+  $sql = "SELECT * FROM newsletter WHERE email = '$email'";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $data = mysqli_fetch_assoc($result);
+  return $data;
 }
 
 // Funktion zum Generieren des Randomstrings (Für PW Reset)

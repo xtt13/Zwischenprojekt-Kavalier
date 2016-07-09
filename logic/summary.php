@@ -50,8 +50,8 @@
       $sql = "INSERT INTO products_sold (order_id, product_id, quantity, price) VALUES ('$order_id', '$product_id', '$quantity', '$price')";
       $result = mysqli_query($link, $sql) or die(mysqli_error($link));
 
-      // Stock -1
-      $sql = "UPDATE products SET stock = stock -1 WHERE id = '$product_id'";
+      // Stock minus quantity
+      $sql = "UPDATE products SET stock = stock -'$quantity' WHERE id = '$product_id'";
       mysqli_query($link, $sql) or die(mysqli_error($link));
 
     }

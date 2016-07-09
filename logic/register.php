@@ -10,8 +10,9 @@ if(!empty($_POST)){
   $email = $_POST['email'];
   $password = $_POST['password'];
   $password_again = $_POST['password-again'];
-  $adress = $_POST['text'];
+  $adress = $_POST['streetandnumber'];
   $zip = $_POST['zip'];
+  $location = $_POST['location'];
   $country = $_POST['country'];
 
 $error = 2;
@@ -19,7 +20,7 @@ $error_message;
 
 
 if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
-  if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $country !== ''){
+  if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $location !== '' && $adress !== '' && $zip !== '' && $country !== ''){
     $error = 0;
 
     if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
@@ -44,7 +45,8 @@ if($error == 1){
 
 if($error == 0){
   $passwordhash_hashed = password_hash($password, PASSWORD_DEFAULT);
-  register_user($name, $email, $passwordhash_hashed, $adress, $zip, $country);
+  $email = strtolower($email);
+  register_user($name, $email, $passwordhash_hashed, $adress, $zip, $location, $country);
   $_SESSION['registered'] == true;
   // redirect_to('index.php?site=registersuccess');
 }

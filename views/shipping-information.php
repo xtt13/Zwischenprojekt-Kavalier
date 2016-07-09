@@ -26,9 +26,11 @@
           <input class="shipping-adress" type="text" name="adress" value="<?php echo $user[0]['street_and_number']; ?>" placeholder="Street and Number"><br>
 
           <div class="short">
-            <input class="shipping-zip" type="text" name="zip" value="<?php echo $user[0]['zip_and_location']; ?>" placeholder="Zip"><br>
-            <input class="shipping-country" type="text" name="country" value="<?php echo $user[0]['country']; ?>" placeholder="Country"><br>
+            <input class="shipping-zip" type="text" name="zip" value="<?php echo $user[0]['zip']; ?>" placeholder="Zip"><br>
+            <input class="shipping-location" type="text" name="location" value="<?php echo $user[0]['location']; ?>" placeholder="Location"><br>
           </div>
+
+          <input class="shipping-country" type="text" name="country" value="<?php echo $user[0]['country']; ?>" placeholder="Country"><br>
 
           <div class="shipping-alternative-wrapper">
             <input class="shipping-alternative" id="shipping-alternative" value="alt_shipping_adress" type="checkbox" name="alternative_checkbox" checked>
@@ -39,9 +41,11 @@
           <input class="invoice-adress" type="text" name="alt-adress" value="<?php echo $user[0]['alt_street_and_number']; ?>" placeholder="Street and Number" disabled><br>
 
           <div class="short">
-            <input class="invoice-zip" type="text" name="alt_zip" value="<?php echo $user[0]['alt_zip_and_location']; ?>" placeholder="Zip" disabled><br>
-            <input class="invoice-country" type="text" name="alt_country" value="<?php echo $user[0]['alt_country']; ?>" placeholder="Country" disabled><br>
+            <input class="invoice-zip" type="text" name="alt_zip" value="<?php echo $user[0]['alt_zip']; ?>" placeholder="Zip" disabled><br>
+            <input class="invoice-location" type="text" name="alt_location" value="<?php echo $user[0]['alt_location']; ?>" placeholder="Location" disabled><br>
           </div>
+
+          <input class="invoice-country" type="text" name="alt_country" value="<?php echo $user[0]['alt_country']; ?>" placeholder="Country" disabled><br>
 
           <h3 class="shipping-form">Payment</h3>
 

@@ -45,7 +45,8 @@
     if(isset($_POST['button-sbm'])){
 
       $street_and_number = $_POST['adress'];
-      $zip_and_location = $_POST['zip'];
+      $zip = $_POST['zip'];
+      $location = $_POST['location'];
       $payment = $_POST['payment'];
       $country = $_POST['country'];
 
@@ -54,15 +55,20 @@
         $_SESSION['alternative_adress'] = true;
 
         $alt_street_and_number = $_POST['alt-adress'];
-        $alt_zip_and_location = $_POST['alt_zip'];
+        $alt_zip = $_POST['alt_zip'];
+        $alt_location = $_POST['alt_location'];
         $alt_country = $_POST['alt_country'];
 
         if(empty($alt_street_and_number)) {
           $errors["alt_street_and_number"] = "We need your Alternative Invoiceadress!";
         }
 
-        if(empty($alt_zip_and_location)) {
-          $errors["alt_zip_and_location"] = "We need your Alternative ZIP!";
+        if(empty($alt_zip)) {
+          $errors["alt_zip"] = "We need your Alternative ZIP!";
+        }
+
+        if(empty($alt_location)) {
+          $errors["alt_location"] = "We need your Alternative Location!";
         }
 
         if(empty($alt_country)) {
@@ -75,8 +81,12 @@
         $errors["street_and_number"] = "We need your street and number!";
       }
 
-      if(empty($zip_and_location)) {
-        $errors["zip_and_location"] = "We need your street and number!";
+      if(empty($zip)) {
+        $errors["zip"] = "We need your ZIP!";
+      }
+
+      if(empty($location)) {
+        $errors["location"] = "We need your location!";
       }
 
       if(empty($payment)) {
@@ -94,10 +104,10 @@
 
           // Wenn die Alternative Checkbox checked ist, dann verwende Besonderes Query
           if($_SESSION['alternative_adress'] == true){
-            $sql = "UPDATE users SET street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', alt_street_and_number = '$alt_street_and_number', alt_zip_and_location = '$alt_zip_and_location', alt_country ='$alt_country', payment = '$payment' WHERE id = '1'";
+            $sql = "UPDATE users SET street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', alt_street_and_number = '$alt_street_and_number', alt_zip = '$alt_zip', alt_location = '$alt_location', alt_country ='$alt_country', payment = '$payment' WHERE id = '$id'";
             mysqli_query($link, $sql) or die(mysqli_error($link));
           } else {
-            $sql = "UPDATE users SET street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', payment = '$payment' WHERE id = '1'";
+            $sql = "UPDATE users SET street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', payment = '$payment' WHERE id = '$id'";
             mysqli_query($link, $sql) or die(mysqli_error($link));
           }
 

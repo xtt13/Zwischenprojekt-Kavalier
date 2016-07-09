@@ -361,18 +361,22 @@ jQuery(document).ready(function($) {
     $('.invoice-adress').toggleClass('shippingchecked');
     $('.invoice-country').toggleClass('shippingchecked');
     $('.invoice-zip').toggleClass('shippingchecked');
+    $('.invoice-location').toggleClass('shippingchecked');
 
     $('.invoice-adress').toggleClass('invoice-adress-black');
     $('.invoice-country').toggleClass('invoice-country-black');
     $('.invoice-zip').toggleClass('invoice-zip-black');
+    $('.invoice-location').toggleClass('invoice-zip-black');
 
     $('.invoice-adress').removeClass('invalid valid');
     $('.invoice-country').removeClass('invalid valid');
     $('.invoice-zip').removeClass('invalid valid');
+    $('.invoice-location').removeClass('invalid valid');
 
     var invoiceadress = $(".invoice-adress").attr("disabled");
     var invoicecountry = $(".invoice-country").attr("disabled");
     var invoicezip = $(".invoice-zip").attr("disabled");
+    var invoicelocation = $(".invoice-location").attr("disabled");
 
 
     if (invoiceadress == "disabled") {
@@ -394,6 +398,13 @@ jQuery(document).ready(function($) {
     } else {
       $(".invoice-zip").prop("disabled", true);
       $(".invoice-zip").val('');
+    }
+
+    if (invoicelocation == "disabled") {
+      $(".invoice-location").prop("disabled", false);
+    } else {
+      $(".invoice-location").prop("disabled", true);
+      $(".invoice-location").val('');
     }
   }
 
@@ -612,6 +623,7 @@ jQuery(document).ready(function($) {
           .done(function(data, textStatus, jqXhr) {
             // alert(data);
             $(".wrapper-products").replaceWith($(".wrapper-products", data));
+            $('html, body').animate({scrollTop : 0},600);
             //$(this).closest('tr').fadeOut("slow");
             //$('.content_header').html(data);
           })
@@ -631,6 +643,7 @@ jQuery(document).ready(function($) {
           .done(function(data, textStatus, jqXhr) {
             // alert(data);
             $(".wrapper-products").replaceWith($(".wrapper-products", data));
+            $('html, body').animate({scrollTop : 0},600);
             //$(this).closest('tr').fadeOut("slow");
             //$('.content_header').html(data);
           })
@@ -640,7 +653,7 @@ jQuery(document).ready(function($) {
           });
   });
 
-  // AJAX PAGINATATION PREV
+  // AJAX PAGINATATION NEXT
   $('body').on('click', '.pagination-next', function() {
     event.preventDefault();
     $.ajax({
@@ -650,6 +663,7 @@ jQuery(document).ready(function($) {
           .done(function(data, textStatus, jqXhr) {
             // alert(data);
             $(".wrapper-products").replaceWith($(".wrapper-products", data));
+            $('html, body').animate({scrollTop : 0},600);
             //$(this).closest('tr').fadeOut("slow");
             //$('.content_header').html(data);
           })
@@ -700,7 +714,7 @@ jQuery(document).ready(function($) {
   });
 
 
-
+  // Add to bag animate
   $('body').on('click', '.add-to-bag', function() {
     $('.cart p').animate({
       width: '30px',
@@ -713,5 +727,67 @@ jQuery(document).ready(function($) {
       });
     });
   });
+
+    // AJAY NEWSLETTER
+    $('body').on('click', '.button-newsletter', function() {
+    event.preventDefault();
+
+    var name = $('.newsletter-name').val();
+    var email = $('.newsletter-email').val();
+    var btn = 'set';
+
+    $.ajax({
+            url: 'index.php?site=homepage',
+            method: "post",
+            data: {
+              newslettername: name,
+              newsletteremail: email,
+              newslettersbmt: btn
+            }
+          })
+          .done(function(data, textStatus, jqXhr) {
+            //alert(data);
+            $(".newsletter").replaceWith($(".newsletter", data));
+
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+  });
+
+
+  // AJAX CONTACTFORM
+  $('body').on('click', '.button-contact', function() {
+  event.preventDefault();
+
+  var name = $('.contactform-name').val();
+  var email = $('.contactform-email').val();
+  var subject = $('.contactform-subject').val();
+  var message = $('.contactform-textarea').val();
+  var btn = 'set';
+
+  $.ajax({
+          url: 'index.php?site=homepage',
+          method: "post",
+          data: {
+            contactname: name,
+            contactemail: email,
+            contactsubject: subject,
+            contactmessage: message,
+            contactsbmt: btn
+          }
+        })
+        .done(function(data, textStatus, jqXhr) {
+          //alert(data);
+          $(".contactform").replaceWith($(".contactform", data));
+
+        })
+        .fail(function(jqXhr, textStatus, errorThrown) {
+          // wird bei fehlerhaftem Request ausgeführt
+          alert('KLAPPT NICHT!');
+        });
+});
+
 
 });

@@ -605,6 +605,22 @@ section.register-form {
 	margin-right: 20px;
 }
 
+.successnewsletter {
+	background-color: green !important;
+}
+
+.successcontact {
+	background-color: green !important;
+}
+
+.error_message_newsletter {
+	color: red !important;
+}
+
+.error_message_contact {
+	color: red !important;
+}
+
 .contactform {
   margin-top: 96px;
   height: 600px;
@@ -1937,7 +1953,7 @@ REGISTERFORM
 .register-form form{
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
   width: 684px;
-	height: 800px;
+	height: 950px;
   margin: auto;
   background-color: #ffffff;
   border-radius: 3px;
@@ -2096,7 +2112,7 @@ REGISTERFORM
   justify-content: center;
 }
 
-.register-country{
+.register-location{
   display: block;
   /*margin: auto;*/
 
@@ -2117,9 +2133,34 @@ REGISTERFORM
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
 
-	background-image: url('images/country-icon.svg');
+	background-image: url('images/zip-icon.svg');
 	background-repeat: no-repeat;
 	background-position: 8px 9px;
+}
+
+.register-country{
+  display: block;
+  margin: auto;
+	margin-top: 28px;
+	margin-bottom: 10px;
+  width: 500px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: #F3F3F3;
+  border: 2px solid transparent;
+	text-align: center;
+  font-size: 20px;
+  color: black;
+  padding-top: 5px;
+  font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/country-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 7px 12px;
 }
 
 .register-zip{
@@ -2200,7 +2241,7 @@ SHIPPINGFORM
 .shipping-form form{
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
   width: 684px;
-	height: 901px;
+	height: 1050px;
   margin: auto;
 	margin-top: 84px;
   background-color: #ffffff;
@@ -2258,7 +2299,7 @@ SHIPPINGFORM
   justify-content: center;
 }
 
-.shipping-country{
+.shipping-location{
   display: block;
   /*margin: auto;*/
 	text-align: center;
@@ -2275,7 +2316,7 @@ SHIPPINGFORM
 	color: #0C0C0C;
 	letter-spacing: 1.16px;
 
-	background-image: url('images/country-icon.svg');
+	background-image: url('images/zip-icon.svg');
 	background-repeat: no-repeat;
 	background-position: 9px 7px;
 }
@@ -2300,6 +2341,30 @@ SHIPPINGFORM
 	background-image: url('images/zip-icon.svg');
 	background-repeat: no-repeat;
 	background-position: 9px 7px;
+}
+
+.shipping-country{
+
+  display: block;
+  margin: auto;
+  margin-top: 18px;
+	text-align: center;
+  width: 500px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: #F3F3F3;
+  border: 1px solid transparent;
+
+  font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/country-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 9px 7px;
+	background-size: 25px;
 }
 
 
@@ -2333,7 +2398,7 @@ SHIPPINGFORM
 
 }
 
-.invoice-country{
+.invoice-location{
 	display: block;
   /*margin: auto;*/
 	text-align: center;
@@ -2343,6 +2408,35 @@ SHIPPINGFORM
   border-radius: 3px;
 	background-color: transparent;
 	border: 1px solid #979797;
+
+  font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #A6A6A6;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/zip-icon-grey.png');
+	background-repeat: no-repeat;
+	background-position: 9px 7px;
+	background-size: 25px;
+
+	-webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+}
+
+.invoice-country{
+
+  display: block;
+  margin: auto;
+  margin-top: 18px;
+	text-align: center;
+  width: 500px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: transparent;
+  border: 1px solid #979797;
 
   font-family: 'myriad-pro', sans-serif;
 	font-style: italic;
@@ -2360,6 +2454,8 @@ SHIPPINGFORM
 		-o-transition: all 0.5s ease;
 		transition: all 0.5s ease;
 }
+
+
 
 .invoice-zip{
 	display: block;

@@ -6,12 +6,15 @@
         <li><a class='store-category<?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo " category-underline'";} ?>' href='index.php?site=store'>All Products</a></li>
         <?php
         foreach ($categories as $category) {
+          $category_id = $category['id'];
           $category = $category['category'];
+
           echo "<li><a class='store-category ";
 
           if(isset($_GET['category']) && $_GET['category'] == $category){ echo "category-underline";}
 
-          echo" 'href='index.php?site=store&category=$category'>$category</a></li>";
+
+          echo" 'href='index.php?site=store&category=$category_id'>$category</a></li>";
         }
 
 
@@ -75,19 +78,21 @@
         </ul>
 
         <?php
-        if($pages > 1){
-          echo "<a class='pagination-prev' href='?site=store&page=$prevpage&per-page=$perPage'><</a>";
-          for($x=1; $x <= $pages; $x++){
-            echo "<a href='?site=store&page=$x&per-page=$perPage' class='pagination ";
-            if($page === $x){echo "selected-page";}
-            echo "'>$x</a>";
-          }
-          if($nextpage >= $pages){
-            echo "<a class='pagination-next' href='?site=store&page=$pages&per-page=$perPage'>></a>";
-          } else {
-            echo "<a class='pagination-next' href='?site=store&page=$nextpage&per-page=$perPage'>></a>";
-          }
+        if(!isset($_GET['category']) && !isset($_GET['action'])){
+          if($pages > 1){
+            echo "<a class='pagination-prev' href='?site=store&page=$prevpage&per-page=$perPage'><</a>";
+            for($x=1; $x <= $pages; $x++){
+              echo "<a href='?site=store&page=$x&per-page=$perPage' class='pagination ";
+              if($page === $x){echo "selected-page";}
+              echo "'>$x</a>";
+            }
+            if($nextpage >= $pages){
+              echo "<a class='pagination-next' href='?site=store&page=$pages&per-page=$perPage'>></a>";
+            } else {
+              echo "<a class='pagination-next' href='?site=store&page=$nextpage&per-page=$perPage'>></a>";
+            }
 
+          }
         }
         ?>
 

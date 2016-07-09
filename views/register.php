@@ -16,14 +16,16 @@
 
             <input class="register-password-again" type="password" name="password-again" placeholder="Password again"><br>
 
-            <input class="register-adress" type="text" name="text" placeholder="Street and Number"><br>
+            <input class="register-adress" type="text" name="streetandnumber" placeholder="Street and Number"><br>
 
             <div class="short">
 
             <input class="register-zip" type="text" name="zip" placeholder="ZIP"><br>
 
-            <input class="register-country" type="text" name="country" placeholder="Country"><br>
+            <input class="register-location" type="text" name="location" placeholder="Location"><br>
             </div>
+
+            <input class="register-country" type="text" name="country" placeholder="Country"><br>
 
             <input name='sbmbtn' class="register-submit" type="submit" value="Register">
             <div class="error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo $key;}} ?></p></div>

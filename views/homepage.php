@@ -67,33 +67,35 @@
     <div class="newsletter">
       <h3>Newsletter</h3>
       <p>Want to be uptodate? Signup for our monthly Newsletter.</p>
-      <form action="validation.php" method="post">
-        <input class="newsletter-name" type="text" placeholder="Name">
-        <input class="newsletter-email" type="email" placeholder="Email Adress">
-        <button>Subscribe</button>
+      <form action="#" method="post">
+        <input class="newsletter-name" type="text" name='newslettername' placeholder="Name">
+        <input class="newsletter-email" type="email" name='newsletteremail' placeholder="Email Adress">
+        <button type='submit' class='button-newsletter <?php if(isset($successnewsletter) && $successnewsletter == true){echo 'successnewsletter';} ?>' name='newslettersbmt'><?php if(isset($successnewsletter) && $successnewsletter == true){echo '✓';} else { echo 'Subscribe';}?></button>
       </form>
+      <p class='error_message_newsletter'><?php if(isset($errormessagenewsletter)){echo $errormessagenewsletter;} ?></p>
     </div>
     <div class="contactform">
       <h3>Contact Us!</h3>
-      <p>You have a question or want to contact us? Write us an email.</p>
-      <form action="validation.php" method="post">
-        <input class="contactform-name" type="text" placeholder="Name">
+      <p>You have a question or want to contact us? Write us a message.</p>
+      <form action="#" method="post">
+        <input class="contactform-name" name='contactname' type="text" placeholder="Name">
         <br>
-        <input class="contactform-email" type="email" placeholder="Email Adress">
+        <input class="contactform-email" name='contactemail' type="email" placeholder="Email Adress">
         <br>
-        <select class="contactform-subject" name="blabla" id="blabla">
-          <option value="">Subject</option>
-          <option value="">Complaint</option>
-          <option value="">Test</option>
-          <option value="">Test</option>
+        <select class="contactform-subject" name="contactsubject" id="blabla">
+          <option value="0">Subject</option>
+          <option value="complaint">Complaint</option>
+          <option value="test1">Test1</option>
+          <option value="test2">Test2</option>
         </select>
         <br>
-        <textarea class="contactform-textarea" name="blablabla" id="blablabla" cols="30" rows="10" placeholder="Message"></textarea>
+        <textarea class="contactform-textarea" name="contactmessage" id="blablabla" cols="30" rows="10" placeholder="Message"></textarea>
         <br>
-        <button>Send</button>
+        <button type='submit' class='button-contact <?php if(isset($successcontact) && $successcontact == true){echo 'successcontact';} ?>' name='contactsbmt'><?php if(isset($successcontact) && $successcontact == true){echo '✓';} else { echo 'Send';}?></button>
       </form>
+        <p class'error_message_contact'><?php if(isset($errormessagecontact)){echo $errormessagecontact;} ?></p>
     </div>
   </section>
-  
+
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR5BTqOGfwfrDxu0Wyj9kr7VA4rMVYpRU&callback=initMap"></script>
   <script src="js/maps.js"></script>

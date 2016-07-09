@@ -15,6 +15,10 @@
             foreach ($images_other_array as $image) {
                 echo "<li><img class='slider-image' src='images/$image' alt=''></li>";
             }
+            // Doppelte Images Pfusch!
+            foreach ($images_other_array as $image) {
+                echo "<li><img class='slider-image' src='images/$image' alt=''></li>";
+            }
            ?>
 
         </ul>
