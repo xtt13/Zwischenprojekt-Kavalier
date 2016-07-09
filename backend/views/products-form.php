@@ -64,7 +64,7 @@
           <?php if(isset($image_main)){
               echo $image_main;
             }else{
-              echo "Select your file";
+              echo "Select your File";
           } ?>
 
           </span>
@@ -78,7 +78,7 @@
 
         <div class="form-wrapper">
 
-         <?php
+         <?php if(isset($other_image)){
           foreach ($other_image as $image) {
              echo "<a class='image-link'><img src='../images/$image' alt='$image'></a>";
              echo "<div class='upload-wrapper'>
@@ -91,7 +91,7 @@
                  if(isset($image)){
                      echo $image;
                    }else{
-                     echo 'Select your file';
+                     echo 'Select your File';
                  }
             echo "</span>
               <label for='file-upload' name='image'>Browse<input type='file' id='file-upload'></label>
@@ -99,7 +99,19 @@
           </div>  ";
 
           }
+        }else{
 
+          echo '
+          <div class="upload-wrapper">
+
+          <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+
+          <span id="filename">Select your File</span>
+
+          <label for="file-upload">Browse<input type="file" id="file-upload" name="file_upload"></label>
+
+          </div>';
+        }
           ?>
 
             </div>
