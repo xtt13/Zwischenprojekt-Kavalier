@@ -67,6 +67,13 @@
           </div>
 
           <button class="shipping-submit" name="button-sbm" type="submit" value="Next">Next!</button>
+          <p class='shipping-error'>
+            <?php if(isset($errors)){
+              foreach ($errors as $error) {
+                echo $error;
+              }
+            } ?>
+          </p>
         </fieldset>
       </form>
     </section>
