@@ -15,6 +15,8 @@ if(!empty($_POST)){
   $location = $_POST['location'];
   $country = $_POST['country'];
 
+  $result = get_user_by_email($email);
+
 $error = 2;
 $error_message;
 
@@ -26,6 +28,11 @@ if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
     if(filter_var($email, FILTER_VALIDATE_EMAIL) == false){
       $error = 1;
       $error_message['email'] = 'Please insert a valid emailadress!';
+    }
+
+    if($result[0]['email'] == $email){
+      $error = 1;
+      $error_message['email'] = 'This email is already in use!';
     }
 
     if($password !== $password_again){

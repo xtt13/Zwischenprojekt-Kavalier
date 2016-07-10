@@ -23,9 +23,6 @@ jQuery(document).ready(function($) {
     });
   });
 
-  $(".add-to-bag").click(function() {
-      $('.cart p').html(function(i, val) {return +val+1; });
-  });
 
   // MOBILE MENU
 
@@ -700,6 +697,20 @@ jQuery(document).ready(function($) {
             if($('.quantity-success').length){
               $('.add-to-bag').html('✓');
               $('.add-to-bag').addClass('add-to-bag-success');
+
+              $('.cart p').html(function(i, val) {return +val+1; });
+
+              $('.cart p').animate({
+                width: '30px',
+                height: '30px',
+
+              }, 100, function() {
+                $('.cart p').animate({
+                  width: '20px',
+                  height: '20px'
+                });
+              });
+
             } else {
 
             }
@@ -714,19 +725,7 @@ jQuery(document).ready(function($) {
   });
 
 
-  // Add to bag animate
-  $('body').on('click', '.add-to-bag', function() {
-    $('.cart p').animate({
-      width: '30px',
-      height: '30px',
 
-    }, 100, function() {
-      $('.cart p').animate({
-        width: '20px',
-        height: '20px'
-      });
-    });
-  });
 
     // AJAY NEWSLETTER
     $('body').on('click', '.button-newsletter', function() {
@@ -787,6 +786,94 @@ jQuery(document).ready(function($) {
           // wird bei fehlerhaftem Request ausgeführt
           alert('KLAPPT NICHT!');
         });
+});
+
+// Update Accountinformation
+$('body').on('click', '.account-update-submit', function() {
+event.preventDefault();
+
+var name = $('.register-name').val();
+var email = $('.register-email').val();
+var adress = $('.register-adress').val();
+var zip = $('.register-zip').val();
+var location = $('.register-location').val();
+var country = $('.register-country').val();
+var invoiceadress = $('.invoice-adress').val();
+var invoicezip = $('.invoice-zip').val();
+var invoicelocation = $('.invoice-location').val();
+var invoicecountry = $('.invoice-country').val();
+var btn = 'set';
+
+$.ajax({
+        url: 'index.php?site=account&action=information',
+        method: "post",
+        data: {
+          name: name,
+          email: email,
+          adress: adress,
+          zip: zip,
+          location: location,
+          country: country,
+          alt_adress: invoiceadress,
+          alt_zip: invoicezip,
+          alt_location: invoicelocation,
+          alt_country: invoicecountry,
+          sbmbtn: btn
+        }
+      })
+      .done(function(data, textStatus, jqXhr) {
+        //alert(data);
+        $(".account-form").replaceWith($(".account-form", data));
+
+      })
+      .fail(function(jqXhr, textStatus, errorThrown) {
+        // wird bei fehlerhaftem Request ausgeführt
+        alert('KLAPPT NICHT!');
+      });
+});
+
+// Register User
+$('body').on('click', '.register-submit', function() {
+event.preventDefault();
+
+var name = $('.register-name').val();
+var email = $('.register-email').val();
+var adress = $('.register-adress').val();
+var zip = $('.register-zip').val();
+var location = $('.register-location').val();
+var country = $('.register-country').val();
+var invoiceadress = $('.invoice-adress').val();
+var invoicezip = $('.invoice-zip').val();
+var invoicelocation = $('.invoice-location').val();
+var invoicecountry = $('.invoice-country').val();
+var btn = 'set';
+
+$.ajax({
+        url: 'index.php?site=account&action=information',
+        method: "post",
+        data: {
+          name: name,
+          email: email,
+          adress: adress,
+          zip: zip,
+          location: location,
+          country: country,
+          alt_adress: invoiceadress,
+          alt_zip: invoicezip,
+          alt_location: invoicelocation,
+          alt_country: invoicecountry,
+          sbmbtn: btn
+        }
+      })
+      .done(function(data, textStatus, jqXhr) {
+        //alert(data);
+        $(".account-form").replaceWith($(".account-form", data));
+
+      })
+      .fail(function(jqXhr, textStatus, errorThrown) {
+        // wird bei fehlerhaftem Request ausgeführt
+        alert('KLAPPT NICHT!');
+      });
 });
 
 

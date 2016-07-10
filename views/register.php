@@ -28,7 +28,7 @@
             <input class="register-country" type="text" name="country" placeholder="Country"><br>
 
             <input name='sbmbtn' class="register-submit" type="submit" value="Register">
-            <div class="error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo $key;}} ?></p></div>
+            <div class="registration-error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo $key;}} ?></p></div>
         </fieldset>
       </form>
 
