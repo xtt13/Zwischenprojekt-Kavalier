@@ -33,7 +33,7 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
       <div class='summary-shippingadress-wrapper'>
         <div class='summary-shippingadress'><p>Shippingadress:</p></div>
-        <div class='summary-personaldata'><p><?php echo $user[0]['fullname'] ?><br><?php echo $user[0]['street_and_number'] ?><br><?php echo $user[0]['zip_and_location'] ?><br><?php echo $user[0]['country'] ?></p></div>
+        <div class='summary-personaldata'><p><?php echo $user[0]['fullname'] ?><br><?php echo $user[0]['street_and_number'] ?><br><?php echo $user[0]['zip'] ?><?php echo ' '.$user[0]['location'] ?><br><?php echo $user[0]['country'] ?></p></div>
       </div>
 
       <?php
@@ -41,13 +41,14 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
         if(isset($_SESSION['alternative_adress']) && $_SESSION['alternative_adress'] == true){
 
           $alt_street_and_number = $user[0]['alt_street_and_number'];
-          $alt_zip_and_location = $user[0]['alt_zip_and_location'];
+          $alt_zip = $user[0]['alt_zip'];
+          $alt_location = $user[0]['alt_location'];
           $alt_country = $user[0]['alt_country'];
 
           echo "
             <div class='summary-invoiceadress-wrapper'>
               <div class='summary-invoiceadress'><p>Invoiceadress:</p></div>
-              <div class='summary-invoicedata'><p>$alt_street_and_number<br>$alt_zip_and_location<br>$alt_country</p></div>
+              <div class='summary-invoicedata'><p>$alt_street_and_number<br>$alt_zip $alt_location<br>$alt_country</p></div>
             </div>
           ";
         }

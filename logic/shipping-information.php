@@ -16,7 +16,7 @@
 
 
     // print_r($user);
-    // print_r($_POST);
+    print_r($_POST);
 
     $errors = [];
     $prepayment_checked = '';
@@ -98,6 +98,9 @@
       }
 
 
+
+      print_r($errors);
+
       // Wenn keine Fehler vorhanden sind
       if(count($errors) === 0) {
           //save_reservation($fullname, $reservation_date, $smoking_area, $time_sent);
@@ -113,6 +116,8 @@
 
           // Alles in Shippinginformation ist OK. (Ist  Berechtigung für nächsten Checkoutteil)
           $_SESSION['shippinginformation'] = true;
+
+          
 
           // Wenn alles OK --> redirect zum nächsten Checkoutschritt
           redirect_to("index.php?site=checkout&action=summary");
