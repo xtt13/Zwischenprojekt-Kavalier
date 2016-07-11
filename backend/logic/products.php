@@ -27,7 +27,8 @@ if(isset($_GET['action'])) {
     require("views/products-form.php");
   }elseif($action == "save_product"){
 
-
+    print_r($_FILES['name']);
+    echo 'Hallo';
 
   }elseif($action == "edit"){
 

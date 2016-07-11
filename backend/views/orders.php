@@ -27,7 +27,7 @@
         <td><?php echo $order['total_price']; ?>€</td>
         <td><?php echo $order['date_ordered']; ?></td>
         <td>
-          <a href="index.php?site=orders&amp;action=detail" class="button_do">detail</a>
+          <a href="index.php?site=orders&amp;action=detail&amp;id=<?php echo $order['id'];?>" class="button_do">detail</a>
         </td>
         <td>
             <a href="index.php?site=orders&amp;action=shipped" class="button_do">shipped</a>
