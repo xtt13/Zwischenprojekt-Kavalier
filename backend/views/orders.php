@@ -8,10 +8,10 @@
 <table class="table">
   <thead class="t-head">
     <tr>
-      <th>order_id</th>
-      <th>user_id</th>
-      <th>total_price</th>
-      <th>date_ordered</th>
+      <th>Nr.</th>
+      <th>User Id</th>
+      <th>Total price</th>
+      <th>Date ordered</th>
       <th></th>
       <th></th>
     </tr>
@@ -29,9 +29,15 @@
         <td>
           <a href="index.php?site=orders&amp;action=detail&amp;id=<?php echo $order['id'];?>" class="button_do">detail</a>
         </td>
+        <?php if($order['sent'] == '0') : ?>
         <td>
-            <a href="index.php?site=orders&amp;action=shipped" class="button_do">shipped</a>
+            <a href="index.php?site=orders&amp;action=shipped" class="button_do">sent</a>
         </td>
+      <?php else :?>
+        <td class="sent">
+        <img src="css/images/checked.png" alt="" />
+        </td>
+      <?php endif ?>
       </tr>
     <?php endforeach; ?>
   </tbody>

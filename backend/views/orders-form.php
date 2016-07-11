@@ -41,7 +41,7 @@
               <?php endforeach; ?>
             </select>
           </div>
-        </div>
+        </div>s
 
         <div class="form-wrapper">
           <h2 class="form-headline">Main Image</h2>
