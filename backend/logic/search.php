@@ -29,8 +29,7 @@ if(isset($_GET['request'])){
       //print_r($purchases);
      echo 'IM NUM REQUEST';
      if(count($purchases) == -1){
-
-       $sugg_name = 'Kein Ergebnis';
+       $sugg_name = 'No Result!';
      }
   } elseif($request != ''){
     echo 'IM STRING REQUEST';
@@ -41,15 +40,14 @@ if(isset($_GET['request'])){
     if($sugg_name != ''){
       $sugg_name = $id[0]['email'];
     } else {
-      $sugg_name = 'Kein Ergebnis';
+      $sugg_name = 'No Result!';
     }
     $id2 = $id[0]['id'];
 
 
     $purchases = get_purchases_from_user($id2);
   } else {
-    $id = 1;
-    $purchases = get_purchases_from_user($id);
+    // NOTHING
   }
 
 } else {

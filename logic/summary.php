@@ -26,7 +26,8 @@
 
 
     // Die Bestellung wird in 'orders' eingetragen
-    $sql = "INSERT INTO orders (user_id, total_price) VALUES ('$user_id', '$gesamtpreis')";
+    $payment = $_SESSION['payment'];
+    $sql = "INSERT INTO orders (user_id, total_price, payment) VALUES ('$user_id', '$gesamtpreis', '$payment')";
     mysqli_query($link, $sql) or die(mysqli_error($link));
     // ID vom letzen Query wird ausgelesen
     $order_id = mysqli_insert_id($link);

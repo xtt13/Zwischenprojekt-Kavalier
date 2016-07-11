@@ -85,8 +85,8 @@
         <select class="contactform-subject" name="contactsubject" id="blabla">
           <option value="0">Subject</option>
           <option value="complaint">Complaint</option>
-          <option value="test1">Test1</option>
-          <option value="test2">Test2</option>
+          <option value="question">Question</option>
+          <option value="other">Other</option>
         </select>
         <br>
         <textarea class="contactform-textarea" name="contactmessage" id="blablabla" cols="30" rows="10" placeholder="Message"></textarea>

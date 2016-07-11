@@ -1,13 +1,13 @@
 <?php
 session_start();
 include('dbconnect.php');
-include('views/header.php');
 include('functions/products.php');
 include('functions/users.php');
 include('functions/orders.php');
 include('functions/search.php');
 include('functions/helpers.php');
-
+include("logic/messages.php");
+include('views/header.php');
 // include('functions/functions.php');
 
 $site = isset($_GET['site']) ? $_GET["site"] : "index.php";
@@ -23,6 +23,8 @@ if($site == "statistics") {
   include("views/search.php");
 } elseif($site == "users") {
   include("logic/users.php");
+} elseif($site == "messages") {
+  include("views/messages.php");
 }elseif ($site == "products") {
   include("logic/products.php");
 }

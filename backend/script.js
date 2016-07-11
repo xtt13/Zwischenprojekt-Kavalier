@@ -65,7 +65,7 @@ $('.search_request').keyup(function () {
       $(".accordeon h3").each(function (i){
       var me = $(this);
       setTimeout(function(){ $(me).fadeIn(400); }, (30 * i));
-});
+      });
 
 
     });

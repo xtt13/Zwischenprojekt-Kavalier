@@ -3,6 +3,7 @@
     <ul>
       <li><a href="index.php?site=account&amp;action=information">Your Information</a></li>
       <li><a href="index.php?site=account&amp;action=orders">Your Orders</a></li>
+      <li><a href="index.php?site=account&amp;action=contactus">Contact Us!</a></li>
     </ul>
   </div>
 <?php
@@ -14,6 +15,11 @@
       include('logic/account-orders.php');
       include('views/account-orders.php');
 
+    } elseif($_GET['action'] == 'contactus'){
+
+      include('logic/account-contact-us.php');
+      include('views/account-contact-us.php');
+
     } elseif($_GET['action'] == 'information'){
 
       include('logic/account-information.php');
@@ -24,6 +30,11 @@
       include('logic/account-information.php');
       include('views/account-information.php');
     }
+
+  } else {
+
+    include('logic/account-orders.php');
+    include('views/account-orders.php');
 
   }
 

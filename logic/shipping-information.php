@@ -104,7 +104,7 @@
       // Wenn keine Fehler vorhanden sind
       if(count($errors) === 0) {
           //save_reservation($fullname, $reservation_date, $smoking_area, $time_sent);
-
+          $_SESSION['payment'] = $payment;
           // Wenn die Alternative Checkbox checked ist, dann verwende Besonderes Query
           if($_SESSION['alternative_adress'] == true){
             $sql = "UPDATE users SET street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', alt_street_and_number = '$alt_street_and_number', alt_zip = '$alt_zip', alt_location = '$alt_location', alt_country ='$alt_country', payment = '$payment' WHERE id = '$id'";
