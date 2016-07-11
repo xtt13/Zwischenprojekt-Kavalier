@@ -64,6 +64,21 @@ function get_order_detail($id){
   return $order_detail;
 }
 
+function order_sent($id){
+
+  global $link;
+
+  $sql = "UPDATE orders SET sent = '1' WHERE id = '$id'";
+
+  $result = mysqli_query($link, $sql);
+
+  if (!$result){
+
+    echo mysqli_error($link);
+
+  }
+
+}
 
 
  ?>
