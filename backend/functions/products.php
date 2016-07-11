@@ -74,15 +74,15 @@ function get_category($id){
 
 }
 
-function save_product($name, $price, $sale, $description, $category){
+function save_product($name, $price, $sale, $stock, $description, $category){
 
   global $link;
 
   $sql =
   "INSERT INTO
-  products (product_name, price, sale, description, category)
+  products (product_name, price, sale, stock,  description, category)
   VALUES
-  ('$name', '$price','$description','$category', '$sale')";
+  ('$name', '$price','$sale','$stock', '$description' ,'$category', )";
 
   $result = mysqli_query($link, $sql);
 

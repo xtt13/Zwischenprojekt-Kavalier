@@ -21,6 +21,7 @@ if(isset($_GET['action'])) {
     $product['price'] = "";
     $product['description'] = "";
     $product['sale'] = "";
+    $product['stock']= "";
 
     $categories = get_categories();
 
@@ -35,8 +36,8 @@ if(isset($_GET['action'])) {
     $id = (int)$_GET["id"];
 
     $title = "Edit Product";
-    $form_action ="index.php?site=products&action=edit_product";
-    $submit_button_text = "Edit";
+    $form_action ="index.php?site=products&action=save_edit";
+    $submit_button_text = "Save";
 
     // $product = get_product($id);
     $product = get_category($id);

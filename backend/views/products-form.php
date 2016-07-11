@@ -44,6 +44,12 @@
         </div>
 
         <div class="form-wrapper">
+          <h2 class="form-headline">Stock</h2>
+            <label for="stock"></label>
+            <input type="number" name="stock" class="form-input" value="<?php echo $product['stock']; ?>">
+        </div>
+
+        <div class="form-wrapper">
           <h2 class="form-headline">Main Image</h2>
         </div>
 
