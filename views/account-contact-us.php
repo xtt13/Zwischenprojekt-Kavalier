@@ -14,9 +14,8 @@ $name = $user[0]['fullname'];
     <input class="contactform-email" name='contactemail' type="email" value='<?php echo $email; ?>' placeholder="Email Adress">
     <br>
     <select class="contactform-subject" name="contactsubject" id="blabla">
-      <option value="0">Subject</option>
-      <option value="complaint">Complaint</option>
       <option value="question">Question</option>
+      <option value="complaint">Complaint</option>
       <option value="other">Other</option>
     </select>
     <br>

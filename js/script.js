@@ -670,6 +670,21 @@ jQuery(document).ready(function($) {
           });
   });
 
+  
+  $('body').on('click', '.add-to-bag', function() {
+  $('.cart p').html(function(i, val) {return +val+1; });
+  $('.cart p').animate({
+    width: '30px',
+    height: '30px',
+
+  }, 100, function() {
+    $('.cart p').animate({
+      width: '20px',
+      height: '20px'
+    });
+  });
+});
+
   // AJAX ADD-TO-BAG
   $('body').on('click', '.add-to-bag', function() {
     event.preventDefault();
@@ -697,19 +712,6 @@ jQuery(document).ready(function($) {
             if($('.quantity-success').length){
               $('.add-to-bag').html('✓');
               $('.add-to-bag').addClass('add-to-bag-success');
-
-              $('.cart p').html(function(i, val) {return +val+1; });
-
-              $('.cart p').animate({
-                width: '30px',
-                height: '30px',
-
-              }, 100, function() {
-                $('.cart p').animate({
-                  width: '20px',
-                  height: '20px'
-                });
-              });
 
             } else {
 

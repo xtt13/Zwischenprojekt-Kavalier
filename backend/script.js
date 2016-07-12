@@ -6,6 +6,14 @@ $('#file-upload').change(function() {
 
 });
 
+$('#file-upload2').change(function() {
+    var filepath = this.value;
+    var m = filepath.match(/([^\/\\]+)$/);
+    var filename = m[1];
+    $('#filename2').html(filename);
+
+});
+
 //$(body).on('click', '.accordeon-title', function(){
 
 var contents = $('.accordeon-content');

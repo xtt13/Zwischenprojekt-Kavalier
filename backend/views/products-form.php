@@ -2,6 +2,15 @@
 
   <h3 class="headline"><?php echo $title ?></h3>
 
+<?php
+// echo '<pre>';
+// print_r($product);
+// echo '</pre>';
+//
+// echo '<pre>';
+// print_r($_FILES);
+// echo '</pre>';
+ ?>
 
   <section class="form-new">
     <form class="" action="<?php echo $form_action; ?>" method="post" enctype="multipart/form-data">
@@ -27,18 +36,31 @@
 
         <div class="form-wrapper">
           <h2 class="form-headline">Description</h2>
-          <textarea name="porduct-description" rows="15" cols="50" class="form-textarea" value=""><?php echo $product['description']; ?></textarea>
+          <textarea name="product-description" rows="15" cols="50" class="form-textarea" value=""><?php echo $product['description']; ?></textarea>
         </div>
 
         <div class="form-wrapper">
           <h2 class="form-headline">Category</h2>
           <div class="select-wrapper">
+
             <select class="" name="category">
-              <?php foreach($categories as $category) : ?>
-              <option value="<?php echo $category['id']; ?>" <?php if ($category['id'] == $product['category']){
-                echo 'selected';
-              } ?>><?php echo $category['category_name'] ?></option>
-              <?php endforeach; ?>
+              <?php foreach($categories as $category){
+
+                $category_id = $category['id'];
+                $category_name = $category['category'];
+
+                echo "<option value='$category_id' ";
+
+                if(isset($product['category'])){
+                  if ($category_id == $product['category']){
+                    echo 'selected';
+                  }
+                }
+
+                echo ">$category_name</option>";
+              }
+              ?>
+
             </select>
           </div>
         </div>
@@ -74,7 +96,7 @@
           } ?>
 
           </span>
-          <label for="file-upload">Browse<input type="file" id="file-upload" name="file_upload"></label>
+          <label for="file-upload">Browse<input type="file" value='<?php if(isset($image_main)){ echo $image_main;}?>' id="file-upload" name="image[]"></label>
 
         </div>
 
@@ -91,7 +113,7 @@
 
 
 
-                 <input type='hidden' name='MAX_FILE_SIZE' value='2000000'>
+                 <input type='hidden' name='MAX_FILE_SIZE' name='image2[]' value='2000000'>
 
                  <span id='filename'>";
                  if(isset($image)){
@@ -100,7 +122,7 @@
                      echo 'Select your File';
                  }
             echo "</span>
-              <label for='file-upload' name='image'>Browse<input type='file' id='file-upload'></label>
+              <label for='file-upload' name='image'>Browse<input type='file' value='$image' name='image[]' id='file-upload'></label>
 
           </div>  ";
 
@@ -112,9 +134,9 @@
 
           <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
 
-          <span id="filename">Select your File</span>
+          <span id="filename2">Select your File</span>
 
-          <label for="file-upload">Browse<input type="file" id="file-upload" name="file_upload"></label>
+          <label for="file-upload2">Browse<input type="file" id="file-upload2" name="image2[]"></label>
 
           </div>';
         }
@@ -124,6 +146,10 @@
 
         <div class="form-wrapper">
           <input type="submit"  class="save-button" value="<?php echo $submit_button_text?>"></input>
+
+          <?php if(isset($success_message)){echo '<p>' . $success_message . '</p>';} ?>
+          <?php if(isset($error_message)){echo '<p>' . $error_message . '</p>';} ?>
+
         </div>
       </fieldset>
     </form>

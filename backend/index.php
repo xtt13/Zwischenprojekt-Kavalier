@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
+  redirect_to("../index.php?site=homepage");
+  die();
+}
+
 include('dbconnect.php');
 include('functions/products.php');
 include('functions/users.php');

@@ -83,10 +83,10 @@
         <input class="contactform-email" name='contactemail' type="email" placeholder="Email Adress">
         <br>
         <select class="contactform-subject" name="contactsubject" id="blabla">
-          <option value="0">Subject</option>
-          <option value="complaint">Complaint</option>
-          <option value="question">Question</option>
-          <option value="other">Other</option>
+          <option value="No-Subject">Subject</option>
+          <option value="Complaint">Complaint</option>
+          <option value="Question">Question</option>
+          <option value="Other">Other</option>
         </select>
         <br>
         <textarea class="contactform-textarea" name="contactmessage" id="blablabla" cols="30" rows="10" placeholder="Message"></textarea>

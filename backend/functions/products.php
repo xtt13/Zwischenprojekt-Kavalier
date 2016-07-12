@@ -42,7 +42,7 @@ function get_categories(){
 
   global $link;
 
-  $sql = "SELECT id, category AS category_name FROM categories";
+  $sql = "SELECT * FROM categories";
   $result = mysqli_query($link, $sql);
 
   if(!$result) {
@@ -74,15 +74,15 @@ function get_category($id){
 
 }
 
-function save_product($name, $price, $sale, $stock, $description, $category){
+function save_product($name, $price, $sale, $stock, $description, $category, $mainimage, $otherimages){
 
   global $link;
 
   $sql =
   "INSERT INTO
-  products (product_name, price, sale, stock,  description, category)
+  products (product_name, price, sale, stock,  description, category, image_main, image_other)
   VALUES
-  ('$name', '$price','$sale','$stock', '$description' ,'$category', )";
+  ('$name', '$price','$sale','$stock', '$description' ,'$category', '$mainimage', '$otherimages')";
 
   $result = mysqli_query($link, $sql);
 
@@ -95,6 +95,26 @@ function save_product($name, $price, $sale, $stock, $description, $category){
 
 
 }
+
+function save_product_edit($id, $name, $price, $sale, $stock, $description, $category, $mainimage, $otherimages){
+
+  global $link;
+
+  $sql =
+  "UPDATE products SET product_name = '$name', price = '$price', sale = '$sale', stock = '$stock',  description = '$description', category = '$category', image_main = '$image_main', image_other = '$image_other' WHERE id = '$id'";
+
+  $result = mysqli_query($link, $sql);
+
+  if(!$result){
+
+    die(mysqli_error($link));
+  }
+
+  return  $result;
+
+
+}
+
 
 
 

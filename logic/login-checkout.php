@@ -34,7 +34,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
 
             if($user["is_admin"] == 1){
                   $_SESSION["is_admin"] = true;
-                  redirect_to("backend/index.php");
             }
 
           redirect_to("index.php?site=checkout&action=shippinginformation");

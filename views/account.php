@@ -4,6 +4,11 @@
       <li><a href="index.php?site=account&amp;action=information">Your Information</a></li>
       <li><a href="index.php?site=account&amp;action=orders">Your Orders</a></li>
       <li><a href="index.php?site=account&amp;action=contactus">Contact Us!</a></li>
+      <li><a href="index.php?site=account&amp;action=contactus">Contact Us!</a></li>
+      <?php if(isset($_SESSION['is_admin'])) {
+        echo "<li><a href='backend/index.php'>Backend</a></li>";
+      } ?>
+
     </ul>
   </div>
 <?php
