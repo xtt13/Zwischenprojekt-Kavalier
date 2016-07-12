@@ -15,7 +15,7 @@ $site = isset($_GET['site']) ? $_GET["site"] : "index.php";
 
 
 if($site == "statistics") {
-    include("views/statistics.php");
+    include("logic/charts.php");
 } elseif($site == "orders") {
   include("logic/orders.php");
 } elseif($site == "search") {
