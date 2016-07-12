@@ -22,7 +22,8 @@ if(isset($_GET['action'])) {
     $user["fullname"] = "";
     $user['email'] = "";
     $user['street_and_number'] = "";
-    $user['zip_and_location'] = "";
+    $user['zip'] = "";
+    $user['location'] = "";
     $user['country'] = "";
 
 
@@ -67,13 +68,14 @@ if(isset($_GET['action'])) {
       $password_again = $_POST['password-confirm'];
       $adress = $_POST['street_and_number'];
       $zip = $_POST['zip'];
+      $location = $_POST['location'];
       $country = $_POST['country'];
       $is_admin = $_POST['is_admin'];
       /* Variable Error auf 2 damit gestzt und nicht 0 oder 1*/
       $error = 2;
       $error_message;
 
-      if($id !== '' && $name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $country !== ''){
+      if($id !== '' && $name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
 
         $error = 0;
 
@@ -102,7 +104,8 @@ if(isset($_GET['action'])) {
         $user["fullname"] = $name;
         $user['email'] = $email;
         $user['street_and_number'] = $adress;
-        $user['zip_and_location'] = $zip;
+        $user['zip'] = $zip;
+        $user['location'] = $location;
         $user['country'] = $country;
         $user['is_admin'] = $is_admin;
 
@@ -117,7 +120,7 @@ if(isset($_GET['action'])) {
         }
 
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-        update_user($id,$name, $email, $passwordhash_hashed, $adress, $zip, $country, $is_admin);
+        update_user($id,$name, $email, $passwordhash_hashed, $adress, $zip, $location, $country, $is_admin);
         // $_SESSION['registered'] == true;
         $users = get_users();
         require('views/users.php');
@@ -133,6 +136,7 @@ if(isset($_GET['action'])) {
       $password_again = $_POST['password-confirm'];
       $adress = $_POST['street_and_number'];
       $zip = $_POST['zip'];
+      $location = $_POST['location'];
       $country = $_POST['country'];
       $is_admin = $_POST['is_admin'];
 
@@ -140,7 +144,7 @@ if(isset($_GET['action'])) {
       $error = 2;
       $error_message;
 
-      if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $country !== ''){
+      if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
 
         $error = 0;
 
@@ -168,7 +172,8 @@ if(isset($_GET['action'])) {
         $user["fullname"] = $name;
         $user['email'] = $email;
         $user['street_and_number'] = $adress;
-        $user['zip_and_location'] = $zip;
+        $user['zip'] = $zip;
+        $user['location'] = $location;
         $user['country'] = $country;
         $user['is_admin'] = $is_admin;
 
@@ -184,7 +189,7 @@ if(isset($_GET['action'])) {
         }
 
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-        save_user( $name, $email, $passwordhash_hashed, $adress, $zip, $country, $is_admin);
+        save_user( $name, $email, $passwordhash_hashed, $adress, $zip,$location, $country, $is_admin);
         $_SESSION['registered'] == true;
         $users = get_users();
         require('views/users.php');

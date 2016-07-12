@@ -38,23 +38,23 @@ function get_user($id){
 
 };
 
-function save_user($fullname, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
+function save_user($fullname, $email, $password_hashed, $street_and_number, $zip, $location, $country, $is_admin){
 
   global $link;
 
-    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip_and_location, country, is_admin)
-    VALUES ('$fullname', '$email', '$password_hashed', '$street_and_number', '$zip_and_location', '$country', '$is_admin')";
+    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip, location, country, is_admin)
+    VALUES ('$fullname', '$email', '$password_hashed', '$street_and_number', '$zip', '$location', '$country', '$is_admin')";
 
     mysqli_query($link, $sql) or die(mysqli_error($link));
 
 }
 
-function update_user($id, $name, $email, $password_hashed, $street_and_number, $zip_and_location, $country, $is_admin){
+function update_user($id, $name, $email, $password_hashed, $street_and_number, $zip, $location, $country, $is_admin){
 
   global $link;
 
     $sql = "UPDATE users
-    SET fullname = '$name' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip_and_location = '$zip_and_location', country = '$country', is_admin = '$is_admin'
+    SET fullname = '$name' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', is_admin = '$is_admin'
     WHERE id= '$id'";
 
     $result = mysqli_query($link, $sql);

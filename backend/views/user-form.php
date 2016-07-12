@@ -68,7 +68,7 @@
                   <h3 class="form-subheadline">ZIP</h3>
 
                     <label for="zip"></label>
-                    <input type="text" name="zip" class="input-zip form-input" value="<?php echo $user['zip_and_location']; ?>">
+                    <input type="text" name="zip" class="input-zip form-input" value="<?php echo $user['zip']; ?>">
                 </div>
 
 
@@ -76,7 +76,7 @@
                   <h3 class="form-subheadline">Location</h3>
 
                   <label for="location"></label>
-                  <input type="text" name="location" class="input-location form-input" value="">
+                  <input type="text" name="location" class="input-location form-input" value="<?php echo $user['location']; ?>">
                 </div>
 
                 <div class="form-wrapper">
