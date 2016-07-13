@@ -14,7 +14,11 @@
           <?php
             foreach ($images_other_array as $image) {
                 echo "<li><img class='slider-image' src='images/$image' alt=''></li>";
-            }
+            } ?>
+
+          <li><img class="slider-image" src="images/<?php echo $products['0']['image_main']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
+
+            <?php
             // Doppelte Images Pfusch!
             foreach ($images_other_array as $image) {
                 echo "<li><img class='slider-image' src='images/$image' alt=''></li>";

@@ -1,16 +1,18 @@
+<?php
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
+echo '<pre>';
+print_r($product);
+echo '</pre>';
+
+
+ ?>
+
 <div class="body-wrapper">
 
-  <h3 class="headline"><?php echo $title ?></h3>
-
-<?php
-// echo '<pre>';
-// print_r($product);
-// echo '</pre>';
-//
-// echo '<pre>';
-// print_r($_FILES);
-// echo '</pre>';
- ?>
+  <h3 class="headline">Edit Product</h3>
 
   <section class="form-new">
     <form class="" action="<?php echo $form_action; ?>" method="post" enctype="multipart/form-data">
@@ -36,7 +38,7 @@
 
         <div class="form-wrapper">
           <h2 class="form-headline">Description</h2>
-          <textarea name="product-description" rows="15" cols="50" class="form-textarea" value=""><?php echo $product['description']; ?></textarea>
+          <textarea name="product-description" rows="15" cols="50" class="form-textarea" value="<?php echo $product['description']; ?>"></textarea>
         </div>
 
         <div class="form-wrapper">
@@ -51,11 +53,7 @@
 
                 echo "<option value='$category_id' ";
 
-                if(isset($product['category'])){
-                  if ($category_id == $product['category']){
-                    echo 'selected';
-                  }
-                }
+
 
                 echo ">$category_name</option>";
               }
@@ -76,76 +74,62 @@
         </div>
 
         <div class="form-wrapper">
-        <?php
-        $image_main = $product["image_main"];
+          <?php
+          $image_main = $product["image_main"];
 
-         if(isset($image_main)){
-           echo "<a class='image-link'><img src='../images/$image_main' alt='$image_main'></a>";
-         } ?>
-       </div>
-        <div class="upload-wrapper">
+           if(isset($image_main)){
+             echo "<a class='image-link'><img src='../images/$image_main' alt='$image_main'></a>";
+           } ?>
+         </div>
+          <div class="upload-wrapper">
 
-          <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+            <input type="hidden" name="image[]" name="MAX_FILE_SIZE" value="2000000">
 
-          <span id="filename">
+            <span id="filename">
 
-          <?php if(isset($image_main)){
-              echo $image_main;
-            }else{
-              echo "Select your File";
-          } ?>
+            <?php if(isset($image_main)){
+                echo $image_main;
+              }else{
+                echo "Select your File";
+            } ?>
 
-          </span>
-          <label for="file-upload">Browse<input type="file" value='<?php if(isset($image_main)){ echo $image_main;}?>' id="file-upload" name="image[]"></label>
+            </span>
+            <label for="file-upload">Browse<input type="file" value='' id="file-upload" name="image[]"></label>
 
-        </div>
+          </div>
+       <!-- </div> -->
+
 
         <div class="form-wrapper">
           <h2 class="form-headline">Other Image</h2>
         </div>
 
         <div class="form-wrapper">
-
-         <?php if(isset($other_image)){
-          foreach ($other_image as $image) {
-             echo "<a class='image-link'><img src='../images/$image' alt='$image'></a>";
-             echo "<div class='upload-wrapper'>
-
+          <?php if(isset($other_image)){
+           foreach ($other_image as $image) {
+              echo "<a class='image-link'><img src='../images/$image' alt='$image'></a>";
+              echo "<div class='upload-wrapper'>
 
 
-                 <input type='hidden' name='MAX_FILE_SIZE' name='image2[]' value='2000000'>
 
-                 <span id='filename'>";
-                 if(isset($image)){
-                     echo $image;
-                   }else{
-                     echo 'Select your File';
-                 }
-            echo "</span>
-              <label for='file-upload' name='image'>Browse<input type='file' value='$image' name='image[]' id='file-upload'></label>
+                  <input type='hidden' name='MAX_FILE_SIZE' name='image2[]' value='$image'>
 
-          </div>  ";
+                  <span id='filename2'>";
+                  if(isset($image)){
+                      echo $image;
+                    }else{
+                      echo 'Select your File';
+                  }
+             echo "</span>
+               <label for='file-upload2' name='image'>Browse<input type='file' value='' name='image2[]' id='file-upload2' multiple></label>
 
-          }
-        }else{
+           </div>  ";
 
-          echo '
-          <div class="upload-wrapper">
-
-          <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
-
-          <span id="filename2">Select your File</span>
-
-          <label for="file-upload2">Browse<input type="file" id="file-upload2" name="image2[]"></label>
-
-          </div>';
-        }
-          ?>
-
-            </div>
+           }
+         }?>
 
         <div class="form-wrapper">
-          <input type="submit"  class="save-button" value="<?php echo $submit_button_text?>"></input>
+          <input type="submit"  class="save-button" value="Save"></input>
 
           <?php if(isset($success_message)){echo '<p>' . $success_message . '</p>';} ?>
           <?php if(isset($error_message)){echo '<p>' . $error_message . '</p>';} ?>

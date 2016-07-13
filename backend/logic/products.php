@@ -45,15 +45,12 @@ if(isset($_GET['action'])){
 
       save_product($productname, $productprice, $sale, $stock, $description, $category, $mainimage, $filenames_other);
 
-
-
-
     }
 
 
 
 
-    require("views/products-form-new.php");
+    include("views/save-success.php");
 
     //     echo '<pre>';
     //     print_r($_FILES);
@@ -89,16 +86,46 @@ if(isset($_GET['action'])){
 
         $id = (int)$_GET["id"];
 
-        require("save_main_image.php");
-        require("save_other_images.php");
+        $title = "Edit Product";
+        $form_action ="index.php?site=products&action=save_edit&id=$id";
+        $submit_button_text = "Save";
+
+        // $product = get_product($id);
+
+        $product = get_category($id);
+        $categories = get_categories();
 
         if(isset($_POST)){
+          require("save_main_image.php");
+          require("save_other_images.php");
+
           $productname = $_POST['product-name'];
           $productprice = $_POST['product-price'];
           $description = $_POST['product-description'];
           $category = $_POST['category'];
           $stock = $_POST['stock'];
-          $mainimage = $filenames[0];
+
+          if(isset($filenames)){
+
+            $mainimage = $filenames[0];
+          } else {
+            $mainimage = 'bla';
+          }
+
+          var_dump($mainimage);
+
+          // foreach($filenames as $file){
+          //   $mainimage = $file;
+          // }
+
+          // echo '<pre>';
+          // print_r($filenames);
+          // echo '</pre>';
+          //
+          // echo '<pre>';
+          // print_r($filenames_other);
+          // echo '</pre>';
+
           $filenames_other = implode(', ', $filenames_other);
 
           if(isset($_POST['sale']) && $_POST['sale'] == 'on'){
@@ -107,12 +134,35 @@ if(isset($_GET['action'])){
             $sale = 0;
           }
 
-          save_product_edit($id, $productname, $productprice, $sale, $stock, $description, $category, $mainimage, $filenames_other);
+          // print_r($filenames);
+          // print_r($filenames_other);
+
+          if(empty($mainimage) && empty($filenames_other)){
+            save_product_edit_noimages($id, $productname, $productprice, $sale, $stock, $description, $category);
+            echo 'NO IMAGES';
+          }
+          if(isset($mainimage) && empty($filenames_other)){
+            save_product_edit_main($id, $productname, $productprice, $sale, $stock, $description, $category, $mainimage);
+            echo 'MAIN IMAGE';
+          }
+
+          if(isset($filenames_other) && empty($mainimage)){
+            save_product_edit_other($id, $productname, $productprice, $sale, $stock, $description, $category, $filenames_other);
+            echo 'OTHER IMAGE';
+          }
+
+          if(isset($filenames_other) && isset($mainimage)){
+            save_product_edit_both($id, $productname, $productprice, $sale, $stock, $description, $category, $mainimage, $filenames_other);
+            echo 'BOTH IMAGES';
+          }
+
+
 
         }
 
 
-
+        $other_images = $product['image_other'];
+        $other_image = explode(', ', $other_images);
 
         require("views/products-form.php");
 

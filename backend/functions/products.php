@@ -96,12 +96,69 @@ function save_product($name, $price, $sale, $stock, $description, $category, $ma
 
 }
 
-function save_product_edit($id, $name, $price, $sale, $stock, $description, $category, $mainimage, $otherimages){
+function save_product_edit_both($id, $name, $price, $sale, $stock, $description, $category, $image_main, $image_other){
 
   global $link;
 
   $sql =
   "UPDATE products SET product_name = '$name', price = '$price', sale = '$sale', stock = '$stock',  description = '$description', category = '$category', image_main = '$image_main', image_other = '$image_other' WHERE id = '$id'";
+
+  $result = mysqli_query($link, $sql);
+
+  if(!$result){
+
+    die(mysqli_error($link));
+  }
+
+  return  $result;
+
+
+}
+
+function save_product_edit_noimages($id, $name, $price, $sale, $stock, $description, $category){
+
+  global $link;
+
+  $sql =
+  "UPDATE products SET product_name = '$name', price = '$price', sale = '$sale', stock = '$stock',  description = '$description', category = '$category' WHERE id = '$id'";
+
+  $result = mysqli_query($link, $sql);
+
+  if(!$result){
+
+    die(mysqli_error($link));
+  }
+
+  return  $result;
+
+
+}
+
+function save_product_edit_main($id, $name, $price, $sale, $stock, $description, $category, $image_main){
+
+  global $link;
+
+  $sql =
+  "UPDATE products SET product_name = '$name', price = '$price', sale = '$sale', stock = '$stock',  description = '$description', category = '$category', image_main = '$image_main' WHERE id = '$id'";
+
+  $result = mysqli_query($link, $sql);
+
+  if(!$result){
+
+    die(mysqli_error($link));
+  }
+
+  return  $result;
+
+
+}
+
+function save_product_edit_other($id, $name, $price, $sale, $stock, $description, $category, $image_other){
+
+  global $link;
+
+  $sql =
+  "UPDATE products SET product_name = '$name', price = '$price', sale = '$sale', stock = '$stock',  description = '$description', category = '$category', image_other = '$image_other' WHERE id = '$id'";
 
   $result = mysqli_query($link, $sql);
 
