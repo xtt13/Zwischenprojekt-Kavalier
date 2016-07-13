@@ -83,7 +83,10 @@ $('.search_request').keyup(function () {
 //##########Charts##########
 day_of_order();
 hour_of_order();
-zip_of_order()
+zip_of_order();
+sold_products();
+order_payment();
+all_sold_products();
 
 function day_of_order(){
   var ctx = document.getElementById("day_of_order");
@@ -205,3 +208,102 @@ var myBarChart = new Chart(ctx, {
 
 });
 }
+
+function sold_products(){
+
+  var ctx = document.getElementById("sold_products");
+  var chart_data = $(ctx).data('chart-data');
+
+  var data = {
+    labels: chart_data.product_name,
+    datasets: [
+        {
+            data: chart_data.amount,
+            backgroundColor: [
+
+                "#282f43",
+                '#000000',
+                "#D1BCA3"
+            ],
+            hoverBackgroundColor: [
+                "rgba(40,47,67, 0.7)",
+                "rgba(0,0,0,0.7)",
+                "rgba(209, 188, 163, 0.7)"
+            ]
+        }]
+};
+
+  var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data,
+
+});
+}
+
+function order_payment(){
+  var ctx = document.getElementById("order_payment");
+  var chart_data = $(ctx).data('chart-data');
+
+  var data = {
+    labels: chart_data.payment_name,
+    datasets: [
+        {
+            data: chart_data.amount,
+            backgroundColor: [
+
+                "#282f43",
+                '#000000',
+                "#D1BCA3"
+            ],
+            hoverBackgroundColor: [
+                "rgba(40,47,67, 0.7)",
+                "rgba(0,0,0,0.7)",
+                "rgba(209, 188, 163, 0.7)"
+            ]
+        }]
+};
+
+  var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data,
+
+});
+
+}
+function all_sold_products(){
+  var ctx = document.getElementById("all_sold_products");
+  var chart_data = $(ctx).data('chart-data');
+
+  var data = {
+    labels: chart_data.product_name,
+    datasets: [
+        {
+            label: "Orders to zip",
+            backgroundColor: "rgba(209, 188, 163, 1.0)",
+            borderColor: "#282f43",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(209, 188, 163, 0.7)",
+            hoverBorderColor: "",
+            data: chart_data.amount,
+        }
+    ]
+}
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+        yAxes: [{
+            ticks: {
+                max: 60,
+                min: 0,
+                stepSize: 10
+            }
+        }]
+    }
+}
+
+});
+
+
+};

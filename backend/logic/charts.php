@@ -63,5 +63,77 @@ $zip_of_order = array(
   'zip' => $zip,
   'amount' => $amount
 );
+
+
+/* 3 best Sold Products*/
+
+$sql = 'SELECT products_sold.product_id AS product_id, COUNT(products_sold.quantity) AS amount, products.product_name AS product_name
+        FROM products_sold LEFT JOIN products ON products_sold.product_id = products.id
+        GROUP BY products_sold.product_id  LIMIT 3';
+
+$result = $result = mysqli_query($link, $sql);
+
+$sold_products =  mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$product_name = [];
+$amount = [];
+
+foreach ($sold_products as $product) {
+  array_push($product_name, $product['product_name']);
+  array_push($amount, $product['amount']);
+}
+
+$sold_products = array(
+  'product_name' => $product_name,
+  'amount' => $amount
+
+);
+
+/* Order Payment*/
+
+$sql='SELECT COUNT(payment) AS amount, payment FROM users GROUP BY payment';
+$result = $result = mysqli_query($link, $sql);
+
+$order_payment = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$payment_name = [];
+$amount = [];
+
+foreach ($order_payment as $payment) {
+  array_push($payment_name, $payment['payment']);
+  array_push($amount, $payment['amount']);
+}
+
+$order_payment = array(
+
+  'payment_name' => $payment_name,
+  'amount' => $amount
+
+);
+/* All sold products */
+
+$sql = 'SELECT products_sold.product_id AS product_id, COUNT(products_sold.quantity) AS amount, products.product_name AS product_name
+        FROM products_sold LEFT JOIN products ON products_sold.product_id = products.id
+        GROUP BY products_sold.product_id';
+
+$result = $result = mysqli_query($link, $sql);
+
+$all_sold_products =  mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$product_name = [];
+$amount = [];
+
+foreach ($all_sold_products as $product) {
+  array_push($product_name, $product['product_name']);
+  array_push($amount, $product['amount']);
+}
+
+$all_sold_products = array(
+  'product_name' => $product_name,
+  'amount' => $amount
+
+);
+
 require("views/charts.php");
+
 ?>
