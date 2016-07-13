@@ -1953,7 +1953,7 @@ REGISTERFORM
 .register-form form{
   box-shadow: 0px 0px 10px 0px rgba(169,169,169,0.50);
   width: 684px;
-	height: 950px;
+	height: 1000px;
   margin: auto;
   background-color: #ffffff;
   border-radius: 3px;
@@ -2059,6 +2059,30 @@ REGISTERFORM
 	background-position: 9px 7px;
 }
 .register-name{
+  display: block;
+  margin: auto;
+	margin-bottom: 10px;
+  width: 500px;
+  height: 43px;
+  border-radius: 3px;
+  background-color: #F3F3F3;
+  border: 2px solid transparent;
+	text-align: center;
+  font-size: 20px;
+  color: black;
+  padding-top: 5px;
+  font-family: 'myriad-pro', sans-serif;
+	font-style: italic;
+	font-size: 20px;
+	color: #0C0C0C;
+	letter-spacing: 1.16px;
+
+	background-image: url('images/name-icon.svg');
+	background-repeat: no-repeat;
+	background-position: 8px 9px;
+}
+
+.register-age{
   display: block;
   margin: auto;
 	margin-bottom: 10px;

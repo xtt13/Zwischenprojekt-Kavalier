@@ -249,6 +249,21 @@ jQuery(document).ready(function($) {
     }
   });
 
+  $('.register-age').on('input', function() {
+    var input = $(this);
+    var is_name = input.val();
+    if (is_name) {
+      input.removeClass("invalid").addClass("valid");
+      $(".error-message").html("");
+      $(".error").removeClass("error-message error-message-register-age");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+      $('.error').attr('class', 'error');
+      $(".error").addClass("error-message error-message-register-age");
+      $(".error-message").html("<p>We need your name!</p>");
+    }
+  });
+
   $('.register-zip').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -670,7 +685,7 @@ jQuery(document).ready(function($) {
           });
   });
 
-  
+
   $('body').on('click', '.add-to-bag', function() {
   $('.cart p').html(function(i, val) {return +val+1; });
   $('.cart p').animate({

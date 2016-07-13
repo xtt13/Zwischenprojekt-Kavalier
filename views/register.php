@@ -10,6 +10,8 @@
 
             <input class="register-name" type="text" name="name" placeholder="Name"><br>
 
+            <input class="register-age" type="text" name="age" placeholder="Age"><br>
+
             <input class="register-email" type="email" name="email" placeholder="Emailadress"><br>
 
             <input class="register-password" type="password" name="password" placeholder="Password"><br>

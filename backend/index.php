@@ -1,5 +1,7 @@
 <?php
 session_start();
+date_default_timezone_set('Vienna/Austria');
+
 
 if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
   redirect_to("../index.php?site=homepage");
