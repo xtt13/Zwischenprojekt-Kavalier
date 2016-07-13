@@ -141,30 +141,35 @@ if(isset($_GET['action'])){
             save_product_edit_noimages($id, $productname, $productprice, $sale, $stock, $description, $category);
             echo 'NO IMAGES';
           }
-          if(isset($mainimage) && empty($filenames_other)){
+          if(!empty($mainimage) && empty($filenames_other)){
             save_product_edit_main($id, $productname, $productprice, $sale, $stock, $description, $category, $mainimage);
             echo 'MAIN IMAGE';
           }
 
-          if(isset($filenames_other) && empty($mainimage)){
+          if(!empty($filenames_other) && empty($mainimage)){
             save_product_edit_other($id, $productname, $productprice, $sale, $stock, $description, $category, $filenames_other);
             echo 'OTHER IMAGE';
           }
 
-          if(isset($filenames_other) && isset($mainimage)){
+          if(!empty($filenames_other) && !empty($mainimage)){
             save_product_edit_both($id, $productname, $productprice, $sale, $stock, $description, $category, $mainimage, $filenames_other);
             echo 'BOTH IMAGES';
           }
+
+          $other_images = $product['image_other'];
+          $other_image = explode(', ', $other_images);
+
+          include("views/save-success.php");
 
 
 
         }
 
 
-        $other_images = $product['image_other'];
-        $other_image = explode(', ', $other_images);
+        // $other_images = $product['image_other'];
+        // $other_image = explode(', ', $other_images);
 
-        require("views/products-form.php");
+        //require("views/products-form.php");
 
   }
 

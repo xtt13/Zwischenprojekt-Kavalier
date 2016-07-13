@@ -1,12 +1,12 @@
 <?php
 session_start();
-date_default_timezone_set('Vienna/Austria');
+date_default_timezone_set('Europe/Vienna');
 
 
-if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
-  redirect_to("../index.php?site=homepage");
-  die();
-}
+// if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
+//   redirect_to("../index.php?site=homepage");
+//   die();
+// }
 
 include('dbconnect.php');
 include('functions/products.php');

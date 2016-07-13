@@ -38,7 +38,7 @@ echo '</pre>';
 
         <div class="form-wrapper">
           <h2 class="form-headline">Description</h2>
-          <textarea name="product-description" rows="15" cols="50" class="form-textarea" value="<?php echo $product['description']; ?>"></textarea>
+          <textarea name="product-description" rows="15" cols="50" class="form-textarea" value=""><?php echo $product['description']; ?></textarea>
         </div>
 
         <div class="form-wrapper">
