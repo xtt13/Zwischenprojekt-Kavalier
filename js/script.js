@@ -850,48 +850,48 @@ $.ajax({
 });
 
 // Register User
-$('body').on('click', '.register-submit', function() {
-event.preventDefault();
-
-var name = $('.register-name').val();
-var email = $('.register-email').val();
-var adress = $('.register-adress').val();
-var zip = $('.register-zip').val();
-var location = $('.register-location').val();
-var country = $('.register-country').val();
-var invoiceadress = $('.invoice-adress').val();
-var invoicezip = $('.invoice-zip').val();
-var invoicelocation = $('.invoice-location').val();
-var invoicecountry = $('.invoice-country').val();
-var btn = 'set';
-
-$.ajax({
-        url: 'index.php?site=account&action=information',
-        method: "post",
-        data: {
-          name: name,
-          email: email,
-          adress: adress,
-          zip: zip,
-          location: location,
-          country: country,
-          alt_adress: invoiceadress,
-          alt_zip: invoicezip,
-          alt_location: invoicelocation,
-          alt_country: invoicecountry,
-          sbmbtn: btn
-        }
-      })
-      .done(function(data, textStatus, jqXhr) {
-        //alert(data);
-        $(".account-form").replaceWith($(".account-form", data));
-
-      })
-      .fail(function(jqXhr, textStatus, errorThrown) {
-        // wird bei fehlerhaftem Request ausgeführt
-        alert('KLAPPT NICHT!');
-      });
-});
+// $('body').on('click', '.register-submit', function() {
+// event.preventDefault();
+//
+// var name = $('.register-name').val();
+// var email = $('.register-email').val();
+// var adress = $('.register-adress').val();
+// var zip = $('.register-zip').val();
+// var location = $('.register-location').val();
+// var country = $('.register-country').val();
+// var invoiceadress = $('.invoice-adress').val();
+// var invoicezip = $('.invoice-zip').val();
+// var invoicelocation = $('.invoice-location').val();
+// var invoicecountry = $('.invoice-country').val();
+// var btn = 'set';
+//
+// $.ajax({
+//         url: 'index.php?site=account&action=information',
+//         method: "post",
+//         data: {
+//           name: name,
+//           email: email,
+//           adress: adress,
+//           zip: zip,
+//           location: location,
+//           country: country,
+//           alt_adress: invoiceadress,
+//           alt_zip: invoicezip,
+//           alt_location: invoicelocation,
+//           alt_country: invoicecountry,
+//           sbmbtn: btn
+//         }
+//       })
+//       .done(function(data, textStatus, jqXhr) {
+//         //alert(data);
+//         $(".account-form").replaceWith($(".account-form", data));
+//
+//       })
+//       .fail(function(jqXhr, textStatus, errorThrown) {
+//         // wird bei fehlerhaftem Request ausgeführt
+//         alert('KLAPPT NICHT!');
+//       });
+// });
 
 
 });

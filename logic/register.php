@@ -14,7 +14,7 @@ if(!empty($_POST)){
   $zip = $_POST['zip'];
   $location = $_POST['location'];
   $country = $_POST['country'];
-  $age = $_POST['age'];
+  $age = (int)$_POST['age'];
 
   $result = get_user_by_email($email);
 
