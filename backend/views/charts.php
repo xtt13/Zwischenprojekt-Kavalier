@@ -1,8 +1,4 @@
 
-<?php print_r($sold_products);
-    echo 'Hallo!'
-?>
-
 <div class="body-wrapper">
 <h3 class="headline">Statistics</h3>
 <h4 class="form-headline">All Products Sold</h4>
@@ -17,4 +13,5 @@
 <canvas id="sold_products" data-chart-data="<?php echo htmlentities(json_encode($sold_products)); ?>" height="100px"></canvas>
 <h4 class="form-headline">Payment</h4>
 <canvas id="order_payment" data-chart-data="<?php echo htmlentities(json_encode($order_payment)); ?>" height="100px"></canvas>
+
 </div>

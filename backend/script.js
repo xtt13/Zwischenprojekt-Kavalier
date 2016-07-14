@@ -81,6 +81,7 @@ $('.search_request').keyup(function () {
 
 
 //##########Charts##########
+
 day_of_order();
 hour_of_order();
 zip_of_order();
