@@ -8,7 +8,7 @@ date_default_timezone_set('Europe/Vienna');
 //   die();
 // }
 
-include('dbconnect.php');
+include('../dbconnect.php');
 include('functions/products.php');
 include('functions/users.php');
 include('functions/orders.php');
