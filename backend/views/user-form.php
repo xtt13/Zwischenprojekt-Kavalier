@@ -18,6 +18,12 @@
         </div>
 
         <div class="form-wrapper">
+          <h2 class="form-headline">Age</h2>
+          <label for="age"></label>
+          <input type="number" name="age" class="form-input" value="<?php echo $user['age']; ?>">
+        </div>
+
+        <div class="form-wrapper">
           <h2 class="form-headline">Email</h2>
           <label for="email"></label>
           <input type="text" name="email" class="form-input" value="<?php echo $user['email']; ?>">

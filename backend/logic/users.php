@@ -20,6 +20,7 @@ if(isset($_GET['action'])) {
 
     $user= [];
     $user["fullname"] = "";
+    $user["age"]="";
     $user['email'] = "";
     $user['street_and_number'] = "";
     $user['zip'] = "";
@@ -131,6 +132,7 @@ if(isset($_GET['action'])) {
     if(!empty($_POST)){
 
       $name = $_POST['fullname'];
+      $age = $_POST['age'];
       $email = $_POST['email'];
       $password = $_POST['password'];
       $password_again = $_POST['password-confirm'];
@@ -144,7 +146,7 @@ if(isset($_GET['action'])) {
       $error = 2;
       $error_message;
 
-      if($name !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
+      if($name !== '' && $age !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
 
         $error = 0;
 
@@ -170,6 +172,7 @@ if(isset($_GET['action'])) {
 
         $user = [];
         $user["fullname"] = $name;
+        $user["age"] = $age;
         $user['email'] = $email;
         $user['street_and_number'] = $adress;
         $user['zip'] = $zip;
@@ -189,7 +192,7 @@ if(isset($_GET['action'])) {
         }
 
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-        save_user( $name, $email, $passwordhash_hashed, $adress, $zip,$location, $country, $is_admin);
+        save_user( $name, $email, $passwordhash_hashed, $adress, $zip,$location, $country, $is_admin,$age);
         $_SESSION['registered'] == true;
         $users = get_users();
         require('views/users.php');

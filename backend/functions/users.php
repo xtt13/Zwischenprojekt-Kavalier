@@ -38,14 +38,20 @@ function get_user($id){
 
 };
 
-function save_user($fullname, $email, $password_hashed, $street_and_number, $zip, $location, $country, $is_admin){
+function save_user($fullname, $email, $password_hashed, $street_and_number, $zip, $location, $country, $is_admin,$age){
 
   global $link;
 
-    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip, location, country, is_admin)
-    VALUES ('$fullname', '$email', '$password_hashed', '$street_and_number', '$zip', '$location', '$country', '$is_admin')";
+    $sql = "INSERT INTO users (fullname, email, password_hash, street_and_number, zip, location, country, is_admin, age)
+    VALUES ('$fullname','$email', '$password_hashed', '$street_and_number', '$zip', '$location', '$country', '$is_admin','$age')";
 
-    mysqli_query($link, $sql) or die(mysqli_error($link));
+    $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+    if (!$result){
+
+      echo mysqli_error($link);
+
+    }
 
 }
 
