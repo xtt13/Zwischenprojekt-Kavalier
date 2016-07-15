@@ -3221,6 +3221,10 @@ input:focus {
 	font-weight: normal;
 }
 
+.account-no-purchases {
+	text-align: center;
+}
+
 /*.accordeon table tr:nth-child(2n){
 	background-color: grey;
 }*/

@@ -56,8 +56,8 @@
             </div>
 
             <div class="lastname-wrapper">
-              <input class="lastname" id="lastname-label" name="payment" value="lastname" type="radio" <?php echo $lastname_checked; ?>>
-              <label class="lastname-label" for="lastname-label"><span></span>Lastname</label>
+              <input class="lastname" id="lastname-label" name="payment" value="Cash-On-Delivery" type="radio" <?php echo $lastname_checked; ?>>
+              <label class="lastname-label" for="lastname-label"><span></span>Cash On Delivery</label>
             </div>
 
             <div class="prepayment-wrapper">

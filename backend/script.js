@@ -59,6 +59,8 @@ $('body').on('click', ('.accordeon-title'),titles,function(){
 //
 // ENDE ACHTUNG!
 
+// SEARCH AJAX
+
 $('.search_request').keyup(function () {
     var meinevar = $(this).val();
     $.ajax({
@@ -77,6 +79,24 @@ $('.search_request').keyup(function () {
 
 
     });
+});
+
+// ORDERS SHIPPED AJAX
+$('body').on('click', '.button_do', function() {
+  event.preventDefault();
+  $.ajax({
+          url: $(this).attr('href'),
+          method: "get",
+        })
+        .done(function(data, textStatus, jqXhr) {
+          // alert(data);
+          $(".table").replaceWith($(".table", data));
+
+        })
+        .fail(function(jqXhr, textStatus, errorThrown) {
+          // wird bei fehlerhaftem Request ausgeführt
+          alert('KLAPPT NICHT!');
+        });
 });
 
 

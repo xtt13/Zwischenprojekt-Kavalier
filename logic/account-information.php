@@ -4,6 +4,7 @@ $id = $_SESSION['user_id'];
 $user = get_user($id);
 $errors = [];
 $alternative_adress = false;
+print_r($_POST);
 
 if(isset($_POST['sbmbtn'])){
 
@@ -12,6 +13,8 @@ if(isset($_POST['sbmbtn'])){
   $zip = $_POST['zip'];
   $location = $_POST['location'];
   $country = $_POST['country'];
+
+
 
 
 

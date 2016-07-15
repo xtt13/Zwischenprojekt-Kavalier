@@ -14,7 +14,7 @@ if(!empty($_POST)){
   $zip = $_POST['zip'];
   $location = $_POST['location'];
   $country = $_POST['country'];
-  $age = (int)$_POST['age'];
+  $age = $_POST['age'];
 
   $result = get_user_by_email($email);
 
@@ -36,11 +36,6 @@ if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
       $error_message['email'] = 'This email is already in use!';
     }
 
-    if(!is_int($email)){
-      $error = 1;
-      $error_message['age'] = 'Please use a number!';
-    }
-
     if($password !== $password_again){
       $error = 1;
       $error_message['passwords'] = 'Unequal Passwords!';
@@ -52,15 +47,15 @@ if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
   }
 }
 
-if($error == 1){
-  print_r($error_message);
-}
+// if($error == 1){
+//   print_r($error_message);
+// }
 
 if($error == 0){
   $passwordhash_hashed = password_hash($password, PASSWORD_DEFAULT);
   $email = strtolower($email);
   register_user($name, $email, $passwordhash_hashed, $adress, $zip, $location, $country, $age);
-  $_SESSION['registered'] == true;
+  $_SESSION['registered'] = true;
   // redirect_to('index.php?site=registersuccess');
 }
 }

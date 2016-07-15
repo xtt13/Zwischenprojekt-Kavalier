@@ -38,7 +38,7 @@
 
 <body>
   <header class="main-header">
-    <h1><a href="index.php">Kavalier</a></h1>
+    <h1><a href="../index.php">Kavalier</a></h1>
     <nav><ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="index.php?site=statistics">Statistics</a></li>
@@ -49,12 +49,10 @@
       <li class='messages'><a href="index.php?site=messages">Messages</a><span class='messages-counter'><?php if(isset($number)){echo $number;} ?></span></li>
     </ul>
   </nav>
-    <!-- <a class="cart" href="index.php?site=bag">
-      <?php if(isset($_SESSION['bag'])){echo '<p>' . count($_SESSION['bag']) . '</p>';}?>
-    </a> -->
 
 
-    <a class="login" href="index.php?site=login&amp;action=useraccount">Logut</a>
+
+    <a class="login" href="index.php?site=login&amp;action=useraccount">Logout</a>
     <div class="nav-icon">
       <span></span>
       <span></span>

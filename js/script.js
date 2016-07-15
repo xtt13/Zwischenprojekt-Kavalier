@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
     } else {
       input.removeClass("valid").addClass("invalid");
       $('.error').attr('class', 'error');
-      $(".error").addClass("error-message error-message-register-password-again");
+      $(".error").addClass("error-message error-message-password-again");
       $(".error-message").html("<p>Unequal Passwords</p>");
     }
   });
@@ -265,6 +265,16 @@ jQuery(document).ready(function($) {
   });
 
   $('.register-zip').on('input', function() {
+    var input = $(this);
+    var is_name = input.val();
+    if (is_name) {
+      input.removeClass("invalid").addClass("valid");
+    } else {
+      input.removeClass("valid").addClass("invalid");
+    }
+  });
+
+  $('.register-location').on('input', function() {
     var input = $(this);
     var is_name = input.val();
     if (is_name) {
