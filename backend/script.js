@@ -88,6 +88,7 @@ zip_of_order();
 sold_products();
 order_payment();
 all_sold_products();
+customers_age()
 
 function day_of_order(){
   var ctx = document.getElementById("day_of_order");
@@ -271,6 +272,7 @@ function order_payment(){
 });
 
 }
+
 function all_sold_products(){
   var ctx = document.getElementById("all_sold_products");
   var chart_data = $(ctx).data('chart-data');
@@ -308,3 +310,34 @@ var myBarChart = new Chart(ctx, {
 
 
 };
+
+function customers_age(){
+
+  var ctx = document.getElementById("customers_age");
+  var chart_data = $(ctx).data('chart-data');
+
+  var data = {
+    labels: chart_data.age,
+    datasets: [
+        {
+            data: chart_data.amount,
+            backgroundColor: [
+
+                "#282f43",
+                '#000000',
+                "#D1BCA3"
+            ],
+            hoverBackgroundColor: [
+                "rgba(40,47,67, 0.7)",
+                "rgba(0,0,0,0.7)",
+                "rgba(209, 188, 163, 0.7)"
+            ]
+        }]
+};
+
+  var myPieChart = new Chart(ctx,{
+    type: 'pie',
+    data: data,
+
+});
+}

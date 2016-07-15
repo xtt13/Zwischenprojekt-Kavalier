@@ -134,6 +134,27 @@ $all_sold_products = array(
 
 );
 
+/* Customers age*/
+
+$sql='SELECT age, COUNT(age) AS amount FROM users GROUP BY age ASC';
+
+$result = $result = mysqli_query($link, $sql);
+
+$customers_age =  mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+$age =[];
+$amount = [];
+
+foreach ($customers_age as $data) {
+  array_push($age, $data['age']);
+  array_push($amount, $data['amount']);
+}
+
+$customers_age = array(
+  'age' => $age,
+  'amount' => $amount
+);
+
 require("views/charts.php");
 
 ?>
