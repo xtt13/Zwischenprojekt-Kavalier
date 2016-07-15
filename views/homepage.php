@@ -19,9 +19,19 @@
 
   <section class="fullscreen homepage-about-us" id="AboutUs">
     <h2 class="headline">About Us</h2>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-      takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
-      et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+    <p></br>
+    Welcome to the KAVALIER Online Store. Explore international menswear, the KAVALIER brand world – must haves for
+    modern knights!
+    KAVALIER is an Linke Wienzeile design label. Our collections offer everything for a stylish wardrobe and
+    unusual accessories. You’ll only find sophisticated designs, fine materials and
+    unique styles that are sought particularly from urban and trendy target groups.
+    </br>
+    </br>
+    Starting our project in 2015 we remembered an old story about projects and the chicken and the pig:
+    In a project the chicken’s commitment in the business will be to lay eggs whereas the pig will be the bacon.
+    In other words: The pigs are the project team – the chickens are the people who want and need the product –
+    our customers. You see. It’s all about the chicken!
+    </p>
     <h3>Follow Us</h3>
     <ul>
       <li><a class="facebook-icon" href="#">Facebook></a></li>
