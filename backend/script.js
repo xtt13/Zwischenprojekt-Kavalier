@@ -315,29 +315,35 @@ function customers_age(){
 
   var ctx = document.getElementById("customers_age");
   var chart_data = $(ctx).data('chart-data');
-
   var data = {
-    labels: chart_data.age,
+    labels: chart_data.amount,
     datasets: [
         {
-            data: chart_data.amount,
-            backgroundColor: [
-
-                "#282f43",
-                '#000000',
-                "#D1BCA3"
-            ],
-            hoverBackgroundColor: [
-                "rgba(40,47,67, 0.7)",
-                "rgba(0,0,0,0.7)",
-                "rgba(209, 188, 163, 0.7)"
-            ]
+            label: "Customers Age",
+            backgroundColor: "rgba(209, 188, 163, 1.0)",
+            borderColor: "#282f43",
+            borderWidth: 1,
+            hoverBackgroundColor: "rgba(209, 188, 163, 0.7)",
+            hoverBorderColor: "",
+            data: chart_data.age,
+        }
+    ]
+}
+var myBarChart = new Chart(ctx, {
+  type: 'bar',
+  data: data,
+  options: {
+    scales: {
+        yAxes: [{
+            ticks: {
+                max: 50,
+                min: 18,
+                stepSize: 5
+            }
         }]
-};
-
-  var myPieChart = new Chart(ctx,{
-    type: 'pie',
-    data: data,
+    }
+}
 
 });
+
 }
