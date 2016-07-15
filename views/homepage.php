@@ -9,11 +9,11 @@
     <h2 class="headline">Store</h2>
     <ul>
       <li>
-        <a href=""><img class="top-link" src="images/clothing.png" alt="Clothing"></a><a class="bottom-link" href="">Clothing</a></li>
+        <a href="http://hannah.dev/share/Zwischenprojekt-Kavalier/index.php?site=store&category=2"><img class="top-link" src="images/firestarter.jpeg" alt="Clothing"></a><a class="bottom-link" href="">Gadgets</a></li>
       <li>
-        <a href=""><img class="top-link" src="images/gadgets.png" alt="Gadgets"></a><a class="bottom-link" href="">Gadgets</a></li>
+        <a href="http://hannah.dev/share/Zwischenprojekt-Kavalier/index.php?site=store&category=3"><img class="top-link" src="images/navywallet.jpeg" alt="Gadgets"></a><a class="bottom-link" href="">Accessorize</a></li>
       <li>
-        <a href=""><img class="top-link" src="images/accessorize.png" alt="Accessorize"></a><a class="bottom-link" href="">Accessorize</a></li>
+        <a href="http://hannah.dev/share/Zwischenprojekt-Kavalier/index.php?site=store&category=4"><img class="top-link" src="images/notebook2.jpeg" alt="Accessorize"></a><a class="bottom-link" href="">Office</a></li>
     </ul>
   </section>
 

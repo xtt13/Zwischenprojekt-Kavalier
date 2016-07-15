@@ -352,7 +352,7 @@ section.register-form {
 
 .homepage-about-us p {
   max-width: 940px;
-  font-family: 'Latin Modern Roman', serif;
+  font-family: 'myriad-pro', sans-serif;
   font-size: 20px;
   line-height: 33px;
   margin-top: 0;
@@ -434,7 +434,7 @@ section.register-form {
 .homepage-team h3 {
   font-weight: normal;
   font-size: 36px;
-  font-family:'Latin Modern Italic', serif;
+  font-family: 'Latin Modern Roman', serif;
   margin-bottom: 10px;
 }
 
@@ -443,7 +443,7 @@ section.register-form {
   height: 140px;
   background-color: #EEEEEE;
   font-size: 13px;
-  font-family:'Latin Modern Italic', serif;
+  font-family:'myriad-pro', sans-serif;
   padding: 22px 24px;
   margin: 0;
 }
@@ -490,8 +490,8 @@ section.register-form {
 }
 
 .homepage-location p.location-info {
-  font-size: 24px;
-  font-family:'Latin Modern Italic', serif;
+  font-size: 20px;
+  font-family: 'myriad-pro', sans-serif;
   margin: 0;
   margin-left: 39px;
 }
@@ -531,15 +531,15 @@ section.register-form {
 }
 
 .newsletter h3{
-  font-family: 'myriad-pro', sans-serif;
+  font-family: 'Latin Modern Roman', serif;
 	font-weight: bold;
-	font-style: italic;
   font-size: 40px;
   color: #212121;
   line-height: 48px;
   margin: 0;
   margin-left: 24px;
   margin-top: 36px;
+	margin-bottom: 5px;
 }
 
 .newsletter p {
@@ -634,15 +634,15 @@ section.register-form {
 }
 
 .contactform h3 {
-  font-family: 'myriad-pro', sans-serif;
-	font-style: italic;
+	font-family: 'Latin Modern Roman', serif;
 	font-weight: bold;
-  font-size: 40px;
-  color: #212121;
-  line-height: 48px;
-  margin: 0;
-  margin-left: 24px;
-  margin-top: 36px;
+	font-size: 40px;
+	color: #212121;
+	line-height: 48px;
+	margin: 0;
+	margin-left: 24px;
+	margin-top: 36px;
+	margin-bottom: 5px;
 }
 
 .contactform p {
@@ -797,8 +797,8 @@ footer li {
 footer li a {
   text-decoration: none;
   color: white;
-  font-family:'Latin Modern Italic', serif;
-  font-size: 20px;
+  font-family:'myriad-pro', sans-serif;
+  font-size: 15px;
 }
 
 footer li a:hover {
