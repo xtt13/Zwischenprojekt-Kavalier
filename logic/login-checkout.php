@@ -1,13 +1,4 @@
 <?php
-// if(is_admin()) {
-//   redirect_to("backend/index.php");
-// } else {
-
-  //include("views/login-checkout.php");
-
-  // $form_action = "index.php?site=login&action=save";
-
-// }
 
 if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
   redirect_to("index.php?site=checkout&action=shippinginformation");
@@ -50,8 +41,6 @@ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
 
       if($error == 1) {
         $errors["auth"] = "Die eingegebene Email-Passwort-Kombination stimmt nicht überein.";
-
-        print_r($errors);
       }
     }
 

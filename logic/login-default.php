@@ -1,14 +1,4 @@
 <?php
-// if(is_admin()) {
-//   redirect_to("backend/index.php");
-// } else {
-
-  //include("views/login-checkout.php");
-
-  // $form_action = "index.php?site=login&action=save";
-
-// }
-
 
     if(is_post_request()) {
 
@@ -48,9 +38,7 @@
 
 
       if($error == 1) {
-        $errors["auth"] = "Die eingegebene Email-Passwort-Kombination stimmt nicht überein.";
-
-        print_r($errors);
+        $errors["auth"] = "Your Email-Passwordcombination is false!";
       }
     }
 

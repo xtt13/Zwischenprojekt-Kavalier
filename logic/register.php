@@ -1,9 +1,5 @@
 <?php
 
-if(isset($_SESSION['registered']) && $_SESSION['registerd'] == true) {
-  redirect_to('index.php?site=register-success');
-}
-
 
 if(!empty($_POST)){
   $name = $_POST['name'];

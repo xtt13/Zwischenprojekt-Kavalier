@@ -1485,9 +1485,6 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
   padding-left: 10px;
   line-height: 40px;
   text-transform: uppercase;
-  background-image: url('images/arrow-product.svg');
-  background-repeat: no-repeat;
-  background-position: 200px center;
 }
 
 
@@ -1784,6 +1781,13 @@ LOGINFORM
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+
+.login-error {
+	color: red;
+	position: absolute;
+	font-family: 'myriad-pro', sans-serif;
+	margin-top: 25px;
 }
 
 .login-form form{

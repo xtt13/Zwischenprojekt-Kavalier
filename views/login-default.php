@@ -20,6 +20,8 @@
             <label for="password"></label>
             <input class="login-password" type="password" name="password" placeholder="Password">
 
+            <?php if(isset($errors) && $error == 1) { foreach ($errors as $error){ echo "<p class='login-error'>" . $error . "</p>";}}?>
+
             <input class="login-submit" type="submit" value="Login">
         </fieldset>
         <ul class="support">

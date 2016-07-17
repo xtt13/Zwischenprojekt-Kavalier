@@ -52,8 +52,6 @@ if($site == "store") {
   include("views/login-default.php");
 } elseif($site == "register") {
   include("views/register.php");
-} elseif($site == "registersuccess") {
-  include("views/success-register.php");
 } elseif($site == "pwdreset") {
   include("views/pwdreset.php");
 } elseif($site == "pwdupdate") {
