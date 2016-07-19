@@ -42,6 +42,8 @@ if($site == "store") {
   include("views/homepage.php");
 } elseif($site == "account") {
   include("views/account.php");
+} elseif($site == "impressum") {
+  include("views/impressum.php");
 } elseif($site == "bag") {
   include("views/bag.php");
 } elseif($site == "detail") {

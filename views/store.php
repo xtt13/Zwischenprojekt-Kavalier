@@ -23,7 +23,7 @@
       </ul>
         <form action="" method="post">
           <input class='store-checkbox' type="checkbox" value="None" id="sale" checked name="checkbox-sale"/>
-          <label class='store-checkbox-sonderangebote'for="sale"><span></span>Sonderangebote</label>
+          <label class='store-checkbox-sonderangebote'for="sale"><span></span>SALE</label>
         </form>
     </div>
 

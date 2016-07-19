@@ -2,34 +2,35 @@
   <div>
     <h4>Navigation</h4>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Store</a></li>
-      <li><a href="#">Contact</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Team</a></li>
-      <li><a href="#">Location</a></li>
+      <li><a href="index.php?site=homepage">Home</a></li>
+      <li><a href="index.php?site=store">Store</a></li>
+      <li><a href="index.php?site=homepage#Contact">Contact</a></li>
+      <li><a href="index.php?site=homepage#AboutUs">About Us</a></li>
+      <li><a href="index.php?site=homepage#Team">Team</a></li>
+      <li><a href="index.php?site=homepage#Location">Location</a></li>
     </ul>
   </div>
   <div>
     <h4>Impressum</h4>
     <ul>
+      <li><a href="index.php?site=impressum">Impressum</a></li>
       <li><a href="#">FAQ</a></li>
     </ul>
   </div>
   <div>
     <h4>Store</h4>
     <ul>
-      <li><a href="#">Clothing</a></li>
-      <li><a href="#">Accessoires</a></li>
-      <li><a href="#">Gadgets</a></li>
+      <li><a href="index.php?site=store&amp;category=2">Clothing</a></li>
+      <li><a href="index.php?site=store&amp;category=3">Gadgets</a></li>
+      <li><a href="index.php?site=store&amp;category=4">Accessorize</a></li>
     </ul>
   </div>
   <div>
     <h4>Contact</h4>
     <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Newsletter</a></li>
-      <li><a href="#">Contactform</a></li>
+      <li><a href="index.php?site=homepage#Contact">About Us</a></li>
+      <li><a href="index.php?site=homepage#Contact">Newsletter</a></li>
+      <li><a href="index.php?site=homepage#Contact">Contactform</a></li>
     </ul>
   </div>
   <div>
