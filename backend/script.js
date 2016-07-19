@@ -108,7 +108,7 @@ zip_of_order();
 sold_products();
 order_payment();
 all_sold_products();
-customers_age()
+customers_age();
 
 function day_of_order(){
   var ctx = document.getElementById("day_of_order");

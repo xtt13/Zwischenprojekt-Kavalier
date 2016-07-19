@@ -95,7 +95,7 @@
 
             <div class="checkbox-wrapper">
               <label>
-                <input type="checkbox" name="is_admin" <?php echo is_checked($user["is_admin"])?>> Administrator?
+                <input type="checkbox" name="is_admin" <?php echo is_checked(isset($user["is_admin"]))?>> Administrator?
               </label>
             </div>
 
