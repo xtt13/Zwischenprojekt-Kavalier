@@ -11,11 +11,12 @@
       $result = mysqli_query($link, $sql);
 
 
+
       if(mysqli_num_rows($result) === 1) {
 
           $user = mysqli_fetch_assoc($result);
-
-          if(password_verify($password, $user["password_hash"])) {
+      
+          if(password_verify($password, $user["password_hash"])){
 
             $_SESSION['logged_in'] = true;
             $_SESSION['user_id'] = $user["id"];
@@ -41,8 +42,5 @@
         $errors["auth"] = "Your Email-Passwordcombination is false!";
       }
     }
-
-
-
 
 ?>

@@ -17,3 +17,6 @@
 <canvas id="order_payment" data-chart-data="<?php echo htmlentities(json_encode($order_payment)); ?>" height="100px"></canvas>
 
 </div>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/Chart.js/dist/Chart.min.js"></script>
+<script src="charts.js"></script>
