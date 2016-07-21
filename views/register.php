@@ -1,7 +1,7 @@
 
   <div class="wrapper-page registration">
 
-<?php if(!isset($_SESSION['registered'])): ?>
+<?php if(!isset($registered)): ?>
 
     <section class="register-form">
       <form action="index.php?site=register" method='post'>

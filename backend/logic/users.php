@@ -66,8 +66,8 @@ if(isset($_GET['action'])) {
       $name = $_POST['fullname'];
       $age = $_POST['age'];
       $email = $_POST['email'];
-      $password = $_POST['password'];
-      $password_again = $_POST['password-confirm'];
+      // $password = $_POST['password'];
+      // $password_again = $_POST['password-confirm'];
       $adress = $_POST['street_and_number'];
       $zip = $_POST['zip'];
       $location = $_POST['location'];
@@ -77,7 +77,7 @@ if(isset($_GET['action'])) {
       $error = 2;
       $error_message;
 
-      if($id !== '' && $name !== '' && $age !== '' && $email !== '' && $password !== '' && $password_again !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
+      if($id !== '' && $name !== '' && $age !== '' && $email !== '' && $adress !== '' && $zip !== '' && $location !== '' && $country !== ''){
 
         $error = 0;
 
@@ -86,14 +86,6 @@ if(isset($_GET['action'])) {
           $error_message['email'] = 'Please insert a valid emailadress!';
         }
 
-        if($password !== $password_again){
-          $error = 1;
-          $error_message['passwords'] = 'Unequal Passwords!';
-        }
-
-        } else {
-        $error = 1;
-        $error_message['email'] = 'Some Inputfields are empty!';
         }
       }
       if($error == 1){
@@ -122,9 +114,10 @@ if(isset($_GET['action'])) {
           $is_admin = 0;
         }
 
-        $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
-        update_user($id,$name, $email, $passwordhash_hashed, $adress, $zip, $location, $country, $is_admin, $age);
+        // $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
+        update_user($id,$name, $email, $adress, $zip, $location, $country, $is_admin, $age);
         // $_SESSION['registered'] == true;
+        $registered = true;
         $users = get_users();
         require('views/users.php');
     }
@@ -192,10 +185,10 @@ if(isset($_GET['action'])) {
         }else{
           $is_admin = 0;
         }
-
+        $password_hash = $password;
         $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
         save_user( $name, $email, $passwordhash_hashed, $adress, $zip,$location, $country, $is_admin,$age);
-        $_SESSION['registered'] == true;
+        $registered = true;
         $users = get_users();
         require('views/users.php');
     }

@@ -7,7 +7,7 @@ function redirect_to($location, $message = "") {
 
 
 function is_checked($value) {
-  if($value) { return "checked"; }
+  if(isset($value) && $value == true) { return "checked"; }
 }
 
 function get_messages(){

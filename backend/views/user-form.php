@@ -5,7 +5,7 @@
     <h3 class="headline"><?php echo $title ?></h3>
 
   <section class="form-new">
-    <?php if(!isset($_SESSION['registered'])): ?>
+    <?php if(!isset($registered)): ?>
 
     <form class="" action="<?php echo $form_action; ?>" method="post">
       <input type="hidden" name="id" value="<?php echo $user['id']; ?>">
@@ -95,7 +95,7 @@
 
             <div class="checkbox-wrapper">
               <label>
-                <input type="checkbox" name="is_admin" <?php echo is_checked(isset($user["is_admin"]))?>> Administrator
+                <input type="checkbox" name="is_admin" <?php if(isset($user["is_admin"])){ echo is_checked($user["is_admin"]);} ?>> Administrator
               </label>
             </div>
 

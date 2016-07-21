@@ -55,12 +55,12 @@ function save_user($fullname, $email, $password_hashed, $street_and_number, $zip
 
 }
 
-function update_user($id, $name, $email, $password_hashed, $street_and_number, $zip, $location, $country, $is_admin, $age){
+function update_user($id, $name, $email, $street_and_number, $zip, $location, $country, $is_admin, $age){
 
   global $link;
 
     $sql = "UPDATE users
-    SET fullname = '$name' , email = '$email', password_hash = '$password_hashed' , street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', is_admin = '$is_admin', age='$age'
+    SET fullname = '$name' , email = '$email', street_and_number = '$street_and_number', zip = '$zip', location = '$location', country = '$country', is_admin = '$is_admin', age='$age'
     WHERE id= '$id'";
 
     $result = mysqli_query($link, $sql);

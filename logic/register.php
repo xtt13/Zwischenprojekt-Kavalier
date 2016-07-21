@@ -27,7 +27,7 @@ if(isset($_POST['sbmbtn']) && $_POST['sbmbtn'] == 'Register') {
       $error_message['email'] = 'Please insert a valid emailadress!';
     }
 
-    if($result[0]['email'] == $email){
+    if(isset($result[0]['email']) &&  $result[0]['email'] == $email){
       $error = 1;
       $error_message['email'] = 'This email is already in use!';
     }
@@ -51,7 +51,8 @@ if($error == 0){
   $passwordhash_hashed = password_hash($password, PASSWORD_DEFAULT);
   $email = strtolower($email);
   register_user($name, $email, $passwordhash_hashed, $adress, $zip, $location, $country, $age);
-  $_SESSION['registered'] = true;
+  $registered = true;
+  // $_SESSION['registered'] = true;
   // redirect_to('index.php?site=registersuccess');
 }
 }

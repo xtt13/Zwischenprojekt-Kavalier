@@ -415,6 +415,7 @@ section.register-form {
   font-size: 36px;
   font-family: 'Latin Modern Roman', serif;
   font-weight: normal;
+	margin-top: 0;
 }
 
 .homepage-about-us ul {
