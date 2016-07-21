@@ -1,3 +1,7 @@
+jQuery(document).ready(function($) {
+
+// FILEUPLOAD LABEL
+
 $('#file-upload').change(function() {
     var filepath = this.value;
     var m = filepath.match(/([^\/\\]+)$/);
@@ -14,7 +18,8 @@ $('#file-upload2').change(function() {
 
 });
 
-//$(body).on('click', '.accordeon-title', function(){
+
+// SEARCH ACCORDEON
 
 var contents = $('.accordeon-content');
 var titles = $('.accordeon-title');
@@ -35,29 +40,6 @@ $('body').on('click', ('.accordeon-title'),titles,function(){
     content.slideDown(function(){title.addClass('is-opened');});
   }
 });
-//});
-
-//
-// ACHTUNG BEHEBT BUG MIT JQUERY UND AJAX REQUEST
-//
-// $(document).on('click', '.accordeon-title', function(){
-//   var contents = $('.accordeon-content');
-//   var titles = $('.accordeon-title');
-//   titles.on('click',function(){
-//     var title = $(this);
-//     contents.filter(':visible').slideUp(function(){
-//       $(this).prev('.accordeon-title').removeClass('is-opened');
-//     });
-//
-//     var content = title.next('.accordeon-content');
-//
-//     if (!content.is(':visible')) {
-//       content.slideDown(function(){title.addClass('is-opened');});
-//     }
-//   });
-// });
-//
-// ENDE ACHTUNG!
 
 // SEARCH AJAX
 
@@ -82,7 +64,7 @@ $('.search_request').keyup(function () {
 });
 
 // ORDERS SHIPPED AJAX
-$('body').on('click', '.button_do', function() {
+$('body').on('click', '.checked-button', function() {
   event.preventDefault();
   $.ajax({
           url: $(this).attr('href'),
@@ -97,4 +79,6 @@ $('body').on('click', '.button_do', function() {
           // wird bei fehlerhaftem Request ausgeführt
           alert('KLAPPT NICHT!');
         });
+});
+
 });

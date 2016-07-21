@@ -31,7 +31,7 @@
         </td>
         <?php if($order['sent'] == '0') : ?>
         <td>
-            <a href="index.php?site=orders&amp;action=sent&amp;id=<?php echo $order['id'];?>" class="button_do">sent</a>
+            <a href="index.php?site=orders&amp;action=sent&amp;id=<?php echo $order['id'];?>" class="button_do checked-button">sent</a>
         </td>
       <?php else :?>
         <td class="sent">

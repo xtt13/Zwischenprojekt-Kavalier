@@ -40,7 +40,8 @@
       <p>
       <?php echo $order_detail["street_and_number"] ?>
       <br>
-      <?php echo $order_detail['zip_and_location'] ?>
+      <?php echo $order_detail['zip'] ?>
+      <?php echo $order_detail['location'] ?>
       <br>
       <?php echo $order_detail['country'] ?>
     </p>
@@ -48,7 +49,8 @@
     <p>
       <?php echo $order_detail['alt_street_and_number'] ?>
       <br>
-      <?php echo $order_detail['alt_zip_and_location'] ?>
+      <?php echo $order_detail['alt_zip'] ?>
+      <?php echo $order_detail['alt_location'] ?>
       <br>
       <?php echo $order_detail['alt_country'] ?>
     </p>
