@@ -81,4 +81,26 @@ $('body').on('click', '.checked-button', function() {
         });
 });
 
+$('body').on('click', '.product-delete', function() {
+  event.preventDefault();
+  var really = confirm('Do you really want to delete this product?');
+
+  if(really === true){
+    $.ajax({
+            url: $(this).attr('href'),
+            method: "get",
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".table").replaceWith($(".table", data));
+
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+  }
+
+});
+
 });

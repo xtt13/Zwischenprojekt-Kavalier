@@ -4,7 +4,7 @@ function get_orders(){
 
   global $link;
 
-   $sql = "SELECT * , DATE_FORMAT(orders.date_ordered, '%d.%m.%Y') AS date_ordered  FROM orders";
+   $sql = "SELECT * , DATE_FORMAT(orders.date_ordered, '%d.%m.%Y') AS date_ordered  FROM orders ORDER BY id DESC";
    //
 
    $result = mysqli_query($link, $sql);

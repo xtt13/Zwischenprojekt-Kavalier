@@ -176,6 +176,9 @@ if(isset($_GET['action'])){
   if($action == "delete") {
 
     $id = (int)$_GET["id"];
+    delete_product($id);
+    $products = get_products();
+    require("views/products.php");
 
   }
 

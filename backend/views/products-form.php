@@ -1,12 +1,4 @@
-<?php
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
 
-echo '<pre>';
-print_r($product);
-echo '</pre>';
- ?>
 
 <div class="body-wrapper">
 

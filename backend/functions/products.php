@@ -115,6 +115,16 @@ function save_product_edit_both($id, $name, $price, $sale, $stock, $description,
 
 }
 
+function delete_product($id){
+
+  global $link;
+
+  $sql =
+  "DELETE FROM products WHERE id = '$id'";
+
+  mysqli_query($link, $sql);
+}
+
 function save_product_edit_noimages($id, $name, $price, $sale, $stock, $description, $category){
 
   global $link;
