@@ -6,7 +6,7 @@ $showForm = true;
 if(isset($_GET['send']) ) {
 
 	if(!isset($_POST['email']) || empty($_POST['email'])) {
-		$error = "<b class='pwdreset-error'>Bitte eine E-Mail-Adresse eintragen</b>";
+		$error = "<b class='pwdreset-error'>Insert a emailadress!</b>";
 	} else {
 
     $email_from_form = $_POST['email'];
@@ -16,7 +16,7 @@ if(isset($_GET['send']) ) {
 
 
 		if(empty($user)) {
-			$error = "<b class='pwdreset-error'>Kein Benutzer gefunden</b>";
+			$error = "<b class='pwdreset-error'>No User found!</b>";
 		} else {
 
       $user_id = $user[0]['id'];

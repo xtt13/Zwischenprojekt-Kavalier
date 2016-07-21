@@ -4,7 +4,6 @@ $id = $_SESSION['user_id'];
 $user = get_user($id);
 $errors = [];
 $alternative_adress = false;
-print_r($_POST);
 
 if(isset($_POST['sbmbtn'])){
 

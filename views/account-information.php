@@ -32,8 +32,11 @@
           </div>
 
           <input class="invoice-country" type="text" name="alt_country" value="<?php echo $user[0]['alt_country']; ?>" placeholder="Country" disabled><br>
+          <div class="account-btn-wrapper">
+            <a class='account-change-password' href="index.php?site=pwdreset">Change Password</a>
+            <input name='sbmbtn' class="account-update-submit <?php if(isset($account_information_success)){echo 'account_information_success';}?>" type="submit" value="<?php if(isset($account_information_success)){echo '✓';}else{echo 'Update';}?>">
+          </div>
 
-          <input name='sbmbtn' class="account-update-submit <?php if(isset($account_information_success)){echo 'account_information_success';}?>" type="submit" value="<?php if(isset($account_information_success)){echo '✓';}else{echo 'Update';}?>">
           <div class="error"><p><?php if(isset($errors)){foreach ($errors as $key) {echo $key;}} ?></p></div>
       </fieldset>
     </form>
