@@ -50,9 +50,7 @@
     </ul>
   </nav>
 
-
-
-    <a class="login" href="index.php?site=login&amp;action=useraccount">Logout</a>
+    <a class="login" href="index.php?site=logout&amp;action=logout">Logout</a>
     <div class="nav-icon">
       <span></span>
       <span></span>
