@@ -2,18 +2,18 @@
 session_start();
 date_default_timezone_set('Europe/Vienna');
 
+include('functions/helpers.php');
 
-// if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
-//   redirect_to("../index.php?site=homepage");
-//   die();
-// }
+if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
+  redirect_to("../index.php?site=homepage");
+  die();
+}
 
 include('../dbconnect.php');
 include('functions/products.php');
 include('functions/users.php');
 include('functions/orders.php');
 include('functions/search.php');
-include('functions/helpers.php');
 include("logic/messages.php");
 include('views/header.php');
 // include('functions/functions.php');
@@ -35,21 +35,12 @@ if($site == "statistics") {
   include("views/messages.php");
 }elseif ($site == "products") {
   include("logic/products.php");
-}
-else{
+}elseif($site == "logout") {
+  include("logic/logout.php");
+}else{
   include("views/home.php");
 }
 
-//elseif($site == "detail") {
-//   include("views/detail.php");
-// } elseif($site == "checkout") {
-//   include("logic/checkout.php");
-// } elseif($site == "login") {
-//   // Muss später noch auf $_SESSION überprüft werden!
-//   include("logic/login.php");
-// } else {
-//   include("views/homepage.php");
-// }
 include("views/footer.php")
 
 ?>

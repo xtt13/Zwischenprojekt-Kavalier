@@ -64,6 +64,7 @@ $('.search_request').keyup(function () {
 });
 
 // ORDERS SHIPPED AJAX
+<<<<<<< HEAD
 $('body').on('click', '.checked-button', function() {
   event.preventDefault();
   $.ajax({
@@ -82,3 +83,21 @@ $('body').on('click', '.checked-button', function() {
 });
 
 });
+=======
+// $('body').on('click', '.button_do', function() {
+//   event.preventDefault();
+//   $.ajax({
+//           url: $(this).attr('href'),
+//           method: "get",
+//         })
+//         .done(function(data, textStatus, jqXhr) {
+//           // alert(data);
+//           $(".table").replaceWith($(".table", data));
+//
+//         })
+//         .fail(function(jqXhr, textStatus, errorThrown) {
+//           // wird bei fehlerhaftem Request ausgeführt
+//           alert('KLAPPT NICHT!');
+//         });
+// });
+>>>>>>> origin/master
