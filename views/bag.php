@@ -1,9 +1,5 @@
 <?php
 
-  print_r($_GET);
-  print_r($_POST);
-  print_r($_SESSION['bag']);
-
   //Löschen von Produkten aus dem Warenkorb
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
     // $key = array_search($_GET['id'], $_SESSION['bag']);
@@ -12,20 +8,19 @@
     //echo $gesamtpreis;
   }
 
-  // Update von Produktanzahl im Warenkorb
-  // if(isset($_POST)) {
-  //   foreach($_POST as $id => $quantity){
-  //     $_SESSION['bag'][$id]['quantity'] = $quantity;
-  //   }
-  // }
-
-  // GET ALTERNATIVE
-  //
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'update_cart' && isset($_GET['quantity'])){
       $quantity = $_GET['quantity'];
       $id = $_GET['id'];
 
-      $_SESSION['bag'][$id]['quantity'] = $quantity;
+      //Überprüfung ob gewählte Produktanzahl nicht größer als Anzahl im Stock ist
+      $result = get_product($id);
+      $stock_update = $result[0]['stock'];
+
+      if($quantity <= $stock_update){
+        $_SESSION['bag'][$id]['quantity'] = $quantity;
+      }
+
+
 
   }
  ?>
