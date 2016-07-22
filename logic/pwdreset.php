@@ -9,7 +9,7 @@ if(isset($_GET['send']) ) {
 		$error = "<b class='pwdreset-error'>Insert a emailadress!</b>";
 	} else {
 
-    $email_from_form = $_POST['email'];
+    $email_from_form = mysqli_real_escape_string($link, $_POST["email"]);
 		$user = get_user_by_email($email_from_form);
 
     //print_r($user);

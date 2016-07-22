@@ -3,6 +3,7 @@
 // print_r($_GET);
  ?>
   <div class="wrapper-page detail">
+
     <div class="wrapper-detail">
 
       <div id="slider">

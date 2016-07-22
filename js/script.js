@@ -228,7 +228,7 @@ jQuery(document).ready(function($) {
     } else {
       input.removeClass("valid").addClass("invalid");
       $('.error').attr('class', 'error');
-      $(".error").addClass("error-message error-message-password-again");
+      $(".error").addClass("error-message error-message-register-password-again");
       $(".error-message").html("<p>Unequal Passwords</p>");
     }
   });

@@ -10,7 +10,7 @@
 
             <input class="register-name" type="text" name="name" placeholder="Name"><br>
 
-            <input class="register-age" type="text" name="age" placeholder="Age"><br>
+            <input class="register-age" type="number" name="age" placeholder="Age"><br>
 
             <input class="register-email" type="email" name="email" placeholder="Emailadress"><br>
 
@@ -31,8 +31,10 @@
 
             <input name='sbmbtn' class="register-submit" type="submit" value="Register">
             <div class="registration-error"><p><?php if(isset($error_message)){foreach ($error_message as $key) {echo $key;}} ?></p></div>
+
         </fieldset>
       </form>
+      <div class="error"><p></p></div>
 
     </section>
 

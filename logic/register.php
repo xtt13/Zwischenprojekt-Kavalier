@@ -2,15 +2,15 @@
 
 
 if(!empty($_POST)){
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $password = $_POST['password'];
-  $password_again = $_POST['password-again'];
-  $adress = $_POST['streetandnumber'];
-  $zip = $_POST['zip'];
-  $location = $_POST['location'];
-  $country = $_POST['country'];
-  $age = $_POST['age'];
+  $name = mysqli_real_escape_string($link, $_POST["name"]);
+  $email = mysqli_real_escape_string($link, $_POST["email"]);
+  $password = mysqli_real_escape_string($link, $_POST["password"]);
+  $password_again = mysqli_real_escape_string($link, $_POST["password-again"]);
+  $adress = mysqli_real_escape_string($link, $_POST["streetandnumber"]);
+  $zip = mysqli_real_escape_string($link, $_POST["zip"]);
+  $location = mysqli_real_escape_string($link, $_POST["location"]);
+  $country = mysqli_real_escape_string($link, $_POST["country"]);
+  $age = mysqli_real_escape_string($link, $_POST["age"]);
 
   $result = get_user_by_email($email);
 

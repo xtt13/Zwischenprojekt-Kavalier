@@ -116,25 +116,25 @@ section.register-form {
 }
 
 .error-message-register-email {
-	top: 270px !important;
+	top: 341px !important;
 	left: 616px;
 	width: 134px;
 }
 
 .error-message-register-password {
-	top: 340px !important;
+	top: 412px !important;
 	left: 616px;
 	width: 356px;
 }
 
 .error-message-register-password-again {
-	top: 412px !important;
+	top: 483px !important;
 	left: 616px;
 	width: 136px;
 }
 
 .error-message-register-adress {
-	top: 510px !important;
+	top: 582px !important;
 	left: 616px;
 	width: 220px;
 }
