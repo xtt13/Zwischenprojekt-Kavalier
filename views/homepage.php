@@ -7,7 +7,7 @@
 
   <section class="fullscreen homepage-store" id="Store">
     <h2 class="headline">Store</h2>
-    <ul>
+    <ul class='hideme'>
       <li>
         <a href="index.php?site=store&amp;category=2"><img class="top-link" src="images/firestarter.jpeg" alt="Clothing"></a><a class="bottom-link" href="">Gadgets</a></li>
       <li>
@@ -19,7 +19,7 @@
 
   <section class="fullscreen homepage-about-us" id="AboutUs">
     <h2 class="headline">About Us</h2>
-    <p></br>
+    <p class='hideme'></br>
     Welcome to the KAVALIER Online Store. Explore international menswear, the KAVALIER brand world – must haves for
     modern knights!
     KAVALIER is an Linke Wienzeile design label. Our collections offer everything for a stylish wardrobe and
@@ -33,7 +33,7 @@
     our customers. You see. It’s all about the chicken!
     </p>
     <h3>Follow Us</h3>
-    <ul>
+    <ul class='hideme'>
       <li><a class="facebook-icon" href="#">Facebook></a></li>
       <li><a class="instagram-icon" href="#">Instagram</a></li>
       <li><a class="twitter-icon" href="#">Twitter</a></li>
@@ -42,7 +42,7 @@
 
   <section class="fullscreen homepage-team" id="Team">
     <h2 class="headline">Team</h2>
-    <ul>
+    <ul class='hideme'>
       <li>
         <img src="images/hannah.png" alt="Hannah">
         <h3>Hannah</h3>
@@ -58,7 +58,7 @@
 
   <section class="fullscreen homepage-location" id="Location">
     <h2 class="headline">Location</h2>
-    <ul>
+    <ul class='hideme'>
       <li>
         <h3>Where?</h3>
         <p class="location-info">Neubaugasse 36/1

@@ -51,7 +51,7 @@
     <?php
     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){
       echo"<a class='signin' href='index.php?site=account'>Account</a>";
-      echo"<a class='signin' href='index.php?site=logout'>Logout</a>";
+      echo"<a class='logout-header' href='index.php?site=logout'>Logout</a>";
     } else {
       echo"<a class='signin' href='index.php?site=login&amp;action=useraccount'>Sign In/Register</a>";
 
