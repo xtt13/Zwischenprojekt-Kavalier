@@ -44,7 +44,9 @@
     </ul>
   </nav>
     <a class="cart" href="index.php?site=bag">
-      <?php if(isset($_SESSION['bag'])){echo '<p>' . count($_SESSION['bag']) . '</p>';}?>
+      <p>
+      <?php if(isset($_SESSION['bag'])){echo  count($_SESSION['bag']);} else { echo '0';}?>
+    </p>
     </a>
     <?php
     if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true){

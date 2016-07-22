@@ -734,9 +734,12 @@ jQuery(document).ready(function($) {
           .done(function(data, textStatus, jqXhr) {
             // alert(data);
             $(".wrapper-information").replaceWith($(".wrapper-information", data));
+
             if($('.quantity-success').length){
               $('.add-to-bag').html('✓');
               $('.add-to-bag').addClass('add-to-bag-success');
+
+              // $('.cart p').html(function(i, val) {return +val+1; });
 
             } else {
 
