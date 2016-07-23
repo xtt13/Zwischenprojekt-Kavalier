@@ -60,9 +60,7 @@ if(isset($_GET['action'])){
         // print_r($_POST);
         // echo '</pre>';
 
-  }
-
-  if($action == "edit") {
+  }if($action == "edit") {
 
         $id = (int)$_GET["id"];
 

@@ -182,9 +182,4 @@ function save_product_edit_other($id, $name, $price, $sale, $stock, $description
 
 }
 
-
-
-
-
-
  ?>
