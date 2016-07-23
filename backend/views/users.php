@@ -3,6 +3,9 @@
  ?>
  <div class="body-wrapper">
  <h3 class="headline">Users</h3>
+ <?php if(isset($success)): ?>
+ <p class='success_message'><?php echo $success ?></p>
+ <?php endif ?>
  <a href="index.php?site=users&amp;action=new" class="button_new">new user</a>
 
  <table class="table">

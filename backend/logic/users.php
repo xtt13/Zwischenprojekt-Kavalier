@@ -39,6 +39,7 @@ if(isset($_GET['action'])) {
     delet_user($id);
 
     $users = get_users();
+    $success = "Deleted user";
     require('views/users.php');
 
 
@@ -114,11 +115,11 @@ if(isset($_GET['action'])) {
           $is_admin = 0;
         }
 
-        // $passwordhash_hashed = password_hash($password_hash, PASSWORD_DEFAULT);
         update_user($id,$name, $email, $adress, $zip, $location, $country, $is_admin, $age);
-        // $_SESSION['registered'] == true;
+
         $registered = true;
         $users = get_users();
+        $success = "Saved edit";
         require('views/users.php');
     }
 /* ####### SAVE_USER #######*/
@@ -190,6 +191,7 @@ if(isset($_GET['action'])) {
         save_user( $name, $email, $passwordhash_hashed, $adress, $zip,$location, $country, $is_admin,$age);
         $registered = true;
         $users = get_users();
+        $success = "Saved new user";
         require('views/users.php');
     }
     }

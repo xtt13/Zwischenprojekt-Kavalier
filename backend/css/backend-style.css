@@ -717,6 +717,20 @@ div .detail-element-wrapper{
 	padding-bottom: 5px;
 	padding-left: 10px;
 }
+
+
+/*Success Message*/
+
+.success_message{
+	font-family: 'myriad-pro', sans-serif;
+	font-weight: 100;
+	font-size: 16.9px;
+	color: #00b200;
+	letter-spacing: 1.17px;
+	padding-bottom: 30px;
+
+}
+
 /* Backend Search */
 
 .search {
