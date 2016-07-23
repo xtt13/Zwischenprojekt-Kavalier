@@ -46,12 +46,17 @@
       <li>
         <img src="images/hannah.png" alt="Hannah">
         <h3>Hannah</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p>On of the two founders of Kavalier.
+          Hannah works as our store manager and is dedicated to her work like no one else.
+          With her knowledge about design and trends she is a precious member of our Team. </p>
       </li>
       <li>
         <img src="images/michi.png" alt="Michi">
         <h3>Michi</h3>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+        <p>Is a co-founder of Kavalier.
+          He works as sales manager at the store and online.
+          Michi is the brain behind everything.
+          His huge knowledge about the latest technologies is what makes Kavalier such a huge success.</p>
       </li>
     </ul>
   </section>
