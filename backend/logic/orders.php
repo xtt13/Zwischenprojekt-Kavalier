@@ -25,11 +25,10 @@ if(isset($_GET['action'])) {
 
     require("views/orders-detail.php");
 
+  }elseif($action == 'back'){
+    $orders = get_orders();
+    require("views/orders.php");
 
-  }elseif ($action == 'edit') {
-
-      $title = "Edit Order";
-      require("views/products-form.php");
   }elseif ($action =='sent'){
     $id = (int)$_GET["id"];
     order_sent($id);

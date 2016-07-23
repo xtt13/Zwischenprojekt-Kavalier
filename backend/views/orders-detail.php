@@ -58,6 +58,6 @@
     </div>
 
   </div>
-  <a href="index.php?site=orders&amp;action=edit&amp;id=<?php echo $order['id']; ?>" class="button_do">edit</a>
+  <a href="index.php?site=orders&amp;action=back" class="button_do">back</a>
 
 </div>
