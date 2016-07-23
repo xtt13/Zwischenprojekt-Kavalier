@@ -80,13 +80,11 @@ function hour_of_order(){
       data: data,
       options: {
         scales: {
-            yAxes: [{
-                ticks: {
-                    max: 8,
-                    min: 0,
-                    stepSize: 1
-                }
-            }]
+          xAxes: [{
+             time: {
+                 unit: 'hour'
+             }
+         }]
         }
     }
   });
@@ -200,7 +198,7 @@ function all_sold_products(){
     labels: chart_data.product_name,
     datasets: [
         {
-            label: "Orders to zip",
+            label: "All Products Sold",
             backgroundColor: "rgba(209, 188, 163, 1.0)",
             borderColor: "#282f43",
             borderWidth: 1,
@@ -257,7 +255,7 @@ var myBarChart = new Chart(ctx, {
             ticks: {
                 max: 50,
                 min: 18,
-                stepSize: 5
+                stepSize: 2
             }
         }]
     }
