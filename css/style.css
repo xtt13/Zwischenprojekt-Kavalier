@@ -1408,6 +1408,7 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 
 .wrapper-detail {
   margin-top: 133px;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1419,6 +1420,20 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	        justify-content: center;
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
+}
+
+.wrapper-detail .backlink {
+  position: absolute;
+  left: 50px;
+  top: -50px;
+  font-family: 'myriad-pro', sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.wrapper-detail .backlink:hover {
+  color: grey;
 }
 
 
@@ -1771,10 +1786,10 @@ a.control_next {
 	right: 10px;
 }
 
-a.control_prev:hover, a.control_next:hover {
+/*a.control_prev:hover, a.control_next:hover {
   opacity: 1;
   -webkit-transition: all 0.2s ease;
-}
+}*/
 
 .slider-image {
 	width: 280px;

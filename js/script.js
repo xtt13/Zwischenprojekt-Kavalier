@@ -493,6 +493,20 @@ $(window).scroll( function(){
   // END
 
 
+  $(".control_next").hover(
+  function() {
+    $(this).css("background-image", "url('css/images/button-right-hover.svg')");
+  }, function() {
+    $(this).css("background-image", "url('css/images/button-right.svg')");
+  });
+
+  $(".control_prev").hover(
+  function() {
+    $(this).css("background-image", "url('css/images/button-left-hover.svg')");
+  }, function() {
+    $(this).css("background-image", "url('css/images/button-left.svg')");
+  });
+
   $(".bag-delete").hover(
   function() {
     $(this).css("background-image", "url('css/images/bag-delete-click.svg')");

@@ -1,7 +1,7 @@
   <div class="wrapper-page detail">
 
     <div class="wrapper-detail">
-
+      <a class='backlink' href="index.php?site=store">&#10229; Back!</a>
       <div id="slider">
         <a href="#" class="control_next"></a>
         <a href="#" class="control_prev"></a>
