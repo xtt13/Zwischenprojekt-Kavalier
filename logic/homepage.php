@@ -1,7 +1,5 @@
 <?php
 
-
-
 // Validation Newsletter inkl. insert into database
 if(!empty($_POST) && isset($_POST['newslettersbmt'])){
 
@@ -31,6 +29,7 @@ if(!empty($_POST) && isset($_POST['newslettersbmt'])){
 
 }
 
+// Contactform Validation 
 if(!empty($_POST) && isset($_POST['contactsbmt'])){
   $contactname = $_POST['contactname'];
   $contactemail = $_POST['contactemail'];

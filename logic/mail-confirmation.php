@@ -1,6 +1,7 @@
 <?php
+// Bestellbestätigung
 
-// FUNKTIONIERT NOCH NICHT!
+// Muss noch manuell im Code aktiviert werden. Für Präsentation deaktiviert
 
 $order = get_order(89);
 

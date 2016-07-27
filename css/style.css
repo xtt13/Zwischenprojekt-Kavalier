@@ -706,6 +706,7 @@ section.register-form {
 }
 
 .newsletter button {
+  transition-duration: 200ms;
   width: 154px;
   height: 43px;
   background-color: #D1BCA3;
@@ -717,6 +718,10 @@ section.register-form {
   margin-left: 30px;
   cursor: pointer;
 	margin-right: 20px;
+}
+
+.newsletter button:hover {
+  background-color: #282f43;
 }
 
 .successnewsletter {
@@ -851,6 +856,7 @@ section.register-form {
 }
 
 .contactform button {
+  transition-duration: 200ms;
   width: 154px;
   height: 43px;
   background-color: #D1BCA3;
@@ -861,11 +867,15 @@ section.register-form {
   font-family: 'myriad-pro', sans-serif;
   margin-left: 30px;
   margin-top: 40px;
-  margin-right: 35px;
+  margin-right: 20px;
 	margin-bottom: 20px;
   position: absolute;
   right: 0;
   cursor: pointer;
+}
+
+.contactform button:hover {
+  background-color: #282f43;
 }
 
 /*_____           _
@@ -1017,6 +1027,7 @@ footer li a:hover {
   font-family: 'myriad-pro', sans-serif;
   font-size: 13px;
   border: 0;
+  cursor: pointer;
   -webkit-user-select: none;  /* Chrome all / Safari all */
   -moz-user-select: none;     /* Firefox all */
   -ms-user-select: none;      /* IE 10+ */
@@ -1494,6 +1505,7 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 }
 
 .add-to-bag {
+  transition-duration: 200ms;
   width: 154px;
   height: 43px;
   background-color: #D1BCA3;
@@ -1518,12 +1530,17 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	        align-items: center;
 }
 
+.add-to-bag:hover {
+  background-color: #282f43;
+}
+
 
 .add-to-bag-success {
 	background-color: green;
 }
 
 .show-bag {
+  transition-duration: 200ms;
 	display: inline-block;
 	text-decoration: none;
   width: 154px;
@@ -1545,6 +1562,10 @@ box-shadow: 0px 0px 10px 0px rgba(83,83,83,0.50);
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+}
+
+.show-bag:hover {
+  background-color: #282f43;
 }
 
 .other-products {
@@ -1940,6 +1961,7 @@ a.control_prev:hover, a.control_next:hover {
 }
 
 .checkout-wrapper a {
+  transition-duration: 200ms;
 	display: block;
 	width: 154px;
 	height: 43px;
@@ -1959,6 +1981,10 @@ a.control_prev:hover, a.control_next:hover {
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
+}
+
+.checkout-wrapper a:hover {
+    background-color: #282f43;
 }
 
 /*######################
@@ -2536,6 +2562,7 @@ SHIPPINGFORM
 
 
 .shipping-submit{
+  transition-duration: 200ms;
   margin: auto;
   display: block;
   width: 154px;
@@ -2550,6 +2577,10 @@ SHIPPINGFORM
   padding-top: 6px;
   cursor: pointer;
   margin-bottom: 10px;
+}
+
+.shipping-submit:hover {
+  background-color: #282f43;
 }
 
 .shipping-form form{
@@ -3352,6 +3383,8 @@ SHIPPINGFORM
 }
 
 .summary-buy {
+  cursor: pointer;
+  transition-duration: 200ms;
 	display: block;
 	text-decoration: none;
 	width: 154px;
@@ -3373,6 +3406,10 @@ SHIPPINGFORM
 	color: #FFFFFF;
 	margin-bottom: 47px;
 	border: 0;
+}
+
+.summary-buy:hover {
+  background-color: #282f43;
 }
 
 .green_border {

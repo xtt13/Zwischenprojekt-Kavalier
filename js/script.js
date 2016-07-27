@@ -1,34 +1,30 @@
+// Weiß nicht mehr warum, aber das soll glaub ich stehen bleiben :'D
 /*jshint sub:true*/
 
 jQuery(document).ready(function($) {
 
+// Beim Ändern der Selectbox im Detailbereich
+$('.detail-select').on('change', function() {
+   document.forms[myFormName].submit();
+});
 
-    $('.detail-select').on('change', function() {
-     document.forms[myFormName].submit();
-  });
-  
+// Fade in wenn die Klasse .hideme erreicht ist
+$(window).scroll( function(){
 
-  $(window).scroll( function(){
+  $('.hideme').each( function(i){
 
-    /* Check the location of each desired element */
-    $('.hideme').each( function(i){
+      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-        var bottom_of_window = $(window).scrollTop() + $(window).height();
-
-        /* If the object is completely visible in the window, fade it it */
-        if( bottom_of_window > bottom_of_object ){
-
-            $(this).animate({'opacity':'1'},800);
-
-        }
+      if( bottom_of_window > bottom_of_object ){
+          $(this).animate({'opacity':'1'},800);
+      }
 
     });
 
-});
+  });
 
   // SMOOTH ANCHOR SCROLLING
-
   $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
@@ -44,20 +40,14 @@ jQuery(document).ready(function($) {
     });
   });
 
-
   // MOBILE MENU
-
   $('.nav-icon').click(function(){
-
     $('header ul').toggleClass('open');
     $('header nav').toggleClass('open');
     $('.nav-icon').toggleClass('open');
-
-
   });
 
-  // SLIDER
-
+  // IMAGE SLIDER
   $(".control_next").click(function(event) {
   event.preventDefault();
   });
@@ -114,7 +104,6 @@ jQuery(document).ready(function($) {
   });
 
   // NEWSLETTER EMAIL VALIDATION
-
   $('.newsletter-email').on('input', function() {
     var input = $(this);
     var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -132,7 +121,6 @@ jQuery(document).ready(function($) {
   });
 
   // NEWSLETTER NAME VALIDATION
-
   $('.newsletter-name').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -149,7 +137,6 @@ jQuery(document).ready(function($) {
   });
 
   // CONTACT NAME VALIDATION
-
   $('.contactform-name').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -166,7 +153,6 @@ jQuery(document).ready(function($) {
   });
 
   // CONTACT EMAIL VALIDATION
-
   $('.contactform-email').on('input', function() {
     var input = $(this);
     var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -184,7 +170,6 @@ jQuery(document).ready(function($) {
   });
 
   // CONTACT MESSAGE VALIDATION
-
   $('.contactform-textarea').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -200,13 +185,7 @@ jQuery(document).ready(function($) {
     }
   });
 
-  // FUNKTIONIERT NICHT: ANSATZ SELECT VALIDIERUNG
-  $('.contactform-subject').on('change', function() {
-    $(this).addClass('contactform-ok');
-  });
-
-  // FORM VALIDATION REGISTER
-
+  // REGISTER VALIDATION EMAIL
   $('.register-email').on('input', function() {
     var input = $(this);
     var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -223,6 +202,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION PASSWORD
   $('.register-password').on('input', function() {
     var input = $(this);
     var re = /(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$$/;
@@ -239,6 +219,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION PASSWORD AGAIN
   $('.register-password-again').on('input', function() {
     var input = $(this);
 
@@ -270,6 +251,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION AGE
   $('.register-age').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -285,6 +267,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION ZIP
   $('.register-zip').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -295,6 +278,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION LOCATION
   $('.register-location').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -305,6 +289,7 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // REGISTER VALIDATION COUNTRY
   $('.register-country').on('input', function() {
     var input = $(this);
     var is_name = input.val();
@@ -332,7 +317,6 @@ jQuery(document).ready(function($) {
   });
 
   // FORM VALIDATION SHIPPINGINFORMATION
-
   $('.shipping-adress').on('input', function() {
     var input = $(this);
     var re = /^([A-ZÄÖÜ][a-zäöüß]+(([.] )|( )|([-])))+[1-9][0-9]{0,3}[a-z]?$/;
@@ -457,7 +441,6 @@ jQuery(document).ready(function($) {
 
   // AJAX BAG DELETE
   $('body').on('click', '.bag-delete', function() {
-  //$('.bag-delete').click(function() {
     event.preventDefault();
     $('.cart p').text(parseInt($('.cart p').text()) - 1);
     var id = $(this).data("id");
@@ -471,14 +454,10 @@ jQuery(document).ready(function($) {
             }
           })
           .done(function(data, textStatus, jqXhr) {
-            // alert(data);
             $("form").replaceWith($("form", data));
-            //$(this).closest('tr').fadeOut("slow");
-            //$('.content_header').html(data);
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
-            // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert("The Server didnt't answer your request!");
           });
   });
 
@@ -491,23 +470,18 @@ jQuery(document).ready(function($) {
     var test = meinevar + ":" + val;
     var final_url = 'index.php?site=bag&action=update_cart&id=' + meinevar + '&quantity=' + val;
 
-    //alert(final_url);
-
     $.ajax({
             url: final_url,
             method: "get"
 
           })
           .done(function(data, textStatus, jqXhr) {
-            // alert(data);
             $(".bag-table").replaceWith($(".bag-table", data));
             $(".checkout-wrapper").replaceWith($(".checkout-wrapper", data));
-
-            //alert('changed');
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert("The Server didn't answer your request!");
           });
 
   });

@@ -15,7 +15,6 @@ if(isset($_SESSION['user_id'])){
 // Wenn der User nicht eingeloggt ist
 if($logged_in == false){
 
-  //redirect_to("index.php?site=checkout&action=login-checkout");
   include('logic/login-checkout.php');
 
 } else {

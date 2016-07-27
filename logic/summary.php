@@ -4,13 +4,6 @@
     redirect_to("index.php?site=checkout&action=shippinginformation");
   }
 
-  //Damit man in der Menüwahl bei einer späteren Bestellung nicht auf die (3)Summary springen kann. Damit Daten submited werden und nicht übersprungen werden können
-  //$_SESSION['shippinginformation'] = false;
-
-
-  //print_r($_POST);
-
-
   // Wenn der Buy!-Button gedrückt wurde
   if(isset($_POST['button-sbm-buy'])){
 
@@ -59,11 +52,11 @@
     //Der Abschnitt Summary ist OK (Ist  Berechtigung für nächsten Checkoutteil)
     $_SESSION['summary'] = true;
 
-    // EMAIL BESTÄTIGUNG
+    // EMAIL BESTÄTIGUNG (Ist für Präsentation auskommentiert!)
     //include('logic/mail-confirmation.php');
 
     // SESSION Überprüfung für Checkoutbereich wird zurückgesetzt
-    //$_SESSION['shippinginformation'] = false;
+    $_SESSION['shippinginformation'] = false;
 
     // Warenkorb wird geleert
     unset($_SESSION['bag']);

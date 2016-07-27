@@ -18,10 +18,6 @@ if(!empty($purchases)){
 
       $product_infos = get_product_from_productid($product_id);
 
-      // foreach ($product_infos as $product_info) {
-      //
-      // }
-
     }
 
     echo "  <h3 class='accordeon-title'>$date_format <i>Order-ID: $order_id</i><span ";
@@ -74,9 +70,7 @@ if(!empty($purchases)){
                   echo "</tr>";
 
                   }
-                  // echo "<tr><td></td><td></td><td></td><td></td>$total_price €<tr>";
-
-
+                  
 
     echo"         </tbody>
               </table>

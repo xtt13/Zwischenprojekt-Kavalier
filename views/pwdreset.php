@@ -18,11 +18,6 @@ if($showForm):
   </form>
 </section>
 
-
-
-
-
-
 <?php
 endif; //Endif von if($showForm)
 ?>

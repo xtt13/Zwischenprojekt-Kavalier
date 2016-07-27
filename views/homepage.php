@@ -1,5 +1,4 @@
 
-
   <section class="fullscreen-above-the-fold above-the-fold">
     <h1>Kavalier</h1>
     <h2>Welcome Modern Knights!</h2>

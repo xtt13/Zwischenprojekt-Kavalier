@@ -33,8 +33,9 @@ if(isset($_GET['send'])) {
 
 	if($passwort != $passwort2) {
 		echo "Bitte identische Passwörter eingeben";
-	} else { //Speichere neues Passwort und lösche den Code
-
+	} else {
+		
+		//Speichere neues Passwort und lösche den Code
 		$password_hash = password_hash($passwort, PASSWORD_DEFAULT);
     update_password($password_hash, $user[0]['id']);
     $update_password = true;

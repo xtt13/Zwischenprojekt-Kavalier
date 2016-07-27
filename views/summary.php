@@ -1,7 +1,6 @@
 <?php
 
 $order = get_order(89);
-//print_r($order);
 
 // Query von Userdaten
 $sql = "SELECT * FROM users WHERE id = '$id'";

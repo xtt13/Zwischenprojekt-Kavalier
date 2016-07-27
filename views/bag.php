@@ -2,10 +2,9 @@
 
   //Löschen von Produkten aus dem Warenkorb
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'delete'){
-    // $key = array_search($_GET['id'], $_SESSION['bag']);
+
     $id = $_GET['id'];
     unset($_SESSION['bag'][$id]);
-    //echo $gesamtpreis;
   }
 
   if(isset($_GET['action']) && isset($_GET['id']) && $_GET['action'] == 'update_cart' && isset($_GET['quantity'])){
@@ -19,15 +18,8 @@
       if($quantity <= $stock_update){
         $_SESSION['bag'][$id]['quantity'] = $quantity;
       }
-
-
-
   }
  ?>
-
-
-
-
   <div class="wrapper-page bag">
     <h1 class="bag-headline">Your Bag</h1>
 
@@ -49,25 +41,11 @@
 
         <?php
 
-        // Ansatz für Dedoding von Produkten im Cookie
-        // $data = json_decode($_COOKIE['bag'], true);
-
-
         $gesamtpreis = "";
 
         // Wenn sich etwas im Warenkorb befindet
         if(isset($_SESSION['bag'])){
           $bag = $_SESSION['bag'];
-
-          // echo "<pre>";
-          // print_r($bag);
-          // echo "</pre>";
-          //
-          // echo "<pre>";
-          // print_r($_POST);
-          // echo "</pre>";
-
-          //echo "<form action='index.php?site=bag' method='post'>";
 
           foreach($bag as $bag_keys){
 
@@ -78,11 +56,6 @@
             $sql = "SELECT * FROM products WHERE id = '$product_id'";
             $result = mysqli_query($link, $sql) or die(mysqli_error($link));
             $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            // echo "<pre>";
-            // print_r($_SESSION['bag']);
-            // echo "</pre>";
-            //print_r($products);
 
             // Datenbank Array Values auf Variablen legen.
             $name = $products['0']['product_name'];
@@ -121,18 +94,9 @@
           }
 
         }
-
-// &action=delete&id=$id
-
-
         ?>
-
-
-
       </tbody>
     </table>
-
-
     <?php if(empty($_SESSION['bag'])){echo "<p class='empty-cart-message'>You have no items in your cart!</p>";} ?>
 
     <div class="checkout-wrapper">

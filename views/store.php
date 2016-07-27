@@ -4,6 +4,7 @@
       <h1>Categories</h1>
       <ul>
         <li><a class='store-category<?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo " category-underline'";} ?>' href='index.php?site=store'>All Products</a></li>
+        
         <?php
         foreach ($categories as $category) {
           $category_id = $category['id'];
@@ -16,10 +17,8 @@
 
           echo" 'href='index.php?site=store&category=$category_id'>$category</a></li>";
         }
-
-
-
         ?>
+
       </ul>
         <form action="" method="post">
           <input class='store-checkbox' type="checkbox" value="None" id="sale" checked name="checkbox-sale"/>

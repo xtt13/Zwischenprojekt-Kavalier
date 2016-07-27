@@ -13,10 +13,6 @@ if(isset($_POST['sbmbtn'])){
   $location = $_POST['location'];
   $country = $_POST['country'];
 
-
-
-
-
   // Wenn die Alternative Checkbox gechecked ist (ACHTUNG! Aufgrund des Checkboxstylings wird auf !isset überprüft !!!)
   if(!isset($_POST['alternative_checkbox'])){
     $alternative_adress = true;
@@ -66,13 +62,8 @@ if(isset($_POST['sbmbtn'])){
     $errors["country"] = "We need a country!";
   }
 
-
-
-  //print_r($errors);
-
   // Wenn keine Fehler vorhanden sind
   if(count($errors) === 0) {
-      //save_reservation($fullname, $reservation_date, $smoking_area, $time_sent);
 
       // Wenn die Alternative Checkbox checked ist, dann verwende Besonderes Query
       if($alternative_adress == true){
@@ -86,8 +77,6 @@ if(isset($_POST['sbmbtn'])){
 
       $account_information_success = true;
 
-      // Wenn alles OK --> redirect zum nächsten Checkoutschritt
-      // redirect_to("index.php?site=checkout&action=summary");
   }
 
 }

@@ -1,61 +1,65 @@
 <?php
 
-  //PAGINATION (nur für All Produkts), für alle Anderen bin ich zu faul bzw. hab keine Zeit und ist zu viel Arbeit!
+//PAGINATION (nur für All Produkts), für alle Anderen bin ich zu faul bzw. hab keine Zeit und ist zu viel Arbeit!
 
-  if(isset($_GET['page'])){
-    $page = (int)$_GET['page'];
-    if($page > 1){
-      $nextpage = $page + 1;
-      $prevpage = $page - 1;
-    }
-    if($page == 1){
-      $nextpage = $page + 1;
-      $prevpage = $page - 1;
-    }
-  } else {
-    $page = 1;
+if(isset($_GET['page'])){
+
+  $page = (int)$_GET['page'];
+
+  if($page > 1){
     $nextpage = $page + 1;
-    $prevpage = 1;
+    $prevpage = $page - 1;
   }
 
-  if(isset($_GET['per-page'])){
-    $perPage = (int)$_GET['per-page'];
-  } else {
-    $perPage = 12;
+  if($page == 1){
+    $nextpage = $page + 1;
+    $prevpage = $page - 1;
   }
 
-  // Ermittelt Startpunkt für Pagination
-  $start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+} else {
+  $page = 1;
+  $nextpage = $page + 1;
+  $prevpage = 1;
+}
+
+if(isset($_GET['per-page'])){
+  $perPage = (int)$_GET['per-page'];
+} else {
+  $perPage = 12;
+}
+
+// Ermittelt Startpunkt für Pagination
+$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
 
-  // Query: Alle Kategorien
-  $sql = "SELECT * FROM categories";
-  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
-  $categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
+// Query: Alle Kategorien
+$sql = "SELECT * FROM categories";
+$result = mysqli_query($link, $sql) or die(mysqli_error($link));
+$categories = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
+// Wenn eine Kategorie gewählt wurde und keine Auswahl in der Sortierung getroffen wurde
+if(isset($_GET['category']) && !isset($_GET['sort-price'])){
+  $category = $_GET['category'];
+  $products = category_product_query($category);
 
-
-  // Wenn eine Kategorie gewählt wurde und keine Auswahl in der Sortierung getroffen wurde
-  if(isset($_GET['category']) && !isset($_GET['sort-price'])){
-    $category = $_GET['category'];
-    $products = category_product_query($category);
-
-  // Wenn die Auswahl Price High-To-Low getroffen wurde
+// Wenn die Auswahl Price High-To-Low getroffen wurde
 } elseif(isset($_GET['sort-price']) && $_GET['sort-price'] == 'high-to-low'){
 
-        // Wenn zusätzlich eine Kategorie gewählt wurde
-        if(isset($_GET['category'])) {
+  // Wenn zusätzlich eine Kategorie gewählt wurde
+  if(isset($_GET['category'])) {
 
-          $category = $_GET['category'];
-          $products = price_high_to_low_category($category);
-          $high_to_low = "selected";
-        } else {
-          $products = price_high_to_low();
-          $high_to_low = "selected";
+    $category = $_GET['category'];
+    $products = price_high_to_low_category($category);
+    $high_to_low = "selected";
 
-        }
+  } else {
 
-  // Wenn die Auswahl Price Low-To-High getroffen wurde
+    $products = price_high_to_low();
+    $high_to_low = "selected";
+
+  }
+
+// Wenn die Auswahl Price Low-To-High getroffen wurde
 } elseif(isset($_GET['sort-price']) && $_GET['sort-price'] == 'low-to-high'){
 
       // Wenn zusätzlich eine Kategorie gewählt wurde

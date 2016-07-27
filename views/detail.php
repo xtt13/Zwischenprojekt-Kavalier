@@ -1,7 +1,3 @@
-<?php
-// print_r($_POST);
-// print_r($_GET);
- ?>
   <div class="wrapper-page detail">
 
     <div class="wrapper-detail">
@@ -20,7 +16,7 @@
           <li><img class="slider-image" src="images/<?php echo $products['0']['image_main']; ?>" alt="<?php echo $products['0']['product_name']; ?>"></li>
 
             <?php
-            // Doppelte Images Pfusch!
+            // Doppelte Images (Pfusch ;-) )
             foreach ($images_other_array as $image) {
                 echo "<li><img class='slider-image' src='images/$image' alt=''></li>";
             }
@@ -86,7 +82,7 @@
     <ul>
 
       <?php foreach ($products_other as $product) {
-        //print_r($product);
+
         $name = $product['product_name'];
         $image = $product['image_main'];
         $price = $product['price'];
