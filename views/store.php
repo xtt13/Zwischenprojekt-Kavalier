@@ -4,7 +4,7 @@
       <h1>Categories</h1>
       <ul>
         <li><a class='store-category<?php if(!isset($_GET['category']) && $_GET['site'] == 'store'){ echo " category-underline'";} ?>' href='index.php?site=store'>All Products</a></li>
-        
+
         <?php
         foreach ($categories as $category) {
           $category_id = $category['id'];
@@ -66,7 +66,7 @@
             }
 
             echo "
-              <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image_main' alt='Nailkit'></a>
+              <a class='image-link' href='index.php?site=detail&id=$id'><img src='images/$image_main' alt='$image_main'></a>
               <div><a class='title-link' href='index.php?site=detail&id=$id'>$name</a><a class='price-link' href='index.php?site=detail&id=$id'>$price €</a></div>
               <a class='view-link' href='index.php?site=detail&id=$id'>View Item</a>
             </li>";

@@ -282,8 +282,8 @@ section.register-form {
 
 	background-image: url('images/logout-icon.png');
 	background-repeat: no-repeat;
-	background-size: 20px 20px;
-	background-position: 2px 3px;
+	background-size: 17px 17px;
+	background-position: 2px 5px;
 
 	transition-duration: 200ms;
 }
@@ -530,6 +530,7 @@ section.register-form {
 
 .homepage-team li img {
   margin-top: 51px;
+  width: 178px;
 }
 
 .homepage-team h3 {
@@ -547,6 +548,7 @@ section.register-form {
   font-family:'myriad-pro', sans-serif;
   padding: 30px;
   margin: 0;
+  line-height: 20px;
 }
 
 /*_____ _  __ _   _       ____            _   _
@@ -3444,6 +3446,7 @@ input:focus {
 }
 
 .account-change-password {
+  transition-duration: 200ms;
 	margin-top: 40px;
 	display: block;
 	width: 200px;
@@ -3461,6 +3464,10 @@ input:focus {
 	margin-bottom: 10px;
 	text-decoration: none;
 	margin-right: 20px;
+}
+
+.account-change-password:hover{
+  background-color: #282f43;
 }
 
 .account-menu {
@@ -3685,6 +3692,7 @@ input:focus {
 }
 
 .account-update-submit {
+  transition-duration: 200ms;
 	margin-top: 40px;
 	display: block;
 	width: 154px;
@@ -3699,6 +3707,10 @@ input:focus {
 	padding-top: 6px;
 	cursor: pointer;
 	margin-bottom: 10px;
+}
+
+.account-update-submit:hover{
+  background-color: #282f43;
 }
 
 /* PASSWORD RESET */

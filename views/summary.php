@@ -115,6 +115,7 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
               // Wenn der Gesamtpreis <= 30€ ist, dann berechne 4,99€ Versand
               if($gesamtpreis <= 30){
+                $gesamtpreis += 4.99;
                 echo "
                   <tr>
                     <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
