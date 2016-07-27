@@ -29,7 +29,6 @@
         <tr>
           <th></th>
           <th>Productname</th>
-          <th>Size</th>
           <th>Amount</th>
           <th>Price</th>
           <th></th>
@@ -44,7 +43,7 @@
         $gesamtpreis = "";
 
         // Wenn sich etwas im Warenkorb befindet
-        if(isset($_SESSION['bag'])){
+        if(isset($_SESSION['bag']) && !empty($_SESSION['bag'])){
           $bag = $_SESSION['bag'];
 
           foreach($bag as $bag_keys){
@@ -72,7 +71,6 @@
                         <tr>
                           <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='index.php?site=detail&id=$id'><img src='./images/$image' alt='Bild'></a></div></td>
                           <td>$name</td>
-                          <td></td>
                           <td><select class='bag-select' name='$id'>
                 ";
                           for($i=1;$i<=$products['0']['stock'];$i++){
@@ -91,6 +89,31 @@
 
                         <tr class='space'></tr>
                 ";
+          }
+
+          if($gesamtpreis < 30){
+
+            $gesamtpreis += 4.99;
+
+            echo"<tr>
+              <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='#'><img src='./images/shipping.svg' alt='Shipping'></a></div></td>
+              <td>Free Shipping from 30 €</td>
+              <td></td>
+              <td>4.99 €</td>
+              <td></td>
+              </tr>
+
+            ";
+          } else {
+            echo"<tr>
+              <td><div class='bag-table-image-wrapper'><a class='bag-table-image-link' href='#'><img src='./images/shipping.svg' alt='Free Shipping'></a></div></td>
+              <td>Free Shipping</td>
+              <td></td>
+              <td>0 €</td>
+              <td></td>
+              </tr>
+
+            ";
           }
 
         }
