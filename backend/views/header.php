@@ -35,7 +35,7 @@
     <nav><ul>
       <li><a href="index.php">Home</a></li>
       <li><a href="index.php?site=statistics">Statistics</a></li>
-      <li><a href="index.php?site=orders&amp;action=view">Orders</a></li>
+      <li class='messages'><a href="index.php?site=orders&amp;action=view">Orders</a><span class='messages-counter-orders'><?php if(isset($number_orders)){echo $number_orders;} ?></span></li>
       <li><a href="index.php?site=users&amp;action=view">Users</a></li>
       <li><a href="index.php?site=products&amp;action=view">Products</a></li>
       <li><a href="index.php?site=search">Search</a></li>

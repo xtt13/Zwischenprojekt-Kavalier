@@ -6,7 +6,7 @@
  <?php if(isset($success)): ?>
  <p class='success_message'><?php echo $success ?></p>
  <?php endif ?>
- <a href="index.php?site=users&amp;action=new" class="button_new">new user</a>
+ <a href="index.php?site=users&amp;action=new" class="button_new">New User</a>
 
  <table class="table">
    <thead class="t-head">

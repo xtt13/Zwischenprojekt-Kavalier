@@ -60,5 +60,31 @@ function check_if_user_exists($email){
 
 }
 
+function get_new_orders(){
+  global $link;
+  $sql = "SELECT COUNT(*) AS count FROM orders WHERE sent = 0";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $number = mysqli_fetch_assoc($result);
+  return $number;
+}
+
+function get_registrated_users(){
+  global $link;
+  $sql = "SELECT COUNT(*) AS count FROM users";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $number = mysqli_fetch_assoc($result);
+  return $number;
+}
+
+function get_sold_products(){
+  global $link;
+  $sql = "SELECT COUNT(*) AS count FROM products_sold";
+  $result = mysqli_query($link, $sql) or die(mysqli_error($link));
+
+  $number = mysqli_fetch_assoc($result);
+  return $number;
+}
 
  ?>
