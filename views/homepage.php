@@ -8,11 +8,11 @@
     <h2 class="headline">Store</h2>
     <ul class='hideme'>
       <li>
-        <a href="index.php?site=store&amp;category=2"><img class="top-link" src="images/firestarter.jpeg" alt="Clothing"></a><a class="bottom-link" href="">Gadgets</a></li>
+        <a href="index.php?site=store&amp;category=2"><img class="top-link" src="images/firestarter.jpeg" alt="Gadgets"></a><a class="bottom-link" href="index.php?site=store&amp;category=2">Gadgets</a></li>
       <li>
-        <a href="index.php?site=store&amp;category=3"><img class="top-link" src="images/navywallet.jpeg" alt="Gadgets"></a><a class="bottom-link" href="">Accessorize</a></li>
+        <a href="index.php?site=store&amp;category=3"><img class="top-link" src="images/navywallet.jpeg" alt="Accessorize"></a><a class="bottom-link" href="index.php?site=store&amp;category=3">Accessorize</a></li>
       <li>
-        <a href="index.php?site=store&amp;category=4"><img class="top-link" src="images/notebook2.jpeg" alt="Accessorize"></a><a class="bottom-link" href="">Office</a></li>
+        <a href="index.php?site=store&amp;category=4"><img class="top-link" src="images/notebook2.jpeg" alt="Office"></a><a class="bottom-link" href="index.php?site=store&amp;category=4">Office</a></li>
     </ul>
   </section>
 

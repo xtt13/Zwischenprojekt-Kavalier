@@ -22,9 +22,11 @@ if(isset($_GET['request'])){
     $purchases = get_purchases_from_user($id);
     $users = get_user_by_id($id);
     $user = $users[0]['email'];
+    $user_name = $users[0]['fullname'];
 
     if($user != ''){
       $sugg_name = $user;
+      $sugg_name2 = $user_name;
     }
       //print_r($purchases);
      echo 'IM NUM REQUEST';

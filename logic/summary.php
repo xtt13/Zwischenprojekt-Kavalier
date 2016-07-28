@@ -19,8 +19,15 @@
 
 
     // Die Bestellung wird in 'orders' eingetragen
+    
+    if(isset($_SESSION['alternative_adress']) && $_SESSION['alternative_adress'] == true){
+      $alt_shipping = 1;
+    } else {
+      $alt_shipping = 0;
+    }
+
     $payment = $_SESSION['payment'];
-    $sql = "INSERT INTO orders (user_id, total_price, payment) VALUES ('$user_id', '$gesamtpreis', '$payment')";
+    $sql = "INSERT INTO orders (user_id, total_price, payment, alt_shipping) VALUES ('$user_id', '$gesamtpreis', '$payment', '$alt_shipping')";
     mysqli_query($link, $sql) or die(mysqli_error($link));
     // ID vom letzen Query wird ausgelesen
     $order_id = mysqli_insert_id($link);

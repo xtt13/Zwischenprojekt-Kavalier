@@ -7,7 +7,8 @@
 
   <div class="answer">
     <p>
-    <?php if(isset($sugg_name)){echo 'Showing: '.$sugg_name;} ?>
+    <?php if(isset($sugg_name2)){echo 'Showing: <b>'.$sugg_name2.'</b>';} ?>
+    <?php if(isset($sugg_name)){echo' Email: '.$sugg_name;} ?>
     </p>
   </div>
 
