@@ -28,7 +28,7 @@ function get_product_detail($id){
   $sql = "SELECT products_sold.*, products.product_name AS product_name
           FROM products_sold LEFT JOIN products
           ON products_sold.product_id = products.id
-          WHERE products_sold.order_id = '90'";
+          WHERE products_sold.order_id = '$id'";
 
   $result = mysqli_query($link, $sql);
 

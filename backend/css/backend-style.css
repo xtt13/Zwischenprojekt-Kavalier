@@ -49,6 +49,10 @@ body {
 	position: relative;
 }
 
+.home {
+	height: 100vh;
+}
+
 
 
 /*
@@ -606,6 +610,10 @@ img {
 
 /* Order Detail Page*/
 
+.orders-detail {
+	height: 100vh;
+}
+
 .detail-wrapper{
 
 	display: -webkit-box;
@@ -634,8 +642,7 @@ div .detail-element-wrapper{
 	            -ms-grid-row-align: center;
 	        align-items: center;
 
-	margin : 30px;
-	margin-top: 0px;
+	margin-left: 40px;
 	-webkit-box-pack: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
@@ -649,16 +656,30 @@ div .detail-element-wrapper{
 
 	font-family: 'myriad-pro', sans-serif;
 	font-size: 15px;
-	letter-spacing: 1.17px;
   font-weight: normal;;
-  font-size: 25px;
+  font-size: 20px;
   color: #0C0C0C;
-  letter-spacing: 2.64px;
 	-ms-flex-item-align: start;
 	    align-self: flex-start;
 	margin: 0px;
+	min-width: 150px;
 	/*align-self: center;*/
+}
 
+.detail-headline2 {
+	font-family: 'myriad-pro', sans-serif;
+	font-size: 15px;
+	font-weight: normal;;
+	font-size: 18px;
+	color: grey;
+	-ms-flex-item-align: start;
+			align-self: flex-start;
+	margin: 0px;
+	min-width: 150px;
+}
+
+.detail-headline a {
+	color: black;
 }
 
 .detail-table{
@@ -666,7 +687,8 @@ div .detail-element-wrapper{
 	    align-self: flex-start;
 	margin-top: 20px;
 		border-collapse: collapse;
-
+		width: 400px;
+	border: 1px solid grey;
 }
 
 .detail-table-head{
@@ -683,9 +705,8 @@ div .detail-element-wrapper{
 .detail-table-head th{
 	font-family: 'myriad-pro', sans-serif;
 	font-weight: normal;
-	font-size: 20px;
-	letter-spacing: 1.17px;
-
+	font-size: 15px;
+	text-align: left;
 	padding-right: 30px;
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -696,17 +717,18 @@ div .detail-element-wrapper{
 
 	font-family: 'myriad-pro', sans-serif;
 	font-size: 15px;
-	letter-spacing: 1.17px;
-	background-color: #ffffff;
 	padding-top: 10px;
 	padding-bottom: 10px;
 	padding-left: 10px;
-
-
 }
+
+.detail-table tr:nth-child(2n) {
+	background-color: #E3E3E3;
+}
+
 .detail-table-foot {
 
-	border: 1px solid black;
+	border: 1px solid grey;
 
 }
 

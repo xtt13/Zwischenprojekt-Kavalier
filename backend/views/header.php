@@ -24,15 +24,8 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
-
-  <!-- <script src="https://use.typekit.net/rse4oyh.js"></script> -->
-  <script>
-    try {
-      Typekit.load({
-        async: true
-      });
-    } catch (e) {}
-  </script>
+  <script src="https://use.typekit.net/jxg7fik.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 </head>
 
