@@ -103,4 +103,26 @@ $('body').on('click', '.product-delete', function() {
 
 });
 
+$('body').on('click', '.delete_user', function() {
+  event.preventDefault();
+  var really = confirm('Do you really want to delete this user?');
+
+  if(really === true){
+    $.ajax({
+            url: $(this).attr('href'),
+            method: "get",
+          })
+          .done(function(data, textStatus, jqXhr) {
+            // alert(data);
+            $(".table").replaceWith($(".table", data));
+
+          })
+          .fail(function(jqXhr, textStatus, errorThrown) {
+            // wird bei fehlerhaftem Request ausgeführt
+            alert('KLAPPT NICHT!');
+          });
+  }
+
+});
+
 });

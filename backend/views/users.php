@@ -38,7 +38,7 @@
            <a href="index.php?site=users&amp;action=edit&amp;id=<?php echo $user['id']; ?>" class="button_do">edit</a>
          </td>
          <td>
-            <a href="index.php?site=users&amp;action=delet&amp;id=<?php echo $user['id']; ?>" class="button_do">delete</a>
+            <a href="index.php?site=users&amp;action=delet&amp;id=<?php echo $user['id']; ?>" class="button_do delete_user">delete</a>
          </td>
       <?php endforeach; ?>
    </tbody>
