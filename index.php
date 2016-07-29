@@ -3,6 +3,8 @@ session_start();
 include('dbconnect.php');
 include('functions/functions.php');
 
+error_reporting(0);
+
 // GET ÜBERPRÜFUNG
 $site = isset($_GET['site']) ? $_GET["site"] : "homepage";
 

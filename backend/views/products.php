@@ -28,7 +28,7 @@
           <a href="index.php?site=products&amp;action=edit&amp;id=<?php echo $product['id']; ?>" class="button_do">edit</a>
         </td>
         <td>
-            <a href="index.php?site=products&amp;action=delete&amp;id=<?php echo $product['id']; ?>" class="button_do product-delete">activ</a>
+            <a href="index.php?site=products&amp;action=delete&amp;id=<?php echo $product['id']; ?>" class="button_do product-delete">delete</a>
         </td>
       </tr>
     <?php endforeach; ?>

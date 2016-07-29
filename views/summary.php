@@ -102,7 +102,7 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
                 echo "
                   <tr>
-                    <td><div class='summary-table-image-wrapper'><img src='./images/$image' alt='Nailkit'></div></td>
+                    <td><div class='summary-table-image-wrapper'><img src='./images/$image' alt='$image'></div></td>
                     <td>$name</td>
                     <td></td>
                     <td>$quantity</td>
@@ -118,7 +118,7 @@ $user = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 $gesamtpreis += 4.99;
                 echo "
                   <tr>
-                    <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Nailkit'></div></td>
+                    <td><div class='summary-table-image-wrapper'><img src='./images/shipping.svg' alt='Shipping'></div></td>
                     <td>Shipping</td>
                     <td></td>
                     <td>1</td>

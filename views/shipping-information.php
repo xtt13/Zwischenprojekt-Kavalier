@@ -5,8 +5,8 @@
     <map name="image-maps-2016-03-26-060856" id="ImageMapsCom-image-maps-2016-03-26-060856">
     <area  alt="Login" title="Login" href="index.php?site=checkout&amp;action=login-checkout" shape="rect" coords="0,0,48,48" style="outline:none;" target="_self"     />
     <area  alt="Shipping Information" title="" href="index.php?site=checkout&amp;action=shippinginformation" shape="rect" coords="161,0,208,48" style="outline:none;" target="_self"     />
-    <area  alt="Summary" title="" href="index.php?site=checkout&amp;action=summary" shape="rect" coords="320,0,367,48" style="outline:none;" target="_self"     />
-    <area  alt="Thank You!" title="" href="index.php?site=checkout&amp;action=success" shape="rect" coords="481,0,528,48" style="outline:none;" target="_self"     />
+    <area  alt="Summary" title="Summary" href="index.php?site=checkout&amp;action=summary" shape="rect" coords="320,0,367,48" style="outline:none;" target="_self"     />
+    <area  alt="Thank You!" title="Thank" href="index.php?site=checkout&amp;action=success" shape="rect" coords="481,0,528,48" style="outline:none;" target="_self"     />
     <area shape="rect" coords="526,46,528,48" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
     </map>
 

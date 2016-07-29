@@ -24,21 +24,21 @@ if(isset($_GET['send']) ) {
       update_passwordcode($passwordcode, $user_id);
 
 			$empfaenger = $user[0]['email'];
-			$betreff = "Neues Passwort für deinen Account auf Kavalier.at";
+			$betreff = "New Password for your Kavalier.at Account";
 			$from = "From: Kavalier.at <noreplay@kavalier.at>";
 			$url_passwortcode = 'http://rotrock.at/index.php?site=pwdupdate&userid='.$user[0]['id'].'&code='.$passwordcode;
-			$text = 'Hallo '.$user[0]['fullname'].', für deinen Account auf Kavalier.at wurde nach einem neuen Passwort gefragt. Um ein neues Passwort zu vergeben, rufe innerhalb der nächsten 24 Stunden die folgende Website auf:
+			$text = 'Hallo '.$user[0]['fullname'].', a new password was requested on your account. Open the link within 24 hours.
 
     '.$url_passwortcode.'
 
-Sollte dir dein Passwort wieder eingefallen sein oder hast du dies nicht angefordert, so bitte ignoriere diese E-Mail.
+If you remember you password, you may ignore this mail.
 
-Liebe Grüße,
-dein Kavalier-Team';
+Greetings,
+Kavalier.at';
 
 			mail($empfaenger, $betreff, $text, $from);
 
-			$success = "Ein Link um dein Passwort zurückzusetzen wurde an deine E-Mail-Adresse gesendet.";
+			$success = "Reset Password Kavalier.at";
 			$showForm = false;
 		}
 	}

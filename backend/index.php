@@ -2,6 +2,8 @@
 session_start();
 date_default_timezone_set('Europe/Vienna');
 
+error_reporting(0);
+
 include('functions/helpers.php');
 
 if(!isset($_SESSION['is_admin']) || $_SESSION["is_admin"] !== true){
