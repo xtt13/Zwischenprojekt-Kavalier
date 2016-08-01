@@ -34,7 +34,7 @@
         </fieldset>
         <ul class="support">
           <li><a href="index.php?site=pwdreset">Forgot your password?</a></li>
-          <li><a href="register.html">No account? Sign up Now!</a></li>
+          <li><a href="index.php?site=register">No account? Sign up Now!</a></li>
         </ul>
       </form>
 
