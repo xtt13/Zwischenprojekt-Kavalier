@@ -1,16 +1,6 @@
 
   <div class="wrapper-page login">
 
-
-    <section class="progressbar_text">
-      <ul>
-        <li>Login</li>
-        <li>Shipping</li>
-        <li>Summary</li>
-        <li>Success</li>
-      </ul>
-    </section>
-
     <section class="login-form">
       <form action="#" method="post">
         <fieldset>

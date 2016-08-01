@@ -1168,7 +1168,7 @@ footer li a:hover {
 
 .wrapper-all-products {
   margin-bottom: 123px;
-	width: 700px;
+	width: 100%;
 }
 
 .wrapper-all-products ul{
@@ -2188,8 +2188,7 @@ LOGINFORM
 	font-style: italic;
   padding-top: 6px;
   cursor: pointer;
-
-
+  -webkit-appearance: none;
   margin-bottom: 32px;
 }
 
@@ -3722,6 +3721,7 @@ input:focus {
 	padding-top: 6px;
 	cursor: pointer;
 	margin-bottom: 10px;
+  -webkit-appearance: none;
 }
 
 .account-update-submit:hover{
@@ -3994,7 +3994,7 @@ input:focus {
 
         position: absolute;
 				right: 10px;
-				top: 8px;
+				top: 10px;
         z-index: 100;
         text-indent: -10000px;
         margin-top: 5px;
@@ -4089,7 +4089,7 @@ input:focus {
         -webkit-box-align: center;
             -ms-flex-align: center;
                 align-items: center;
-				margin-top: 50px;
+				margin-top: 80px;
 
     }
 
@@ -4101,8 +4101,33 @@ input:focus {
 	.above-the-fold h1 {
 		background-size: 70%;
 		background-position: center;
-		width: 382px;
+		width: 300px;
 	}
+
+  .homepage-about-us ul a {
+    margin-right: 40px;
+  }
+
+  .login-form form {
+    width: 300px;
+    margin-top: 63px;
+  }
+
+  .login-email {
+    width: 260px;
+  }
+
+  .login-password {
+    width: 260px;
+  }
+
+  .login-form h3 {
+    margin-top: 0px;
+  }
+
+  .wrapper-all-products {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 606px) {
@@ -4113,12 +4138,12 @@ input:focus {
     background-position: 0px 11px;
     width: 40px;
     height: 50px;
-    margin-left: 16px;
+    margin-left: 9px;
   }
 
   .logout-header {
     text-indent: -10000px;
-    margin-left: 9px;
+    margin-left: 0px;
     background-size: 25px 25px;
     background-position: 0px 14px;
     width: 40px;
@@ -4354,6 +4379,7 @@ input:focus {
 
 	footer div{
 		margin-right: 37px;
+    width: 100px;
 	}
 
 	footer div:nth-child(5) {
@@ -4420,6 +4446,252 @@ input:focus {
 
 }
 
+@media screen and (max-width: 670px) {
+
+  .wrapper-page {
+    height: auto;
+    min-height: 700px;
+  }
+
+  .checkout-wrapper {
+    margin-bottom: 0px;
+  }
+
+  .other-products h2 {
+    font-size: 24px;
+  }
+
+  .other-products li {
+    margin-right: 0px;
+  }
+
+  .wrapper-detail {
+    margin-top: 80px;
+    margin-bottom: 0px;
+  }
+
+  .wrapper-detail .backlink {
+    display: none;
+  }
+
+  .wrapper-information h1 {
+    font-size: 33px;
+  }
+
+  .wrapper-information .product-price {
+    margin: 20px 0px;
+  }
+
+  .add-to-bag {
+    margin-right: 20px;
+  }
+
+  .wrapper-information-wrapper {
+    margin-top: 50px;
+  }
+
+  .bag-table tbody .space {
+    height: 13px;
+  }
+
+  #slider {
+    width: 300px !important;
+    height: 300px !important;
+    margin-right: 0;
+    margin-left: 0;
+    order: 2;
+  }
+
+  .wrapper-information {
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  #slider ul li {
+    width: 300px;
+    height: 300px;
+  }
+
+  .slider-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  a.control_prev {
+    top: 123px;
+  }
+
+  a.control_next {
+    top: 123px;
+  }
+
+  .wrapper-detail form{
+    order: 1;
+  }
+
+  .wrapper-information {
+    width: 300px;
+  }
+
+  .shipping-alternative-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .account-change-password {
+    font-size: 15px;
+    padding-top: 11px;
+    margin-right: 0;
+  }
+
+  .account-form h3 {
+    font-size: 29px;
+  }
+
+  .account-btn-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .account-form {
+    margin-top: 20px;
+  }
+
+  .account-form form{
+    width: 320px;
+  }
+
+  .short {
+    display: block;
+  }
+
+  .account-form input{
+    width: 300px;
+    margin: 0;
+    font-size: 15px;
+  }
+
+  .account-update-submit {
+    width: 200px !important;
+  }
+
+  .account-menu {
+    margin-top: 66px;
+  }
+
+  .account-menu a {
+    font-size: 11px;
+  }
+
+  .accordeon {
+    width: 96%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .accordeon table {
+    margin: 0;
+    font-size: 12px;
+  }
+
+  .accordeon-title {
+    font-size: 12px;
+  }
+
+  .main-header li a {
+    font-size: 24px;
+  }
+
+  .bag-headline {
+    margin-top: 80px;
+  }
+
+  .bag-table {
+    width: 300px;
+    margin-top: 28px;
+  }
+
+  .bag-table tbody tr {
+    height: 80px;
+  }
+
+  .bag-delete {
+    width: 18px;
+    height: 18px;
+    margin-right: -17px;
+  }
+
+  .bag-table-image-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  .bag-table tbody td {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .bag-table-head th {
+    font-size: 12px;
+  }
+
+  .checkout-wrapper {
+    right: 16px;
+    margin-top: 40px;
+  }
+
+  .checkout-wrapper p {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  .wrapper-categories ul {
+    display: block;
+  }
+
+  .wrapper-categories {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    align-items: center;
+    padding: 46px;
+    background-color: #F7F7F7;
+    border-radius: 3px;
+  }
+
+  .wrapper-categories form {
+    width: 90px;
+  }
+
+  .wrapper-selection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  .wrapper-selection select:nth-child(2n){
+    margin-right: 0;
+  }
+
+  .wrapper-selection p {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
+
+  .wrapper-categories li {
+    margin-bottom: 5px;
+  }
+
+  .wrapper-categories ul {
+    margin-top: 20px;
+  }
+}
+
 @media screen and (max-width: 699px) {
 	.wrapper-all-products li:nth-child(3n){
 	  margin-right: 20px;
@@ -4457,14 +4729,9 @@ input:focus {
 	}
 }
 
+
 @media screen and (max-width: 483px) {
 
-		.wrapper-selection {
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			    -ms-flex-direction: column;
-			        flex-direction: column;
-		}
 
 		.wrapper-all-products ul {
 			-webkit-box-align: center;
@@ -4485,16 +4752,6 @@ input:focus {
 			margin-right: 0;
 		}
 
-		.wrapper-categories {
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			    -ms-flex-direction: column;
-			        flex-direction: column;
-		}
-
-		.wrapper-categories ul {
-			display: block;
-		}
 
 		.wrapper-selection p, .wrapper-selection select {
 			margin-right: 0;
@@ -4541,15 +4798,3 @@ input:focus {
 }
 
 /* BAG MEDIAQUERIES */
-
-@media screen and (max-width: 974px) {
-	.bag-table {
-		width: 700px;
-	}
-}
-
-@media screen and (max-width: 745px) {
-	.bag-table {
-		width: 700px;
-	}
-}

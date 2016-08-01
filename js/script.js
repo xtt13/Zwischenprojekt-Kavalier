@@ -8,32 +8,53 @@ $('.detail-select').on('change', function() {
    document.forms[myFormName].submit();
 });
 
-// Fade in wenn die Klasse .hideme erreicht ist
-$(window).scroll( function(){
+// Fade in wenn die Klasse .hideme erreicht ist inkl. ,dass es nicht auf Handys angewendet wird.
+if (screen && screen.width > 480) {
+  $(window).scroll( function(){
 
-  $('.hideme').each( function(i){
+    $('.hideme').each( function(i){
 
-      var bottom_of_object = $(this).offset().top + $(this).outerHeight();
-      var bottom_of_window = $(window).scrollTop() + $(window).height();
+        var bottom_of_object = $(this).offset().top + $(this).outerHeight();
+        var bottom_of_window = $(window).scrollTop() + $(window).height();
 
-      if( bottom_of_window > bottom_of_object ){
-          $(this).animate({'opacity':'1'},800);
-      }
+        if( bottom_of_window > bottom_of_object ){
+            $(this).animate({'opacity':'1'},800);
+        }
+
+      });
 
     });
+} else {
+  $('.hideme').removeClass('hideme');
+}
 
-  });
 
   // SMOOTH ANCHOR SCROLLING
   $(function() {
+
     $('a[href*="#"]:not([href="#"])').click(function() {
+
       if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
         var target = $(this.hash);
         target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
         if (target.length) {
           $('html, body').animate({
             scrollTop: target.offset().top
-          }, 1000);
+          }, 1000, function() {
+            if($('.nav-icon').hasClass('open')){
+
+              $(".main-header nav ul li").each(function (i){
+                var me = $(this);
+                setTimeout(function(){ $(me).fadeOut(500); }, (30 * i));
+              });
+
+              setTimeout(function(){
+                $('header ul').removeClass('open');
+                $('header nav').removeClass('open');
+                $('.nav-icon').removeClass('open');
+              }, 800);
+            }
+      });
           return false;
         }
       }
@@ -45,6 +66,11 @@ $(window).scroll( function(){
     $('header ul').toggleClass('open');
     $('header nav').toggleClass('open');
     $('.nav-icon').toggleClass('open');
+    $(".main-header nav ul li").css("display","none");
+    $(".main-header nav ul li").each(function (i){
+      var me = $(this);
+      setTimeout(function(){ $(me).fadeIn(500); }, (30 * i));
+});
   });
 
   // IMAGE SLIDER
