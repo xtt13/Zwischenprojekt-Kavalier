@@ -91,7 +91,7 @@ $sold_products = array(
 
 /* Order Payment*/
 
-$sql='SELECT COUNT(payment) AS amount, payment FROM users WHERE payment IS NOT NULL GROUP BY payment';
+$sql='SELECT COUNT(payment) AS amount, payment FROM users WHERE payment<>"" GROUP BY payment';
 $result = $result = mysqli_query($link, $sql);
 
 $order_payment = mysqli_fetch_all($result, MYSQLI_ASSOC);

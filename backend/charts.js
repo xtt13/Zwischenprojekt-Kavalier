@@ -233,7 +233,7 @@ function customers_age(){
   var ctx = document.getElementById("customers_age");
   var chart_data = $(ctx).data('chart-data');
   var data = {
-    labels: chart_data.amount,
+    labels: chart_data.age,
     datasets: [
         {
             label: "Customers Age",
@@ -242,7 +242,7 @@ function customers_age(){
             borderWidth: 1,
             hoverBackgroundColor: "rgba(209, 188, 163, 0.7)",
             hoverBorderColor: "",
-            data: chart_data.age,
+            data:chart_data.amount ,
         }
     ]
 }
@@ -253,8 +253,8 @@ var myBarChart = new Chart(ctx, {
     scales: {
         yAxes: [{
             ticks: {
-                max: 50,
-                min: 18,
+                max: 20,
+                min: 0,
                 stepSize: 2
             }
         }]
