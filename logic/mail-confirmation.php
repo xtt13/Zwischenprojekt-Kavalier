@@ -30,7 +30,7 @@ Order Date: $order_date
 ";
 $headers = "From: noreply@michaeldorn.at \r\n Reply-To: kavalier@michaeldorn.at \r\n";
 
-mail($to, $subject, $message, $headers);
+// mail($to, $subject, $message, $headers);
 
 
 

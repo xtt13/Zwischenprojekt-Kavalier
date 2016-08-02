@@ -6,7 +6,7 @@
 
 
         <div class="form-wrapper">
-          <input type="submit"  class="save-button" value="Save"></input>
+          
 
           <?php if(isset($success_message)){echo '<p>' . $success_message . '</p>';} ?>
           <?php if(isset($error_message)){echo '<p>' . $error_message . '</p>';} ?>

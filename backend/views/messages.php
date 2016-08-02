@@ -5,7 +5,7 @@
   <?php
     $id = $_GET['id'];
     $result = find_message($id);
-    
+
     if(isset($_POST) && isset($_POST['Sbmbtn'])){
 
       $email = $_POST['contactemail'];
@@ -13,7 +13,7 @@
       $message = $_POST['contactmessage'];
 
       $to = $email;
-      mail($email, $subject, $message);
+      // mail($email, $subject, $message);
 
       $successcontact = true;
       update_reply($id, $message);

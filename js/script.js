@@ -581,7 +581,7 @@ if (screen && screen.width > 480) {
               })
               .fail(function(jqXhr, textStatus, errorThrown) {
                 // wird bei fehlerhaftem Request ausgeführt
-                //alert('KLAPPT NICHT!');
+                alert('Connection Problems! Please reload the Page!');
               });
           } else {
             //console.log('not checked');
@@ -613,7 +613,7 @@ if (screen && screen.width > 480) {
             })
             .fail(function(jqXhr, textStatus, errorThrown) {
               // wird bei fehlerhaftem Request ausgeführt
-              alert('KLAPPT NICHT!');
+              alert('Connection Problems! Please reload the Page!');
             });
     });
 
@@ -640,7 +640,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
 
   });
@@ -665,7 +665,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
 
   });
@@ -686,7 +686,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   });
 
@@ -706,7 +706,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   });
 
@@ -726,7 +726,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   });
 
@@ -783,7 +783,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
 
 
@@ -816,7 +816,7 @@ if (screen && screen.width > 480) {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   });
 
@@ -849,7 +849,7 @@ if (screen && screen.width > 480) {
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
           // wird bei fehlerhaftem Request ausgeführt
-          alert('KLAPPT NICHT!');
+          alert('Connection Problems! Please reload the Page!');
         });
 });
 
@@ -893,7 +893,7 @@ $.ajax({
       })
       .fail(function(jqXhr, textStatus, errorThrown) {
         // wird bei fehlerhaftem Request ausgeführt
-        alert('KLAPPT NICHT!');
+        alert('Connection Problems! Please reload the Page!');
       });
 });
 
@@ -937,7 +937,7 @@ $.ajax({
 //       })
 //       .fail(function(jqXhr, textStatus, errorThrown) {
 //         // wird bei fehlerhaftem Request ausgeführt
-//         alert('KLAPPT NICHT!');
+//         alert('Connection Problems! Please reload the Page!');
 //       });
 // });
 

@@ -77,7 +77,7 @@ $('body').on('click', '.checked-button', function() {
         })
         .fail(function(jqXhr, textStatus, errorThrown) {
           // wird bei fehlerhaftem Request ausgeführt
-          alert('KLAPPT NICHT!');
+          alert('Connection Problems! Please reload the Page!');
         });
 });
 
@@ -97,7 +97,7 @@ $('body').on('click', '.product-delete', function() {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   }
 
@@ -119,7 +119,7 @@ $('body').on('click', '.delete_user', function() {
           })
           .fail(function(jqXhr, textStatus, errorThrown) {
             // wird bei fehlerhaftem Request ausgeführt
-            alert('KLAPPT NICHT!');
+            alert('Connection Problems! Please reload the Page!');
           });
   }
 

@@ -1060,6 +1060,7 @@ footer li a:hover {
 }
 
 .wrapper-selection p {
+  width: 120px;
   margin: 0;
   font-family: 'myriad-pro', sans-serif;
   font-size: 13px;
